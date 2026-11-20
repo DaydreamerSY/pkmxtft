@@ -87,6 +87,10 @@ var _scheduled: Array = [] ## [time_ms, BattleUnit owner, Callable, ability_sour
 ## The unit whose ability is running now (AbilityRunner.cast, and what the ability scheduled): its damage, heal
 ## and shield events get "ability": true (bot TSV sdealt / ssus; the hits of basic attacks stay "attack").
 var ability_source: BattleUnit = null
+## > 0 inside what follows a damage (lifesteal, Shell Bell, shields when hit, a Cover Band taking it): their amounts
+## come from a damage its ability scale was already on, so ability_scale() is 1 there (an ability cast from them
+## sets it back to 0: AbilityRunner.cast).
+var damage_hooks := 0
 var _started := false
 var _enraged := false
 var _storm_timer := 0.0
@@ -200,6 +204,7 @@ func update(dt_ms: float) -> void:
 		SynergyEffects.on_fight_start(self)
 		PassiveEffects.on_fight_start(self)
 	time_ms += dt_ms
+	damage_hooks = 0 # no damage is running between two steps
 
 	var due: Array = []
 	var later: Array = []
@@ -986,6 +991,7 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 		return {"taken": 0.0, "death": false}
 	if attacker != null and attacker.has_status("enraged"):
 		amount *= 2.0
+	amount *= ability_scale(attacker) # the auto balance's strength of its own ability
 	# Magic Bounce (Rowap Berry): special damage is blocked and bounced back
 	if t.has_status("magic_bounce") and kind == BattleUnit.DamageKind.SPECIAL and attacker != null \
 			and attacker != t and not retaliation:
@@ -1066,7 +1072,10 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 			var cover := board.get_unit(c)
 			if cover != null and cover.alive and cover.team == t.team and cover.has_item("COVER_BAND") and cover.hp > 0.0:
 				t.shield += taken # undo the shield part taken from the covered unit
-				return deal_damage(cover, amount, kind, attacker, crit, retaliation, gain_pp, over_time)
+				damage_hooks += 1 # `amount` has its ability scale already
+				var covered := deal_damage(cover, amount, kind, attacker, crit, retaliation, gain_pp, over_time)
+				damage_hooks -= 1
+				return covered
 	var fossil := SynergyEffects.fossil_awaken(self, t, residual)
 	taken += fossil.taken
 	residual = fossil.residual
@@ -1082,6 +1091,7 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 		"attack": attacker != null and attacker == _attack_source, # from the hit of a basic attack (attack_hit)
 		"ability": attacker != null and attacker == ability_source and attacker != _attack_source}) # from its ability
 
+	damage_hooks += 1 # what follows the damage (retaliation, lifesteal, kill and hit effects) is not scaled again
 	var can_retaliate := attacker != null and attacker.alive and not retaliation \
 		and not attacker.has_item("PROTECTIVE_PADS")
 	if can_retaliate and kind == BattleUnit.DamageKind.SPECIAL and t.has_item("POWER_LENS") and amount >= 1.0:
@@ -1097,8 +1107,10 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 		if t.has_item("SMOKE_BALL"):
 			ItemEffects.smoke_ball(self, t)
 		if _try_resurrect(t):
+			damage_hooks -= 1
 			return {"taken": taken, "death": false}
 		_faint(t, attacker, kind)
+		damage_hooks -= 1
 		return {"taken": taken, "death": true}
 	if taken > 0.0:
 		if t.has_status("sleep") and t.passive != "COMATOSE": # each hit wakes it up 0.3 s sooner
@@ -1111,6 +1123,7 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 		SynergyItems.on_damage_received(self, t)
 		SynergyEffects.on_damage_received(self, t, attacker, taken, retaliation)
 		PassiveEffects.on_damage_received(self, t, attacker, kind, before, retaliation)
+	damage_hooks -= 1
 	return {"taken": taken, "death": false}
 
 
@@ -1238,6 +1251,8 @@ func _update_possessed() -> void:
 func heal(t: BattleUnit, amount: float, source: BattleUnit = null) -> float:
 	if not t.alive or amount <= 0.0 or t.has_status("protect"):
 		return 0.0
+	var healer: BattleUnit = source if source != null else t
+	amount *= ability_scale(healer) # the auto balance's strength of its own ability
 	if t.effects.get("buff_heal_received", false): # Sitrus Berry
 		amount *= 1.3
 	if t.has_status("wound"):
@@ -1252,7 +1267,6 @@ func heal(t: BattleUnit, amount: float, source: BattleUnit = null) -> float:
 	var healed := minf(amount, t.max_hp - t.hp)
 	t.hp += healed
 	if healed > 0.0:
-		var healer: BattleUnit = source if source != null else t
 		emit({"type": "heal", "unit": t, "amount": roundf(healed), "source": healer,
 			"ability": healer == ability_source and healer != _attack_source})
 	var overheal := amount - healed
@@ -1264,14 +1278,24 @@ func heal(t: BattleUnit, amount: float, source: BattleUnit = null) -> float:
 func add_shield(t: BattleUnit, amount: float, source: BattleUnit = null) -> void:
 	if not t.alive or amount <= 0.0:
 		return
+	var giver: BattleUnit = source if source != null else t
+	amount *= ability_scale(giver) # the auto balance's strength of its own ability
 	if t.has_status("enraged"):
 		amount *= 0.5
 	amount = roundf(amount)
 	t.shield += amount
 	t.counters.shield_gained = float(t.counters.get("shield_gained", 0.0)) + amount # Explosive Band
-	var giver: BattleUnit = source if source != null else t
 	emit({"type": "shield", "unit": t, "amount": amount, "source": giver,
 		"ability": giver == ability_source and giver != _attack_source})
+
+
+## The auto balance on what `u` deals, heals or shields now: the strength of its own ability (BattleUnit.skill_scale,
+## data/balance.json "skill") while that ability runs (ability_source, the hits of a basic attack apart), else 1 - and
+## 1 in what follows a damage (damage_hooks: lifesteal of a scaled hit...).
+func ability_scale(u: BattleUnit) -> float:
+	if u == null or u != ability_source or u == _attack_source or damage_hooks > 0:
+		return 1.0
+	return u.skill_scale()
 
 
 ## Inflicts a status: immunities, weather and Aquatic durations, Enraged halving

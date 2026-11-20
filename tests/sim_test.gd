@@ -46,6 +46,7 @@ func _ready() -> void:
 	_check_mana()
 	_check_balance()
 	_check_ability_events()
+	_check_skill_scale()
 	_check_player_config()
 	_check_fights()
 	_check_ported_rules()
@@ -2060,15 +2061,22 @@ func _check_balance() -> void:
 	var src := GameData.get_pokemon(fire)
 	var d := src.duplicate(true)
 	GameData.balance_form(d, 1.2)
-	if int(d.hp) != maxi(roundi(float(src.hp) * 1.2 / 10.0) * 10, 10) or int(d.ap) != 20 or int(d.hp) % 10 != 0 \
+	if int(d.hp) != maxi(roundi(float(src.hp) * 1.2 / 10.0) * 10, 10) or not is_equal_approx(float(d.get("skillScale", 0)), 1.2) \
+			or d.has("ap") or int(d.hp) % 10 != 0 \
 			or absf(float(d.atk) - maxf(snappedf(float(src.atk) * 1.2, 0.1), 1.0)) > 0.001 or d.maxPP != src.maxPP:
-		_fail("balance of a form x1.2: %s -> hp %s atk %s ap %s pp %s" % [fire, d.hp, d.atk, d.ap, d.maxPP])
+		_fail("balance of a form x1.2: %s -> hp %s atk %s skill %s pp %s" % [fire, d.hp, d.atk, d.get("skillScale"), d.maxPP])
 	d = src.duplicate(true)
 	GameData.balance_form(d, {"hp": 1.1, "skill": 0.9, "def": 2.0, "pp": 0.67})
-	if int(d.hp) != maxi(roundi(float(src.hp) * 1.1 / 10.0) * 10, 10) or float(d.atk) != float(src.atk) or int(d.ap) != -10 \
+	if int(d.hp) != maxi(roundi(float(src.hp) * 1.1 / 10.0) * 10, 10) or float(d.atk) != float(src.atk) \
+			or not is_equal_approx(float(d.get("skillScale", 0)), 0.9) or d.has("ap") \
 			or absf(float(d.def) - 2.0 * float(src.def)) > 0.11 or float(d.speed) != float(src.speed) \
 			or int(d.maxPP) != maxi(roundi(float(src.maxPP) * 0.67 / 10.0) * 10, 10) or int(d.maxPP) % 10 != 0:
-		_fail("balance of a form's own stats: %s -> hp %s atk %s ap %s def %s pp %s" % [fire, d.hp, d.atk, d.ap, d.def, d.maxPP])
+		_fail("balance of a form's own stats: %s -> hp %s atk %s skill %s def %s pp %s"
+			% [fire, d.hp, d.atk, d.get("skillScale"), d.def, d.maxPP])
+	d = src.duplicate(true)
+	GameData.balance_form(d, {"skill": 0.001, "def": 0.001, "atk": 0.001, "hp": 0.001})
+	if float(d.skillScale) < 0.1 or float(d.def) < 0.0 or float(d.atk) < 1.0 or int(d.hp) < 10:
+		_fail("balance of a form may not go below 0 (strength 0.1, ATK 1, HP 10): %s" % d)
 	var u := BattleUnit.create(fire, BattleUnit.Team.BLUE)
 	if u.ap != 0.0 or u.max_hp != float(src.hp): # the web stats in sim_test (use_balance(false) in _ready)
 		_fail("balance off: %s starts with AP %s, HP %s" % [fire, u.ap, u.max_hp])
@@ -2081,12 +2089,29 @@ func _check_balance() -> void:
 		GameData.use_balance(true)
 		var tuned := GameData.get_pokemon(pkm).duplicate(true)
 		var unit := BattleUnit.create(pkm, BattleUnit.Team.BLUE)
+		var unit_scale := unit.skill_scale() # (its data is the GameData entry, back to the web's just below)
 		GameData.use_balance(false)
-		if tuned.hp != expected.hp or tuned.atk != expected.atk or tuned.get("ap", 0) != expected.ap \
+		if tuned.hp != expected.hp or tuned.atk != expected.atk \
+				or tuned.get("skillScale", 1.0) != expected.get("skillScale", 1.0) \
 				or tuned.maxPP != expected.maxPP or unit.max_pp != Difficulty.max_pp_of(float(expected.maxPP)) \
-				or unit.ap != float(expected.ap) or GameData.get_pokemon(pkm).hp != web.hp or GameData.get_pokemon(pkm).has("ap") \
+				or unit.ap != 0.0 or unit_scale != float(expected.get("skillScale", 1.0)) \
+				or GameData.get_pokemon(pkm).hp != web.hp or GameData.get_pokemon(pkm).has("skillScale") \
 				or GameData.get_pokemon(pkm).maxPP != web.maxPP:
 			_fail("use_balance: %s %s web %s -> %s -> %s" % [pkm, forms[pkm], web.hp, tuned.hp, GameData.get_pokemon(pkm).hp])
+	# no stat of any form goes below 0 with the balance (a too strong ability: lower strength or more PP, never a stat)
+	GameData.use_balance(true)
+	var negative: Array[String] = []
+	for pkm in GameData.pokemon:
+		var p: Dictionary = GameData.pokemon[pkm]
+		for stat in ["hp", "atk", "def", "speDef", "speed", "maxPP", "range"]:
+			if float(p.get(stat, 0)) < 0.0:
+				negative.append("%s %s %s" % [pkm, stat, p[stat]])
+		if p.has("ap") or float(p.get("skillScale", 1.0)) <= 0.0:
+			negative.append("%s ap %s skill %s" % [pkm, p.get("ap"), p.get("skillScale")])
+	var probe := BattleUnit.create(forms.keys()[0] if not forms.is_empty() else fire, BattleUnit.Team.BLUE)
+	GameData.use_balance(false)
+	if not negative.is_empty() or probe.ap != 0.0:
+		_fail("balance: negative stats %s (AP of a unit %s)" % [negative.slice(0, 8), probe.ap])
 
 
 ## The damage of an ability (now or scheduled: BattleSim.ability_source) is marked "ability", a basic attack's
@@ -2119,6 +2144,65 @@ func _check_ability_events() -> void:
 		if e.type == "damage" and e.get("source") == c and (not e.get("attack", false) or e.get("ability", false)):
 			_fail("a basic attack's damage should be attack only: %s" % e)
 	sim.dispose()
+
+
+## The auto balance's strength of an ability (data/balance.json "skill" -> skillScale, BattleUnit.skill_scale, never a
+## stat): x the damage, heal and shield of its OWN ability while it runs - not its attacks, not what follows a damage
+## (lifesteal), not another ability (TM, Skill Swap); its AP stays 0.
+func _check_skill_scale() -> void:
+	var dealt: Array[float] = []
+	var attacks: Array[float] = []
+	for scale in [1.0, 0.5]:
+		var sim := _fight([["CHARMANDER", Vector2i(3, 2)]], [["MAGIKARP", Vector2i(3, 3)]])
+		var c: BattleUnit = sim.units[0]
+		var t: BattleUnit = sim.units[1]
+		c.data = c.data.duplicate() # not the GameData entry
+		c.data["skillScale"] = scale
+		t.max_hp = 100000.0
+		t.hp = t.max_hp
+		t.dodge = 0.0
+		sim.drain_events()
+		AbilityRunner.cast(sim, c, t)
+		for _i in 20:
+			sim.update(BattleSim.MAX_STEP_MS)
+		sim.attack_hit(c, t)
+		var by_ability := 0.0
+		var by_attack := 0.0
+		for e in sim.drain_events():
+			if e.type == "damage" and e.get("source") == c and e.unit == t:
+				if e.get("ability", false):
+					by_ability += float(e.amount)
+				elif e.get("attack", false):
+					by_attack += float(e.amount)
+		dealt.append(by_ability)
+		attacks.append(by_attack)
+		if scale == 0.5:
+			var gained: Array[float] = []
+			sim.ability_source = c # its ability: x0.5
+			var before := c.shield
+			sim.add_shield(c, 100.0, c)
+			gained.append(c.shield - before)
+			sim.damage_hooks = 1 # what follows a damage: as it is
+			before = c.shield
+			sim.add_shield(c, 100.0, c)
+			gained.append(c.shield - before)
+			sim.damage_hooks = 0
+			c.ability_id = "SPLASH" # another ability than its own
+			before = c.shield
+			sim.add_shield(c, 100.0, c)
+			gained.append(c.shield - before)
+			c.ability_id = String(c.data.skill)
+			sim.ability_source = null # no ability running
+			before = c.shield
+			sim.add_shield(c, 100.0, c)
+			gained.append(c.shield - before)
+			if gained != [50.0, 100.0, 100.0, 100.0] or c.ap != 0.0:
+				_fail("strength 0.5 of the ability on shields (own, after a damage, other ability, none): %s, AP %s"
+					% [gained, c.ap])
+		sim.dispose()
+	if dealt[0] <= 0.0 or absf(dealt[1] / dealt[0] - 0.5) > 0.1 or attacks[0] != attacks[1]: # (DEF rounds up each hit)
+		_fail("strength 0.5 of the ability: ability damage %s -> %s (x0.5), attack %s -> %s (same)"
+			% [dealt[0], dealt[1], attacks[0], attacks[1]])
 
 
 func _check_mana() -> void:

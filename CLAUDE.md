@@ -189,8 +189,11 @@ Board của `PlayerState` dùng đúng toạ độ ô của trận (web: board y
   hướng mọc (`Hud._place`). `layout_test` (`_export_fidelity`) bắt lỗi loại này; thấy bản máy thật lệch bản test thì soát
   scene trong APK trước (`docs/HANDOFF.md` mục 9).
 - **Tự cân bằng** (`data/balance.json`, không có ở web): **mỗi Pokémon có chỉ số riêng** — `GameData.pokemon` đã nhân hệ số
-  của từng chỉ số (`hp`, `atk`, `skill` = `ap` gốc 100 (m − 1), `def` / `speDef` / `speed`, `pp` = maxPP; HP và PP làm tròn
-  hàng chục; `GameData.balance_form`); không có hệ số theo hệ (người dùng: cân theo chỉ số từng con). Tiêu chí + mục tiêu
+  của từng chỉ số (`hp`, `atk`, `def` / `speDef` / `speed`, `pp` = maxPP; HP và PP làm tròn hàng chục; `GameData.balance_form`);
+  `skill` **không phải chỉ số** mà là sức mạnh skill riêng của nó (`skillScale` → `BattleUnit.skill_scale()`: × sát thương /
+  hồi / khiên của skill đó, `BattleSim.ability_scale`; AP luôn 0 như web). **Không chỉ số nào được âm** (người dùng
+  2026-11-20): skill quá mạnh → giảm `skill` hoặc tăng PP, không hạ chỉ số dưới 0 (`autobalance.py` kiểm trước khi ghi,
+  `sim_test._check_balance`); không có hệ số theo hệ (người dùng: cân theo chỉ số từng con). Tiêu chí + mục tiêu
   (số lần cast theo vai trò, hồ sơ công / thủ của vai trò, độ hiếm, có / không item): `tools/bot/balance_targets.json`,
   `docs/BOT.md`. Đọc chỉ số từ `GameData`, đừng đọc thẳng `data/pac/pokemon.json`;
   test cần số web thì `GameData.use_balance(false)` (sim_test làm vậy); về web hẳn: `python tools/bot/autobalance.py --reset`.
@@ -272,6 +275,9 @@ logic trận (khoảng cách / 6 hướng / đường đi / tìm ô trống), sk
 về 7 cột), bot, sơ đồ skill; sàn vẽ lại như sân Pokémon (Poké Ball giữa sân, viền ô mảnh nhạt), camera desktop lùi cho vừa
 sàn sâu hơn (`docs/HANDOFF.md` mục 13, `docs/PORTING.md` "Lưới lục giác"). Cân bằng / mô hình bot còn học trên sàn vuông.
 Sau đó: **Marksman / Caster tầm đánh 5** (`UnitRoles.ROLES` `"range"`; Support / cận chiến giữ tầm web).
+Sau đó (người dùng thấy chỉ số âm khi chơi thử): `skill` của tự cân bằng thành **sức mạnh skill** (× sát thương / hồi / khiên
+của skill riêng, tooltip "Sức mạnh kỹ năng: x%"), không còn AP âm; **không chỉ số nào được âm**. Version 9 đổi tại chỗ: 651 dạng
+skill theo AP giữ số (cùng sát thương), 144 dạng skill không theo AP về 1 (bản trước: `build/bot/balance_v9.json`).
 
 Hướng tiếp: người dùng chọn điểm chung → hệ mới cho từng mùa (`docs/THEMES.md`), duyệt / chỉnh 3 mùa, cân mốc riêng của
 hệ đặc biệt; xác nhận bố cục gọn bản 4 trên máy thật, ký release; chạy bot lô lớn (hàng chục nghìn run) rồi cân độ khó

@@ -54,13 +54,16 @@ static func cast(sim: BattleSim, caster: BattleUnit, target: BattleUnit, ability
 	if ab.get("cycle", false) and not steps.is_empty():
 		steps = [steps[(caster.cast_count - 1) % steps.size()]]
 	var outer := sim.ability_source # its damage / heal / shield (and what it schedules) are the ability's
+	var outer_hooks := sim.damage_hooks # cast from what follows a damage: its own ability is scaled all the same
 	sim.ability_source = caster
+	sim.damage_hooks = 0
 	for step in steps:
 		_schedule_step(ctx, step)
 	AbilityScripts.run(ctx) # "script": code of the ability (ability_scripts.gd)
 	if ab.get("special", "") == "transe":
 		PassiveEffects.transe(sim, caster)
 	sim.ability_source = outer
+	sim.damage_hooks = outer_hooks
 	ItemEffects.on_cast(sim, caster)
 	SynergyEffects.on_cast(sim, caster)
 	PassiveEffects.on_cast(sim, caster)

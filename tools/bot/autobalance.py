@@ -19,9 +19,11 @@ criteria of tools/bot/balance_targets.json. No synergy lever: a strong synergy g
          replaces an attack (perAttack PP of its role lost). A form whose PP moves more than ppFreeze keeps its power
          and role this step (measured again once its casts changed).
   stats  bulk = HP, DEF, SPE_DEF (one multiplier; the armour weighs by the physical / special share of the damage it
-         takes), offence = Attack + SPEED (2 : 1 of the attack part: attack rate 0.4 + 0.007 speed) and skill (AP) by
-         the share of its output from attacks. At most +-step (10 %) per stat per step (PP: ppStep), HP and PP in tens
-         in the game; forms on fewer than --min boards only follow the PP of their role.
+         takes), offence = Attack + SPEED (2 : 1 of the attack part: attack rate 0.4 + 0.007 speed) and skill by the
+         share of its output from attacks. skill is NO stat: the strength of its own ability (x the damage, heal and
+         shield it deals, GameData "skillScale"; its AP stays 0), so a too strong ability gets a lower skill or more PP to
+         cast, never a negative stat (every stat checked >= 0 before writing). At most +-step (10 %) per stat per step
+         (PP: ppStep), HP and PP in tens in the game; forms on fewer than --min boards only follow the PP of their role.
     python tools/bot/autobalance.py build/bot/bal_v4 [more folders] [--min 60] [--step 0.1] [--rate 1] [--explore 0.03]
         [--sens S] [--dry]          (--rate: damping of the power steps, 1 = the full step; --explore: random +-x on
                                     each step's power, so that the next step can measure the lever)
@@ -65,8 +67,8 @@ ROLE_OFFENCE = {"tank": 0.3, "fighter": 0.5, "support": 0.6, "marksman": 0.7, "c
 CARRIES = ("marksman", "caster", "assassin")
 SHOP = ["COMMON", "UNCOMMON", "RARE", "EPIC", "ULTRA"]
 DOC = ("Auto balance (tools/bot/autobalance.py, docs/BOT.md) - not in the web game: every form's own multipliers of its "
-       "web stats. hp, atk, def, speDef, speed: x m (hp in tens); skill: base AP 100 (m - 1); pp: the PP to cast x m (in "
-       "tens). Missing = 1. version: the step that wrote it (bot batches record it). Remove an entry to undo it; python "
+       "web stats. hp, atk, def, speDef, speed: x m (hp in tens); skill: the strength of its own ability, x m on the damage, "
+       "heal and shield it deals (no stat: AP stays 0, no stat is ever negative); pp: the PP to cast x m (in tens). Missing = 1. version: the step that wrote it (bot batches record it). Remove an entry to undo it; python "
        "tools/bot/autobalance.py --reset for the web stats, --restore <version> for an earlier step.")
 
 
@@ -95,6 +97,9 @@ def save_balance(b):
         e = {k: round(v, 3) for k, v in entry_of(b["pokemon"][pkm]).items() if abs(v - 1.0) >= 0.005}
         if e:
             forms[pkm] = e
+    wrong = negative_stats(forms)
+    if wrong:
+        raise SystemExit("autobalance: a stat would go below 0, data/balance.json unchanged: %s" % wrong[:10])
     lines = ['\t\t"%s": %s' % (pkm, json.dumps(e, ensure_ascii=False)) for pkm, e in forms.items()]
     text = "{\n\t\"_doc\": %s,\n\t\"version\": %d,\n\t\"pokemon\": {\n%s\n\t}\n}\n" % (
         json.dumps(DOC, ensure_ascii=False), b["version"], ",\n".join(lines))
@@ -195,11 +200,28 @@ def damage_effective(folders):
     return True
 
 
+_OUTPUT = re.compile(r"\b(?:hit|deal_damage|heal|add_shield)\(")
+
+
+def skill_output(pkm):
+    """Its ability deals damage, heals or shields (data effects damage / heal / shield / drain, a script calling hit /
+    deal_damage / heal / add_shield, itself or through its helpers): what the skill lever scales."""
+    ab = ABILITIES.get(tm.POKEMON.get(pkm, {}).get("skill", ""), {})
+    if not isinstance(ab, dict):
+        return False
+    if any(e.get("type") in ("damage", "heal", "shield", "drain") for st in ab.get("steps", []) for e in st.get("effects", [])):
+        return True
+    body = SCRIPTS.get(ab.get("script", ""), "")
+    for helper in set(re.findall(r"\b(_[a-z0-9_]+)\(", body)):
+        body += SCRIPTS.get(helper, "")
+    return bool(_OUTPUT.search(body))
+
+
 def skill_levers(pkm):
-    """What tunes the power of its ability: skill (AP) and / or Attack, the stats it scales with that the balance moves
-    for the offence ([] = none: its power comes from its casts only)."""
-    found = skill_scaling(pkm)
-    return [lever for stat, lever in (("ap", "skill"), ("atk", "atk")) if stat in found]
+    """What tunes the power of its ability: skill = its strength (x the damage, heal and shield it deals, whatever stat
+    it scales with; GameData "skillScale", no stat) - [] when it deals, heals and shields nothing (its power comes from
+    its casts only: the PP)."""
+    return ["skill"] if skill_output(pkm) else []
 
 
 def guess_role(pkm):
@@ -235,17 +257,29 @@ def roundi(x):
 
 
 def realized(pkm, e):
-    """The stats the game gives a form with its multipliers (GameData.balance_form)."""
+    """The stats the game gives a form with its multipliers (GameData.balance_form); skill = skillScale, the strength of
+    its own ability (no stat: its AP stays 0)."""
     d = tm.POKEMON.get(pkm, {})
     snap = lambda x: math.floor(x * 10 + 0.5) / 10
     out = {"hp": max(roundi(float(d.get("hp", 10)) * e.get("hp", 1.0) / 10.0) * 10, 10),
            "atk": max(snap(float(d.get("atk", 1)) * e.get("atk", 1.0)), 1.0),
-           "ap": roundi(100.0 * (e.get("skill", 1.0) - 1.0))}
+           "skill": max(math.floor(e.get("skill", 1.0) * 100 + 0.5) / 100, 0.1)}
     for stat in ("def", "speDef", "speed"):
         out[stat] = max(snap(float(d.get(stat, 0)) * e.get(stat, 1.0)), 0.0) if stat in e else float(d.get(stat, 0))
     pp = float(d.get("maxPP", 0))
     out["pp"] = max(roundi(pp * e.get("pp", 1.0) / 10.0) * 10, 10) if pp > 0 else 0
     return out
+
+
+def negative_stats(forms):
+    """(form, stat, value) of every multiplier <= 0 or stat below 0 the balance `forms` would give (must be empty)."""
+    wrong = []
+    for pkm, value in forms.items():
+        e = entry_of(value)
+        wrong += [(pkm, k, v) for k, v in e.items() if not v > 0]
+        if pkm in tm.POKEMON:
+            wrong += [(pkm, k, v) for k, v in realized(pkm, e).items() if v < 0]
+    return wrong
 
 
 def power_eq(pkm, e, prof):
@@ -265,9 +299,9 @@ def power_eq(pkm, e, prof):
 
 def step_stats(pkm, old, d_off, d_bulk, prof, cap, extra=None, levers=("skill",), skill_shift=0.0):
     """New multipliers: bulk (ln) on HP, DEF, SPE_DEF; offence (ln) on the attack (Attack + attack rate, 2 : 1) and on
-    the ability's levers (`levers`: skill = AP and / or Attack, the stats it scales with; none: all on the attack) by the
-    attack share; `skill_shift` (ln of the skill / attack output ratio, same offence) from the attack to the ability;
-    `extra` {knob: ln} added (a support's Attack / skill shift); every change within +-cap."""
+    the ability's levers (`levers`: skill = the strength of its ability; none: all on the attack) by the attack share;
+    `skill_shift` (ln of the skill / attack output ratio, same offence) from the attack to the ability; `extra` {knob:
+    ln} added (a support's Attack / skill shift); every change within +-cap, every multiplier within BOUNDS (> 0)."""
     d = tm.POKEMON.get(pkm, {})
     clip = lambda x: max(min(x, cap), -cap)
     elastic = lambda stat: ARMOR * float(d.get(stat, 0)) * old.get(stat, 1.0) / (1 + ARMOR * float(d.get(stat, 0)) * old.get(stat, 1.0))
@@ -784,12 +818,15 @@ def main():
                     sigma = lo - pr["q"] # takes too much for what it deals: toward offence
                 if role == "support" and pr["qs"] < sustain_min:
                     move = min(r_strength * (sustain_min - pr["qs"]), r_step)
-                    # deals more than its share: Attack down; else heals / shields too little: skill up
-                    extra = {"atk": -move} if pr["D"] > 1.0 else {"skill": move}
-                    shift_off = pr["a"] * extra.get("atk", 0.0) + (1 - pr["a"]) * extra.get("skill", 0.0)
-                    extra["hp"] = extra["def"] = extra["speDef"] = -shift_off # same power
+                    # deals more than its share: Attack down; else heals / shields too little: a stronger ability
+                    # (one that heals / shields nothing has only its PP for it)
+                    extra = {"atk": -move} if pr["D"] > 1.0 else ({"skill": move} if "skill" in levers else {})
+                    if extra:
+                        shift_off = pr["a"] * extra.get("atk", 0.0) + (1 - pr["a"]) * extra.get("skill", 0.0)
+                        extra["hp"] = extra["def"] = extra["speDef"] = -shift_off # same power
                 sigma = max(min(r_strength * sigma, r_step), -r_step)
-                # skill against attack output (skillShare of its role): between Attack / speed and AP, same offence
+                # skill against attack output (skillShare of its role): between Attack / speed and the ability's
+                # strength, same offence
                 lo_s, hi_s = share_goal.get(role) or [None, None]
                 s_share = min(max(1.0 - pr["a"], 0.02), 0.98)
                 logit = lambda v: math.log(v / (1.0 - v))
@@ -1006,20 +1043,23 @@ def main():
     print(text)
     #endregion
 
+    wrong = negative_stats(forms)
+    if wrong: # BOUNDS keep every multiplier > 0: never a negative stat (a too strong ability: lower skill, more PP)
+        raise SystemExit("autobalance: a stat would go below 0: %s" % wrong[:10])
     if dry:
-        print("dry run: data/balance.json unchanged")
+        print("dry run: data/balance.json unchanged (no stat below 0)")
         return
     written = save_balance({"version": bal["version"] + 1, "pokemon": forms})
     with io.open(STATS, "w", encoding="utf-8", newline="\n") as f:
         cols = ["hp", "atk", "def", "speDef", "speed", "pp"]
-        f.write("pkm\trarity\tstars\trole\t" + "\t".join("%s_web\t%s" % (c, c) for c in cols) + "\tap\n")
+        f.write("pkm\trarity\tstars\trole\t" + "\t".join("%s_web\t%s" % (c, c) for c in cols) + "\tskill\n")
         for pkm, e in written.items():
             d = tm.POKEMON.get(pkm, {})
             now = realized(pkm, e)
             web = {"hp": d.get("hp", 0), "atk": d.get("atk", 0), "def": d.get("def", 0), "speDef": d.get("speDef", 0),
                    "speed": d.get("speed", 0), "pp": d.get("maxPP", 0)}
             f.write("\t".join(str(x) for x in [pkm, d.get("rarity", ""), d.get("stars", ""), role_of.get(pkm, "")]
-                              + sum(([web[c], now[c]] for c in cols), []) + [now["ap"]]) + "\n")
+                              + sum(([web[c], now[c]] for c in cols), []) + [now["skill"]]) + "\n")
     print("data/balance.json -> version %d (%d forms with their own stats; table %s); version %d kept as %s"
           % (bal["version"] + 1, len(written), os.path.relpath(STATS, tm.ROOT), bal["version"], os.path.relpath(BACKUP % bal["version"], tm.ROOT)))
     new_file = not os.path.exists(HISTORY)

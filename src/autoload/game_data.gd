@@ -890,7 +890,7 @@ func use_balance(on: bool) -> void:
 	for pkm in _web_stats:
 		for stat in _web_stats[pkm]:
 			pokemon[pkm][stat] = _web_stats[pkm][stat]
-		pokemon[pkm].erase("ap")
+		pokemon[pkm].erase("skillScale")
 	balance = {}
 	balance_id = "off"
 	if on:
@@ -898,8 +898,10 @@ func use_balance(on: bool) -> void:
 
 
 ## The stats of a form (`d`, its data) with its balance `entry`: {"hp", "atk", "skill", "def", "speDef", "speed", "pp"}
-## -> multiplier (missing = 1; "skill" gives base AP 100 (m - 1), "pp" the PP to cast), or one number for hp, atk and
-## skill. HP and PP in tens (at least 10; a form without PP keeps 0), the other stats to 0.1.
+## -> multiplier (missing = 1; "pp" the PP to cast), or one number for hp, atk and skill. HP and PP in tens (at least 10;
+## a form without PP keeps 0), the other stats to 0.1. No stat ever goes below 0: "skill" is no stat but the strength
+## of its own ability, `skillScale` (x the damage, heal and shield it deals: BattleUnit.skill_scale, to 0.01, at least
+## 0.1); its AP stays the web's 0.
 static func balance_form(d: Dictionary, entry: Variant) -> void:
 	var m := {}
 	if entry is Dictionary:
@@ -913,7 +915,11 @@ static func balance_form(d: Dictionary, entry: Variant) -> void:
 			d[stat] = maxf(snappedf(float(d.get(stat, 0)) * float(m[stat]), 0.1), 0.0)
 	if float(d.get("maxPP", 0)) > 0.0:
 		d["maxPP"] = maxi(roundi(float(d.maxPP) * float(m.get("pp", 1.0)) / 10.0) * 10, 10)
-	d["ap"] = roundi(100.0 * (float(m.get("skill", 1.0)) - 1.0))
+	var scale := maxf(snappedf(float(m.get("skill", 1.0)), 0.01), 0.1)
+	if is_equal_approx(scale, 1.0):
+		d.erase("skillScale")
+	else:
+		d["skillScale"] = scale
 
 
 func _load_json_optional(path: String) -> Dictionary:

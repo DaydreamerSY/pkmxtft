@@ -369,7 +369,7 @@ func _base_value(stat: String) -> float:
 		"SPE_DEF": return float(data.get("speDef", 0))
 		"SPEED": return float(data.get("speed", 0))
 		"PP": return Difficulty.max_pp_of(float(data.get("maxPP", 100)))
-		"AP": return float(data.get("ap", 0)) # the auto balance (data/balance.json)
+		"AP": return 0.0 # every Pokémon starts at 0 (the auto balance scales its ability: skill tooltip)
 		"CRIT_CHANCE": return 10.0
 		"CRIT_POWER": return 2.0
 	return 0.0

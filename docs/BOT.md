@@ -163,12 +163,18 @@ có hệ số theo hệ (hệ mạnh được cân qua chỉ số của các Pok
   đảo** các chiến thuật khác.
 
 **`data/balance.json`** (không đụng `data/pac`, một dòng mỗi dạng): `pokemon`: dạng → hệ số riêng từng chỉ số
-`{"hp", "atk", "def", "speDef", "speed", "skill", "pp"}` (thiếu = 1; `skill` = AP gốc 100 (m − 1), skill × m; `pp` = PP cần để
-dùng skill × m; HP và PP làm tròn **hàng chục**; một số = cùng hp / atk / skill — định dạng cũ). Áp lúc đọc data
+`{"hp", "atk", "def", "speDef", "speed", "skill", "pp"}` (thiếu = 1; `pp` = PP cần để dùng skill × m; HP và PP làm tròn
+**hàng chục**; một số = cùng hp / atk / skill — định dạng cũ). `skill` **không phải chỉ số**: sức mạnh skill riêng của dạng đó
+(`skillScale`, `BattleUnit.skill_scale()`) = × sát thương / hồi / khiên mà skill đó gây ra lúc chạy (`BattleSim.ability_scale`,
+cùng điều kiện với cờ `ability` của event; không nhân đòn đánh thường, hút máu / Shell Bell sau một đòn (`damage_hooks`), skill
+không phải của nó (TM, Skill Swap)); AP luôn 0 như web; tooltip skill ghi "Sức mạnh kỹ năng: x%". **Không chỉ số nào được âm**
+(người dùng 2026-11-20, trước đó `skill` < 1 thành AP âm, thấp nhất −47): skill quá mạnh → giảm `skill` hoặc tăng PP; mọi hệ
+số > 0 (`BOUNDS`), `autobalance.py` dừng nếu một chỉ số sẽ dưới 0 (`negative_stats`), `sim_test._check_balance` kiểm mọi dạng.
+Skill không gây sát thương / hồi / khiên (buff, trạng thái, triệu hồi: 186 dạng) không có cần `skill`, chỉ có PP. Áp lúc đọc data
 (`GameData._apply_balance` → `balance_form`), nên tooltip / bảng chỉ số, địch và bot đều thấy số mới;
 `GameData.use_balance(false)` = chỉ số web (`sim_test`). Vai trò (`UnitRoles`) suy từ chỉ số **web** (`GameData.web_stat`) nên
 cân bằng không đổi vai trò. `version` = bước đã ghi, worker ghi vào `meta_W.tsv` (`balance`). Bảng đọc được:
-**`build/bot/balance_stats.tsv`** (mỗi dạng: HP / ATK / DEF / SPE_DEF / SPEED / PP web → sau cân bằng, AP). Huỷ: xoá mục;
+**`build/bot/balance_stats.tsv`** (mỗi dạng: HP / ATK / DEF / SPE_DEF / SPEED / PP web → sau cân bằng, sức mạnh skill). Huỷ: xoá mục;
 `python tools/bot/autobalance.py --reset` (về chỉ số web) / `--restore <version>` (bản cũ trong `build/bot/balance_v<n>.json`).
 
 **Mục tiêu** (sửa tay): **`tools/bot/balance_targets.json`** — `casts` (số lần dùng skill TB mỗi trận khi không cầm item, theo
@@ -202,10 +208,12 @@ ln(S / D) ≥ 0,4), `skillShare` (phần đầu ra từ skill: caster ≥ 55%, s
    chỉ số mỗi skill scale theo đọc từ `data/abilities.json` (damage / heal / shield × AP trừ `no_ap`, × `stat` / `plus_stat`,
    buff × `scale_stat`) và code của skill trong `src/core/ability_scripts.gd` (`hit()` = AP; đọc `c.atk` / `c.def` /
    `c.spe_def` / `c.max_hp` / `c.speed`, cả hàm phụ nó gọi): 978 dạng skill theo AP, 94 theo AP + ATK, 6 chỉ ATK, 101 không theo
-   AP / ATK. Phần sức mạnh skill của bước đổ vào **đúng chỉ số skill scale** (AP = `skill`, ATK); skill không theo AP / ATK thì
-   cả phần công vào đòn đánh. `skillShare` của vai trò (phần đầu ra từ skill so với skill + đòn tay: caster ≥ 55%, support ≥
-   50%, marksman ≤ 50%) ngoài khoảng → dịch giữa ATK / tốc đánh và AP, cùng sức công. Báo cáo: tỉ lệ đòn tay / skill theo vai
-   trò, đầu ra mỗi lần cast, dạng skill to nhất.
+   AP / ATK (cột `scales` của `balance_step.tsv`, để đọc). Phần sức mạnh skill của bước đổ vào **sức mạnh skill** (`skill`:
+   × sát thương / hồi / khiên của skill, theo chỉ số nào cũng vậy; từ 2026-11-20, trước đó là AP gốc nên âm khi < 1) nếu skill
+   có gây sát thương / hồi / khiên (`skill_output`: 992 dạng), không thì cả phần công vào đòn đánh (186 dạng: skill chỉ buff /
+   trạng thái / triệu hồi, chỉ cân qua PP). `skillShare` của vai trò (phần đầu ra từ skill so với skill + đòn tay: caster ≥
+   55%, support ≥ 50%, marksman ≤ 50%) ngoài khoảng → dịch giữa ATK / tốc đánh và sức mạnh skill, cùng sức công. Báo cáo: tỉ lệ
+   đòn tay / skill theo vai trò, đầu ra mỗi lần cast, dạng skill to nhất.
 7. **Chia vào chỉ số**: thủ = HP, DEF, SPE_DEF (một hệ số; giáp tính theo tỉ lệ sát thương vật lý / phép mà nó nhận), công =
    ATK + tốc đánh (2 : 1, tốc đánh = 0,4 + 0,007 SPEED) và chỉ số skill scale, theo tỉ lệ đầu ra đến từ đòn đánh thường
    (`adealt` / (`adealt` + `sdealt` + `ssus`)). Mỗi chỉ số tối đa ±10% mỗi bước (PP: `ppStep`), hệ số trong [0,5; 2] (SPEED

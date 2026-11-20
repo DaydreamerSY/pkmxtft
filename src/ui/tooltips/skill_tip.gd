@@ -27,6 +27,10 @@ func _ready() -> void:
 	_title.text = GameData.ability_name(data.skill)
 	_pp.text = "[right]%s %d[/right]" % [GameText.stat_text("PP", 16, false), int(data.maxPP)]
 	_desc.text = GameText.format(GameData.ability_desc(data.skill))
+	var scale := float(data.get("skillScale", 1.0)) if skill == "" else 1.0 # the auto balance, on its own ability
+	if not is_equal_approx(scale, 1.0):
+		_desc.text += "\n[color=#%s]%s[/color]" % [UiStyle.STAT_COLORS.get("AP", UiStyle.TEXT).to_html(false),
+			L.t("Ability strength: %d%% (damage, heal, shield)") % roundi(scale * 100.0)]
 	_cells.text = "[color=#ffb866]%s[/color] " % L.t("Cells:") + AbilityRunner.describe_areas(ab, int(data.range), int(data.stars))
 	_shape.show_pokemon(pkm)
 	var approx = ab.get("approx", null)

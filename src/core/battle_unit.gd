@@ -122,7 +122,7 @@ func _load(pkm_name: String) -> void:
 	spe_def = float(data.get("speDef", 1))
 	speed = float(data.get("speed", 50))
 	attack_range = int(data.get("range", 1))
-	ap = float(data.get("ap", 0.0)) # the auto balance (data/balance.json) only; the web game starts at 0
+	ap = 0.0 # every Pokémon starts at 0 (web); the auto balance scales its ability instead (skill_scale)
 	role = UnitRoles.role_of(pkm_name)
 	max_pp = Difficulty.max_pp_of(float(data.get("maxPP", 100))) # its own (balanced), not by role
 	base_atk = atk
@@ -130,6 +130,15 @@ func _load(pkm_name: String) -> void:
 	base_spe_def = spe_def
 	base_hp = max_hp
 	base_range = attack_range
+
+
+## Strength of its own ability given by the auto balance (data/balance.json "skill" -> GameData "skillScale", never a
+## negative stat): x the damage, heal and shield it deals (BattleSim.ability_scale); 1 while it has another ability than
+## its own (TM, Skill Swap, Mimic...).
+func skill_scale() -> float:
+	if ability_id != String(data.get("skill", "")):
+		return 1.0
+	return float(data.get("skillScale", 1.0))
 
 
 ## Changes form during the fight (Aegislash Blade, Darmanitan Zen...): new name,

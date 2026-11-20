@@ -107,8 +107,10 @@ Một stage:
 Ba loại sát thương: **vật lý** (giảm bởi DEF), **phép** (giảm bởi SPE_DEF), **chuẩn** (không giảm).
 
 **Tự cân bằng** (chỉ có ở bản này, `data/balance.json`, `docs/BOT.md`): **mỗi Pokémon có chỉ số riêng** — hệ số của từng
-chỉ số (HP, ATK, DEF, SPE_DEF, SPEED, skill = AP gốc 100 (m − 1), **PP tối đa**; HP / PP làm tròn hàng chục) học từ bot, áp
-lên chỉ số web; không có hệ số theo hệ (hệ mạnh được cân qua chỉ số các Pokémon của nó). Tiêu chí (người dùng 2026-11-19):
+chỉ số (HP, ATK, DEF, SPE_DEF, SPEED, **PP tối đa**; HP / PP làm tròn hàng chục) và **sức mạnh skill** (× sát thương / hồi /
+khiên của skill riêng của nó, không phải chỉ số: AP vẫn 0; tooltip skill ghi "Sức mạnh kỹ năng: x%") học từ bot, áp lên chỉ số
+web; **không chỉ số nào âm** (skill quá mạnh → giảm sức mạnh skill hoặc tăng PP); không có hệ số theo hệ (hệ mạnh được cân qua
+chỉ số các Pokémon của nó). Tiêu chí (người dùng 2026-11-19):
 làm tròn vai trò / không làm việc khác vai trò, có và không có item không mạnh hơn phần còn lại, hiếm hơn thì mạnh hơn, số
 lần dùng skill mỗi trận hợp lý, sát thương skill / đòn tay theo vai trò và đúng chỉ số skill scale; mục tiêu cuối: nhiều
 chiến thuật carry + item + hệ, không chiến thuật nào áp đảo. Mục tiêu ở `tools/bot/balance_targets.json`; bảng đủ:
