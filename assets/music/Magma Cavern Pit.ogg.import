@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwqqr4crff2qy"
+path="res://.godot/imported/Magma Cavern Pit.ogg-4579a5df795a0729adc71b6538c8a3ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Magma Cavern Pit.ogg"
+dest_files=["res://.godot/imported/Magma Cavern Pit.ogg-4579a5df795a0729adc71b6538c8a3ff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dw3oggxrm6e0e"
+path="res://.godot/imported/Mt. Blaze Peak.ogg-5e4ab2093e7954224e8b76ade111e2dd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Mt. Blaze Peak.ogg"
+dest_files=["res://.godot/imported/Mt. Blaze Peak.ogg-5e4ab2093e7954224e8b76ade111e2dd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

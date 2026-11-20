@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5ef7ey1dlkx0"
+path="res://.godot/imported/Southern Jungle.ogg-b061007965d72e649799eae1632da865.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Southern Jungle.ogg"
+dest_files=["res://.godot/imported/Southern Jungle.ogg-b061007965d72e649799eae1632da865.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

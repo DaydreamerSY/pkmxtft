@@ -1,0 +1,76 @@
+{
+ "_doc": [
+  "Template wave của chế độ Endless. Sửa bằng tools\\wave_editor.bat (không cần sửa tay). Chi tiết: docs/DIFFICULTY.md.",
+  "wildWeight: trọng số của bầy hoang dã mặc định khi bốc thăm với các template hợp stage (0 = luôn dùng template).",
+  "Template: id, name (tên hiển thị, dịch trong data/i18n/ui.json nếu muốn), enabled, stages [đầu, cuối] (cuối 0 = không giới hạn),",
+  "  every (chỉ mỗi N stage kể từ stage đầu), weight, always (thắng mọi lần bốc thăm), replaceBoss (được thay cả boss),",
+  "  levels (các mức độ khó dùng nó, [] = tất cả), stageItems (cộng thêm item theo luật stage), statBoosts (cộng thẳng),",
+  "  statScale (nhân chỉ số gốc), synergies auto|on|off, bonusSynergies {HỆ: điểm}, reward default|none|component|full|choice_component|choice_full.",
+  "Slot: count, pkm (tên Pokémon cố định, “” = ngẫu nhiên), types (một trong các hệ), rarity (COMMON..ULTRA, UNIQUE, LEGENDARY; [] = theo stage),",
+  "  stars (1-3, 0 = theo stage), items (item cố định), randomItems + itemPool auto|component|full, row (3 trước, 2 giữa, 1 sau, 0 = theo tầm đánh)."
+ ],
+ "wildWeight": 10,
+ "templates": [
+  {
+   "id": "fire_raid",
+   "name": "Fire raid",
+   "stages": [6, 0],
+   "weight": 2,
+   "levels": ["normal", "hard"],
+   "slots": [
+    {"count": 1, "types": ["FIRE"], "rarity": ["RARE", "EPIC"], "randomItems": 1},
+    {"count": 4, "types": ["FIRE"]}
+   ],
+   "stageItems": true,
+   "bonusSynergies": {"FIRE": 1}
+  },
+  {
+   "id": "steel_wall",
+   "name": "Steel wall",
+   "stages": [10, 0],
+   "weight": 2,
+   "levels": ["normal", "hard"],
+   "slots": [
+    {"count": 4, "types": ["STEEL", "ROCK"], "randomItems": 1, "itemPool": "component", "row": 3},
+    {"count": 3, "types": ["ELECTRIC", "PSYCHIC"], "row": 1}
+   ],
+   "statScale": {"HP": 1.15}
+  },
+  {
+   "id": "dragon_den",
+   "name": "Dragon den",
+   "stages": [15, 0],
+   "weight": 2,
+   "levels": ["normal", "hard"],
+   "slots": [
+    {"count": 3, "types": ["DRAGON"], "stars": 2, "randomItems": 1},
+    {"count": 3, "types": ["FLYING", "MONSTER"]}
+   ],
+   "synergies": "on"
+  },
+  {
+   "id": "elite_trio",
+   "name": "Elite trio",
+   "stages": [18, 0],
+   "weight": 1,
+   "levels": ["normal", "hard"],
+   "slots": [
+    {"count": 3, "rarity": ["EPIC", "ULTRA"], "stars": 2, "randomItems": 2, "itemPool": "full"}
+   ],
+   "statScale": {"HP": 1.5, "ATK": 1.2},
+   "reward": "choice_component"
+  },
+  {
+   "id": "legend_hunt",
+   "name": "Legend hunt",
+   "stages": [30, 0],
+   "weight": 1,
+   "levels": ["hard"],
+   "slots": [
+    {"count": 1, "rarity": ["LEGENDARY"], "randomItems": 3, "itemPool": "full", "row": 2},
+    {"count": 5, "rarity": ["RARE", "EPIC"], "stars": 2, "randomItems": 1}
+   ],
+   "reward": "choice_full"
+  }
+ ]
+}

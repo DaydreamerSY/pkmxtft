@@ -1,0 +1,33 @@
+{
+ "_doc": [
+  "Battle Pass (chỉ có ở bản Godot): tiến trình mở khoá hệ qua nhiều run. Code: src/core/progression.gd, tài liệu: docs/PROGRESSION.md.",
+  "levels: mỗi mục là một level kế tiếp của pass (mục đầu = level 2). xp = XP cần để lên level đó từ level trước; synergies = các hệ được mở khi tới level đó.",
+  "Hệ khởi đầu (level 1) = mọi hệ KHÔNG nằm trong mục nào của levels. Muốn một hệ có sẵn từ đầu thì xoá nó khỏi levels.",
+  "xp.perRun: XP khi một run chơi tới hết (Game Over; thoát giữa chừng bằng nút Menu không tính). xp.perStage: XP cho mỗi trận đã đấu; xp.perWin: cộng thêm khi thắng trận (0 = tắt). xp.difficulty: hệ số theo mức độ khó (mức không ghi = 1). Run có dùng cheat không được XP.",
+  "Nhịp hiện tại: 100 XP mỗi run -> level 2 sau 1 run (+1 hệ), sau đó cứ 3 run lên một level (+2 hệ).",
+  "Hệ chưa mở bị ẩn khỏi mọi Pokémon (không đếm, không kích hoạt, cả phía địch); họ Pokémon mà dạng đầu không còn hệ nào đã mở thì chưa xuất hiện (shop, đề xuất, wave).",
+  "gatedBy: các hệ giữ cả họ Pokémon ở ngoài cho tới khi hệ đó mở, dù họ còn hệ khác đã mở (WILD: Pokémon hoang dã có luật shop riêng).",
+  "enabled: false = tắt hẳn pass (mọi hệ mở sẵn, không có XP, menu và Game Over không hiện pass).",
+  "Thử nhanh: thêm `-- pass=<level>` hoặc `-- pass=all` khi chạy scene (không lưu). Tiến trình thật lưu ở user://progress.cfg."
+ ],
+ "enabled": true,
+ "xp": {"perRun": 100, "perStage": 0, "perWin": 0, "difficulty": {"classic": 1.0, "normal": 1.0, "hard": 1.0}},
+ "gatedBy": ["WILD"],
+ "levels": [
+  {"xp": 100, "synergies": ["NORMAL"]},
+  {"xp": 300, "synergies": ["ELECTRIC", "FLYING"]},
+  {"xp": 300, "synergies": ["FIGHTING", "ROCK"]},
+  {"xp": 300, "synergies": ["POISON", "FIELD"]},
+  {"xp": 300, "synergies": ["DARK", "STEEL"]},
+  {"xp": 300, "synergies": ["ICE", "GHOST"]},
+  {"xp": 300, "synergies": ["MONSTER", "AQUATIC"]},
+  {"xp": 300, "synergies": ["BUG", "SOUND"]},
+  {"xp": 300, "synergies": ["DRAGON", "WILD"]},
+  {"xp": 300, "synergies": ["FAIRY", "PSYCHIC"]},
+  {"xp": 300, "synergies": ["FOSSIL", "AMORPHOUS"]},
+  {"xp": 300, "synergies": ["HUMAN", "GROUND"]},
+  {"xp": 300, "synergies": ["FLORA", "BABY"]},
+  {"xp": 300, "synergies": ["ARTIFICIAL", "LIGHT"]},
+  {"xp": 300, "synergies": ["GOURMET"]}
+ ]
+}

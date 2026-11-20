@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfoldihwtdp6w"
+path="res://.godot/imported/The Legend of Ninetales.ogg-27c67957bcca9e29ba00241285735667.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/The Legend of Ninetales.ogg"
+dest_files=["res://.godot/imported/The Legend of Ninetales.ogg-27c67957bcca9e29ba00241285735667.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

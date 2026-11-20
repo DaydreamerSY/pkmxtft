@@ -1,0 +1,6099 @@
+{
+ "categories": {
+  "AbsorbedItems": [
+   "TATSUGIRI_CURLY",
+   "TATSUGIRI_DROOPY",
+   "TATSUGIRI_STRETCHY"
+  ],
+  "ArtificialItems": [
+   "METAL_COAT",
+   "MACHO_BRACE",
+   "SPELL_TAG",
+   "SHED_SHELL",
+   "MAGMARIZER",
+   "ELECTIRIZER",
+   "POKERUS_VIAL",
+   "COOKING_POT",
+   "MAX_ELIXIR",
+   "EXP_SHARE",
+   "TERRAIN_EXTENDER"
+  ],
+  "Berries": [
+   "AGUAV_BERRY",
+   "APICOT_BERRY",
+   "ASPEAR_BERRY",
+   "BABIRI_BERRY",
+   "CHERI_BERRY",
+   "CHESTO_BERRY",
+   "GANLON_BERRY",
+   "JABOCA_BERRY",
+   "LANSAT_BERRY",
+   "LEPPA_BERRY",
+   "LIECHI_BERRY",
+   "LUM_BERRY",
+   "ORAN_BERRY",
+   "PECHA_BERRY",
+   "PERSIM_BERRY",
+   "PETAYA_BERRY",
+   "RAWST_BERRY",
+   "ROWAP_BERRY",
+   "SALAC_BERRY",
+   "SITRUS_BERRY",
+   "NANAB_BERRY",
+   "GOLDEN_RAZZ_BERRY",
+   "GOLDEN_NANAB_BERRY",
+   "GOLDEN_PINAP_BERRY"
+  ],
+  "BuriedTrash": [
+   "TRASH",
+   "LEFTOVERS",
+   "COIN",
+   "NUGGET",
+   "FOSSIL_STONE"
+  ],
+  "BuriedTreasures": [
+   "PROTECTOR",
+   "METAL_COAT",
+   "EXPLORER_KIT",
+   "SPELL_TAG",
+   "SHED_SHELL",
+   "INCENSE",
+   "ELECTIRIZER",
+   "MAGMARIZER",
+   "MAX_ELIXIR",
+   "EXP_SHARE",
+   "DRAGON_SCALE",
+   "TREASURE_BOX",
+   "BIG_NUGGET"
+  ],
+  "ConsumableItems": [
+   "TM_RAGE",
+   "TM_RETURN",
+   "TM_COUNTER",
+   "TM_DISABLE",
+   "TM_BULK_UP",
+   "TM_CHARGE",
+   "TM_REFLECT",
+   "TM_PAYDAY",
+   "TM_FOCUS_PUNCH",
+   "TM_HYPER_BEAM",
+   "TM_SUBSTITUTE",
+   "TM_SKILL_SWAP",
+   "OLIVE_OIL",
+   "RAGE_CANDY_BAR",
+   "ROCK_SALT",
+   "TEA",
+   "CURRY",
+   "POFFIN",
+   "CASTELIACONE",
+   "WHIPPED_DREAM",
+   "TART_APPLE",
+   "SWEET_APPLE",
+   "SIRUPY_APPLE",
+   "LEFTOVERS",
+   "HERBA_MYSTICA",
+   "HERBA_MYSTICA_SWEET",
+   "HERBA_MYSTICA_SPICY",
+   "HERBA_MYSTICA_SOUR",
+   "HERBA_MYSTICA_BITTER",
+   "HERBA_MYSTICA_SALTY",
+   "HONEY",
+   "BLACK_SLUDGE",
+   "FRUIT_JUICE",
+   "NUTRITIOUS_EGG",
+   "LEEK",
+   "LARGE_LEEK",
+   "MOOMOO_MILK",
+   "SMOKED_FILET",
+   "SPINDA_COCKTAIL",
+   "LUCKY_EGG",
+   "BERRY_JUICE",
+   "BINDING_MOCHI",
+   "STRAWBERRY_SWEET",
+   "LOVE_SWEET",
+   "BERRY_SWEET",
+   "CLOVER_SWEET",
+   "FLOWER_SWEET",
+   "STAR_SWEET",
+   "RIBBON_SWEET",
+   "SWEETS",
+   "SANDWICH",
+   "HEARTY_STEW",
+   "MUSHROOMS",
+   "TINY_MUSHROOM",
+   "BIG_MUSHROOM",
+   "BALM_MUSHROOM",
+   "RICE",
+   "BERRIES",
+   "RICH_MULCH",
+   "AMAZE_MULCH",
+   "VANILLA_FLAVOR",
+   "RUBY_FLAVOR",
+   "MATCHA_FLAVOR",
+   "MINT_FLAVOR",
+   "LEMON_FLAVOR",
+   "SALTED_FLAVOR",
+   "RUBY_SWIRL_FLAVOR",
+   "CARAMEL_SWIRL_FLAVOR",
+   "RAINBOW_SWIRL_FLAVOR",
+   "STRAWBERRY_SWEET",
+   "LOVE_SWEET",
+   "FLOWER_SWEET",
+   "CLOVER_SWEET",
+   "BERRY_SWEET",
+   "CLOVER_SWEET",
+   "FLOWER_SWEET",
+   "STAR_SWEET",
+   "RIBBON_SWEET",
+   "BRONZE_DOJO_TICKET",
+   "SILVER_DOJO_TICKET",
+   "GOLD_DOJO_TICKET",
+   "AGUAV_BERRY",
+   "APICOT_BERRY",
+   "ASPEAR_BERRY",
+   "BABIRI_BERRY",
+   "CHERI_BERRY",
+   "CHESTO_BERRY",
+   "GANLON_BERRY",
+   "JABOCA_BERRY",
+   "LANSAT_BERRY",
+   "LEPPA_BERRY",
+   "LIECHI_BERRY",
+   "LUM_BERRY",
+   "ORAN_BERRY",
+   "PECHA_BERRY",
+   "PERSIM_BERRY",
+   "PETAYA_BERRY",
+   "RAWST_BERRY",
+   "ROWAP_BERRY",
+   "SALAC_BERRY",
+   "SITRUS_BERRY",
+   "NANAB_BERRY",
+   "GOLDEN_RAZZ_BERRY",
+   "GOLDEN_NANAB_BERRY",
+   "GOLDEN_PINAP_BERRY",
+   "EXCHANGE_TICKET",
+   "RECYCLE_TICKET",
+   "PICNIC_SET",
+   "FIRE_SHARD",
+   "CELL_BATTERY",
+   "SCROLL_OF_DARKNESS",
+   "SCROLL_OF_WATERS",
+   "AUSPICIOUS_ARMOR",
+   "MALICIOUS_ARMOR",
+   "SOOTHE_BELL"
+  ],
+  "CraftableItems": [
+   "OLD_AMBER",
+   "DAWN_STONE",
+   "WATER_STONE",
+   "THUNDER_STONE",
+   "FIRE_STONE",
+   "MOON_STONE",
+   "DUSK_STONE",
+   "LEAF_STONE",
+   "ICE_STONE",
+   "CHOICE_SPECS",
+   "SOUL_DEW",
+   "UPGRADE",
+   "REAPER_CLOTH",
+   "ABILITY_SHIELD",
+   "POWER_LENS",
+   "POKEMONOMICON",
+   "HEAVY_DUTY_BOOTS",
+   "AQUA_EGG",
+   "BLUE_ORB",
+   "SCOPE_LENS",
+   "STAR_DUST",
+   "GREEN_ORB",
+   "DEEP_SEA_TOOTH",
+   "SHINY_CHARM",
+   "XRAY_VISION",
+   "RAZOR_FANG",
+   "GRACIDEA_FLOWER",
+   "LOADED_DICE",
+   "PUNCHING_GLOVE",
+   "MUSCLE_BAND",
+   "WONDER_BOX",
+   "SMOKE_BALL",
+   "WIDE_LENS",
+   "RAZOR_CLAW",
+   "SAFETY_GOGGLES",
+   "KINGS_ROCK",
+   "STICKY_BARB",
+   "PROTECTIVE_PADS",
+   "MAX_REVIVE",
+   "ASSAULT_VEST",
+   "SHELL_BELL",
+   "POKE_DOLL",
+   "RED_ORB",
+   "FLAME_ORB",
+   "ROCKY_HELMET",
+   "FRIEND_BOW",
+   "BLACK_BELT",
+   "MACH_RIBBON",
+   "EXPLOSIVE_BAND",
+   "TWIST_BAND",
+   "LUCKY_RIBBON",
+   "BIG_EATER_BELT",
+   "COVER_BAND",
+   "EFFICIENT_BANDANNA",
+   "NULLIFY_BANDANNA"
+  ],
+  "CraftableItemsNoScarves": [
+   "OLD_AMBER",
+   "DAWN_STONE",
+   "WATER_STONE",
+   "THUNDER_STONE",
+   "FIRE_STONE",
+   "MOON_STONE",
+   "DUSK_STONE",
+   "LEAF_STONE",
+   "ICE_STONE",
+   "CHOICE_SPECS",
+   "SOUL_DEW",
+   "UPGRADE",
+   "REAPER_CLOTH",
+   "ABILITY_SHIELD",
+   "POWER_LENS",
+   "POKEMONOMICON",
+   "HEAVY_DUTY_BOOTS",
+   "AQUA_EGG",
+   "BLUE_ORB",
+   "SCOPE_LENS",
+   "STAR_DUST",
+   "GREEN_ORB",
+   "DEEP_SEA_TOOTH",
+   "SHINY_CHARM",
+   "XRAY_VISION",
+   "RAZOR_FANG",
+   "GRACIDEA_FLOWER",
+   "LOADED_DICE",
+   "PUNCHING_GLOVE",
+   "MUSCLE_BAND",
+   "WONDER_BOX",
+   "SMOKE_BALL",
+   "WIDE_LENS",
+   "RAZOR_CLAW",
+   "SAFETY_GOGGLES",
+   "KINGS_ROCK",
+   "STICKY_BARB",
+   "PROTECTIVE_PADS",
+   "MAX_REVIVE",
+   "ASSAULT_VEST",
+   "SHELL_BELL",
+   "POKE_DOLL",
+   "RED_ORB",
+   "FLAME_ORB",
+   "ROCKY_HELMET"
+  ],
+  "CraftableNoStonesOrScarves": [
+   "CHOICE_SPECS",
+   "SOUL_DEW",
+   "UPGRADE",
+   "REAPER_CLOTH",
+   "ABILITY_SHIELD",
+   "POWER_LENS",
+   "POKEMONOMICON",
+   "HEAVY_DUTY_BOOTS",
+   "AQUA_EGG",
+   "BLUE_ORB",
+   "SCOPE_LENS",
+   "STAR_DUST",
+   "GREEN_ORB",
+   "DEEP_SEA_TOOTH",
+   "SHINY_CHARM",
+   "XRAY_VISION",
+   "RAZOR_FANG",
+   "GRACIDEA_FLOWER",
+   "LOADED_DICE",
+   "PUNCHING_GLOVE",
+   "MUSCLE_BAND",
+   "WONDER_BOX",
+   "SMOKE_BALL",
+   "WIDE_LENS",
+   "RAZOR_CLAW",
+   "SAFETY_GOGGLES",
+   "KINGS_ROCK",
+   "STICKY_BARB",
+   "PROTECTIVE_PADS",
+   "MAX_REVIVE",
+   "ASSAULT_VEST",
+   "SHELL_BELL",
+   "POKE_DOLL",
+   "RED_ORB",
+   "FLAME_ORB",
+   "ROCKY_HELMET"
+  ],
+  "Dishes": [
+   "OLIVE_OIL",
+   "RAGE_CANDY_BAR",
+   "ROCK_SALT",
+   "TEA",
+   "CURRY",
+   "POFFIN",
+   "CASTELIACONE",
+   "WHIPPED_DREAM",
+   "TART_APPLE",
+   "SWEET_APPLE",
+   "SIRUPY_APPLE",
+   "LEFTOVERS",
+   "HERBA_MYSTICA",
+   "HERBA_MYSTICA_SWEET",
+   "HERBA_MYSTICA_SPICY",
+   "HERBA_MYSTICA_SOUR",
+   "HERBA_MYSTICA_BITTER",
+   "HERBA_MYSTICA_SALTY",
+   "HONEY",
+   "BLACK_SLUDGE",
+   "FRUIT_JUICE",
+   "NUTRITIOUS_EGG",
+   "LEEK",
+   "LARGE_LEEK",
+   "MOOMOO_MILK",
+   "SMOKED_FILET",
+   "SPINDA_COCKTAIL",
+   "LUCKY_EGG",
+   "BERRY_JUICE",
+   "BINDING_MOCHI",
+   "STRAWBERRY_SWEET",
+   "LOVE_SWEET",
+   "BERRY_SWEET",
+   "CLOVER_SWEET",
+   "FLOWER_SWEET",
+   "STAR_SWEET",
+   "RIBBON_SWEET",
+   "SWEETS",
+   "SANDWICH",
+   "HEARTY_STEW",
+   "MUSHROOMS",
+   "TINY_MUSHROOM",
+   "BIG_MUSHROOM",
+   "BALM_MUSHROOM",
+   "RICE",
+   "BERRIES"
+  ],
+  "DishesGoingToInventory": [
+   "TART_APPLE",
+   "SWEET_APPLE",
+   "SIRUPY_APPLE",
+   "TINY_MUSHROOM",
+   "BIG_MUSHROOM",
+   "BALM_MUSHROOM",
+   "NANAB_BERRY"
+  ],
+  "DojoTickets": [
+   "BRONZE_DOJO_TICKET",
+   "SILVER_DOJO_TICKET",
+   "GOLD_DOJO_TICKET"
+  ],
+  "FishingRods": [
+   "SUPER_ROD",
+   "GOOD_ROD",
+   "OLD_ROD"
+  ],
+  "Flavors": [
+   "VANILLA_FLAVOR",
+   "RUBY_FLAVOR",
+   "MATCHA_FLAVOR",
+   "MINT_FLAVOR",
+   "LEMON_FLAVOR",
+   "SALTED_FLAVOR",
+   "RUBY_SWIRL_FLAVOR",
+   "CARAMEL_SWIRL_FLAVOR",
+   "RAINBOW_SWIRL_FLAVOR"
+  ],
+  "Gifts": [
+   "BERRIES_GIFT",
+   "SWEETS_GIFT",
+   "DITTO_GIFT",
+   "TICKET_BUNDLE",
+   "HATCH_BUNDLE",
+   "REGIONAL_TOUR",
+   "BANQUET",
+   "SMALL_EXP_GIFT",
+   "GEMS_BUNDLE",
+   "POTION",
+   "FORAGE_BAG",
+   "PRETTY_BOX",
+   "COLLECTION_BOX",
+   "LARGE_EXP_GIFT",
+   "UNCOMMON_GIFT",
+   "RARE_GIFT",
+   "COMMON_GIFT",
+   "EPIC_GIFT",
+   "ULTRA_GIFT",
+   "UNIQUE_GIFT",
+   "LEGENDARY_GIFT",
+   "STAR_GIFT",
+   "TOOLBOX",
+   "DELUXE_BOX"
+  ],
+  "HerbaMysticas": [
+   "HERBA_MYSTICA",
+   "HERBA_MYSTICA_SWEET",
+   "HERBA_MYSTICA_SPICY",
+   "HERBA_MYSTICA_SOUR",
+   "HERBA_MYSTICA_BITTER",
+   "HERBA_MYSTICA_SALTY"
+  ],
+  "ItemComponents": [
+   "MIRACLE_SEED",
+   "MYSTIC_WATER",
+   "HEART_SCALE",
+   "NEVER_MELT_ICE",
+   "CHARCOAL",
+   "MAGNET",
+   "BLACK_GLASSES",
+   "TWISTED_SPOON",
+   "FOSSIL_STONE",
+   "SILK_SCARF"
+  ],
+  "ItemComponentsNoFossilOrScarf": [
+   "MIRACLE_SEED",
+   "MYSTIC_WATER",
+   "HEART_SCALE",
+   "NEVER_MELT_ICE",
+   "CHARCOAL",
+   "MAGNET",
+   "BLACK_GLASSES",
+   "TWISTED_SPOON"
+  ],
+  "ItemComponentsNoScarf": [
+   "MIRACLE_SEED",
+   "MYSTIC_WATER",
+   "HEART_SCALE",
+   "NEVER_MELT_ICE",
+   "CHARCOAL",
+   "MAGNET",
+   "BLACK_GLASSES",
+   "TWISTED_SPOON",
+   "FOSSIL_STONE"
+  ],
+  "ItemsSoldAtTown": [
+   "TINY_MUSHROOM",
+   "BIG_MUSHROOM",
+   "BALM_MUSHROOM"
+  ],
+  "MemoryDiscs": [
+   "FIRE_MEMORY",
+   "FOSSIL_MEMORY",
+   "PSYCHIC_MEMORY",
+   "WATER_MEMORY",
+   "ELECTRIC_MEMORY",
+   "FAIRY_MEMORY",
+   "DARK_MEMORY",
+   "GRASS_MEMORY",
+   "ICE_MEMORY",
+   "FIGHTING_MEMORY",
+   "POISON_MEMORY",
+   "SOUND_MEMORY",
+   "STEEL_MEMORY",
+   "FLYING_MEMORY",
+   "ROCK_MEMORY",
+   "GROUND_MEMORY",
+   "FIELD_MEMORY",
+   "GHOST_MEMORY",
+   "LIGHT_MEMORY",
+   "NORMAL_MEMORY",
+   "BUG_MEMORY",
+   "GOURMET_MEMORY",
+   "MONSTER_MEMORY",
+   "AQUATIC_MEMORY",
+   "DRAGON_MEMORY",
+   "FLORA_MEMORY"
+  ],
+  "MissionOrders": [
+   "MISSION_ORDER_PINK",
+   "MISSION_ORDER_RED",
+   "MISSION_ORDER_BLUE",
+   "MISSION_ORDER_GREEN",
+   "MISSION_ORDER_GOLD"
+  ],
+  "Mulches": [
+   "RICH_MULCH",
+   "AMAZE_MULCH"
+  ],
+  "Mushrooms": [
+   "TINY_MUSHROOM",
+   "BIG_MUSHROOM",
+   "BALM_MUSHROOM"
+  ],
+  "Nectars": [
+   "RED_NECTAR",
+   "PURPLE_NECTAR",
+   "YELLOW_NECTAR",
+   "PINK_NECTAR"
+  ],
+  "NonSpecialBerries": [
+   "AGUAV_BERRY",
+   "APICOT_BERRY",
+   "ASPEAR_BERRY",
+   "BABIRI_BERRY",
+   "CHERI_BERRY",
+   "CHESTO_BERRY",
+   "GANLON_BERRY",
+   "JABOCA_BERRY",
+   "LANSAT_BERRY",
+   "LEPPA_BERRY",
+   "LIECHI_BERRY",
+   "LUM_BERRY",
+   "ORAN_BERRY",
+   "PECHA_BERRY",
+   "PERSIM_BERRY",
+   "PETAYA_BERRY",
+   "RAWST_BERRY",
+   "ROWAP_BERRY",
+   "SALAC_BERRY",
+   "SITRUS_BERRY"
+  ],
+  "OgerponMasks": [
+   "TEAL_MASK",
+   "WELLSPRING_MASK",
+   "CORNERSTONE_MASK",
+   "HEARTHFLAME_MASK"
+  ],
+  "RemovableItems": [
+   "CHEF_HAT",
+   "TRASH",
+   "LIGHT_BALL",
+   "PROTECTOR",
+   "DRAGON_SCALE",
+   "METAL_COAT",
+   "AIR_BALLOON",
+   "MACHO_BRACE",
+   "METRONOME",
+   "EXPLORER_KIT",
+   "SPELL_TAG",
+   "SHED_SHELL",
+   "BERSERK_GENE",
+   "SURFBOARD",
+   "COOKING_POT",
+   "RUNNING_SHOES",
+   "INCENSE",
+   "ELECTIRIZER",
+   "MAGMARIZER",
+   "POKERUS_VIAL",
+   "MAX_ELIXIR",
+   "EXP_SHARE",
+   "TERRAIN_EXTENDER",
+   "FRIEND_BOW",
+   "BLACK_BELT",
+   "MACH_RIBBON",
+   "EXPLOSIVE_BAND",
+   "TWIST_BAND",
+   "LUCKY_RIBBON",
+   "BIG_EATER_BELT",
+   "COVER_BAND",
+   "EFFICIENT_BANDANNA",
+   "NULLIFY_BANDANNA",
+   "FIRE_MEMORY",
+   "FOSSIL_MEMORY",
+   "PSYCHIC_MEMORY",
+   "WATER_MEMORY",
+   "ELECTRIC_MEMORY",
+   "FAIRY_MEMORY",
+   "DARK_MEMORY",
+   "GRASS_MEMORY",
+   "ICE_MEMORY",
+   "FIGHTING_MEMORY",
+   "POISON_MEMORY",
+   "SOUND_MEMORY",
+   "STEEL_MEMORY",
+   "FLYING_MEMORY",
+   "ROCK_MEMORY",
+   "GROUND_MEMORY",
+   "FIELD_MEMORY",
+   "GHOST_MEMORY",
+   "LIGHT_MEMORY",
+   "NORMAL_MEMORY",
+   "BUG_MEMORY",
+   "GOURMET_MEMORY",
+   "MONSTER_MEMORY",
+   "AQUATIC_MEMORY",
+   "DRAGON_MEMORY",
+   "FLORA_MEMORY"
+  ],
+  "Scarves": [
+   "FRIEND_BOW",
+   "BLACK_BELT",
+   "MACH_RIBBON",
+   "EXPLOSIVE_BAND",
+   "TWIST_BAND",
+   "LUCKY_RIBBON",
+   "BIG_EATER_BELT",
+   "COVER_BAND",
+   "EFFICIENT_BANDANNA",
+   "NULLIFY_BANDANNA"
+  ],
+  "SevenTreasures": [
+   "AQUA_MONICA",
+   "FIERY_DRUM",
+   "GRASS_CORNET",
+   "ICY_FLUTE",
+   "ROCK_HORN",
+   "SKY_MELODICA",
+   "TERRA_CYMBAL"
+  ],
+  "ShinyItems": [
+   "DYNAMAX_BAND",
+   "SHINY_STONE",
+   "RARE_CANDY",
+   "EVIOLITE",
+   "GOLD_MASK",
+   "GOLD_BOTTLE_CAP",
+   "ABSORB_BULB",
+   "SACRED_ASH",
+   "STAR_PIECE",
+   "REPEAT_BALL",
+   "GOLD_BOW",
+   "RED_SCALE"
+  ],
+  "SpecialBerries": [
+   "NANAB_BERRY",
+   "GOLDEN_RAZZ_BERRY",
+   "GOLDEN_NANAB_BERRY",
+   "GOLDEN_PINAP_BERRY"
+  ],
+  "SpecialItems": [
+   "TREASURE_BOX",
+   "AMULET_COIN",
+   "GIMMIGHOUL_COIN",
+   "EXCHANGE_TICKET",
+   "RECYCLE_TICKET",
+   "BRONZE_DOJO_TICKET",
+   "SILVER_DOJO_TICKET",
+   "GOLD_DOJO_TICKET",
+   "MISSION_ORDER_PINK",
+   "MISSION_ORDER_RED",
+   "MISSION_ORDER_BLUE",
+   "MISSION_ORDER_GREEN",
+   "MISSION_ORDER_GOLD",
+   "AQUA_MONICA",
+   "FIERY_DRUM",
+   "GRASS_CORNET",
+   "ICY_FLUTE",
+   "ROCK_HORN",
+   "SKY_MELODICA",
+   "TERRA_CYMBAL",
+   "EGG_FOR_SELL",
+   "PICNIC_SET",
+   "WANTED_NOTICE",
+   "LEADERS_CREST",
+   "LAPRAS_PASSPORT",
+   "SOOTHE_BELL",
+   "COIN",
+   "NUGGET",
+   "BIG_NUGGET",
+   "TRASH",
+   "FIRE_SHARD",
+   "CELL_BATTERY",
+   "OLD_ROD",
+   "GOOD_ROD",
+   "SUPER_ROD",
+   "CHEF_HAT",
+   "RICH_MULCH",
+   "AMAZE_MULCH",
+   "ROTOM_CATALOG",
+   "TEAL_MASK",
+   "WELLSPRING_MASK",
+   "CORNERSTONE_MASK",
+   "HEARTHFLAME_MASK",
+   "ZYGARDE_CUBE",
+   "METEORITE",
+   "AUSPICIOUS_ARMOR",
+   "MALICIOUS_ARMOR",
+   "MYSTERY_BOX",
+   "RUSTED_SWORD",
+   "SCROLL_OF_WATERS",
+   "SCROLL_OF_DARKNESS",
+   "MEMORY_DISCS",
+   "FIRE_MEMORY",
+   "FOSSIL_MEMORY",
+   "PSYCHIC_MEMORY",
+   "WATER_MEMORY",
+   "ELECTRIC_MEMORY",
+   "FAIRY_MEMORY",
+   "DARK_MEMORY",
+   "GRASS_MEMORY",
+   "ICE_MEMORY",
+   "FIGHTING_MEMORY",
+   "POISON_MEMORY",
+   "SOUND_MEMORY",
+   "STEEL_MEMORY",
+   "FLYING_MEMORY",
+   "ROCK_MEMORY",
+   "GROUND_MEMORY",
+   "FIELD_MEMORY",
+   "GHOST_MEMORY",
+   "LIGHT_MEMORY",
+   "NORMAL_MEMORY",
+   "BUG_MEMORY",
+   "GOURMET_MEMORY",
+   "MONSTER_MEMORY",
+   "AQUATIC_MEMORY",
+   "DRAGON_MEMORY",
+   "FLORA_MEMORY",
+   "COMFEY",
+   "TATSUGIRI_CURLY",
+   "TATSUGIRI_DROOPY",
+   "TATSUGIRI_STRETCHY",
+   "BALL",
+   "VANILLA_FLAVOR",
+   "RUBY_FLAVOR",
+   "MATCHA_FLAVOR",
+   "MINT_FLAVOR",
+   "LEMON_FLAVOR",
+   "SALTED_FLAVOR",
+   "RUBY_SWIRL_FLAVOR",
+   "CARAMEL_SWIRL_FLAVOR",
+   "RAINBOW_SWIRL_FLAVOR",
+   "RED_NECTAR",
+   "PURPLE_NECTAR",
+   "YELLOW_NECTAR",
+   "PINK_NECTAR"
+  ],
+  "Sweets": [
+   "STRAWBERRY_SWEET",
+   "LOVE_SWEET",
+   "FLOWER_SWEET",
+   "CLOVER_SWEET",
+   "BERRY_SWEET",
+   "CLOVER_SWEET",
+   "FLOWER_SWEET",
+   "STAR_SWEET",
+   "RIBBON_SWEET"
+  ],
+  "SynergyGems": [
+   "NORMAL_GEM",
+   "GRASS_GEM",
+   "FIRE_GEM",
+   "WATER_GEM",
+   "ELECTRIC_GEM",
+   "FIGHTING_GEM",
+   "PSYCHIC_GEM",
+   "DARK_GEM",
+   "STEEL_GEM",
+   "GROUND_GEM",
+   "POISON_GEM",
+   "DRAGON_GEM",
+   "FIELD_GEM",
+   "MONSTER_GEM",
+   "HUMAN_GEM",
+   "AQUATIC_GEM",
+   "BUG_GEM",
+   "FLYING_GEM",
+   "FLORA_GEM",
+   "ROCK_GEM",
+   "GHOST_GEM",
+   "FAIRY_GEM",
+   "ICE_GEM",
+   "FOSSIL_GEM",
+   "SOUND_GEM",
+   "ARTIFICIAL_GEM",
+   "LIGHT_GEM",
+   "WILD_GEM",
+   "AMORPHOUS_GEM",
+   "GOURMET_GEM"
+  ],
+  "SynergyGemsBuried": [
+   "FIRE_GEM",
+   "ROCK_GEM",
+   "NORMAL_GEM",
+   "BUG_GEM",
+   "FLYING_GEM",
+   "ICE_GEM",
+   "WATER_GEM",
+   "STEEL_GEM",
+   "DRAGON_GEM",
+   "POISON_GEM",
+   "GHOST_GEM",
+   "FIELD_GEM",
+   "GROUND_GEM",
+   "AMORPHOUS_GEM"
+  ],
+  "SynergyItems": [
+   "OLD_AMBER",
+   "DAWN_STONE",
+   "WATER_STONE",
+   "THUNDER_STONE",
+   "FIRE_STONE",
+   "MOON_STONE",
+   "DUSK_STONE",
+   "LEAF_STONE",
+   "ICE_STONE",
+   "MACHO_BRACE",
+   "LIGHT_BALL",
+   "DRAGON_SCALE",
+   "POKERUS_VIAL",
+   "METRONOME",
+   "METAL_COAT",
+   "AIR_BALLOON",
+   "PROTECTOR",
+   "ELECTIRIZER",
+   "MAGMARIZER",
+   "EXPLORER_KIT",
+   "SPELL_TAG",
+   "SHINY_STONE",
+   "SHED_SHELL",
+   "COOKING_POT",
+   "RUNNING_SHOES",
+   "BERSERK_GENE",
+   "SURFBOARD",
+   "INCENSE",
+   "FRIEND_BOW",
+   "FIRE_MEMORY",
+   "FOSSIL_MEMORY",
+   "PSYCHIC_MEMORY",
+   "WATER_MEMORY",
+   "ELECTRIC_MEMORY",
+   "FAIRY_MEMORY",
+   "DARK_MEMORY",
+   "GRASS_MEMORY",
+   "ICE_MEMORY",
+   "FIGHTING_MEMORY",
+   "POISON_MEMORY",
+   "SOUND_MEMORY",
+   "STEEL_MEMORY",
+   "FLYING_MEMORY",
+   "ROCK_MEMORY",
+   "GROUND_MEMORY",
+   "FIELD_MEMORY",
+   "GHOST_MEMORY",
+   "LIGHT_MEMORY",
+   "NORMAL_MEMORY",
+   "BUG_MEMORY",
+   "GOURMET_MEMORY",
+   "MONSTER_MEMORY",
+   "AQUATIC_MEMORY",
+   "DRAGON_MEMORY",
+   "FLORA_MEMORY"
+  ],
+  "SynergyItemsNoSpecial": [
+   "OLD_AMBER",
+   "DAWN_STONE",
+   "WATER_STONE",
+   "THUNDER_STONE",
+   "FIRE_STONE",
+   "MOON_STONE",
+   "DUSK_STONE",
+   "LEAF_STONE",
+   "ICE_STONE",
+   "MACHO_BRACE",
+   "LIGHT_BALL",
+   "DRAGON_SCALE",
+   "POKERUS_VIAL",
+   "METRONOME",
+   "METAL_COAT",
+   "AIR_BALLOON",
+   "PROTECTOR",
+   "ELECTIRIZER",
+   "MAGMARIZER",
+   "EXPLORER_KIT",
+   "SPELL_TAG",
+   "SHINY_STONE",
+   "SHED_SHELL",
+   "COOKING_POT",
+   "RUNNING_SHOES",
+   "BERSERK_GENE",
+   "SURFBOARD",
+   "INCENSE",
+   "FRIEND_BOW"
+  ],
+  "SynergyStones": [
+   "OLD_AMBER",
+   "DAWN_STONE",
+   "WATER_STONE",
+   "THUNDER_STONE",
+   "FIRE_STONE",
+   "MOON_STONE",
+   "DUSK_STONE",
+   "LEAF_STONE",
+   "ICE_STONE"
+  ],
+  "TMs": [
+   "TM_RAGE",
+   "TM_RETURN",
+   "TM_COUNTER",
+   "TM_DISABLE",
+   "TM_BULK_UP",
+   "TM_CHARGE",
+   "TM_REFLECT",
+   "TM_PAYDAY",
+   "TM_FOCUS_PUNCH",
+   "TM_HYPER_BEAM",
+   "TM_SUBSTITUTE",
+   "TM_SKILL_SWAP"
+  ],
+  "TMsBronze": [
+   "TM_RAGE",
+   "TM_RETURN",
+   "TM_COUNTER",
+   "TM_DISABLE"
+  ],
+  "TMsGold": [
+   "TM_FOCUS_PUNCH",
+   "TM_HYPER_BEAM",
+   "TM_SUBSTITUTE",
+   "TM_SKILL_SWAP"
+  ],
+  "TMsSilver": [
+   "TM_BULK_UP",
+   "TM_CHARGE",
+   "TM_REFLECT",
+   "TM_PAYDAY"
+  ],
+  "Tools": [
+   "LIGHT_BALL",
+   "PROTECTOR",
+   "DRAGON_SCALE",
+   "METAL_COAT",
+   "AIR_BALLOON",
+   "MACHO_BRACE",
+   "METRONOME",
+   "EXPLORER_KIT",
+   "SPELL_TAG",
+   "SHED_SHELL",
+   "BERSERK_GENE",
+   "SURFBOARD",
+   "COOKING_POT",
+   "RUNNING_SHOES",
+   "INCENSE",
+   "ELECTIRIZER",
+   "MAGMARIZER",
+   "POKERUS_VIAL",
+   "MAX_ELIXIR",
+   "EXP_SHARE",
+   "TERRAIN_EXTENDER"
+  ],
+  "ToolsBuried": [
+   "PROTECTOR",
+   "METAL_COAT",
+   "EXPLORER_KIT",
+   "SPELL_TAG",
+   "SHED_SHELL",
+   "INCENSE",
+   "ELECTIRIZER",
+   "MAGMARIZER",
+   "MAX_ELIXIR",
+   "EXP_SHARE",
+   "DRAGON_SCALE"
+  ],
+  "TownItems": [
+   "TREASURE_BOX",
+   "AMULET_COIN",
+   "GIMMIGHOUL_COIN",
+   "EXCHANGE_TICKET",
+   "RECYCLE_TICKET",
+   "BRONZE_DOJO_TICKET",
+   "SILVER_DOJO_TICKET",
+   "GOLD_DOJO_TICKET",
+   "MISSION_ORDER_PINK",
+   "MISSION_ORDER_RED",
+   "MISSION_ORDER_BLUE",
+   "MISSION_ORDER_GREEN",
+   "MISSION_ORDER_GOLD",
+   "AQUA_MONICA",
+   "FIERY_DRUM",
+   "GRASS_CORNET",
+   "ICY_FLUTE",
+   "ROCK_HORN",
+   "SKY_MELODICA",
+   "TERRA_CYMBAL",
+   "EGG_FOR_SELL",
+   "PICNIC_SET",
+   "WANTED_NOTICE",
+   "LEADERS_CREST",
+   "LAPRAS_PASSPORT",
+   "SOOTHE_BELL"
+  ],
+  "UnholdableItems": [
+   "SUN_STONE",
+   "HEAT_ROCK",
+   "DAMP_ROCK",
+   "ICY_ROCK",
+   "SMOOTH_ROCK",
+   "BLACK_AUGURITE",
+   "FLOAT_STONE",
+   "ELECTRIC_QUARTZ",
+   "MIST_STONE",
+   "BLOOD_STONE",
+   "SMELLY_CLAY",
+   "ODD_KEYSTONE",
+   "SUPER_ROD",
+   "GOOD_ROD",
+   "OLD_ROD",
+   "BLAST_WAND",
+   "HP_SWAP_WAND",
+   "SPIRIT_WAND",
+   "LONG_WAND",
+   "CONFUSE_WAND",
+   "PETRIFY_WAND",
+   "SLOW_WAND",
+   "SLUMBER_WAND",
+   "GUIDING_WAND",
+   "SURROUND_WAND",
+   "POUNCE_WAND",
+   "TWO_EDGED_WAND",
+   "WARP_WAND",
+   "SWITCHER_WAND",
+   "WHIRLWIND_WAND",
+   "TUNNEL_WAND",
+   "TM_RAGE",
+   "TM_RETURN",
+   "TM_COUNTER",
+   "TM_DISABLE",
+   "TM_BULK_UP",
+   "TM_CHARGE",
+   "TM_REFLECT",
+   "TM_PAYDAY",
+   "TM_FOCUS_PUNCH",
+   "TM_HYPER_BEAM",
+   "TM_SUBSTITUTE",
+   "TM_SKILL_SWAP",
+   "VANILLA_FLAVOR",
+   "RUBY_FLAVOR",
+   "MATCHA_FLAVOR",
+   "MINT_FLAVOR",
+   "LEMON_FLAVOR",
+   "SALTED_FLAVOR",
+   "RUBY_SWIRL_FLAVOR",
+   "CARAMEL_SWIRL_FLAVOR",
+   "RAINBOW_SWIRL_FLAVOR",
+   "OLIVE_OIL",
+   "RAGE_CANDY_BAR",
+   "ROCK_SALT",
+   "TEA",
+   "CURRY",
+   "POFFIN",
+   "CASTELIACONE",
+   "WHIPPED_DREAM",
+   "TART_APPLE",
+   "SWEET_APPLE",
+   "SIRUPY_APPLE",
+   "LEFTOVERS",
+   "HERBA_MYSTICA",
+   "HERBA_MYSTICA_SWEET",
+   "HERBA_MYSTICA_SPICY",
+   "HERBA_MYSTICA_SOUR",
+   "HERBA_MYSTICA_BITTER",
+   "HERBA_MYSTICA_SALTY",
+   "HONEY",
+   "BLACK_SLUDGE",
+   "FRUIT_JUICE",
+   "NUTRITIOUS_EGG",
+   "LEEK",
+   "LARGE_LEEK",
+   "MOOMOO_MILK",
+   "SMOKED_FILET",
+   "SPINDA_COCKTAIL",
+   "LUCKY_EGG",
+   "BERRY_JUICE",
+   "BINDING_MOCHI",
+   "STRAWBERRY_SWEET",
+   "LOVE_SWEET",
+   "BERRY_SWEET",
+   "CLOVER_SWEET",
+   "FLOWER_SWEET",
+   "STAR_SWEET",
+   "RIBBON_SWEET",
+   "SWEETS",
+   "SANDWICH",
+   "HEARTY_STEW",
+   "MUSHROOMS",
+   "TINY_MUSHROOM",
+   "BIG_MUSHROOM",
+   "BALM_MUSHROOM",
+   "RICE",
+   "BERRIES",
+   "NORMAL_GEM",
+   "GRASS_GEM",
+   "FIRE_GEM",
+   "WATER_GEM",
+   "ELECTRIC_GEM",
+   "FIGHTING_GEM",
+   "PSYCHIC_GEM",
+   "DARK_GEM",
+   "STEEL_GEM",
+   "GROUND_GEM",
+   "POISON_GEM",
+   "DRAGON_GEM",
+   "FIELD_GEM",
+   "MONSTER_GEM",
+   "HUMAN_GEM",
+   "AQUATIC_GEM",
+   "BUG_GEM",
+   "FLYING_GEM",
+   "FLORA_GEM",
+   "ROCK_GEM",
+   "GHOST_GEM",
+   "FAIRY_GEM",
+   "ICE_GEM",
+   "FOSSIL_GEM",
+   "SOUND_GEM",
+   "ARTIFICIAL_GEM",
+   "LIGHT_GEM",
+   "WILD_GEM",
+   "AMORPHOUS_GEM",
+   "GOURMET_GEM",
+   "RICH_MULCH",
+   "AMAZE_MULCH",
+   "MISSION_ORDER_PINK",
+   "MISSION_ORDER_RED",
+   "MISSION_ORDER_BLUE",
+   "MISSION_ORDER_GREEN",
+   "MISSION_ORDER_GOLD",
+   "AQUA_MONICA",
+   "FIERY_DRUM",
+   "GRASS_CORNET",
+   "ICY_FLUTE",
+   "ROCK_HORN",
+   "SKY_MELODICA",
+   "TERRA_CYMBAL",
+   "BERRIES_GIFT",
+   "SWEETS_GIFT",
+   "DITTO_GIFT",
+   "TICKET_BUNDLE",
+   "HATCH_BUNDLE",
+   "REGIONAL_TOUR",
+   "BANQUET",
+   "SMALL_EXP_GIFT",
+   "GEMS_BUNDLE",
+   "POTION",
+   "FORAGE_BAG",
+   "PRETTY_BOX",
+   "COLLECTION_BOX",
+   "LARGE_EXP_GIFT",
+   "UNCOMMON_GIFT",
+   "RARE_GIFT",
+   "COMMON_GIFT",
+   "EPIC_GIFT",
+   "ULTRA_GIFT",
+   "UNIQUE_GIFT",
+   "LEGENDARY_GIFT",
+   "STAR_GIFT",
+   "TOOLBOX",
+   "DELUXE_BOX",
+   "METEORITE",
+   "ROTOM_CATALOG",
+   "MYSTERY_BOX",
+   "TREASURE_BOX",
+   "ZYGARDE_CUBE",
+   "SCROLL_OF_DARKNESS",
+   "SCROLL_OF_WATERS",
+   "AUSPICIOUS_ARMOR",
+   "MALICIOUS_ARMOR",
+   "FIRE_SHARD",
+   "CELL_BATTERY",
+   "GIMMIGHOUL_COIN",
+   "EGG_FOR_SELL",
+   "EXCHANGE_TICKET",
+   "COIN",
+   "NUGGET",
+   "BIG_NUGGET",
+   "WANTED_NOTICE",
+   "LEADERS_CREST",
+   "LAPRAS_PASSPORT",
+   "RED_SCALE"
+  ],
+  "UnholdableItemsToSaveForStats": [
+   "GIMMIGHOUL_COIN",
+   "BLAST_WAND",
+   "HP_SWAP_WAND",
+   "SPIRIT_WAND",
+   "LONG_WAND",
+   "CONFUSE_WAND",
+   "PETRIFY_WAND",
+   "SLOW_WAND",
+   "SLUMBER_WAND",
+   "GUIDING_WAND",
+   "SURROUND_WAND",
+   "POUNCE_WAND",
+   "TWO_EDGED_WAND",
+   "WARP_WAND",
+   "SWITCHER_WAND",
+   "WHIRLWIND_WAND",
+   "TUNNEL_WAND",
+   "NORMAL_GEM",
+   "GRASS_GEM",
+   "FIRE_GEM",
+   "WATER_GEM",
+   "ELECTRIC_GEM",
+   "FIGHTING_GEM",
+   "PSYCHIC_GEM",
+   "DARK_GEM",
+   "STEEL_GEM",
+   "GROUND_GEM",
+   "POISON_GEM",
+   "DRAGON_GEM",
+   "FIELD_GEM",
+   "MONSTER_GEM",
+   "HUMAN_GEM",
+   "AQUATIC_GEM",
+   "BUG_GEM",
+   "FLYING_GEM",
+   "FLORA_GEM",
+   "ROCK_GEM",
+   "GHOST_GEM",
+   "FAIRY_GEM",
+   "ICE_GEM",
+   "FOSSIL_GEM",
+   "SOUND_GEM",
+   "ARTIFICIAL_GEM",
+   "LIGHT_GEM",
+   "WILD_GEM",
+   "AMORPHOUS_GEM",
+   "GOURMET_GEM",
+   "AQUA_MONICA",
+   "FIERY_DRUM",
+   "GRASS_CORNET",
+   "ICY_FLUTE",
+   "ROCK_HORN",
+   "SKY_MELODICA",
+   "TERRA_CYMBAL",
+   "SUN_STONE",
+   "HEAT_ROCK",
+   "DAMP_ROCK",
+   "ICY_ROCK",
+   "SMOOTH_ROCK",
+   "BLACK_AUGURITE",
+   "FLOAT_STONE",
+   "ELECTRIC_QUARTZ",
+   "MIST_STONE",
+   "BLOOD_STONE",
+   "SMELLY_CLAY",
+   "ODD_KEYSTONE"
+  ],
+  "Wands": [
+   "BLAST_WAND",
+   "HP_SWAP_WAND",
+   "SPIRIT_WAND",
+   "LONG_WAND",
+   "CONFUSE_WAND",
+   "PETRIFY_WAND",
+   "SLOW_WAND",
+   "SLUMBER_WAND",
+   "GUIDING_WAND",
+   "SURROUND_WAND",
+   "POUNCE_WAND",
+   "TWO_EDGED_WAND",
+   "WARP_WAND",
+   "SWITCHER_WAND",
+   "WHIRLWIND_WAND",
+   "TUNNEL_WAND"
+  ],
+  "WeatherRocks": [
+   "SUN_STONE",
+   "HEAT_ROCK",
+   "DAMP_ROCK",
+   "ICY_ROCK",
+   "SMOOTH_ROCK",
+   "BLACK_AUGURITE",
+   "FLOAT_STONE",
+   "ELECTRIC_QUARTZ",
+   "MIST_STONE",
+   "BLOOD_STONE",
+   "SMELLY_CLAY",
+   "ODD_KEYSTONE"
+  ]
+ },
+ "items": {
+  "FOSSIL_STONE": {
+   "name": "Fossil Stone",
+   "desc": "A fossil of a Pokémon that lived in prehistoric times",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "BuriedTrash",
+    "ItemComponents",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "TWISTED_SPOON": {
+   "name": "Twisted Spoon",
+   "desc": "+10 AP",
+   "stats": {
+    "AP": 10
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "MYSTIC_WATER": {
+   "name": "Mystic Water",
+   "desc": "+15 PP",
+   "stats": {
+    "PP": 15
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "MAGNET": {
+   "name": "Magnet",
+   "desc": "+10 SPEED",
+   "stats": {
+    "SPEED": 10
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "BLACK_GLASSES": {
+   "name": "Black Glasses",
+   "desc": "+10% CRIT_CHANCE",
+   "stats": {
+    "CRIT_CHANCE": 10
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "MIRACLE_SEED": {
+   "name": "Miracle Seed",
+   "desc": "+15 HP",
+   "stats": {
+    "HP": 15
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "NEVER_MELT_ICE": {
+   "name": "Never Melt Ice",
+   "desc": "+3 SPE_DEF",
+   "stats": {
+    "SPE_DEF": 3
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "CHARCOAL": {
+   "name": "Charcoal",
+   "desc": "+3 ATK",
+   "stats": {
+    "ATK": 3
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "HEART_SCALE": {
+   "name": "Heart Scale",
+   "desc": "+3 DEF",
+   "stats": {
+    "DEF": 3
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents",
+    "ItemComponentsNoFossilOrScarf",
+    "ItemComponentsNoScarf"
+   ]
+  },
+  "OLD_AMBER": {
+   "name": "Old Amber",
+   "desc": "The holder gains the FOSSIL type",
+   "stats": {},
+   "recipe": [
+    "FOSSIL_STONE",
+    "FOSSIL_STONE"
+   ],
+   "synergy": "FOSSIL",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "DAWN_STONE": {
+   "name": "Dawn Stone",
+   "desc": "The holder gains the PSYCHIC type",
+   "stats": {
+    "AP": 20
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "TWISTED_SPOON"
+   ],
+   "synergy": "PSYCHIC",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "WATER_STONE": {
+   "name": "Water Stone",
+   "desc": "The holder gains the WATER type",
+   "stats": {
+    "PP": 30
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "MYSTIC_WATER"
+   ],
+   "synergy": "WATER",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "THUNDER_STONE": {
+   "name": "Thunder Stone",
+   "desc": "The holder gains the ELECTRIC type",
+   "stats": {
+    "SPEED": 20
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "MAGNET"
+   ],
+   "synergy": "ELECTRIC",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "FIRE_STONE": {
+   "name": "Fire Stone",
+   "desc": "The holder gains the FIRE type",
+   "stats": {
+    "ATK": 6
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "CHARCOAL"
+   ],
+   "synergy": "FIRE",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "MOON_STONE": {
+   "name": "Moon Stone",
+   "desc": "The holder gains the FAIRY type",
+   "stats": {
+    "DEF": 6
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "HEART_SCALE"
+   ],
+   "synergy": "FAIRY",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "DUSK_STONE": {
+   "name": "Dusk Stone",
+   "desc": "The holder gains the DARK type",
+   "stats": {
+    "CRIT_CHANCE": 20
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "BLACK_GLASSES"
+   ],
+   "synergy": "DARK",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "LEAF_STONE": {
+   "name": "Leaf Stone",
+   "desc": "The holder gains the GRASS type",
+   "stats": {
+    "HP": 30
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "MIRACLE_SEED"
+   ],
+   "synergy": "GRASS",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "ICE_STONE": {
+   "name": "Ice Stone",
+   "desc": "The holder gains the ICE type",
+   "stats": {
+    "SPE_DEF": 6
+   },
+   "recipe": [
+    "FOSSIL_STONE",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "ICE",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "SynergyStones"
+   ]
+  },
+  "CHOICE_SPECS": {
+   "name": "Choice Specs",
+   "desc": "The holder gains 100 bonus AP",
+   "stats": {
+    "AP": 100
+   },
+   "recipe": [
+    "TWISTED_SPOON",
+    "TWISTED_SPOON"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "SOUL_DEW": {
+   "name": "Soul Dew",
+   "desc": "During combat, the holder gains 5 AP and 5 PP every second",
+   "stats": {},
+   "recipe": [
+    "TWISTED_SPOON",
+    "MYSTIC_WATER"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "UPGRADE": {
+   "name": "Upgrade",
+   "desc": "Holder gains +5 SPEED ON_ATTACK (stackable)",
+   "stats": {
+    "AP": 10,
+    "SPEED": 10
+   },
+   "recipe": [
+    "TWISTED_SPOON",
+    "MAGNET"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "REAPER_CLOTH": {
+   "name": "Reaper Cloth",
+   "desc": "The holder's ability can now critically strike based on CRIT_CHANCE. If the ability can already critically strike by default, increase CRIT_POWER by 50% instead.",
+   "stats": {
+    "AP": 10,
+    "CRIT_CHANCE": 20
+   },
+   "recipe": [
+    "TWISTED_SPOON",
+    "BLACK_GLASSES"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "POKEMONOMICON": {
+   "name": "Pokemonomicon",
+   "desc": "When the holder deals SPECIAL, they BURN the target for 3 seconds and reduce its SPE_DEF by 1.",
+   "stats": {
+    "AP": 30,
+    "ATK": 3
+   },
+   "recipe": [
+    "TWISTED_SPOON",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "ABILITY_SHIELD": {
+   "name": "Ability Shield",
+   "desc": "When combat begins, the holder and allies ADJACENT_IN_THE_SAME_ROW receive 20% of their max HP as SHIELD and SAFEGUARD for 5 seconds",
+   "stats": {
+    "AP": 10
+   },
+   "recipe": [
+    "TWISTED_SPOON",
+    "MIRACLE_SEED"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "POWER_LENS": {
+   "name": "Power Lens",
+   "desc": "The amount of SPECIAL blocked by SPE_DEF is inflicted back to the attacker",
+   "stats": {
+    "SPE_DEF": 10,
+    "AP": 10
+   },
+   "recipe": [
+    "TWISTED_SPOON",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "SHELL_BELL": {
+   "name": "Shell Bell",
+   "desc": "Holder heals for 33% of all damages inflicted",
+   "stats": {
+    "ATK": 5,
+    "SPE_DEF": 5
+   },
+   "recipe": [
+    "NEVER_MELT_ICE",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "HEAVY_DUTY_BOOTS": {
+   "name": "Heavy-Duty Boots",
+   "desc": "Holder is immune to any BOARD_EFFECT, forced displacement and LOCKED",
+   "stats": {
+    "AP": 50,
+    "DEF": 12
+   },
+   "recipe": [
+    "TWISTED_SPOON",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "AQUA_EGG": {
+   "name": "Aqua Egg",
+   "desc": "The holder regains 20% of its max PP after casting its ability, + 2 PP for each cast done in the fight",
+   "stats": {
+    "PP": 30
+   },
+   "recipe": [
+    "MYSTIC_WATER",
+    "MYSTIC_WATER"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "BLUE_ORB": {
+   "name": "Blue Orb",
+   "desc": "Every 3 attacks, unleashes a chain lightning that bounces to the 2 closest enemies, dealing 10 SPECIAL and burning 15 PP",
+   "stats": {
+    "PP": 15,
+    "SPEED": 10
+   },
+   "recipe": [
+    "MYSTIC_WATER",
+    "MAGNET"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "SCOPE_LENS": {
+   "name": "Scope Lens",
+   "desc": "Critical attacks steal 10 PP from the target ON_HIT.",
+   "stats": {
+    "PP": 15,
+    "CRIT_CHANCE": 25
+   },
+   "recipe": [
+    "MYSTIC_WATER",
+    "BLACK_GLASSES"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "STAR_DUST": {
+   "name": "Star Dust",
+   "desc": "After casting ability, gain 50% of max PP as SHIELD",
+   "stats": {
+    "SPE_DEF": 10,
+    "PP": 15
+   },
+   "recipe": [
+    "MYSTIC_WATER",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "GREEN_ORB": {
+   "name": "Green Orb",
+   "desc": "Holder and ADJACENT allies regain 5% of their max HP every 2 seconds. 30% of overheal is converted to PP.",
+   "stats": {
+    "HP": 15
+   },
+   "recipe": [
+    "MYSTIC_WATER",
+    "MIRACLE_SEED"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "DEEP_SEA_TOOTH": {
+   "name": "Deep Sea Tooth",
+   "desc": "Holder restore 5 additional PP ON_ATTACK. If the attack knocks out the target, restore 15 additional PP.",
+   "stats": {
+    "ATK": 7,
+    "PP": 15
+   },
+   "recipe": [
+    "MYSTIC_WATER",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "SMOKE_BALL": {
+   "name": "Smoke Ball",
+   "desc": "Once below 40% max HP, drop the smoke ball, gain 70 SHIELD and jump to a tile away. Every ADJACENT enemy is PARALYSIS and BLINDED for 4 seconds.",
+   "stats": {
+    "CRIT_CHANCE": 10
+   },
+   "recipe": [
+    "BLACK_GLASSES",
+    "MIRACLE_SEED"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "XRAY_VISION": {
+   "name": "XRay Vision",
+   "desc": "Holder is immune to SLEEP and their attacks can no longer miss.",
+   "stats": {
+    "SPEED": 50
+   },
+   "recipe": [
+    "MAGNET",
+    "MAGNET"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "RAZOR_FANG": {
+   "name": "Razor Fang",
+   "desc": "Attacks apply ARMOR_BREAK for 2 seconds ON_HIT.",
+   "stats": {
+    "SPEED": 10,
+    "CRIT_CHANCE": 10,
+    "CRIT_POWER": 50
+   },
+   "recipe": [
+    "MAGNET",
+    "BLACK_GLASSES"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "PROTECTIVE_PADS": {
+   "name": "Protective Pads",
+   "desc": "Holder deals double damage against units with  SHIELD, and is protected from recoil damage and retaliation effects.",
+   "stats": {
+    "SHIELD": 60,
+    "ATK": 6
+   },
+   "recipe": [
+    "MIRACLE_SEED",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "LOADED_DICE": {
+   "name": "Loaded Dice",
+   "desc": "Attacks have [50,LK]% chance to also hit the lowest health enemy ADJACENT to target for 75% of the damage, which also trigger ON_HIT effects.",
+   "stats": {
+    "SPEED": 10,
+    "SPE_DEF": 3,
+    "LUCK": 20
+   },
+   "recipe": [
+    "MAGNET",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "PUNCHING_GLOVE": {
+   "name": "Punching Glove",
+   "desc": "Attacks deal 8 % of target max HP as additional PHYSICAL ON_HIT",
+   "stats": {
+    "SPEED": 10,
+    "ATK": 3
+   },
+   "recipe": [
+    "MAGNET",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "MUSCLE_BAND": {
+   "name": "Muscle Band",
+   "desc": "When the holder takes damage, gain 1 stack. Every 2 stacks, the holder gains +2 DEF, +1 ATK and +5 SPEED (max 20 stacks)",
+   "stats": {
+    "SPEED": 10,
+    "DEF": 3
+   },
+   "recipe": [
+    "MAGNET",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "WONDER_BOX": {
+   "name": "Wonder Box",
+   "desc": "At the beginning of each battle, WONDER_BOX is replaced by 2 temporary random craftable items (max 3 items held)",
+   "stats": {},
+   "recipe": [
+    "BLACK_GLASSES",
+    "BLACK_GLASSES"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "STICKY_BARB": {
+   "name": "Sticky Barb",
+   "desc": "When struck by an attack at melee range, deal 3 + 15% of DEF as retaliation TRUE and inflict WOUND for 3 seconds to the attacker.",
+   "stats": {
+    "DEF": 6,
+    "HP": 15
+   },
+   "recipe": [
+    "MIRACLE_SEED",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "WIDE_LENS": {
+   "name": "Wide Lens",
+   "desc": "The holder gains +2 RANGE",
+   "stats": {
+    "RANGE": 2,
+    "CRIT_CHANCE": 15,
+    "SPE_DEF": 3
+   },
+   "recipe": [
+    "BLACK_GLASSES",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "RAZOR_CLAW": {
+   "name": "Razor Claw",
+   "desc": "The holder gains +50% CRIT_CHANCE",
+   "stats": {
+    "CRIT_CHANCE": 50,
+    "ATK": 3
+   },
+   "recipe": [
+    "BLACK_GLASSES",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "SAFETY_GOGGLES": {
+   "name": "Safety Goggles",
+   "desc": "Holder is immune to all negative status effects and to sandstorm damage",
+   "stats": {
+    "CRIT_CHANCE": 10,
+    "DEF": 3
+   },
+   "recipe": [
+    "BLACK_GLASSES",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "KINGS_ROCK": {
+   "name": "King's Rock",
+   "desc": "+100 HP. 20% of max HP are gained as SHIELD when combat begins.",
+   "stats": {
+    "HP": 100
+   },
+   "recipe": [
+    "MIRACLE_SEED",
+    "MIRACLE_SEED"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "SHINY_CHARM": {
+   "name": "Shiny Charm",
+   "desc": "Prevents damage and give PROTECT for 1.5 seconds and 50 PP the first time the holder gets below 30% HP",
+   "stats": {
+    "DEF": 3
+   },
+   "recipe": [
+    "MYSTIC_WATER",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "GRACIDEA_FLOWER": {
+   "name": "Gracidea Flower",
+   "desc": "When combat begins, the holder and allies ADJACENT_IN_THE_SAME_ROW gain +20 SPEED",
+   "stats": {},
+   "recipe": [
+    "MAGNET",
+    "MIRACLE_SEED"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "FLAME_ORB": {
+   "name": "Flame Orb",
+   "desc": "Holder increases its BASE ATK by 100% and is immune to FREEZE, but suffers from BURN during the entire fight.",
+   "stats": {
+    "ATK": 5,
+    "DEF": 3
+   },
+   "recipe": [
+    "CHARCOAL",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "ASSAULT_VEST": {
+   "name": "Assault Vest",
+   "desc": "+40 SPE_DEF. Reduce BURN and POISONED damage by 50%",
+   "stats": {
+    "SPE_DEF": 40
+   },
+   "recipe": [
+    "NEVER_MELT_ICE",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "AMULET_COIN": {
+   "name": "Amulet Coin",
+   "desc": "+1 GOLD each time the holder knocks out an opponent.\nReduce max interest cap by 10 GOLD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "TownItems"
+   ]
+  },
+  "POKE_DOLL": {
+   "name": "Poke Doll",
+   "desc": "Reduce all incoming PHYSICAL and SPECIAL by 30%. Makes the holder more likely to be targeted.",
+   "stats": {
+    "DEF": 3,
+    "SPE_DEF": 3
+   },
+   "recipe": [
+    "NEVER_MELT_ICE",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "RED_ORB": {
+   "name": "Red Orb",
+   "desc": "25% of attack damage is dealt as TRUE",
+   "stats": {
+    "ATK": 10
+   },
+   "recipe": [
+    "CHARCOAL",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "MAX_REVIVE": {
+   "name": "Max Revive",
+   "desc": "Give RESURRECTION, preventing the holder first KO and restoring to max HP",
+   "stats": {},
+   "recipe": [
+    "MIRACLE_SEED",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "ROCKY_HELMET": {
+   "name": "Rocky Helmet",
+   "desc": "+25 DEF. Negates critical bonus damage from all incoming critical hits.",
+   "stats": {
+    "DEF": 25
+   },
+   "recipe": [
+    "HEART_SCALE",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "CraftableItemsNoScarves",
+    "CraftableNoStonesOrScarves"
+   ]
+  },
+  "AGUAV_BERRY": {
+   "name": "Aguav Berry",
+   "desc": "Consumed once below 50% HP, restore 50% HP and get CONFUSION for 3 seconds",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "APICOT_BERRY": {
+   "name": "Apicot Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and gain 20 SPE_DEF",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "ASPEAR_BERRY": {
+   "name": "Aspear Berry",
+   "desc": "Consumed once below 50% HP or after being FREEZE, heal 50 HP and give +15 SPEED and immunity to FREEZE for the rest of the fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "BABIRI_BERRY": {
+   "name": "Babiri Berry",
+   "desc": "Consumed once below 50% HP or after receiving a critical hit, heal 50 HP and gain PROTECT for 2 seconds",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "CHERI_BERRY": {
+   "name": "Cheri Berry",
+   "desc": "Consumed once below 50% HP or after being PARALYSIS, heal 50 HP and give +10 ATK and immunity to PARALYSIS for the rest of the fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "CHESTO_BERRY": {
+   "name": "Chesto Berry",
+   "desc": "Consumed once below 50% HP or after being SLEEP, heal 50 HP and give +50 AP and immunity to SLEEP for the rest of the fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "GANLON_BERRY": {
+   "name": "Ganlon Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and gain 20 DEF",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "JABOCA_BERRY": {
+   "name": "Jaboca Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and cast Spiky Shield for 10 seconds",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "LANSAT_BERRY": {
+   "name": "Lansat Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and gain 50% CRIT_CHANCE",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "LEPPA_BERRY": {
+   "name": "Leppa Berry",
+   "desc": "Consumed once below 50% HP or after casting ability, heal 50 HP and gain 50 PP",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "LIECHI_BERRY": {
+   "name": "Liechi Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and gain 15 ATK",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "LUM_BERRY": {
+   "name": "Lum Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP, clear negative status and get SAFEGUARD for 5 seconds",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "ORAN_BERRY": {
+   "name": "Oran Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and gain 80 SHIELD",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "PECHA_BERRY": {
+   "name": "Pecha Berry",
+   "desc": "Consumed once below 50% HP or after being POISONED, heal 100 HP and give immunity to POISONED for the rest of the fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "PERSIM_BERRY": {
+   "name": "Persim Berry",
+   "desc": "Consumed once below 50% HP or after being CONFUSION, heal 50 HP and give 10 SPE_DEF and immunity to CONFUSION for the rest of the fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "PETAYA_BERRY": {
+   "name": "Petaya Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and gain 80 AP",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "RAWST_BERRY": {
+   "name": "Rawst Berry",
+   "desc": "Consumed once below 50% HP or after being BURN, heal 50 HP and give 10 DEF and immunity to BURN for the rest of the fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "ROWAP_BERRY": {
+   "name": "Rowap Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and cast Magic Bounce for 10 seconds",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "SALAC_BERRY": {
+   "name": "Salac Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and gain 50 SPEED",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "SITRUS_BERRY": {
+   "name": "Sitrus Berry",
+   "desc": "Consumed once below 50% HP, heal 100 HP and increase all healing received by 30%",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "NonSpecialBerries"
+   ]
+  },
+  "GOLDEN_RAZZ_BERRY": {
+   "name": "Golden Razz Berry",
+   "desc": "Consumed once below 50% HP, heal 50% of max HP and player gains 6 free shop rerolls.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "SpecialBerries"
+   ]
+  },
+  "GOLDEN_NANAB_BERRY": {
+   "name": "Golden Nanab Berry",
+   "desc": "Consumed once below 50% HP, heal 50% of max HP and player gains 5 GOLD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "SpecialBerries"
+   ]
+  },
+  "GOLDEN_PINAP_BERRY": {
+   "name": "Golden Pinap Berry",
+   "desc": "Consumed once below 50% HP, heal 50% of max HP and player gains 3 random SWEETS.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "SpecialBerries"
+   ]
+  },
+  "COMFEY": {
+   "name": "Comfey",
+   "desc": "Wears Comfey and get its ability and its max HP, ATK, DEF, and SPE_DEF as bonus stats.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems"
+   ]
+  },
+  "ELECTIRIZER": {
+   "name": "Electirizer",
+   "desc": "Gives ELECTRIC synergy. Every third attack inflicts PARALYSIS for 2 seconds ON_HIT.",
+   "stats": {
+    "SPEED": 10
+   },
+   "recipe": null,
+   "synergy": "ELECTRIC",
+   "categories": [
+    "ArtificialItems",
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "MAGMARIZER": {
+   "name": "Magmarizer",
+   "desc": "Gives FIRE synergy. The holder doesn't take BURN damage. Instead, it gains 30 SPEED when burning.",
+   "stats": {
+    "ATK": 5
+   },
+   "recipe": null,
+   "synergy": "FIRE",
+   "categories": [
+    "ArtificialItems",
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "MACHO_BRACE": {
+   "name": "Macho Brace",
+   "desc": "Gives FIGHTING synergy.",
+   "stats": {
+    "ATK": 15,
+    "SPEED": -15
+   },
+   "recipe": null,
+   "synergy": "FIGHTING",
+   "categories": [
+    "ArtificialItems",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "LIGHT_BALL": {
+   "name": "Light Ball",
+   "desc": "Gives LIGHT synergy.",
+   "stats": {
+    "AP": 50
+   },
+   "recipe": null,
+   "synergy": "LIGHT",
+   "categories": [
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "DRAGON_SCALE": {
+   "name": "Dragon Scale",
+   "desc": "Gives DRAGON synergy as first synergy.",
+   "stats": {
+    "DEF": 5,
+    "SPE_DEF": 5
+   },
+   "recipe": null,
+   "synergy": "DRAGON",
+   "categories": [
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "METRONOME": {
+   "name": "Metronome",
+   "desc": "Gives SOUND synergy. Every second, the holder gains 5 PP.",
+   "stats": {
+    "PP": 5
+   },
+   "recipe": null,
+   "synergy": "SOUND",
+   "categories": [
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "EXPLORER_KIT": {
+   "name": "Explorer Kit",
+   "desc": "Gives GROUND synergy. Increase the [LK] chance to find gold buried in the ground.",
+   "stats": {
+    "DEF": 5,
+    "SPE_DEF": 5,
+    "ATK": 3
+   },
+   "recipe": null,
+   "synergy": "GROUND",
+   "categories": [
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "METAL_COAT": {
+   "name": "Metal Coat",
+   "desc": "Gives STEEL synergy.",
+   "stats": {
+    "DEF": 10,
+    "SPE_DEF": 10
+   },
+   "recipe": null,
+   "synergy": "STEEL",
+   "categories": [
+    "ArtificialItems",
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "AIR_BALLOON": {
+   "name": "Air Balloon",
+   "desc": "Gives FLYING synergy. Gain 10% chance to dodge attacks and immunity to any BOARD_EFFECT.",
+   "stats": {
+    "SPEED": 30
+   },
+   "recipe": null,
+   "synergy": "FLYING",
+   "categories": [
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "PROTECTOR": {
+   "name": "Protector",
+   "desc": "Gives ROCK synergy.",
+   "stats": {
+    "SHIELD": 75
+   },
+   "recipe": null,
+   "synergy": "ROCK",
+   "categories": [
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "INCENSE": {
+   "name": "Incense",
+   "desc": "Gives FLORA synergy. Each Pokémon in shop has an additional 5% chance to share a common synergy with the holder.",
+   "stats": {
+    "SPE_DEF": 10,
+    "LUCK": 30
+   },
+   "recipe": null,
+   "synergy": "FLORA",
+   "categories": [
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "EXP_SHARE": {
+   "name": "Exp. Share",
+   "desc": "Get the best ATK, AP, DEF and SPE_DEF values of allies ADJACENT_IN_THE_SAME_ROW.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ArtificialItems",
+    "BuriedTreasures",
+    "RemovableItems",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "TERRAIN_EXTENDER": {
+   "name": "Terrain Extender",
+   "desc": "At the start of the fight, holder gains either ELECTRIC_FIELD, GRASS_FIELD, PSYCHIC_FIELD or FAIRY_FIELD based on its synergies. When casting its ability, spread the field effect to all allies sharing the field's synergy.",
+   "stats": {
+    "SHIELD": 50,
+    "PP": 20
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ArtificialItems",
+    "RemovableItems",
+    "Tools"
+   ]
+  },
+  "POKERUS_VIAL": {
+   "name": "Pokérus Vial",
+   "desc": "Gives POISON synergy. Infects the holder with POKERUS, gaining 1 ATK and 10 AP every 3 seconds and transmitting to ADJACENT allies.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "POISON",
+   "categories": [
+    "ArtificialItems",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "SPELL_TAG": {
+   "name": "Spell Tag",
+   "desc": "Gives GHOST synergy. When the holder is KO, CURSE its attacker to be KO'd after 10 seconds",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GHOST",
+   "categories": [
+    "ArtificialItems",
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "SHED_SHELL": {
+   "name": "Shed Shell",
+   "desc": "Gives BUG synergy but reduce the holder's max HP by 50% when cloned.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "BUG",
+   "categories": [
+    "ArtificialItems",
+    "BuriedTreasures",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "BERSERK_GENE": {
+   "name": "Berserk Gene",
+   "desc": "Gives MONSTER synergy. The holder gets CONFUSION for 1 second if gaining MONSTER stacks.",
+   "stats": {
+    "ATK": 10
+   },
+   "recipe": null,
+   "synergy": "MONSTER",
+   "categories": [
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "SURFBOARD": {
+   "name": "Surf Board",
+   "desc": "Gives AQUATIC synergy. The holder casts Surf at every TIDAL_WAVE, with the ability level matching current AQUATIC synergy level.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "AQUATIC",
+   "categories": [
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "COOKING_POT": {
+   "name": "Cooking Pot",
+   "desc": "Gives GOURMET synergy. When BURN, the COOKING_POT is heated little by little which gives 10 SPEED per second.",
+   "stats": {
+    "DEF": 10
+   },
+   "recipe": null,
+   "synergy": "GOURMET",
+   "categories": [
+    "ArtificialItems",
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "RUNNING_SHOES": {
+   "name": "Running Shoes",
+   "desc": "Gives FIELD synergy. The holder gains 5 SPEED every tile they move (jumps and dashes count for one tile).",
+   "stats": {
+    "SPEED": 15
+   },
+   "recipe": null,
+   "synergy": "FIELD",
+   "categories": [
+    "RemovableItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial",
+    "Tools"
+   ]
+  },
+  "MAX_ELIXIR": {
+   "name": "Max Elixir",
+   "desc": "Restores 100% of max PP 1 second after the first ability cast.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ArtificialItems",
+    "BuriedTreasures",
+    "RemovableItems",
+    "Tools",
+    "ToolsBuried"
+   ]
+  },
+  "METEORITE": {
+   "name": "Meteorite",
+   "desc": "A meteorite that seems to interact with Deoxys. It continues to give off a faint glow and is slightly warm to the touch.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "ROTOM_CATALOG": {
+   "name": "Rotom Catalog",
+   "desc": "A catalog of devices that Rotom like. Use the catalog to have Rotom hop in and out of the various devices listed within.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "TRASH": {
+   "name": "Trash",
+   "desc": "No effect, but can be held.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "BuriedTrash",
+    "RemovableItems",
+    "SpecialItems"
+   ]
+  },
+  "DYNAMAX_BAND": {
+   "name": "Dynamax Band",
+   "desc": "At the start of the fight, raise max HP by 200%.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "SHINY_STONE": {
+   "name": "Shiny Stone",
+   "desc": "Gives LIGHT synergy. A second spotlight is projected onto the holder's tile at the start of the fight.",
+   "stats": {
+    "AP": 50
+   },
+   "recipe": null,
+   "synergy": "LIGHT",
+   "categories": [
+    "ShinyItems",
+    "SynergyItems",
+    "SynergyItemsNoSpecial"
+   ]
+  },
+  "OLD_ROD": {
+   "name": "Old Rod",
+   "desc": "After each PvP round, fish a Pokémon that is then added to a free slot on your bench. Can catch common and uncommon WATER Pokémon as well as Magikarp.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "FishingRods",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "GOOD_ROD": {
+   "name": "Good Rod",
+   "desc": "After each PvP round, fish a Pokémon that is then added to a free slot on your bench. Can catch rare WATER Pokémon as well as Feebas.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "FishingRods",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "SUPER_ROD": {
+   "name": "Super Rod",
+   "desc": "After each PvP round, fish a Pokémon that is then added to a free slot on your bench. Can catch epic WATER Pokémon as well as Wishiwashi.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "FishingRods",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "RARE_CANDY": {
+   "name": "Rare Candy",
+   "desc": "Immediately make a Pokémon evolve. Can only be given to Pokémon that can evolve, and reduce its sell price to its previous tier.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "EVIOLITE": {
+   "name": "Eviolite",
+   "desc": "Holder gets a bunch of stats, but can no longer evolve. Can only be given to non-fully evolved Pokémon.",
+   "stats": {
+    "HP": 100,
+    "ATK": 10,
+    "AP": 50,
+    "DEF": 10,
+    "SPE_DEF": 10
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "RED_SCALE": {
+   "name": "Red Scale",
+   "desc": "Increase your passive income by 5 GOLD per round",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems",
+    "UnholdableItems"
+   ]
+  },
+  "GOLD_MASK": {
+   "name": "Gold Mask",
+   "desc": "At the start of the fight, spawn 3 Pokémon that share a type with the holder. Rarity and tier scale with stage level.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "GOLD_BOTTLE_CAP": {
+   "name": "Gold Bottle Cap",
+   "desc": "+1% CRIT_POWER per GOLD you have. Gain 1 GOLD per KO. If eliminating the last enemy, get a Jackpot that doubles the amount gained during the round.",
+   "stats": {
+    "LUCK": 50,
+    "CRIT_CHANCE": 30
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "ABSORB_BULB": {
+   "name": "Absorb Bulb",
+   "desc": "All the damage reduction is absorbed by the bulb. Once under 50% HP, bulb explodes, dealing all damage absorbed to ADJACENT enemy units as SPECIAL.",
+   "stats": {
+    "DEF": 20,
+    "SPE_DEF": 20
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "SACRED_ASH": {
+   "name": "Sacred Ash",
+   "desc": "Gives RESURRECTION. After resurrecting, up to 3 allies KO are resurrected as well, but without items.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "STAR_PIECE": {
+   "name": "Star Piece",
+   "desc": "Gives the holder one additional STAR, which increases the power of their ability.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "REPEAT_BALL": {
+   "name": "Repeat Ball",
+   "desc": "Each time you spend gold on a reroll, gain 1 free reroll. For every 2 shop rerolls, gain 1 SPEED and 2 SHIELD. After lots of rerolls, you may encounter powerful Pokémon in your shop.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "GOLD_BOW": {
+   "name": "Gold Bow",
+   "desc": "The holder does not count for team size limit.",
+   "stats": {
+    "SHIELD": 50
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ShinyItems"
+   ]
+  },
+  "DAMP_ROCK": {
+   "name": "Damp Rock",
+   "desc": "Counts for 3 towards RAIN. Under RAIN, your team gains +2 PP per second.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "ICY_ROCK": {
+   "name": "Icy Rock",
+   "desc": "Counts for 3 towards SNOW. Under SNOW, your team recovers from FREEZE 20% faster and have [5,LK]% additional chance to FREEZE their opponents with their attacks.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "HEAT_ROCK": {
+   "name": "Heat Rock",
+   "desc": "Counts for 3 towards DROUGHT. Under DROUGHT, your team gains 3 ATK and takes 20% less damage from BURN.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "SMOOTH_ROCK": {
+   "name": "Smooth Rock",
+   "desc": "Counts for 3 towards SANDSTORM. Under SANDSTORM, your team takes 20% less sandstorm damage and gain 1 SPEED every second.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "BLACK_AUGURITE": {
+   "name": "Black Augurite",
+   "desc": "Counts for 3 towards NIGHT. Under NIGHT, your team gains 5% CRIT_CHANCE and take 10% less critical damage.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "FLOAT_STONE": {
+   "name": "Float Stone",
+   "desc": "Counts for 3 towards WINDY. Under WINDY, your team gains 10 SPEED.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "MIST_STONE": {
+   "name": "Mist Stone",
+   "desc": "Counts for 3 towards MISTY. Under MISTY, your team gains 3 SPE_DEF.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "ELECTRIC_QUARTZ": {
+   "name": "Electric Quartz",
+   "desc": "Counts for 3 towards STORM. Under STORM, your team gains 50 SHIELD when struck by lightning and recovers from PARALYSIS 20% faster.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "BLOOD_STONE": {
+   "name": "Blood Stone",
+   "desc": "Counts for 3 towards BLOODMOON. Under BLOODMOON, your team gets 30% of incoming healing as SHIELD when WOUND, and heal for 20% of damage dealt if target is WOUND.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "SMELLY_CLAY": {
+   "name": "Smelly Clay",
+   "desc": "Counts for 3 towards SMOG. Under SMOG, your team gains 5% accuracy and has 15% less chance to get POISONED.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "ODD_KEYSTONE": {
+   "name": "Odd Stone",
+   "desc": "Counts for 3 towards MURKY. Under MURKY, your team gains 10 LUCK and -10% negative status duration, and resist to CURSE 1 second longer.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "SUN_STONE": {
+   "name": "Sun Stone",
+   "desc": "Counts for 3 towards ZENITH. Under ZENITH, your Pokémon heal for 5 HP every 2 seconds and have 5% additional chance to BURN with their attacks.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "WeatherRocks"
+   ]
+  },
+  "NORMAL_GEM": {
+   "name": "Normal Gem",
+   "desc": "+1 to NORMAL synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "NORMAL",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "GRASS_GEM": {
+   "name": "Grass Gem",
+   "desc": "+1 to GRASS synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GRASS",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FIRE_GEM": {
+   "name": "Fire Gem",
+   "desc": "+1 to FIRE synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FIRE",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "WATER_GEM": {
+   "name": "Water Gem",
+   "desc": "+1 to WATER synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "WATER",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "ELECTRIC_GEM": {
+   "name": "Electric Gem",
+   "desc": "+1 to ELECTRIC synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "ELECTRIC",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FIGHTING_GEM": {
+   "name": "Fighting Gem",
+   "desc": "+1 to FIGHTING synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FIGHTING",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "PSYCHIC_GEM": {
+   "name": "Psychic Gem",
+   "desc": "+1 to PSYCHIC synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "PSYCHIC",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "DARK_GEM": {
+   "name": "Dark Gem",
+   "desc": "+1 to DARK synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "DARK",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "STEEL_GEM": {
+   "name": "Steel Gem",
+   "desc": "+1 to STEEL synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "STEEL",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "GROUND_GEM": {
+   "name": "Ground Gem",
+   "desc": "+1 to GROUND synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GROUND",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "POISON_GEM": {
+   "name": "Poison Gem",
+   "desc": "+1 to POISON synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "POISON",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "DRAGON_GEM": {
+   "name": "Dragon Gem",
+   "desc": "+1 to DRAGON synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "DRAGON",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FIELD_GEM": {
+   "name": "Field Gem",
+   "desc": "+1 to FIELD synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FIELD",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "MONSTER_GEM": {
+   "name": "Monster Gem",
+   "desc": "+1 to MONSTER synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "MONSTER",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "HUMAN_GEM": {
+   "name": "Human Gem",
+   "desc": "+1 to HUMAN synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "HUMAN",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "AQUATIC_GEM": {
+   "name": "Aquatic Gem",
+   "desc": "+1 to AQUATIC synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "AQUATIC",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "BUG_GEM": {
+   "name": "Bug Gem",
+   "desc": "+1 to BUG synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "BUG",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FLYING_GEM": {
+   "name": "Flying Gem",
+   "desc": "+1 to FLYING synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FLYING",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FLORA_GEM": {
+   "name": "Flora Gem",
+   "desc": "+1 to FLORA synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FLORA",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "ROCK_GEM": {
+   "name": "Rock Gem",
+   "desc": "+1 to ROCK synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "ROCK",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "GHOST_GEM": {
+   "name": "Ghost Gem",
+   "desc": "+1 to GHOST synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GHOST",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FAIRY_GEM": {
+   "name": "Fairy Gem",
+   "desc": "+1 to FAIRY synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FAIRY",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "ICE_GEM": {
+   "name": "Ice Gem",
+   "desc": "+1 to ICE synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "ICE",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FOSSIL_GEM": {
+   "name": "Fossil Gem",
+   "desc": "+1 to FOSSIL synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FOSSIL",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "SOUND_GEM": {
+   "name": "Sound Gem",
+   "desc": "+1 to SOUND synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "SOUND",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "ARTIFICIAL_GEM": {
+   "name": "Artificial Gem",
+   "desc": "+1 to ARTIFICIAL synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "ARTIFICIAL",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "LIGHT_GEM": {
+   "name": "Light Gem",
+   "desc": "+1 to LIGHT synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "LIGHT",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "WILD_GEM": {
+   "name": "Wild Gem",
+   "desc": "+1 to WILD synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "WILD",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "AMORPHOUS_GEM": {
+   "name": "Amorphous Gem",
+   "desc": "+1 to AMORPHOUS synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "AMORPHOUS",
+   "categories": [
+    "SynergyGems",
+    "SynergyGemsBuried",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "GOURMET_GEM": {
+   "name": "Gourmet Gem",
+   "desc": "+1 to GOURMET synergy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GOURMET",
+   "categories": [
+    "SynergyGems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FIRE_SHARD": {
+   "name": "Fire Shard",
+   "desc": "Sacrifice 3 player HP (1 in Double Up) to give permanently +3 ATK and +3 SPEED to a FIRE Pokémon. Immediately consumed when given.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "TEAL_MASK": {
+   "name": "Teal Mask",
+   "desc": "This carved wooden mask is adorned with crystals, grants Ogerpon the FLORA type during battle. Ogerpon loses its mask when its shield is depleted.",
+   "stats": {
+    "SHIELD": 100,
+    "SPEED": 30
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "OgerponMasks",
+    "SpecialItems"
+   ]
+  },
+  "WELLSPRING_MASK": {
+   "name": "Wellspring Mask",
+   "desc": "This carved wooden mask is adorned with crystals, grants Ogerpon the AQUATIC type during battle. Ogerpon loses its mask when its shield is depleted.",
+   "stats": {
+    "SHIELD": 100,
+    "SPE_DEF": 10
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "OgerponMasks",
+    "SpecialItems"
+   ]
+  },
+  "CORNERSTONE_MASK": {
+   "name": "Cornerstone Mask",
+   "desc": "This carved wooden mask is adorned with crystals, grants Ogerpon the ROCK type during battle. Ogerpon loses its mask when its shield is depleted.",
+   "stats": {
+    "SHIELD": 100,
+    "DEF": 10
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "OgerponMasks",
+    "SpecialItems"
+   ]
+  },
+  "HEARTHFLAME_MASK": {
+   "name": "Hearthflame Mask",
+   "desc": "This carved wooden mask is adorned with crystals, grants Ogerpon the FIRE type during battle. Ogerpon loses its mask when its shield is depleted.",
+   "stats": {
+    "SHIELD": 100,
+    "ATK": 10
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "OgerponMasks",
+    "SpecialItems"
+   ]
+  },
+  "ZYGARDE_CUBE": {
+   "name": "Zygarde Cube",
+   "desc": "Contains cells of the Order Pokémon, Zygarde. It will cause a transformation into one of its alternate formes.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "TM_RAGE": {
+   "name": "TM01 - Rage",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nRage: Get RAGE status for 3 seconds and gain [10,10,10,20,SP]% BASE ATK for each 10% of max HP missing",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsBronze",
+    "UnholdableItems"
+   ]
+  },
+  "TM_RETURN": {
+   "name": "TM02 - Return",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nReturn: Deal [20,40,80,160,SP] SPECIAL to the target, then gain 2 AP permanently.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsBronze",
+    "UnholdableItems"
+   ]
+  },
+  "TM_COUNTER": {
+   "name": "TM03 - Counter",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nCounter: The user lashes out at ADJACENT enemy Pokémon dealing [50,50,50,100,SP]% of its missing HP as SPECIAL.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsBronze",
+    "UnholdableItems"
+   ]
+  },
+  "TM_DISABLE": {
+   "name": "TM04 - Disable",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nDisable: Deal [12,25,50,100,SP] SPECIAL to the target and all ADJACENT enemy Pokémon and SILENCE them for [2,3,4,8] seconds.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsBronze",
+    "UnholdableItems"
+   ]
+  },
+  "TM_BULK_UP": {
+   "name": "TM05 - Bulk Up",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nBulk Up: Increase BASE ATK and BASE DEF by [50,50,50,100,SP]%",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsSilver",
+    "UnholdableItems"
+   ]
+  },
+  "TM_CHARGE": {
+   "name": "TM06 - Charge",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nCharge: Until the end of the fight, attacks deal [100,100,100,200,SP]% additional SPECIAL (stackable).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsSilver",
+    "UnholdableItems"
+   ]
+  },
+  "TM_REFLECT": {
+   "name": "TM07 - Reflect",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nReflect: For [3,3,3,5] seconds, whenever the user received PHYSICAL, block the damage and reflect [50,75,100,150,SP]% of the damage as SPECIAL to the attacker.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsSilver",
+    "UnholdableItems"
+   ]
+  },
+  "TM_PAYDAY": {
+   "name": "TM08 - Pay Day",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nPay Day: Deals [15,30,60,120] + [15,30,60,120,SP] SPECIAL. If the target is KO'd, the allied player receives [1,2,3] GOLD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsSilver",
+    "UnholdableItems"
+   ]
+  },
+  "TM_FOCUS_PUNCH": {
+   "name": "TM09 - Focus Punch",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nFocus Punch: Focuses its energy into a single punch, rushing towards the target after 1 second, dealing [500,500,500,1000,SP]% of ATK as SPECIAL and pushing it back. Target is ejected from the board if it does not collide with any other unit.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsGold",
+    "UnholdableItems"
+   ]
+  },
+  "TM_HYPER_BEAM": {
+   "name": "TM10 - Hyper Beam",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nHyper Beam: Concentrates its energy for 1 second then fires a powerful beam that deals [65,130,250,500,SP] SPECIAL to enemies in a line. Then user gets FATIGUE for 5 seconds.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsGold",
+    "UnholdableItems"
+   ]
+  },
+  "TM_SUBSTITUTE": {
+   "name": "TM11 - Substitute",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nSubstitute: Spawns a Substitute at the location of the user with [25,25,25,50,SP]% of user's max HP as bonus HP. The user moves to a free cell nearby and all aggro is redirected to the Substitute.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsGold",
+    "UnholdableItems"
+   ]
+  },
+  "TM_SKILL_SWAP": {
+   "name": "TM12 - Skill Swap",
+   "desc": "Teaches a HUMAN Pokémon a new ability and set its max PP to 100. Can only be used once.\nSkill Swap: Copy the ability and max PP of the target if not INIMITABLE, then cast it immediately. The copied ability persists between fights and can be reset by benching the user.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "TMs",
+    "TMsGold",
+    "UnholdableItems"
+   ]
+  },
+  "CHEF_HAT": {
+   "name": "Chef's Hat",
+   "desc": "The holder will cook their Signature Dish between rounds.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "RemovableItems",
+    "SpecialItems"
+   ]
+  },
+  "PICNIC_SET": {
+   "name": "Picnic Set",
+   "desc": "Immediately consumed when given. Give a SANDWICH to the holder and all ADJACENT allies. SANDWICH gives stat boosts for the next fight based on the types of the Pokémon eating it.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "TownItems"
+   ]
+  },
+  "SANDWICH": {
+   "name": "Sandwich",
+   "desc": "Gives various stat boosts for the next fight based on the types of the Pokémon eating it.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "HEARTY_STEW": {
+   "name": "Hearty Stew",
+   "desc": "At the start of next fight, raise max HP by 30%. If fed to a Pokémon holding COOKING_POT, the Pokémon is BURN for 5 seconds.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "RAGE_CANDY_BAR": {
+   "name": "Rage Candy Bar",
+   "desc": "Gain 10 ATK at the start of the next fight.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "TEA": {
+   "name": "Tea",
+   "desc": "Gain 60 PP at the start of the next fight.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "CURRY": {
+   "name": "Curry",
+   "desc": "Start the next fight RAGE for 3 seconds.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "CASTELIACONE": {
+   "name": "Casteliacone",
+   "desc": "In the next fight, get [30,LK]% chance to inflict FREEZE for 2 seconds ON_HIT. The first attack always FREEZE.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "WHIPPED_DREAM": {
+   "name": "Whipped Dream",
+   "desc": "In the next fight, get [30,LK]% chance to inflict CHARM for 2 seconds ON_HIT. The first attack always CHARM.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "BERRY_JUICE": {
+   "name": "Berry Juice",
+   "desc": "Gain 100 SHIELD at the start of the next fight and every time a berry is consumed.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "NANAB_BERRY": {
+   "name": "Nanab Berry",
+   "desc": "Consumed once below 50% HP, heal 50 HP and player gains 1 GOLD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Berries",
+    "ConsumableItems",
+    "DishesGoingToInventory",
+    "SpecialBerries"
+   ]
+  },
+  "OLIVE_OIL": {
+   "name": "Olive Oil",
+   "desc": "Gain 20% dodge chance in the next fight.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "LUCKY_EGG": {
+   "name": "Lucky Egg",
+   "desc": "Gain 30 LUCK and 30 AP",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "TART_APPLE": {
+   "name": "Tart Apple",
+   "desc": "In the next fight, each attack by this Pokémon will remove 2 DEF from the target. Will turn into a SWEET_APPLE after one round.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "DishesGoingToInventory",
+    "UnholdableItems"
+   ]
+  },
+  "SWEET_APPLE": {
+   "name": "Sweet Apple",
+   "desc": "In the next fight, each attack by this Pokémon will remove 2 SPE_DEF from the target. Will turn into a SIRUPY_APPLE after one round.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "DishesGoingToInventory",
+    "UnholdableItems"
+   ]
+  },
+  "SIRUPY_APPLE": {
+   "name": "Syrupy Apple",
+   "desc": "In the next fight, each attack by this Pokémon has [30,LK]% chance to inflict PARALYSIS for 1 second. Will turn into LEFTOVERS after one round.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "DishesGoingToInventory",
+    "UnholdableItems"
+   ]
+  },
+  "HERBA_MYSTICA": {
+   "name": "Herba Mystica",
+   "desc": "Gain a field effect based on its flavor. The flavor will be determined by the type of the Pokémon eating it:\nFAIRY: HERBA_MYSTICA_SWEET\nGRASS: HERBA_MYSTICA_BITTER\nELECTRIC: HERBA_MYSTICA_SOUR\nPSYCHIC: HERBA_MYSTICA_SPICY\nOthers: HERBA_MYSTICA_SALTY",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "HerbaMysticas",
+    "UnholdableItems"
+   ]
+  },
+  "HERBA_MYSTICA_SWEET": {
+   "name": "Herba Mystica (Sweet)",
+   "desc": "Get FAIRY_FIELD during the next fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "HerbaMysticas",
+    "UnholdableItems"
+   ]
+  },
+  "HERBA_MYSTICA_SPICY": {
+   "name": "Herba Mystica (Spicy)",
+   "desc": "Get PSYCHIC_FIELD during the next fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "HerbaMysticas",
+    "UnholdableItems"
+   ]
+  },
+  "HERBA_MYSTICA_SOUR": {
+   "name": "Herba Mystica (Sour)",
+   "desc": "Get ELECTRIC_FIELD during the next fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "HerbaMysticas",
+    "UnholdableItems"
+   ]
+  },
+  "HERBA_MYSTICA_BITTER": {
+   "name": "Herba Mystica (Bitter)",
+   "desc": "Get GRASS_FIELD during the next fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "HerbaMysticas",
+    "UnholdableItems"
+   ]
+  },
+  "HERBA_MYSTICA_SALTY": {
+   "name": "Herba Mystica (Salty)",
+   "desc": "Get SAFEGUARD during the next fight",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "HerbaMysticas",
+    "UnholdableItems"
+   ]
+  },
+  "MOOMOO_MILK": {
+   "name": "Moomoo Milk",
+   "desc": "Gain 15 permanent max HP.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "HONEY": {
+   "name": "Honey",
+   "desc": "Each Pokémon in the next shop rerolls this round has an additional 5% chance to share a common synergy with a Pokémon eating HONEY.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "MUSHROOMS": {
+   "name": "Mushrooms",
+   "desc": "A mix of mushrooms that can be sold for GOLD when coming back to town",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "TINY_MUSHROOM": {
+   "name": "Tiny Mushroom",
+   "desc": "Gives 30 SPEED and reduce max HP by 30% for the next fight when consumed. Will be sold for 1 GOLD when returning to town.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "DishesGoingToInventory",
+    "ItemsSoldAtTown",
+    "Mushrooms",
+    "UnholdableItems"
+   ]
+  },
+  "BIG_MUSHROOM": {
+   "name": "Big Mushroom",
+   "desc": "Gives +30% max HP for the next fight when consumed. Will be sold for 2 GOLD when returning to town.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "DishesGoingToInventory",
+    "ItemsSoldAtTown",
+    "Mushrooms",
+    "UnholdableItems"
+   ]
+  },
+  "BALM_MUSHROOM": {
+   "name": "Balm Mushroom",
+   "desc": "When consumed, gains SAFEGUARD, 30 SPEED and heals 10% of max HP per second for the next fight. Will be sold for 5 GOLD when returning to town.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "DishesGoingToInventory",
+    "ItemsSoldAtTown",
+    "Mushrooms",
+    "UnholdableItems"
+   ]
+  },
+  "RICE": {
+   "name": "Rice",
+   "desc": "Gives 50 additional max HP. If a Tatsugiri is on the board, also provides the additional stats given by its form.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "BERRIES": {
+   "name": "Berries",
+   "desc": "Forage a random berry for the Chef to hold. If no free item slots, it goes to your inventory.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "POFFIN": {
+   "name": "Poffin",
+   "desc": "Gain 100 SHIELD. All held berries are added to the poffin. Their effects are applied immediately, with healed HP turned into SHIELD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "ROCK_SALT": {
+   "name": "Rock Salt",
+   "desc": "Start the next fight with SAFEGUARD for 10 seconds and 20% of max HP as SHIELD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "NUTRITIOUS_EGG": {
+   "name": "Nutritious Egg",
+   "desc": "Start the next fight with +50% BASE ATK, DEF and SPE_DEF.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "LEFTOVERS": {
+   "name": "Leftovers",
+   "desc": "No effect. There is not much left to eat.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "BuriedTrash",
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "BLACK_SLUDGE": {
+   "name": "Black Sludge",
+   "desc": "POISONED the Pokémon that eats it. If it has POISON type, restore 5% of max HP every 2 seconds instead. In the next fight, get [30,LK]% chance to inflict POISONED for 5 seconds ON_HIT. The first attack always inflicts POISONED.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "FRUIT_JUICE": {
+   "name": "Fruit Juice",
+   "desc": "Gain 50 SPEED in the next fight.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "LEEK": {
+   "name": "Leek",
+   "desc": "Gain 50% CRIT_CHANCE and allow ability to critically strike in the next fight. If the ability can already critically strike by default, increase CRIT_POWER by 50% instead.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "LARGE_LEEK": {
+   "name": "Large Leek",
+   "desc": "Gain 100% CRIT_POWER and allow ability to critically strike in the next fight. If the ability can already critically strike by default, increase CRIT_POWER by 50% instead.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "SMOKED_FILET": {
+   "name": "Smoked Fillet",
+   "desc": "Permanently lose 5 max HP to gain 3 ATK and 10 AP.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "SPINDA_COCKTAIL": {
+   "name": "Spinda's Cocktail",
+   "desc": "A cocktail with [LK] random effects that can buff stats or make you dizzy.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "BINDING_MOCHI": {
+   "name": "Binding Mochi",
+   "desc": "The first attack in the next fight will cause POSSESSED for 5 seconds ON_HIT.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "STRAWBERRY_SWEET": {
+   "name": "Strawberry Sweet",
+   "desc": "Gain 3 permanent ATK",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "Sweets",
+    "UnholdableItems"
+   ]
+  },
+  "LOVE_SWEET": {
+   "name": "Love Sweet",
+   "desc": "Gain 3 permanent DEF",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "Sweets",
+    "UnholdableItems"
+   ]
+  },
+  "BERRY_SWEET": {
+   "name": "Berry Sweet",
+   "desc": "Gain 15 permanent HP",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "Sweets",
+    "UnholdableItems"
+   ]
+  },
+  "CLOVER_SWEET": {
+   "name": "Clover Sweet",
+   "desc": "Gain 10 permanent LUCK",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "Sweets",
+    "UnholdableItems"
+   ]
+  },
+  "FLOWER_SWEET": {
+   "name": "Flower Sweet",
+   "desc": "Gain 10 permanent SPEED",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "Sweets",
+    "UnholdableItems"
+   ]
+  },
+  "STAR_SWEET": {
+   "name": "Star Sweet",
+   "desc": "Gain 10 permanent AP",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "Sweets",
+    "UnholdableItems"
+   ]
+  },
+  "RIBBON_SWEET": {
+   "name": "Ribbon Sweet",
+   "desc": "Gain 3 permanent SPE_DEF",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "Sweets",
+    "UnholdableItems"
+   ]
+  },
+  "SWEETS": {
+   "name": "Sweets",
+   "desc": "A random candy granting a permanent stats bonus",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Dishes",
+    "UnholdableItems"
+   ]
+  },
+  "VANILLA_FLAVOR": {
+   "name": "Vanilla Flavor",
+   "desc": "Baked with NORMAL FLYING ARTIFICIAL GOURMET allies. Use it on Milcery to evolve into a Alcremie (Vanilla). Upon casting, the VANILLA_FLAVOR adds [80,SP] SHIELD to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "RUBY_FLAVOR": {
+   "name": "Ruby Flavor",
+   "desc": "Baked with FIGHTING HUMAN STEEL allies. Use it on Milcery to evolve into a Alcremie (Ruby). Upon casting, the RUBY_FLAVOR adds [30,SP] SPEED to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "MATCHA_FLAVOR": {
+   "name": "Matcha Flavor",
+   "desc": "Baked with GRASS FLORA POISON GHOST allies. Use it on Milcery to evolve into a Alcremie (Matcha). Upon casting, the MATCHA_FLAVOR adds [60,SP] maximum HP to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "MINT_FLAVOR": {
+   "name": "Mint Flavor",
+   "desc": "Baked with WATER AQUATIC ICE allies. Use it on Milcery to evolve into a Alcremie (Mint). Upon casting, the MINT_FLAVOR heals [40,SP] HP and adds [15,SP] SPE_DEF to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "LEMON_FLAVOR": {
+   "name": "Lemon Flavor",
+   "desc": "Baked with ELECTRIC BUG FAIRY SOUND allies. Use it on Milcery to evolve into a Alcremie (Lemon). Upon casting, the LEMON_FLAVOR adds [40,SP] % CRIT_CHANCE to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "SALTED_FLAVOR": {
+   "name": "Salted Flavor",
+   "desc": "Baked with ROCK GROUND FOSSIL allies. Use it on Milcery to evolve into a Alcremie (Salted). Upon casting, the SALTED_FLAVOR heals [40,SP] HP and adds [15,SP] DEF to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "RUBY_SWIRL_FLAVOR": {
+   "name": "Ruby Swirl Flavor",
+   "desc": "Baked with FIRE WILD FIELD allies. Use it on Milcery to evolve into a Alcremie (Ruby Swirl). Upon casting, the RUBY_SWIRL_FLAVOR adds [10,SP] ATK to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "CARAMEL_SWIRL_FLAVOR": {
+   "name": "Caramel Swirl Flavor",
+   "desc": "Baked with DARK MONSTER DRAGON allies. Use it on Milcery to evolve into a Alcremie (Caramel Swirl). Upon casting, the CARAMEL_SWIRL_FLAVOR adds [80,SP] % CRIT_POWER to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "RAINBOW_SWIRL_FLAVOR": {
+   "name": "Rainbow Swirl Flavor",
+   "desc": "Baked with PSYCHIC AMORPHOUS BABY LIGHT allies. Use it on Milcery to evolve into a Alcremie (Rainbow Swirl). Upon casting, the RAINBOW_SWIRL_FLAVOR adds [50,SP] PP to the decorated ally",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Flavors",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "EGG_FOR_SELL": {
+   "name": "Pokémon Egg",
+   "desc": "An Egg sold at Chansey's Daycare",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "COIN": {
+   "name": "Rusty Coin",
+   "desc": "An old rusty coin. +1 GOLD when obtained.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "BuriedTrash",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "NUGGET": {
+   "name": "Nugget",
+   "desc": "A small gold nugget. +3 GOLD when obtained.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "BuriedTrash",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "BIG_NUGGET": {
+   "name": "Big Nugget",
+   "desc": "A big gold nugget. +10 GOLD when obtained.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "BuriedTreasures",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "GIMMIGHOUL_COIN": {
+   "name": "Gimmighoul Coin",
+   "desc": "+5 GOLD when obtained.\nIncrease max interest cap by 10 GOLD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "EXCHANGE_TICKET": {
+   "name": "Exchange Ticket",
+   "desc": "Exchange an item component or a crafted item on bench for another random one. Single use, does not work with scarves.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "RECYCLE_TICKET": {
+   "name": "Recycle Ticket",
+   "desc": "Recycle a crafted item on bench or the crafted items held by a Pokémon into their BASE components. Then all components held are sent back to player item bench. Single use.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "TownItems"
+   ]
+  },
+  "TREASURE_BOX": {
+   "name": "Treasure Box",
+   "desc": "You wonder what's inside. It will open once you have 40 HP or less.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "BuriedTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "AUSPICIOUS_ARMOR": {
+   "name": "Auspicious Armor",
+   "desc": "A peculiar set of armor that can make a certain species of Pokémon evolve. Auspicious wishes live within it.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "MALICIOUS_ARMOR": {
+   "name": "Malicious Armor",
+   "desc": "A peculiar set of armor that can make a certain species of Pokémon evolve. Malicious will lurks within it.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "RUSTED_SWORD": {
+   "name": "Rusted Sword",
+   "desc": "It is said that a hero used this sword to halt a terrible disaster in ancient times. Gives the holder +50% BASE ATK. Transfers to the ally with the weakest ATK when the holder faints.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems"
+   ]
+  },
+  "SCROLL_OF_WATERS": {
+   "name": "Scroll of Waters",
+   "desc": "Written upon it are the true secrets of the path of water. When used on a Kubfu, will cause it to evolve into Urshifu (Rapid Strike).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "SCROLL_OF_DARKNESS": {
+   "name": "Scroll of Darkness",
+   "desc": "Written upon it are the true secrets of the path of darkness. When used on a Kubfu, will cause it to evolve into Urshifu (Single Strike)",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "MYSTERY_BOX": {
+   "name": "Mystery Box",
+   "desc": "A mysterious old box. When in your inventory, all Ditto found in shops are replaced by Meltan.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "RICH_MULCH": {
+   "name": "Rich Mulch",
+   "desc": "Use it on a flower pot to evolve the Pokémon inside, or on a berry tree to fully grow it.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Mulches",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "AMAZE_MULCH": {
+   "name": "Amaze Mulch",
+   "desc": "Use it on a flower pot to permanently give 50 max HP and 30 AP to the Pokémon inside, or on a berry tree to fully grow it and make it golden.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "Mulches",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "BRONZE_DOJO_TICKET": {
+   "name": "Bronze Dojo Ticket",
+   "desc": "Use it on a Pokémon to send them to the Dojo for 3 stages, returning with +50 max HP, +5 ATK and +15 AP. A substitute takes their place in the meantime.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "DojoTickets",
+    "SpecialItems",
+    "TownItems"
+   ]
+  },
+  "SILVER_DOJO_TICKET": {
+   "name": "Silver Dojo Ticket",
+   "desc": "Use it on a Pokémon to send them to the Dojo for 3 stages, returning with +100 max HP, +10 ATK and +30 AP. A substitute takes their place in the meantime.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "DojoTickets",
+    "SpecialItems",
+    "TownItems"
+   ]
+  },
+  "GOLD_DOJO_TICKET": {
+   "name": "Gold Dojo Ticket",
+   "desc": "Use it on a Pokémon to send them to the Dojo for 3 stages, returning with +150 max HP, +15 ATK and +45 AP. A substitute takes their place in the meantime.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "DojoTickets",
+    "SpecialItems",
+    "TownItems"
+   ]
+  },
+  "WANTED_NOTICE": {
+   "name": "Wanted Notice",
+   "desc": "Wanted: Fainted or Alive\n Reward: 10 GOLD",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "MEMORY_DISCS": {
+   "name": "Memory Discs",
+   "desc": "Can be equipped on Silvally to get a previously used type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems"
+   ]
+  },
+  "FIRE_MEMORY": {
+   "name": "Fire Memory",
+   "desc": "Can be equipped on Silvally to get FIRE type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FIRE",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "FOSSIL_MEMORY": {
+   "name": "Fossil Memory",
+   "desc": "Can be equipped on Silvally to get FOSSIL type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FOSSIL",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "PSYCHIC_MEMORY": {
+   "name": "Psychic Memory",
+   "desc": "Can be equipped on Silvally to get PSYCHIC type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "PSYCHIC",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "WATER_MEMORY": {
+   "name": "Water Memory",
+   "desc": "Can be equipped on Silvally to get WATER type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "WATER",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "ELECTRIC_MEMORY": {
+   "name": "Electric Memory",
+   "desc": "Can be equipped on Silvally to get ELECTRIC type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "ELECTRIC",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "FAIRY_MEMORY": {
+   "name": "Fairy Memory",
+   "desc": "Can be equipped on Silvally to get FAIRY type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FAIRY",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "DARK_MEMORY": {
+   "name": "Dark Memory",
+   "desc": "Can be equipped on Silvally to get DARK type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "DARK",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "GRASS_MEMORY": {
+   "name": "Grass Memory",
+   "desc": "Can be equipped on Silvally to get GRASS type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GRASS",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "ICE_MEMORY": {
+   "name": "Ice Memory",
+   "desc": "Can be equipped on Silvally to get ICE type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "ICE",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "FIGHTING_MEMORY": {
+   "name": "Fighting Memory",
+   "desc": "Can be equipped on Silvally to get FIGHTING type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FIGHTING",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "POISON_MEMORY": {
+   "name": "Poison Memory",
+   "desc": "Can be equipped on Silvally to get POISON type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "POISON",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "SOUND_MEMORY": {
+   "name": "Sound Memory",
+   "desc": "Can be equipped on Silvally to get SOUND type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "SOUND",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "STEEL_MEMORY": {
+   "name": "Steel Memory",
+   "desc": "Can be equipped on Silvally to get STEEL type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "STEEL",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "FLYING_MEMORY": {
+   "name": "Flying Memory",
+   "desc": "Can be equipped on Silvally to get FLYING type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FLYING",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "ROCK_MEMORY": {
+   "name": "Rock Memory",
+   "desc": "Can be equipped on Silvally to get ROCK type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "ROCK",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "GROUND_MEMORY": {
+   "name": "Ground Memory",
+   "desc": "Can be equipped on Silvally to get GROUND type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GROUND",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "FIELD_MEMORY": {
+   "name": "Field Memory",
+   "desc": "Can be equipped on Silvally to get FIELD type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FIELD",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "GHOST_MEMORY": {
+   "name": "Ghost Memory",
+   "desc": "Can be equipped on Silvally to get GHOST type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GHOST",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "LIGHT_MEMORY": {
+   "name": "Light Memory",
+   "desc": "Can be equipped on Silvally to get LIGHT type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "LIGHT",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "NORMAL_MEMORY": {
+   "name": "Normal Memory",
+   "desc": "Can be equipped on Silvally to get NORMAL type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "NORMAL",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "BUG_MEMORY": {
+   "name": "Bug Memory",
+   "desc": "Can be equipped on Silvally to get BUG type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "BUG",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "GOURMET_MEMORY": {
+   "name": "Gourmet Memory",
+   "desc": "Can be equipped on Silvally to get GOURMET type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "GOURMET",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "MONSTER_MEMORY": {
+   "name": "Monster Memory",
+   "desc": "Can be equipped on Silvally to get MONSTER type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "MONSTER",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "AQUATIC_MEMORY": {
+   "name": "Aquatic Memory",
+   "desc": "Can be equipped on Silvally to get AQUATIC type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "AQUATIC",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "DRAGON_MEMORY": {
+   "name": "Dragon Memory",
+   "desc": "Can be equipped on Silvally to get DRAGON type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "DRAGON",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "FLORA_MEMORY": {
+   "name": "Flora Memory",
+   "desc": "Can be equipped on Silvally to get FLORA type.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "FLORA",
+   "categories": [
+    "MemoryDiscs",
+    "RemovableItems",
+    "SpecialItems",
+    "SynergyItems"
+   ]
+  },
+  "MISSION_ORDER_PINK": {
+   "name": "Mission Order - Evolve!",
+   "desc": "Complete this mission to earn 30 GOLD:\n get 4 STAR STAR STAR Pokémon on board",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "MissionOrders",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "MISSION_ORDER_RED": {
+   "name": "Mission Order - Destroy!",
+   "desc": "Complete this mission to earn 30 GOLD:\n inflict 100 damage to other players",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "MissionOrders",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "MISSION_ORDER_BLUE": {
+   "name": "Mission Order - Level up!",
+   "desc": "Complete this mission to earn 30 GOLD:\n reach level 9",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "MissionOrders",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "MISSION_ORDER_GREEN": {
+   "name": "Mission Order - Diversify!",
+   "desc": "Complete this mission to earn 30 GOLD:\n reach 8 different active synergies",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "MissionOrders",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "MISSION_ORDER_GOLD": {
+   "name": "Mission Order - Prosper!",
+   "desc": "Complete this mission to earn 30 GOLD:\n earn 200 GOLD in total during the game",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "MissionOrders",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "LEADERS_CREST": {
+   "name": "Leader's Crest",
+   "desc": "When another player beats you in battle, they get an additional 4 GOLD and take the LEADERS_CREST.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "LAPRAS_PASSPORT": {
+   "name": "Lapras Travel Pass",
+   "desc": "Lapras offers a ride to go to a different region. Use the passport on a Pokémon to influence the destination based on its synergies.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems"
+   ]
+  },
+  "CELL_BATTERY": {
+   "name": "Cell Battery",
+   "desc": "Each cell battery on bench gives 2 SPEED to all your ELECTRIC Pokémon.\nUse it on an ELECTRIC Pokémon to supercharge it for the next fight, granting it 20 SPEED, 30 SHIELD and ELECTRIC_FIELD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "UnholdableItems"
+   ]
+  },
+  "SILK_SCARF": {
+   "name": "Silk Scarf",
+   "desc": "Combine it with other item components to make all kinds of scarves, bands and bows. Those items will be removed if you lower down NORMAL synergy level.",
+   "stats": {
+    "SHIELD": 15
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ItemComponents"
+   ]
+  },
+  "FRIEND_BOW": {
+   "name": "Friend Bow",
+   "desc": "The holder gains the NORMAL type.",
+   "stats": {
+    "SHIELD": 30
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "FOSSIL_STONE"
+   ],
+   "synergy": "NORMAL",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves",
+    "SynergyItems",
+    "SynergyItemsNoSpecial"
+   ]
+  },
+  "BLACK_BELT": {
+   "name": "Black Belt",
+   "desc": "Critical attacks provide 33% of the damage dealt as SHIELD.",
+   "stats": {
+    "SHIELD": 15,
+    "CRIT_CHANCE": 30
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "BLACK_GLASSES"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "MACH_RIBBON": {
+   "name": "Mach Ribbon",
+   "desc": "Every 3 seconds, gain 20 SPEED.",
+   "stats": {
+    "SHIELD": 15,
+    "SPEED": 10
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "MAGNET"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "EXPLOSIVE_BAND": {
+   "name": "Explosive Band",
+   "desc": "The first time user shield is depleted, this item explodes, dealing 50% of all SHIELD gained so far as SPECIAL to ADJACENT enemies.",
+   "stats": {
+    "SHIELD": 50,
+    "ATK": 3
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "CHARCOAL"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "TWIST_BAND": {
+   "name": "Twist Band",
+   "desc": "Stat debuffs inflicted by enemies become buffs instead. Holder stat buffs cannot be stolen.",
+   "stats": {
+    "SPE_DEF": 20,
+    "SHIELD": 50
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "NEVER_MELT_ICE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "BIG_EATER_BELT": {
+   "name": "Big Eater Belt",
+   "desc": "Increase all stat buffs received by 25% (rounded down, not affecting PP). Allows the wearer to eat 2 different dishes per round.",
+   "stats": {
+    "HP": 50,
+    "SHIELD": 15
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "MIRACLE_SEED"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "LUCKY_RIBBON": {
+   "name": "Lucky Ribbon",
+   "desc": "Holder gets 20 LUCK and has [15,LK]% chance to dodge attacks.",
+   "stats": {
+    "SHIELD": 15,
+    "AP": 50,
+    "LUCK": 20
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "TWISTED_SPOON"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "COVER_BAND": {
+   "name": "Cover Band",
+   "desc": "If an ADJACENT ally is about to get KO with some incoming damage, the wearer takes the damage instead.",
+   "stats": {
+    "DEF": 12,
+    "SHIELD": 50
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "HEART_SCALE"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "EFFICIENT_BANDANNA": {
+   "name": "Efficient Bandanna",
+   "desc": "The holder and allies ADJACENT_IN_THE_SAME_ROW have their max PP reduced by 15%.",
+   "stats": {
+    "SHIELD": 15,
+    "PP": 15
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "MYSTIC_WATER"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "NULLIFY_BANDANNA": {
+   "name": "Nullify Bandanna",
+   "desc": "Holder can no longer cast its ability. AP is converted to ATK (5:1), and PP are converted to bonus SPECIAL on next attack.",
+   "stats": {
+    "SHIELD": 30
+   },
+   "recipe": [
+    "SILK_SCARF",
+    "SILK_SCARF"
+   ],
+   "synergy": "",
+   "categories": [
+    "CraftableItems",
+    "RemovableItems",
+    "Scarves"
+   ]
+  },
+  "TATSUGIRI_CURLY": {
+   "name": "Tatsugiri Commander (Curly)",
+   "desc": "Can command a Dondozo.",
+   "stats": {
+    "HP": 50,
+    "ATK": 8
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "AbsorbedItems",
+    "SpecialItems"
+   ]
+  },
+  "TATSUGIRI_DROOPY": {
+   "name": "Tatsugiri Commander (Droopy)",
+   "desc": "Can command a Dondozo.",
+   "stats": {
+    "HP": 50,
+    "DEF": 8
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "AbsorbedItems",
+    "SpecialItems"
+   ]
+  },
+  "TATSUGIRI_STRETCHY": {
+   "name": "Tatsugiri Commander (Stretchy)",
+   "desc": "Can command a Dondozo.",
+   "stats": {
+    "HP": 50,
+    "SPEED": 25
+   },
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "AbsorbedItems",
+    "SpecialItems"
+   ]
+  },
+  "CONFUSE_WAND": {
+   "name": "Confuse Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT and have [5,LK]% chance to cause CONFUSION for 2 seconds and reduce their SPE_DEF by 3.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "PETRIFY_WAND": {
+   "name": "Petrify Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT and have [5,LK]% chance to cause LOCKED for 2 seconds and reduce their DEF by 3.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "SLOW_WAND": {
+   "name": "Slow Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT and have [5,LK]% chance to cause PARALYSIS for 2 seconds and reduce their SPEED by 10.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "SLUMBER_WAND": {
+   "name": "Slumber Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT and have [5,LK]% chance to cause SLEEP for 2 seconds and reduce their ATK by 3.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "BLAST_WAND": {
+   "name": "Blast Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT, or 50% if it's a critical hit.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "HP_SWAP_WAND": {
+   "name": "HP Swap Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT. Wands SPECIAL has [20,LK]% chance to be stolen from the target's max HP and given to the attacker.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "SPIRIT_WAND": {
+   "name": "Spirit Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT  + 5% for each ability casted by the attacker during the fight, and have [20,LK]% chance to give 5 additional PP.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "LONG_WAND": {
+   "name": "Long Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT . Ranged FAIRY allies gain +1 RANGE and have [1,LK]% increased CRIT_CHANCE, multiplied by the distance between attacker and target.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "GUIDING_WAND": {
+   "name": "Guiding Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT . Wands SPECIAL has [50,LK]% chance to be redirected to the lowest HP% enemy at RANGE.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "SURROUND_WAND": {
+   "name": "Surround Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT + 5% per enemy ADJACENT to the attacker. Wands SPECIAL has [10,LK]% chance to be inflicted to all enemies ADJACENT to the attacker in addition to the target.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "POUNCE_WAND": {
+   "name": "Pounce Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT . When being hit at melee range, FAIRY allies have [10,LK]% chance to retaliate for 30% of incoming damage to ADJACENT enemies, guaranteed if it's a critical hit.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "TWO_EDGED_WAND": {
+   "name": "Two-Edged Wand",
+   "desc": "Fairy attacks deal 50% ATK as additional SPECIAL ON_HIT. Wands SPECIAL can also be inflicted as recoil damage to the attacker ([80,LK]% chance to prevent recoil damage).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "WARP_WAND": {
+   "name": "Warp Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT and have [5,LK]% chance to teleport target on a cell far away",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "SWITCHER_WAND": {
+   "name": "Switcher Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT and have [5,LK]% chance to swap target position with farthest enemy",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "WHIRLWIND_WAND": {
+   "name": "Whirlwind Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT and have [5,LK]% chance to throw a whirlwind that makes all the units in its path to fly away.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "TUNNEL_WAND": {
+   "name": "Tunnel Wand",
+   "desc": "Fairy attacks deal 20% ATK as additional SPECIAL ON_HIT. Wands SPECIAL has [5,LK]% chance to pass through the target to hit enemies in a line behind it.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats",
+    "Wands"
+   ]
+  },
+  "AQUA_MONICA": {
+   "name": "Aqua Monica",
+   "desc": "Pokémon in the shop are more likely to have the WATER type (5% bonus chance for each shop slot).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SevenTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "FIERY_DRUM": {
+   "name": "Fiery Drum",
+   "desc": "Pokémon in the shop are more likely to have the FIRE type (5% bonus chance for each shop slot).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SevenTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "GRASS_CORNET": {
+   "name": "Grass Cornet",
+   "desc": "Pokémon in the shop are more likely to have the GRASS type (5% bonus chance for each shop slot).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SevenTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "ICY_FLUTE": {
+   "name": "Icy Flute",
+   "desc": "Pokémon in the shop are more likely to have the ICE type (5% bonus chance for each shop slot).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SevenTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "ROCK_HORN": {
+   "name": "Rock Horn",
+   "desc": "Pokémon in the shop are more likely to have the ROCK type (5% bonus chance for each shop slot).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SevenTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "SKY_MELODICA": {
+   "name": "Sky Melodica",
+   "desc": "Pokémon in the shop are more likely to have the FLYING type (5% bonus chance for each shop slot).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SevenTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "TERRA_CYMBAL": {
+   "name": "Terra Cymbal",
+   "desc": "Pokémon in the shop are more likely to have the GROUND type (5% bonus chance for each shop slot).",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SevenTreasures",
+    "SpecialItems",
+    "TownItems",
+    "UnholdableItems",
+    "UnholdableItemsToSaveForStats"
+   ]
+  },
+  "SOOTHE_BELL": {
+   "name": "Soothe Bell",
+   "desc": "Use it on a Pokémon to refresh your shop with Pokémon sharing a type with this Pokémon",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "ConsumableItems",
+    "SpecialItems",
+    "TownItems"
+   ]
+  },
+  "BALL": {
+   "name": "Ball",
+   "desc": "A ball made of a large hard berry. When casting ability, throws the ball to the furthest FIELD ally to pass them the BALL and 50 SHIELD. If no FIELD ally with a free item slot at sight, throws the ball to the furthest enemy instead, dealing [30,SP]% of user's SPEED as PHYSICAL",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "SpecialItems"
+   ]
+  },
+  "BERRIES_GIFT": {
+   "name": "Berries",
+   "desc": "Gift 7 random Berries to your partner.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "SWEETS_GIFT": {
+   "name": "Sweets",
+   "desc": "Gift 7 random Sweets to your partner.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "DITTO_GIFT": {
+   "name": "Ditto Gift",
+   "desc": "Gift a Ditto to your partner. Your partner needs to have at least one free space on the bench.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "TICKET_BUNDLE": {
+   "name": "Ticket Bundle",
+   "desc": "Gift a bundle containing a Exchange Ticket, a Recycle Ticket and a Bronze Dojo Ticket to your partner.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "HATCH_BUNDLE": {
+   "name": "Hatch Bundle",
+   "desc": "Gift 2 random Hatch Pokémon to your partner. 5% chance to receive a Golden Egg instead.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "REGIONAL_TOUR": {
+   "name": "Regional Tour",
+   "desc": "Gift a Lapras Travel Pass to your partner and 10 free shop rolls.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "BANQUET": {
+   "name": "Banquet",
+   "desc": "Give a random dish to every Pokémon on your partner's board and bench. On top of that get one mushroom of each type and a picnic set. Bon appétit!",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "GEMS_BUNDLE": {
+   "name": "Gems Bundle",
+   "desc": "Gift 3 random synergy gems to your partner.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "POTION": {
+   "name": "Potion",
+   "desc": "A potion that heals 10 player HP of the team",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "FORAGE_BAG": {
+   "name": "Forage Bag",
+   "desc": "Gift 3 random item components",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "COLLECTION_BOX": {
+   "name": "Collection Box",
+   "desc": "Gift 1 SILK_SCARF, 1 random craftable item, 1 random tool, 2 berries and an apple.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "PRETTY_BOX": {
+   "name": "Pretty Box",
+   "desc": "Gift 2 random completed items to your partner.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "DELUXE_BOX": {
+   "name": "Deluxe Box",
+   "desc": "Gift 1 random Shiny Item to your partner.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "TOOLBOX": {
+   "name": "Toolbox",
+   "desc": "Gift 3 random tools to your partner.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "SMALL_EXP_GIFT": {
+   "name": "Small Exp Gift",
+   "desc": "Your partner gains 8 XP. Excess XP at max level is given as GOLD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "LARGE_EXP_GIFT": {
+   "name": "Large Exp Gift",
+   "desc": "Your partner gains 24 XP. Excess XP at max level is given as GOLD.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "STAR_GIFT": {
+   "name": "Star Gift",
+   "desc": "Evolve one random Pokémon from your partner's board. If no Pokémon on the board can evolve, one of them will receive a big stat boost.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "COMMON_GIFT": {
+   "name": "Common Gift",
+   "desc": "Gift a random 3 STAR Common Pokémon to your partner. It will match your partner's highest active synergy.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "UNCOMMON_GIFT": {
+   "name": "Uncommon Gift",
+   "desc": "Gift a random 2 STAR Additional or Regional Uncommon Pokémon to your partner. It will match your partner's highest active synergy.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "RARE_GIFT": {
+   "name": "Rare Gift",
+   "desc": "Gift a random 2 STAR Additional or Regional Rare Pokémon to your partner. It will match your partner's highest active synergy.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "EPIC_GIFT": {
+   "name": "Epic Gift",
+   "desc": "Gift a random 2 STAR Additional or Regional Epic Pokémon to your partner. It will have your partner's highest active synergy.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "ULTRA_GIFT": {
+   "name": "Ultra Gift",
+   "desc": "Gift a random 1 STAR Ultra Pokémon to your partner. It will have one of your partner's 2 highest active synergies.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "UNIQUE_GIFT": {
+   "name": "Unique Gift",
+   "desc": "Gift a random Unique Pokémon to your partner. It will have your partner's highest active synergy.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "LEGENDARY_GIFT": {
+   "name": "Legendary Gift",
+   "desc": "Gift a random Legendary Pokémon to your partner. It will have one of your partner's 2 highest active synergies.",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Gifts",
+    "UnholdableItems"
+   ]
+  },
+  "PURPLE_NECTAR": {
+   "name": "Purple Nectar",
+   "desc": "Can be given to Oricorio to switch to Sensu Style",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Nectars",
+    "SpecialItems"
+   ]
+  },
+  "RED_NECTAR": {
+   "name": "Red Nectar",
+   "desc": "Can be given to Oricorio to switch to Baile Style",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Nectars",
+    "SpecialItems"
+   ]
+  },
+  "PINK_NECTAR": {
+   "name": "Pink Nectar",
+   "desc": "Can be given to Oricorio to switch to Pa'u Style",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Nectars",
+    "SpecialItems"
+   ]
+  },
+  "YELLOW_NECTAR": {
+   "name": "Yellow Nectar",
+   "desc": "Can be given to Oricorio to switch to Pom Pom Style",
+   "stats": {},
+   "recipe": null,
+   "synergy": "",
+   "categories": [
+    "Nectars",
+    "SpecialItems"
+   ]
+  }
+ }
+}

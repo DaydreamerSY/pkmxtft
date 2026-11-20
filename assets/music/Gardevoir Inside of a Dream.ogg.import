@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://4hh1d61xqh"
+path="res://.godot/imported/Gardevoir Inside of a Dream.ogg-60e8db750363bba6d56127703eb78a31.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Gardevoir Inside of a Dream.ogg"
+dest_files=["res://.godot/imported/Gardevoir Inside of a Dream.ogg-60e8db750363bba6d56127703eb78a31.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

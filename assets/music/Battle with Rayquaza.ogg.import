@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3ec3o2ml0elu"
+path="res://.godot/imported/Battle with Rayquaza.ogg-a44c3f2a97b3d07fdc220c82a499d31b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Battle with Rayquaza.ogg"
+dest_files=["res://.godot/imported/Battle with Rayquaza.ogg-a44c3f2a97b3d07fdc220c82a499d31b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

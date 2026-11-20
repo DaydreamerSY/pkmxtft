@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://g4oii5i3xqjb"
+path="res://.godot/imported/Amp Plains.ogg-1503fe69de4a2f1d553f06b8348b6a79.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Amp Plains.ogg"
+dest_files=["res://.godot/imported/Amp Plains.ogg-1503fe69de4a2f1d553f06b8348b6a79.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

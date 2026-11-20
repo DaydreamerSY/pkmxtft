@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://471aq5vqyjl8"
+path="res://.godot/imported/Oh No!.ogg-73c7665f88d61a9dd71b4af05b1e8795.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Oh No!.ogg"
+dest_files=["res://.godot/imported/Oh No!.ogg-73c7665f88d61a9dd71b4af05b1e8795.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

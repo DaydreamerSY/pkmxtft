@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnkl5clbofyg7"
+path="res://.godot/imported/Protected World Peace.ogg-6b8467fb7de62470f5e32eab9ad807f1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Protected World Peace.ogg"
+dest_files=["res://.godot/imported/Protected World Peace.ogg-6b8467fb7de62470f5e32eab9ad807f1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

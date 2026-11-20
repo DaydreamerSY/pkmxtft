@@ -1,0 +1,89 @@
+# HỌ | tag | ghi chú — độ hiếm RARE
+ABRA | magic | Siêu năng lực (Psi): Abra ngủ gần cả ngày, Kadabra bẻ cong thìa, Alakazam có trí nhớ cực lớn.
+ALOLAN_MEOWTH | cat royal | Meowth Alola kiêu hãnh — từng là thú cưng của hoàng tộc Alola; Persian Alola mặt tròn.
+ALOLAN_VULPIX | fox folklore weather? | Vulpix băng của Alola; Ninetales Alola như nữ thần núi tuyết, gọi tuyết rơi.
+BERGMITE | transport? | Tảng băng nhỏ (Ice Chunk) → Avalugg (Iceberg) cõng cả đàn Bergmite trên lưng như tàu sân bay.
+BINACLE | crab | Hà biển hai đầu (Two-Handed) → Barbaracle: bảy con Binacle sống chung một tảng đá.
+BRONZOR | relic object folklore | Gương đồng cổ (Bronze) → Bronzong (Bronze Bell) giống chuông đồng thời cổ, từng được thờ để cầu mưa.
+BULBASAUR | frog? | Hạt giống trên lưng (Seed): con vật giống ếch / khủng long; củ nở thành hoa lớn ở Venusaur.
+BUNEARY | rabbit | Thỏ (Rabbit) → Lopunny tai dài, lông mềm.
+BUNNELBY | rabbit worker miner | Thỏ đào hang (Digging) → Diggersby khoẻ như máy xúc, rất có ích ở công trường.
+BURMY* | disguise | Sâu bọc tổ (Bagworm) khoác áo lá / cát / rác tuỳ nơi ở; cái thành Wormadam, đực thành Mothim.
+CACNEA | desert farm? | Xương rồng (Cactus) → Cacturne (Scarecrow) như bù nhìn đứng yên giữa sa mạc.
+CARVANHA | transport rogue? | Cá piranha (Savage) → Sharpedo (Brutal), "côn đồ của biển"; Poké Ride Sharpedo Jet ở Alola.
+CHEWTLE | turtle | Rùa cá sấu (Snapping) → Drednaw (Bite) cắn gãy cả đá.
+CLAUNCHER | crab gunner | Tôm súng (Water Gun) → Clawitzer (Howitzer) bắn nước từ càng như khẩu pháo.
+CRABRAWLER | crab sport | Cua đấm bốc (Boxing) → Crabominable (Woolly Crab) leo lên núi tuyết.
+CROAGUNK | frog sport | Ếch độc (Toxic Mouth) → Toxicroak đấm móc như võ sĩ.
+CUTIEFLY | food? | Ruồi ong (Bee Fly) → Ribombee vo phấn hoa thành viên bánh.
+DEERLING* | deer festival | Hươu con (Season) đổi màu lông theo bốn mùa → Sawsbuck có gạc theo mùa.
+DEINO | myth? | Rồng con mù (Irate) → Zweilous → Hydreigon ba đầu như rồng Hydra.
+DRIFLOON | object transport | Bóng bay ma (Balloon) → Drifblim (Blimp) như khinh khí cầu, đôi khi chở người và Pokémon bay đi.
+DRILBUR | miner worker | Chuột chũi khoan (Mole) → Excadrill (Subterrene) đào đường hầm, có khi phá hỏng đường hầm tàu điện.
+ELECTRIKE | dog | Chó / sói điện (Lightning) → Manectric (Discharge).
+ELGYEM | space | Người ngoài hành tinh xám (Cerebral) gắn với chuyện UFO rơi → Beheeyem.
+FIDOUGH | dog food | Chó bột bánh (Puppy) → Dachsbun (Dog): chó lạp xưởng thơm mùi bánh mới nướng.
+FINNEON | | Cá cánh bướm (Wing Fish) → Lumineon (Neon) phát sáng.
+FOMANTIS | disguise | Bọ ngựa giả làm hoa (Sickle Grass) → Lurantis (Bloom Sickle).
+GALARIAN_YAMASK | relic | Yamask Galar: hồn đất bám vào phiến đá khắc cổ → Runerigus như bức bích hoạ cổ.
+GALARIAN_ZIGZAGOON | rogue urban artist? | Gấu mèo Galar (Tiny Raccoon) → Linoone → Obstagoon (Blocking) như dân punk rock.
+GALAR_MEOWTH | cat knight? | Meowth Galar lông sắt → Perrserker (Viking), chiến binh Viking.
+GLIMMET | miner treasure | Quặng (Ore) → Glimmora như bông hoa pha lê độc.
+GOLDEEN | royal? | Cá vàng (Goldfish) → Seaking, "vua" của cá vàng.
+GOLETT | relic guardian | Người đất (Automaton) do người cổ đại nặn để bảo vệ / phục vụ → Golurk, như golem.
+HONEDGE | knight object royal | Kiếm ma (Sword) → Doublade → Aegislash (Royal Sword): kiếm và khiên từng theo các vị vua.
+JOLTIK | spider | Nhện điện bé xíu (Attaching) → Galvantula (EleSpider).
+KABUTO | crab? | Sam biển cổ đại (Shellfish) → Kabutops lưỡi hái.
+KRICKETOT | artist? | Dế (Cricket) → Kricketune kéo "vĩ cầm" bằng chân (âm nhạc: hệ Sound).
+LARVITAR | weather | Ấu trùng núi (Rock Skin) → Pupitar → Tyranitar (Armor) gây bão cát.
+LILEEP | | Huệ biển cổ đại (Sea Lily) → Cradily.
+LOTAD | folklore artist | Lá sen (Water Weed) → Lombre → Ludicolo: dựa trên kappa (thuỷ quái Nhật), nghe nhạc là nhảy múa.
+MAGBY | gunner | Lửa con (Live Coal) → Magmar (Spitfire) → Magmortar (Blast) tay như súng phun lửa.
+MAKUHITA | sport | Võ sĩ sumo con (Guts) → Hariyama (Arm Thrust).
+MAREANIE | | Sao biển gai (Brutal Star) → Toxapex.
+MEOWTH | cat treasure rogue | Mèo mê đồng xu (Scratch Cat) → Persian (Classy Cat); Meowth biết nói của Team Rocket.
+MIENFOO | sport | Chồn võ (Martial Arts) → Mienshao, kiểu kung fu Lý Tiểu Long.
+MUNNA | dream folklore | Heo vòi ăn giấc mơ (Dream Eater) → Musharna nhả khói mộng — dựa trên baku.
+NATU | magic? relic? | Chim nhỏ (Tiny Bird) → Xatu (Mystic) đứng nhìn mặt trời cả ngày, thấy được tương lai; giống cột totem.
+NICKIT | fox rogue urban? | Cáo con (Fox) → Thievul: lén trộm thức ăn, trứng của người và Pokémon khác.
+NYMBLE | | Châu chấu (Grasshopper) → Lokix, dáng như hiệp sĩ đeo mặt nạ (Kamen Rider).
+PALDEA_WOOPER | | Wooper Paldea (độc, sống ở đầm lầy) → Clodsire.
+PANCHAM | bear rogue | Gấu trúc con (Playful) → Pangoro (Daunting) như đại ca băng đảng, ngậm lá tre.
+PARAS | medic food? | Bọ mang nấm (Mushroom) → Parasect: nấm trên lưng được dùng làm thuốc, như đông trùng hạ thảo.
+PATRAT | rodent guardian | Sóc canh gác (Scout) → Watchog (Lookout) luôn cảnh giới.
+PAWMI | rodent sport medic? | Chuột điện (Mouse) → Pawmo → Pawmot (Hands-On) đấm điện, có chiêu hồi sinh đồng đội.
+PHANPY | elephant | Voi con (Long Nose) → Donphan (Armor) cuộn tròn lăn như bánh xe.
+PHANTUMP | folklore | Gốc cây có hồn (Stump) → Trevenant (Elder Tree) — như tinh linh cây (kodama).
+POOCHYENA | dog | Linh cẩu / sói con (Bite) → Mightyena săn theo bầy.
+RIOLU | dog sport | Chó rừng con (Emanation) → Lucario (Aura) cảm nhận "aura"; dáng giống thần Anubis.
+ROOKIDEE | raptor transport knight | Chim nhỏ (Tiny Bird) → Corvisquire → Corviknight (Raven): taxi bay của Galar, như hiệp sĩ giáp đen.
+SALANDIT | reptile royal | Thằn lằn độc (Toxic Lizard); Salazzle chỉ có con cái, như nữ hoàng có đàn đực theo hầu.
+SENTRET | guardian | Chồn sóc (Scout) đứng trên đuôi để canh gác → Furret (Long Body).
+SHIELDON | guardian | Khủng long mặt khiên (Shield) → Bastiodon mặt như bức thành.
+SILICOBRA | snake desert | Rắn cát (Sand Snake) → Sandaconda.
+SKWOVET | rodent glutton | Sóc (Cheeky) → Greedent (Greedy) nhồi đầy quả mọng trong má.
+SLUGMA | | Ốc dung nham (Lava) → Magcargo.
+SNOM | | Sâu băng (Worm) → Frosmoth (Frost Moth).
+SPOINK | pig treasure | Lợn lò xo (Bounce) đội viên ngọc trai trên đầu → Grumpig (Manipulate).
+STARYU | space treasure | Sao biển (Star Shape) → Starmie (Mysterious): lõi đỏ như ngọc quý, nhiều chuyện kể nó đến từ vũ trụ.
+SUNKERN | farm food? | Hạt hướng dương (Seed) → Sunflora (Sun).
+SURSKIT | | Gọng vó trượt nước (Pond Skater) → Masquerain (Eyeball).
+SWIRLIX | food | Kẹo bông (Cotton Candy) → Slurpuff (Meringue) mũi thính, giúp thợ làm bánh.
+TADBULB | frog | Nòng nọc điện (EleTadpole) → Bellibolt (EleFrog).
+TAILLOW | raptor? | Chim én (Tiny Swallow) → Swellow.
+TOGEPI | family? | Quả trứng (Spike Ball) → Togetic (Happiness) → Togekiss (Jubilee) mang may mắn, hoà bình.
+TORCHIC | fowl sport | Gà con (Chick) → Combusken (Young Fowl) → Blaziken (Blaze) đá võ — như gà chọi.
+TOTODILE | reptile | Cá sấu con (Big Jaw) → Croconaw → Feraligatr.
+TOXEL | artist | Ấu trùng (Baby) → Toxtricity (Punk): rocker punk, ngực như cây đàn guitar.
+TRAPINCH | desert | Kiến sư tử (Ant Pit) → Vibrava → Flygon, "linh hồn sa mạc".
+TURTWIG | turtle myth? | Rùa cây (Tiny Leaf) → Grotle → Torterra (Continent) mang cả khu rừng trên lưng, như rùa đội thế giới.
+TYRUNT | royal | Khủng long bạo chúa con (Royal Heir) → Tyrantrum (Despot).
+VANILLITE | food object | Kem (Fresh Snow) → Vanillish → Vanilluxe hai đầu kem ốc quế.
+VULLABY | raptor | Kền kền con đội vỏ xương (Diapered) → Mandibuzz (Bone Vulture).
+VULPIX | fox folklore | Cáo lửa (Fox) → Ninetales chín đuôi sống ngàn năm (kitsune).
+WHISMUR | | Loa phóng thanh (Whisper) → Loudred → Exploud (âm thanh: hệ Sound).
+WOOPER | | Kỳ nhông axolotl (Water Fish) → Quagsire.
+WYNAUT | | Wobbuffet con (Bright) → Wobbuffet (Patient) chỉ phản đòn.
+YAMASK | desert relic | Hồn ma cầm mặt nạ (Spirit) → Cofagrigus (Coffin) như quan tài vàng Ai Cập.
+YANMA | | Chuồn chuồn (Clear Wing) → Yanmega (Ogre Darner).
+ZIGZAGOON | treasure? | Gấu mèo (Tiny Raccoon) chạy zíc zắc, hay nhặt đồ → Linoone (Rushing).

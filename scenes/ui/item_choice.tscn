@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/item_choice.gd" id="2_item_choice"]
+
+[node name="ItemChoice" type="PanelContainer"]
+visible = false
+custom_minimum_size = Vector2(400, 0)
+mouse_filter = 0
+theme_type_variation = &"ChoicePanel"
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_item_choice")
+
+[node name="V" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="V"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 22
+text = "Choose an item"
+horizontal_alignment = 1
+
+[node name="Row" type="HBoxContainer" parent="V"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Skip" type="Button" parent="V"]
+layout_mode = 2
+unique_name_in_owner = true
+visible = false
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Skip"

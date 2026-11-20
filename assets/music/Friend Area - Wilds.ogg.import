@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d2ynjyamjo60d"
+path="res://.godot/imported/Friend Area - Wilds.ogg-103efbf6b342cb032067b81c738fa66b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Friend Area - Wilds.ogg"
+dest_files=["res://.godot/imported/Friend Area - Wilds.ogg-103efbf6b342cb032067b81c738fa66b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

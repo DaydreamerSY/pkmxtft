@@ -1,0 +1,7363 @@
+{
+ "shopSize": 6,
+ "maxLevel": 9,
+ "rarityCost": {
+  "SPECIAL": 0,
+  "COMMON": 1,
+  "UNCOMMON": 2,
+  "RARE": 3,
+  "EPIC": 4,
+  "ULTRA": 5,
+  "HATCH": 9,
+  "UNIQUE": 10,
+  "LEGENDARY": 20
+ },
+ "rarityProbabilityPerLevel": {
+  "1": [
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "2": [
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "3": [
+   0.7,
+   0.3,
+   0,
+   0,
+   0
+  ],
+  "4": [
+   0.5,
+   0.4,
+   0.1,
+   0,
+   0
+  ],
+  "5": [
+   0.36,
+   0.42,
+   0.2,
+   0.02,
+   0
+  ],
+  "6": [
+   0.25,
+   0.4,
+   0.3,
+   0.05,
+   0
+  ],
+  "7": [
+   0.15,
+   0.35,
+   0.35,
+   0.15,
+   0
+  ],
+  "8": [
+   0.11,
+   0.27,
+   0.35,
+   0.22,
+   0.05
+  ],
+  "9": [
+   0.05,
+   0.2,
+   0.35,
+   0.3,
+   0.1
+  ],
+  "10": [
+   0,
+   0.05,
+   0.3,
+   0.4,
+   0.25
+  ]
+ },
+ "poolSize": {
+  "COMMON": [
+   1,
+   18,
+   27
+  ],
+  "UNCOMMON": [
+   1,
+   13,
+   22
+  ],
+  "RARE": [
+   1,
+   9,
+   18
+  ],
+  "EPIC": [
+   1,
+   7,
+   14
+  ],
+  "ULTRA": [
+   1,
+   5,
+   10
+  ],
+  "UNIQUE": [
+   1,
+   1,
+   1
+  ],
+  "LEGENDARY": [
+   1,
+   1,
+   1
+  ],
+  "SPECIAL": [
+   0,
+   0,
+   0
+  ],
+  "HATCH": [
+   0,
+   0,
+   0
+  ]
+ },
+ "expTable": {
+  "1": 0,
+  "2": 2,
+  "3": 6,
+  "4": 10,
+  "5": 22,
+  "6": 34,
+  "7": 52,
+  "8": 72,
+  "9": 72,
+  "10": 255
+ },
+ "synergyThresholds": {
+  "NORMAL": [
+   3,
+   5,
+   7,
+   9
+  ],
+  "GRASS": [
+   3,
+   5,
+   7,
+   9
+  ],
+  "FIRE": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "WATER": [
+   3,
+   6,
+   9
+  ],
+  "ELECTRIC": [
+   3,
+   5,
+   7
+  ],
+  "FIGHTING": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "PSYCHIC": [
+   3,
+   5,
+   7
+  ],
+  "DARK": [
+   3,
+   5,
+   7
+  ],
+  "STEEL": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "GROUND": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "POISON": [
+   3,
+   5,
+   7
+  ],
+  "DRAGON": [
+   3,
+   5,
+   7
+  ],
+  "FIELD": [
+   3,
+   6,
+   9
+  ],
+  "MONSTER": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "HUMAN": [
+   2,
+   4,
+   6
+  ],
+  "AQUATIC": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "BUG": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "FLYING": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "FLORA": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "ROCK": [
+   2,
+   4,
+   6
+  ],
+  "GHOST": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "FAIRY": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "ICE": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "FOSSIL": [
+   2,
+   4,
+   6
+  ],
+  "SOUND": [
+   2,
+   4,
+   6
+  ],
+  "ARTIFICIAL": [
+   2,
+   4,
+   6
+  ],
+  "BABY": [
+   3,
+   5,
+   7
+  ],
+  "LIGHT": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "WILD": [
+   2,
+   4,
+   6,
+   9
+  ],
+  "AMORPHOUS": [
+   3,
+   5,
+   7
+  ],
+  "GOURMET": [
+   3,
+   4,
+   5
+  ]
+ },
+ "synergyTiers": {
+  "NORMAL": [
+   "STAMINA",
+   "STRENGTH",
+   "ENDURE",
+   "PURE_POWER"
+  ],
+  "GRASS": [
+   "INGRAIN",
+   "GROWTH",
+   "SPORE",
+   "OVERGROW"
+  ],
+  "FIRE": [
+   "FLAME_BODY",
+   "WILDFIRE",
+   "BLAZE",
+   "DESOLATE_LAND"
+  ],
+  "WATER": [
+   "RAIN_DANCE",
+   "DRIZZLE",
+   "PRIMORDIAL_SEA"
+  ],
+  "ELECTRIC": [
+   "RISING_VOLTAGE",
+   "POWER_SURGE",
+   "SUPERCHARGED"
+  ],
+  "FIGHTING": [
+   "GUTS",
+   "STURDY",
+   "DEFIANT",
+   "COACHING"
+  ],
+  "PSYCHIC": [
+   "PRECOGNITION",
+   "AURA",
+   "TRANSCENDENCE"
+  ],
+  "DARK": [
+   "HONE_CLAWS",
+   "ASSURANCE",
+   "BEAT_UP"
+  ],
+  "STEEL": [
+   "STEEL_SURGE",
+   "STEEL_SPIKE",
+   "CORKSCREW_CRASH",
+   "MAX_MELTDOWN"
+  ],
+  "GROUND": [
+   "TILLER",
+   "DIGGER",
+   "DRILLER",
+   "DEEP_MINER"
+  ],
+  "POISON": [
+   "POISONOUS",
+   "VENOMOUS",
+   "TOXIC"
+  ],
+  "DRAGON": [
+   "DRAGON_ENERGY",
+   "DRAGON_SCALES",
+   "DRAGON_DANCE"
+  ],
+  "FIELD": [
+   "BULK_UP",
+   "RAGE",
+   "ANGER_POINT"
+  ],
+  "MONSTER": [
+   "PURSUIT",
+   "BRUTAL_SWING",
+   "POWER_TRIP",
+   "MERCILESS"
+  ],
+  "HUMAN": [
+   "MEDITATE",
+   "FOCUS_ENERGY",
+   "CALM_MIND"
+  ],
+  "AQUATIC": [
+   "SWIFT_SWIM",
+   "HYDRATION",
+   "WATER_VEIL",
+   "SURGE_SURFER"
+  ],
+  "BUG": [
+   "COCOON",
+   "INFESTATION",
+   "HORDE",
+   "HEART_OF_THE_SWARM"
+  ],
+  "FLYING": [
+   "TAILWIND",
+   "FEATHER_DANCE",
+   "MAX_AIRSTREAM",
+   "SKYDIVE"
+  ],
+  "FLORA": [
+   "COTTONWEED",
+   "FLYCATCHER",
+   "FRAGRANT",
+   "FLOWER_POWER"
+  ],
+  "ROCK": [
+   "BATTLE_ARMOR",
+   "MOUTAIN_RESISTANCE",
+   "DIAMOND_STORM"
+  ],
+  "GHOST": [
+   "CURSE_OF_VULNERABILITY",
+   "CURSE_OF_WEAKNESS",
+   "CURSE_OF_TORMENT",
+   "CURSE_OF_FATE"
+  ],
+  "FAIRY": [
+   "AROMATIC_MIST",
+   "FAIRY_AURA",
+   "PIXILATE",
+   "MOON_FORCE"
+  ],
+  "ICE": [
+   "CHILLY",
+   "FROSTY",
+   "FREEZING",
+   "SHEER_COLD"
+  ],
+  "FOSSIL": [
+   "ANCIENT_POWER",
+   "ELDER_POWER",
+   "FORGOTTEN_POWER"
+  ],
+  "SOUND": [
+   "LARGO",
+   "ALLEGRO",
+   "PRESTO"
+  ],
+  "ARTIFICIAL": [
+   "DUBIOUS_DISC",
+   "LINK_CABLE",
+   "GOOGLE_SPECS"
+  ],
+  "BABY": [
+   "HATCHER",
+   "BREEDER",
+   "GOLDEN_EGGS"
+  ],
+  "LIGHT": [
+   "SHINING_RAY",
+   "LIGHT_PULSE",
+   "ETERNAL_LIGHT",
+   "MAX_ILLUMINATION"
+  ],
+  "WILD": [
+   "QUICK_FEET",
+   "RUN_AWAY",
+   "HUSTLE",
+   "BERSERK"
+  ],
+  "AMORPHOUS": [
+   "FLUID",
+   "SHAPELESS",
+   "ETHEREAL"
+  ],
+  "GOURMET": [
+   "APPETIZER",
+   "LUNCH_BREAK",
+   "BANQUET"
+  ]
+ },
+ "synergyValues": {
+  "monsterAtk": [
+   0,
+   3,
+   6,
+   10,
+   10
+  ],
+  "monsterAp": [
+   0,
+   10,
+   20,
+   30,
+   30
+  ],
+  "monsterHpFactor": [
+   0,
+   0.2,
+   0.4,
+   0.6,
+   0.6
+  ],
+  "fieldHeal": [
+   0,
+   30,
+   40,
+   50
+  ],
+  "fieldSpeed": [
+   0,
+   15,
+   20,
+   25
+  ],
+  "amorphousSpeed": [
+   0,
+   1,
+   3,
+   5
+  ],
+  "amorphousHp": [
+   0,
+   3,
+   6,
+   10
+  ],
+  "groundDef": [
+   0,
+   1,
+   2,
+   3,
+   3
+  ],
+  "groundAtk": [
+   0,
+   3,
+   5,
+   8,
+   8
+  ],
+  "fireAtk": [
+   0,
+   0,
+   1,
+   2,
+   3
+  ],
+  "soundAtk": [
+   0,
+   2,
+   1,
+   1
+  ],
+  "soundSpeed": [
+   0,
+   0,
+   5,
+   5
+  ],
+  "soundPp": [
+   0,
+   0,
+   0,
+   3
+  ]
+ },
+ "fairyWands": [
+  [
+   "LONG_WAND",
+   "SPIRIT_WAND",
+   "HP_SWAP_WAND",
+   "BLAST_WAND"
+  ],
+  [
+   "SLUMBER_WAND",
+   "SLOW_WAND",
+   "PETRIFY_WAND",
+   "CONFUSE_WAND"
+  ],
+  [
+   "TWO_EDGED_WAND",
+   "POUNCE_WAND",
+   "SURROUND_WAND",
+   "GUIDING_WAND"
+  ],
+  [
+   "TUNNEL_WAND",
+   "WHIRLWIND_WAND",
+   "SWITCHER_WAND",
+   "WARP_WAND"
+  ]
+ ],
+ "weatherThreshold": {
+  "MISTY": 8,
+  "NEUTRAL": 8,
+  "NIGHT": 8,
+  "BLOODMOON": 8,
+  "RAIN": 8,
+  "SANDSTORM": 8,
+  "SNOW": 8,
+  "STORM": 8,
+  "ZENITH": 8,
+  "DROUGHT": 8,
+  "WINDY": 8,
+  "SMOG": 8,
+  "MURKY": 8
+ },
+ "additionalPickStages": [
+  5,
+  8,
+  11
+ ],
+ "itemCarouselStages": [
+  4,
+  12,
+  17,
+  22,
+  27,
+  34
+ ],
+ "portalCarouselStages": [
+  0,
+  10,
+  20
+ ],
+ "nbStarters": 3,
+ "nbUniquePropositions": 6,
+ "arceusRate": 0.0025,
+ "townEncounters": {
+  "4": {
+   "WIGGLYTUFF": 0.05,
+   "CHANSEY": 0.05,
+   "MEOWTH": 0.05,
+   "DUSKULL": 0.05,
+   "CINCCINO": 0.05,
+   "MAROWAK": 0.05,
+   "MAKUHITA": 0.05,
+   "MAGNEZONE": 0.025,
+   "LAPRAS": 0.05,
+   "LUDICOLO": 0.05
+  },
+  "12": {
+   "KANGASKHAN": 0.05,
+   "WOBBUFFET": 0.05,
+   "KECLEON": 0.05,
+   "ELECTIVIRE": 0.05,
+   "XATU": 0.05,
+   "CINCCINO": 0.05,
+   "MAROWAK": 0.05,
+   "SABLEYE": 0.05,
+   "MAKUHITA": 0.05,
+   "CELEBI": 0.025
+  },
+  "17": {
+   "WOBBUFFET": 0.05,
+   "CROAGUNK": 0.05,
+   "ELECTIVIRE": 0.05,
+   "XATU": 0.05,
+   "MAROWAK": 0.05,
+   "SABLEYE": 0.05,
+   "MAKUHITA": 0.05,
+   "LAPRAS": 0.05,
+   "CHIMECHO": 0.05
+  },
+  "22": {
+   "KECLEON": 0.05,
+   "ELECTIVIRE": 0.05,
+   "MAROWAK": 0.05,
+   "SPINDA": 0.05,
+   "REGIROCK": 0.05,
+   "MUNCHLAX": 0.05,
+   "WOBBUFFET": 0.05,
+   "KINGAMBIT": 0.05,
+   "CHIMECHO": 0.05
+  },
+  "27": {
+   "ELECTIVIRE": 0.05,
+   "MAROWAK": 0.05,
+   "SPINDA": 0.05,
+   "REGIROCK": 0.05,
+   "MUNCHLAX": 0.05,
+   "WOBBUFFET": 0.05
+  },
+  "34": {
+   "ELECTIVIRE": 0.05,
+   "MAROWAK": 0.05,
+   "SPINDA": 0.05,
+   "REGIROCK": 0.05,
+   "MUNCHLAX": 0.05
+  }
+ },
+ "treasureBoxLifeThreshold": 40,
+ "dishByPkm": {
+  "LICKITUNG": "RAGE_CANDY_BAR",
+  "LICKILICKY": "RAGE_CANDY_BAR",
+  "SINISTEA": "TEA",
+  "POLTEAGEIST": "TEA",
+  "CAPSAKID": "CURRY",
+  "SCOVILLAIN": "CURRY",
+  "VANILLITE": "CASTELIACONE",
+  "VANILLISH": "CASTELIACONE",
+  "VANILLUXE": "CASTELIACONE",
+  "SWIRLIX": "WHIPPED_DREAM",
+  "SLURPUFF": "WHIPPED_DREAM",
+  "DELIBIRD": "LUCKY_EGG",
+  "APPLIN": "TART_APPLE",
+  "FLAPPLE": "TART_APPLE",
+  "APPLETUN": "SWEET_APPLE",
+  "DIPPLIN": "SIRUPY_APPLE",
+  "HYDRAPPLE": "SIRUPY_APPLE",
+  "CHERUBI": "HERBA_MYSTICA",
+  "CHERRIM": "HERBA_MYSTICA",
+  "CHERRIM_SUNLIGHT": "HERBA_MYSTICA",
+  "TROPIUS": "NANAB_BERRY",
+  "SHUCKLE": "BERRY_JUICE",
+  "COMBEE": "HONEY",
+  "VESPIQUEN": "HONEY",
+  "CHANSEY": "NUTRITIOUS_EGG",
+  "BLISSEY": "NUTRITIOUS_EGG",
+  "NACLI": "ROCK_SALT",
+  "NACLSTACK": "ROCK_SALT",
+  "GARGANACL": "ROCK_SALT",
+  "FIDOUGH": "POFFIN",
+  "DACHSBUN": "POFFIN",
+  "MUNCHLAX": "LEFTOVERS",
+  "SNORLAX": "LEFTOVERS",
+  "MILTANK": "MOOMOO_MILK",
+  "GULPIN": "BLACK_SLUDGE",
+  "SWALOT": "BLACK_SLUDGE",
+  "BOUNSWEET": "FRUIT_JUICE",
+  "STEENEE": "FRUIT_JUICE",
+  "TSAREENA": "FRUIT_JUICE",
+  "FARFETCH_D": "LEEK",
+  "GALARIAN_FARFETCH_D": "LARGE_LEEK",
+  "SPINDA": "SPINDA_COCKTAIL",
+  "MILCERY": "SWEETS",
+  "ALCREMIE_VANILLA": "SWEETS",
+  "ALCREMIE_RUBY": "SWEETS",
+  "ALCREMIE_MATCHA": "SWEETS",
+  "ALCREMIE_MINT": "SWEETS",
+  "ALCREMIE_LEMON": "SWEETS",
+  "ALCREMIE_SALTED": "SWEETS",
+  "ALCREMIE_RUBY_SWIRL": "SWEETS",
+  "ALCREMIE_CARAMEL_SWIRL": "SWEETS",
+  "ALCREMIE_RAINBOW_SWIRL": "SWEETS",
+  "PECHARUNT": "BINDING_MOCHI",
+  "VELUZA": "SMOKED_FILET",
+  "SMOLIV": "OLIVE_OIL",
+  "DOLLIV": "OLIVE_OIL",
+  "ARBOLIVA": "OLIVE_OIL",
+  "DEERLING_SUMMER": "TEA",
+  "SAWSBUCK_SUMMER": "TEA",
+  "LECHONK": "MUSHROOMS",
+  "OINKOLOGNE_MALE": "MUSHROOMS",
+  "DONDOZO": "RICE",
+  "TATSUGIRI_CURLY": null,
+  "TATSUGIRI_DROOPY": null,
+  "TATSUGIRI_STRETCHY": null,
+  "GUZZLORD": null,
+  "SKWOVET": "BERRIES",
+  "GREEDENT": "BERRIES"
+ },
+ "fishRarity": {
+  "OLD_ROD": {
+   "SPECIAL": 0.55,
+   "COMMON": 0.35,
+   "UNCOMMON": 0.1,
+   "RARE": 0,
+   "EPIC": 0
+  },
+  "GOOD_ROD": {
+   "SPECIAL": 0.35,
+   "COMMON": 0.25,
+   "UNCOMMON": 0.3,
+   "RARE": 0.1,
+   "EPIC": 0
+  },
+  "SUPER_ROD": {
+   "SPECIAL": 0.35,
+   "COMMON": 0.05,
+   "UNCOMMON": 0.25,
+   "RARE": 0.25,
+   "EPIC": 0.1
+  }
+ },
+ "remoraidRate": 0.3333333333333333,
+ "eggHatch": 5,
+ "evolveHatch": 5,
+ "goldenEggItems": [
+  "DYNAMAX_BAND",
+  "SHINY_STONE",
+  "RARE_CANDY",
+  "EVIOLITE",
+  "GOLD_MASK",
+  "GOLD_BOTTLE_CAP",
+  "ABSORB_BULB",
+  "SACRED_ASH",
+  "STAR_PIECE",
+  "REPEAT_BALL",
+  "GOLD_BOW"
+ ],
+ "unownStages": [
+  [
+   "UNOWN_A",
+   "UNOWN_C",
+   "UNOWN_E",
+   "UNOWN_F",
+   "UNOWN_G",
+   "UNOWN_I",
+   "UNOWN_O",
+   "UNOWN_R",
+   "UNOWN_T",
+   "UNOWN_V",
+   "UNOWN_W"
+  ],
+  [
+   "UNOWN_A",
+   "UNOWN_B",
+   "UNOWN_C",
+   "UNOWN_D",
+   "UNOWN_G",
+   "UNOWN_H",
+   "UNOWN_I",
+   "UNOWN_J",
+   "UNOWN_K",
+   "UNOWN_L",
+   "UNOWN_M",
+   "UNOWN_N",
+   "UNOWN_O",
+   "UNOWN_P",
+   "UNOWN_Q",
+   "UNOWN_R",
+   "UNOWN_S",
+   "UNOWN_T",
+   "UNOWN_U",
+   "UNOWN_V",
+   "UNOWN_W",
+   "UNOWN_X",
+   "UNOWN_Y",
+   "UNOWN_Z",
+   "UNOWN_QUESTION"
+  ],
+  [
+   "UNOWN_B",
+   "UNOWN_D",
+   "UNOWN_H",
+   "UNOWN_J",
+   "UNOWN_K",
+   "UNOWN_L",
+   "UNOWN_M",
+   "UNOWN_N",
+   "UNOWN_O",
+   "UNOWN_P",
+   "UNOWN_R",
+   "UNOWN_S",
+   "UNOWN_U",
+   "UNOWN_V",
+   "UNOWN_W",
+   "UNOWN_X",
+   "UNOWN_Y",
+   "UNOWN_Z",
+   "UNOWN_QUESTION",
+   "UNOWN_EXCLAMATION"
+  ]
+ ],
+ "unownIntervals": [
+  5,
+  3,
+  10
+ ],
+ "maps": {
+  "AmpPlains": {
+   "synergies": [
+    "ELECTRIC",
+    "FIELD",
+    "SOUND"
+   ],
+   "music": "Amp Plains"
+  },
+  "AppleWoods": {
+   "synergies": [
+    "BUG",
+    "GOURMET",
+    "BABY"
+   ],
+   "music": "Apple Woods"
+  },
+  "BarrenValley": {
+   "synergies": [
+    "ROCK",
+    "FIGHTING",
+    "GHOST"
+   ],
+   "music": "Barren Valley"
+  },
+  "BeachCave": {
+   "synergies": [
+    "AQUATIC",
+    "GROUND",
+    "FOSSIL"
+   ],
+   "music": "Beach Cave"
+  },
+  "BrineCave": {
+   "synergies": [
+    "POISON",
+    "FOSSIL",
+    "DARK"
+   ],
+   "music": "Brine Cave"
+  },
+  "BuriedRelic1": {
+   "synergies": [
+    "LIGHT",
+    "ARTIFICIAL",
+    "HUMAN"
+   ],
+   "music": "Buried Relic"
+  },
+  "BuriedRelic2": {
+   "synergies": [
+    "GROUND",
+    "ARTIFICIAL",
+    "LIGHT"
+   ],
+   "music": "Time Gear Remix"
+  },
+  "BuriedRelic3": {
+   "synergies": [
+    "GROUND",
+    "ARTIFICIAL",
+    "HUMAN"
+   ],
+   "music": "Time Gear"
+  },
+  "ConcealedRuins": {
+   "synergies": [
+    "POISON",
+    "WILD",
+    "GHOST"
+   ],
+   "music": "Concealed Ruins"
+  },
+  "CraggyCoast": {
+   "synergies": [
+    "WATER",
+    "FIGHTING",
+    "MONSTER"
+   ],
+   "music": "Craggy Coast"
+  },
+  "CrystalCave1": {
+   "synergies": [
+    "PSYCHIC",
+    "SOUND",
+    "FAIRY"
+   ],
+   "music": "Crystal Cave"
+  },
+  "CrystalCave2": {
+   "synergies": [
+    "PSYCHIC",
+    "SOUND",
+    "LIGHT"
+   ],
+   "music": "Staff Roll"
+  },
+  "CrystalCrossing": {
+   "synergies": [
+    "PSYCHIC",
+    "AQUATIC",
+    "POISON"
+   ],
+   "music": "Crystal Crossing"
+  },
+  "DarkCrater": {
+   "synergies": [
+    "DARK",
+    "FIRE",
+    "GROUND"
+   ],
+   "music": "Dark Crater"
+  },
+  "DarkHill1": {
+   "synergies": [
+    "GHOST",
+    "DARK",
+    "FLYING"
+   ],
+   "music": "Dark Hill"
+  },
+  "DarkHill2": {
+   "synergies": [
+    "GHOST",
+    "DARK",
+    "AMORPHOUS"
+   ],
+   "music": "I Saw Something Again"
+  },
+  "DarkIceMountain": {
+   "synergies": [
+    "DARK",
+    "ICE",
+    "NORMAL"
+   ],
+   "music": "Dark Ice Mountain"
+  },
+  "DarkIceMountainPeak": {
+   "synergies": [
+    "DARK",
+    "ICE",
+    "FLYING"
+   ],
+   "music": "At the Snowy Mountain"
+  },
+  "DarknightRelic": {
+   "synergies": [
+    "FOSSIL",
+    "AQUATIC",
+    "HUMAN"
+   ],
+   "music": "Dark Wasteland"
+  },
+  "DarkWasteland": {
+   "synergies": [
+    "DARK",
+    "POISON",
+    "MONSTER"
+   ],
+   "music": "Chasm Cave"
+  },
+  "DeepBoulderQuarry": {
+   "synergies": [
+    "ROCK",
+    "STEEL",
+    "FOSSIL"
+   ],
+   "music": "Boulder Quarry"
+  },
+  "DeepDarkCrater": {
+   "synergies": [
+    "DARK",
+    "FIRE",
+    "MONSTER"
+   ],
+   "music": "Deep Dark Crater"
+  },
+  "DeepDuskForest1": {
+   "synergies": [
+    "DARK",
+    "GRASS",
+    "GOURMET"
+   ],
+   "music": "Deep Dusk Forest"
+  },
+  "DeepDuskForest2": {
+   "synergies": [
+    "GHOST",
+    "GRASS",
+    "LIGHT"
+   ],
+   "music": "Growing Anxiety"
+  },
+  "DeepLimestoneCavern": {
+   "synergies": [
+    "WATER",
+    "BUG",
+    "ROCK"
+   ],
+   "music": "Protected World Peace"
+  },
+  "DeepSealedRuin": {
+   "synergies": [
+    "AMORPHOUS",
+    "GHOST",
+    "FOSSIL"
+   ],
+   "music": "Sealed Ruin Pit"
+  },
+  "DesertRegion": {
+   "synergies": [
+    "FIRE",
+    "FIELD",
+    "LIGHT"
+   ],
+   "music": "Mt. Blaze Peak"
+  },
+  "DrenchedBluff": {
+   "synergies": [
+    "AQUATIC",
+    "FOSSIL",
+    "MONSTER"
+   ],
+   "music": "Drenched Bluff"
+  },
+  "DuskForest1": {
+   "synergies": [
+    "MONSTER",
+    "GRASS",
+    "DARK"
+   ],
+   "music": "Dusk Forest"
+  },
+  "DuskForest2": {
+   "synergies": [
+    "GHOST",
+    "GRASS",
+    "FLORA"
+   ],
+   "music": "Sinister Woods"
+  },
+  "ElectricMaze": {
+   "synergies": [
+    "ELECTRIC",
+    "LIGHT",
+    "GOURMET"
+   ],
+   "music": "Stop! Thief!"
+  },
+  "FarAmpPlains": {
+   "synergies": [
+    "ELECTRIC",
+    "FIELD",
+    "FOSSIL"
+   ],
+   "music": "Far Amp Plains"
+  },
+  "FinalMaze2": {
+   "synergies": [
+    "NORMAL",
+    "FLORA",
+    "BUG"
+   ],
+   "music": "Friend Area - Caves"
+  },
+  "FoggyForest": {
+   "synergies": [
+    "FAIRY",
+    "WILD",
+    "FLORA"
+   ],
+   "music": "Foggy Forest"
+  },
+  "ForestPath": {
+   "synergies": [
+    "GRASS",
+    "BUG",
+    "BABY"
+   ],
+   "music": "Sky Peak Forest"
+  },
+  "FrostyForest": {
+   "synergies": [
+    "LIGHT",
+    "ICE",
+    "FIGHTING"
+   ],
+   "music": "Frosty Forest"
+  },
+  "FutureTemporalSpire": {
+   "synergies": [
+    "HUMAN",
+    "ARTIFICIAL",
+    "PSYCHIC"
+   ],
+   "music": "Battle with Rayquaza"
+  },
+  "FutureTemporalTower": {
+   "synergies": [
+    "MONSTER",
+    "ARTIFICIAL",
+    "PSYCHIC"
+   ],
+   "music": "Temporal Tower"
+  },
+  "GoldenChamber": {
+   "synergies": [
+    "DRAGON",
+    "STEEL",
+    "AMORPHOUS"
+   ],
+   "music": "Outlaw!"
+  },
+  "GrassMaze": {
+   "synergies": [
+    "GRASS",
+    "FIELD",
+    "NORMAL"
+   ],
+   "music": "Makuhita Dojo"
+  },
+  "GreatCanyon": {
+   "synergies": [
+    "NORMAL",
+    "WILD",
+    "FIRE"
+   ],
+   "music": "Great Canyon"
+  },
+  "HiddenHighland": {
+   "synergies": [
+    "FLORA",
+    "GRASS",
+    "DRAGON"
+   ],
+   "music": "Hidden Highland"
+  },
+  "HiddenLand": {
+   "synergies": [
+    "FLORA",
+    "BUG",
+    "WATER"
+   ],
+   "music": "Hidden Land"
+  },
+  "HowlingForest1": {
+   "synergies": [
+    "SOUND",
+    "FIELD",
+    "BUG"
+   ],
+   "music": "Random Dungeon 2"
+  },
+  "HowlingForest2": {
+   "synergies": [
+    "SOUND",
+    "POISON",
+    "GOURMET"
+   ],
+   "music": "Friend Area - Forest"
+  },
+  "IceAegisCave": {
+   "synergies": [
+    "ICE",
+    "FIGHTING",
+    "GROUND"
+   ],
+   "music": "Illusion Stone Chamber"
+  },
+  "IceMaze": {
+   "synergies": [
+    "ICE",
+    "STEEL",
+    "FIGHTING"
+   ],
+   "music": "Top Menu Theme"
+  },
+  "IcicleForest": {
+   "synergies": [
+    "ICE",
+    "FIELD",
+    "FIGHTING"
+   ],
+   "music": "Icicle Forest"
+  },
+  "JoyousTower": {
+   "synergies": [
+    "LIGHT",
+    "FAIRY",
+    "BABY"
+   ],
+   "music": "A New World"
+  },
+  "LapisCave": {
+   "synergies": [
+    "WATER",
+    "AQUATIC",
+    "FOSSIL"
+   ],
+   "music": "Lapis Cave"
+  },
+  "LightningField": {
+   "synergies": [
+    "ELECTRIC",
+    "FIELD",
+    "LIGHT"
+   ],
+   "music": "Oh No!"
+  },
+  "LimestoneCavern": {
+   "synergies": [
+    "ROCK",
+    "BUG",
+    "AQUATIC"
+   ],
+   "music": "Limestone Cavern"
+  },
+  "LowerBrineCave": {
+   "synergies": [
+    "AQUATIC",
+    "FOSSIL",
+    "DRAGON"
+   ],
+   "music": "Lower Brine Cave"
+  },
+  "LushPrairie": {
+   "synergies": [
+    "GOURMET",
+    "LIGHT",
+    "FLORA"
+   ],
+   "music": "Welcome To the World of Pokemon!"
+  },
+  "MagmaCavern2": {
+   "synergies": [
+    "FIRE",
+    "GROUND",
+    "FIGHTING"
+   ],
+   "music": "Magma Cavern"
+  },
+  "MagmaCavern3": {
+   "synergies": [
+    "FIRE",
+    "DRAGON",
+    "MONSTER"
+   ],
+   "music": "Magma Cavern Pit"
+  },
+  "MeteorCave": {
+   "synergies": [
+    "PSYCHIC",
+    "FAIRY",
+    "HUMAN"
+   ],
+   "music": "Random Dungeon 1"
+  },
+  "MiracleSea": {
+   "synergies": [
+    "WATER",
+    "AQUATIC",
+    "FAIRY"
+   ],
+   "music": "Miracle Sea"
+  },
+  "MoonlitCourtyard": {
+   "synergies": [
+    "FAIRY",
+    "FLORA",
+    "DARK"
+   ],
+   "music": "Goodnight"
+  },
+  "MtBlaze": {
+   "synergies": [
+    "FIRE",
+    "FLYING",
+    "WILD"
+   ],
+   "music": "Mt. Blaze"
+  },
+  "MtBristle": {
+   "synergies": [
+    "ELECTRIC",
+    "FLYING",
+    "MONSTER"
+   ],
+   "music": "Mt. Bristle"
+  },
+  "MtFaraway2": {
+   "synergies": [
+    "ICE",
+    "AMORPHOUS",
+    "DRAGON"
+   ],
+   "music": "Frosty Grotto"
+  },
+  "MtFaraway4": {
+   "synergies": [
+    "ICE",
+    "FLYING",
+    "SOUND"
+   ],
+   "music": "Escape Through the Snow"
+  },
+  "MtFreeze": {
+   "synergies": [
+    "ICE",
+    "FLYING",
+    "NORMAL"
+   ],
+   "music": "Mt. Freeze"
+  },
+  "MtHorn": {
+   "synergies": [
+    "ROCK",
+    "FLYING",
+    "SOUND"
+   ],
+   "music": "Mt. Horn"
+  },
+  "MtSteel1": {
+   "synergies": [
+    "STEEL",
+    "FLYING",
+    "FOSSIL"
+   ],
+   "music": "Mt. Steel"
+  },
+  "MtSteel2": {
+   "synergies": [
+    "STEEL",
+    "FLYING",
+    "AMORPHOUS"
+   ],
+   "music": "Boss Battle!"
+  },
+  "MtThunder": {
+   "synergies": [
+    "ELECTRIC",
+    "ROCK",
+    "STEEL"
+   ],
+   "music": "Mt. Thunder"
+  },
+  "MtThunderPeak": {
+   "synergies": [
+    "ELECTRIC",
+    "FLYING",
+    "WILD"
+   ],
+   "music": "Mt. Thunder Peak"
+  },
+  "MtTravail": {
+   "synergies": [
+    "FIGHTING",
+    "HUMAN",
+    "FOSSIL"
+   ],
+   "music": "Mt. Travail"
+  },
+  "MurkyCave": {
+   "synergies": [
+    "GHOST",
+    "GROUND",
+    "HUMAN"
+   ],
+   "music": "Monster House!"
+  },
+  "MurkyForest": {
+   "synergies": [
+    "GHOST",
+    "GRASS",
+    "DARK"
+   ],
+   "music": "Murky Forest"
+  },
+  "MysteryJungle1": {
+   "synergies": [
+    "WILD",
+    "FLORA",
+    "POISON"
+   ],
+   "music": "Friend Area - Steppe"
+  },
+  "MysteryJungle2": {
+   "synergies": [
+    "WILD",
+    "FAIRY",
+    "POISON"
+   ],
+   "music": "Blizzard Island Rescue Team Medley"
+  },
+  "MystifyingForest": {
+   "synergies": [
+    "DRAGON",
+    "FAIRY",
+    "FLORA"
+   ],
+   "music": "Mystifying Forest"
+  },
+  "NorthernDesert1": {
+   "synergies": [
+    "DRAGON",
+    "FIRE",
+    "LIGHT"
+   ],
+   "music": "Northern Desert"
+  },
+  "NorthernDesert2": {
+   "synergies": [
+    "DRAGON",
+    "FIRE",
+    "WILD"
+   ],
+   "music": "Northern Desert"
+  },
+  "NorthernRange1": {
+   "synergies": [
+    "POISON",
+    "WILD",
+    "STEEL"
+   ],
+   "music": "Fortune Ravine"
+  },
+  "NorthernRange2": {
+   "synergies": [
+    "MONSTER",
+    "FIGHTING",
+    "STEEL"
+   ],
+   "music": "Team Skull"
+  },
+  "NorthwindField": {
+   "synergies": [
+    "WATER",
+    "FIELD",
+    "SOUND"
+   ],
+   "music": "Through the Sea of Time"
+  },
+  "PitfallValley1": {
+   "synergies": [
+    "FIELD",
+    "HUMAN",
+    "BABY"
+   ],
+   "music": "Personality Test"
+  },
+  "PoisonMaze": {
+   "synergies": [
+    "POISON",
+    "PSYCHIC",
+    "BUG"
+   ],
+   "music": "Random Dungeon 3"
+  },
+  "PurityForest2": {
+   "synergies": [
+    "BABY",
+    "GOURMET",
+    "AMORPHOUS"
+   ],
+   "music": "Run Away"
+  },
+  "PurityForest4": {
+   "synergies": [
+    "NORMAL",
+    "BABY",
+    "FAIRY"
+   ],
+   "music": "Pokemon Square"
+  },
+  "PurityForest6": {
+   "synergies": [
+    "NORMAL",
+    "GRASS",
+    "BABY"
+   ],
+   "music": "Shaymin Village"
+  },
+  "PurityForest7": {
+   "synergies": [
+    "GRASS",
+    "BABY",
+    "SOUND"
+   ],
+   "music": "On the Beach at Dusk"
+  },
+  "QuicksandCave": {
+   "synergies": [
+    "GROUND",
+    "FOSSIL",
+    "NORMAL"
+   ],
+   "music": "Quicksand Cave"
+  },
+  "QuicksandPit": {
+   "synergies": [
+    "GROUND",
+    "FOSSIL",
+    "MONSTER"
+   ],
+   "music": "Quicksand Pit"
+  },
+  "QuicksandUnused": {
+   "synergies": [
+    "GROUND",
+    "NORMAL",
+    "POISON"
+   ],
+   "music": "There's Trouble!"
+  },
+  "RescueTeamMaze": {
+   "synergies": [
+    "FIGHTING",
+    "HUMAN",
+    "ARTIFICIAL"
+   ],
+   "music": "Rescue Team Base"
+  },
+  "RockAegisCave": {
+   "synergies": [
+    "ROCK",
+    "GHOST",
+    "AMORPHOUS"
+   ],
+   "music": "Friend Area - Swamp"
+  },
+  "RockMaze": {
+   "synergies": [
+    "ROCK",
+    "STEEL",
+    "FIGHTING"
+   ],
+   "music": "Defy the Legends"
+  },
+  "RockPathRB": {
+   "synergies": [
+    "ROCK",
+    "FIELD",
+    "FIRE"
+   ],
+   "music": "Rising Fear"
+  },
+  "RockPathTDS": {
+   "synergies": [
+    "ROCK",
+    "FIELD",
+    "MONSTER"
+   ],
+   "music": "Friend Area - Pond"
+  },
+  "SealedRuin": {
+   "synergies": [
+    "HUMAN",
+    "DRAGON",
+    "GHOST"
+   ],
+   "music": "The Legend of Ninetales"
+  },
+  "SidePath": {
+   "synergies": [
+    "NORMAL",
+    "FIELD",
+    "STEEL"
+   ],
+   "music": "Cave and Side Path"
+  },
+  "SilentChasm": {
+   "synergies": [
+    "FIRE",
+    "LIGHT",
+    "WILD"
+   ],
+   "music": "Silent Chasm"
+  },
+  "SkyPeak4thPass": {
+   "synergies": [
+    "GRASS",
+    "FLORA",
+    "WATER"
+   ],
+   "music": "Sky Peak Coast"
+  },
+  "SkyPeak7thPass": {
+   "synergies": [
+    "ICE",
+    "DRAGON",
+    "FAIRY"
+   ],
+   "music": "Dialga's Fight to the Finish!"
+  },
+  "SkyPeakSummitPass": {
+   "synergies": [
+    "FLYING",
+    "ROCK",
+    "FIGHTING"
+   ],
+   "music": "Sky Tower Summit"
+  },
+  "SkyTower": {
+   "synergies": [
+    "FLYING",
+    "LIGHT",
+    "FAIRY"
+   ],
+   "music": "Sky Tower"
+  },
+  "SnowPath": {
+   "synergies": [
+    "ICE",
+    "FIELD",
+    "NORMAL"
+   ],
+   "music": "Sky Peak Snowfield"
+  },
+  "SolarCave1": {
+   "synergies": [
+    "PSYCHIC",
+    "FIRE",
+    "SOUND"
+   ],
+   "music": "Sky Peak Prairie"
+  },
+  "SouthernCavern1": {
+   "synergies": [
+    "STEEL",
+    "POISON",
+    "ARTIFICIAL"
+   ],
+   "music": "Spring Cave"
+  },
+  "SouthernCavern2": {
+   "synergies": [
+    "FAIRY",
+    "AQUATIC",
+    "POISON"
+   ],
+   "music": "Spring Cave Depths"
+  },
+  "SouthernJungle": {
+   "synergies": [
+    "WILD",
+    "FLORA",
+    "GRASS"
+   ],
+   "music": "Southern Jungle"
+  },
+  "SpacialCliffs": {
+   "synergies": [
+    "GHOST",
+    "AMORPHOUS",
+    "ELECTRIC"
+   ],
+   "music": "Spacial Cliffs"
+  },
+  "SpacialRift1": {
+   "synergies": [
+    "AMORPHOUS",
+    "ARTIFICIAL",
+    "MONSTER"
+   ],
+   "music": "In the Future"
+  },
+  "SpacialRift2": {
+   "synergies": [
+    "AMORPHOUS",
+    "ARTIFICIAL",
+    "PSYCHIC"
+   ],
+   "music": "Planet's Paralysis"
+  },
+  "SteamCave": {
+   "synergies": [
+    "FIRE",
+    "GOURMET",
+    "ELECTRIC"
+   ],
+   "music": "Steam Cave"
+  },
+  "SteelAegisCave": {
+   "synergies": [
+    "STEEL",
+    "NORMAL",
+    "FIGHTING"
+   ],
+   "music": "Aegis Cave"
+  },
+  "StormySea1": {
+   "synergies": [
+    "WATER",
+    "AQUATIC",
+    "ELECTRIC"
+   ],
+   "music": "Stormy Sea"
+  },
+  "StormySea2": {
+   "synergies": [
+    "WATER",
+    "AQUATIC",
+    "SOUND"
+   ],
+   "music": "Friend Area - Oceanic"
+  },
+  "SurroundedSea": {
+   "synergies": [
+    "WATER",
+    "ICE",
+    "WILD"
+   ],
+   "music": "Surrounded Sea"
+  },
+  "TemporalSpire": {
+   "synergies": [
+    "HUMAN",
+    "PSYCHIC",
+    "AMORPHOUS"
+   ],
+   "music": "Temporal Spire"
+  },
+  "TemporalTower": {
+   "synergies": [
+    "HUMAN",
+    "STEEL",
+    "ARTIFICIAL"
+   ],
+   "music": "Gardevoir Inside of a Dream"
+  },
+  "TemporalUnused": {
+   "synergies": [
+    "NORMAL",
+    "FOSSIL",
+    "ARTIFICIAL"
+   ],
+   "music": "Temporal Pinnacle"
+  },
+  "TestDungeon": {
+   "synergies": [
+    "ARTIFICIAL",
+    "ELECTRIC",
+    "PSYCHIC"
+   ],
+   "music": "Friend Area - Lab"
+  },
+  "TheNightmare": {
+   "synergies": [
+    "GHOST",
+    "DARK",
+    "PSYCHIC"
+   ],
+   "music": "The Power of Darkness"
+  },
+  "ThunderwaveCave": {
+   "synergies": [
+    "ELECTRIC",
+    "GROUND",
+    "LIGHT"
+   ],
+   "music": "Thunderwave Cave"
+  },
+  "TinyMeadow": {
+   "synergies": [
+    "BUG",
+    "BABY",
+    "AMORPHOUS"
+   ],
+   "music": "Friend Area - Grasslands"
+  },
+  "TinyWoods": {
+   "synergies": [
+    "BUG",
+    "BABY",
+    "NORMAL"
+   ],
+   "music": "Tiny Woods"
+  },
+  "TreeshroudForest1": {
+   "synergies": [
+    "GOURMET",
+    "FLORA",
+    "BUG"
+   ],
+   "music": "Treeshroud Forest"
+  },
+  "TreeshroudForest2": {
+   "synergies": [
+    "GRASS",
+    "POISON",
+    "BABY"
+   ],
+   "music": "Friend Area - Wilds"
+  },
+  "UnusedBrineCave": {
+   "synergies": [
+    "GOURMET",
+    "GROUND",
+    "DRAGON"
+   ],
+   "music": "In the Nightmare"
+  },
+  "UnusedSteamCave": {
+   "synergies": [
+    "FIRE",
+    "WATER",
+    "ELECTRIC"
+   ],
+   "music": "Upper Steam Cave"
+  },
+  "UnusedWaterfallPond": {
+   "synergies": [
+    "AQUATIC",
+    "BUG",
+    "BABY"
+   ],
+   "music": "Deep Star Cave"
+  },
+  "UproarForest": {
+   "synergies": [
+    "WILD",
+    "FIELD",
+    "SOUND"
+   ],
+   "music": "Treasure Town"
+  },
+  "VastIceMountain": {
+   "synergies": [
+    "WILD",
+    "ICE",
+    "ROCK"
+   ],
+   "music": "Vast Ice Mountain"
+  },
+  "VastIceMountainPeak": {
+   "synergies": [
+    "DRAGON",
+    "ICE",
+    "FLYING"
+   ],
+   "music": "Vast Ice Mountain Peak"
+  },
+  "WaterfallCave": {
+   "synergies": [
+    "WATER",
+    "GROUND",
+    "SOUND"
+   ],
+   "music": "Marowak Dojo"
+  },
+  "WaterfallPond": {
+   "synergies": [
+    "WATER",
+    "AMORPHOUS",
+    "SOUND"
+   ],
+   "music": "Waterfall Cave"
+  },
+  "WaterMaze": {
+   "synergies": [
+    "WATER",
+    "AQUATIC",
+    "GRASS"
+   ],
+   "music": "Star Cave"
+  },
+  "WesternCave1": {
+   "synergies": [
+    "HUMAN",
+    "FLORA",
+    "ARTIFICIAL"
+   ],
+   "music": "Sky Peak Final Pass"
+  },
+  "WesternCave2": {
+   "synergies": [
+    "HUMAN",
+    "FLORA",
+    "ROCK"
+   ],
+   "music": "Job Clear!"
+  },
+  "WishCave1": {
+   "synergies": [
+    "FAIRY",
+    "AQUATIC",
+    "BABY"
+   ],
+   "music": "Living Spirit"
+  },
+  "WishCave2": {
+   "synergies": [
+    "FAIRY",
+    "DRAGON",
+    "BUG"
+   ],
+   "music": "Team Charm's Theme"
+  },
+  "WorldAbyss2": {
+   "synergies": [
+    "DARK",
+    "GHOST",
+    "ELECTRIC"
+   ],
+   "music": "World Calamity"
+  },
+  "WyvernHill": {
+   "synergies": [
+    "DRAGON",
+    "FLYING",
+    "GOURMET"
+   ],
+   "music": "Kecleon's Shop"
+  },
+  "ZeroIsleEast3": {
+   "synergies": [
+    "AMORPHOUS",
+    "PSYCHIC",
+    "STEEL"
+   ],
+   "music": "Versus Boss"
+  },
+  "ZeroIsleEast4": {
+   "synergies": [
+    "POISON",
+    "MONSTER",
+    "PSYCHIC"
+   ],
+   "music": "Versus Legendary"
+  },
+  "ZeroIsleSouth1": {
+   "synergies": [
+    "MONSTER",
+    "BUG",
+    "GOURMET"
+   ],
+   "music": "Wigglytuff's Guild Remix"
+  },
+  "ZeroIsleSouth2": {
+   "synergies": [
+    "ROCK",
+    "GROUND",
+    "FIGHTING"
+   ],
+   "music": "Wigglytuff's Guild"
+  },
+  "town": {
+   "synergies": [],
+   "music": "Treasure Town Stage 0 alt"
+  }
+ },
+ "regional": {
+  "ALOLAN_DIGLETT": {
+   "maps": [
+    "DeepBoulderQuarry",
+    "GoldenChamber",
+    "IceMaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "TemporalTower",
+    "ZeroIsleEast3"
+   ],
+   "requires": "DIGLETT"
+  },
+  "ALOLAN_GEODUDE": {
+   "maps": [
+    "AmpPlains",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "LightningField",
+    "MtBristle",
+    "MtThunder",
+    "MtThunderPeak",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea1",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "UnusedSteamCave",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "ALOLAN_GRIMER": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": "GRIMER"
+  },
+  "ALOLAN_MEOWTH": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": "MEOWTH"
+  },
+  "ALOLAN_RATTATA": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "ALOLAN_SANDSHREW": {
+   "maps": [
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "FrostyForest",
+    "GoldenChamber",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalTower",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "ZeroIsleEast3"
+   ],
+   "requires": "SANDSHREW"
+  },
+  "ALOLAN_VULPIX": {
+   "maps": [
+    "CrystalCave1",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "FoggyForest",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "JoyousTower",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "PurityForest4",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SnowPath",
+    "SouthernCavern2",
+    "SurroundedSea",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WishCave1",
+    "WishCave2"
+   ],
+   "requires": "VULPIX"
+  },
+  "BAGON": {
+   "maps": [
+    "CraggyCoast",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FutureTemporalTower",
+    "GoldenChamber",
+    "HiddenHighland",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MtBristle",
+    "MtFaraway2",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "SpacialRift1",
+    "UnusedBrineCave",
+    "VastIceMountainPeak",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "BLIPBUG": {
+   "maps": [
+    "AppleWoods",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DeepLimestoneCavern",
+    "FinalMaze2",
+    "ForestPath",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "HiddenLand",
+    "HowlingForest1",
+    "LimestoneCavern",
+    "MeteorCave",
+    "PoisonMaze",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedWaterfallPond",
+    "WishCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "BUNEARY": {
+   "maps": [
+    "BarrenValley",
+    "CraggyCoast",
+    "DarkIceMountain",
+    "FinalMaze2",
+    "FrostyForest",
+    "GrassMaze",
+    "GreatCanyon",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MtFreeze",
+    "MtTravail",
+    "NorthernRange2",
+    "PurityForest4",
+    "PurityForest6",
+    "QuicksandCave",
+    "QuicksandUnused",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SidePath",
+    "SkyPeakSummitPass",
+    "SnowPath",
+    "SteelAegisCave",
+    "TemporalUnused",
+    "TinyWoods",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "BURMY_PLANT": {
+   "maps": [
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "MurkyForest",
+    "PurityForest6",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SouthernJungle",
+    "TreeshroudForest2",
+    "WaterMaze"
+   ],
+   "requires": ""
+  },
+  "BURMY_SANDY": {
+   "maps": [
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "DarkCrater",
+    "IceAegisCave",
+    "MagmaCavern2",
+    "MurkyCave",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "WaterfallCave",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "BURMY_TRASH": {
+   "maps": [
+    "BuriedRelic1",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "RescueTeamMaze",
+    "SouthernCavern1",
+    "SpacialRift1",
+    "SpacialRift2",
+    "TemporalTower",
+    "TemporalUnused",
+    "TestDungeon",
+    "WesternCave1"
+   ],
+   "requires": ""
+  },
+  "CETODDLE": {
+   "maps": [
+    "AmpPlains",
+    "CrystalCave1",
+    "CrystalCave2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FrostyForest",
+    "GrassMaze",
+    "HowlingForest1",
+    "HowlingForest2",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "LightningField",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "NorthwindField",
+    "PitfallValley1",
+    "PurityForest7",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SolarCave1",
+    "StormySea2",
+    "SurroundedSea",
+    "UproarForest",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WaterfallCave",
+    "WaterfallPond"
+   ],
+   "requires": ""
+  },
+  "CHERUBI": {
+   "maps": [
+    "AppleWoods",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave2",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "DuskForest2",
+    "ElectricMaze",
+    "FinalMaze2",
+    "FoggyForest",
+    "FrostyForest",
+    "HiddenHighland",
+    "HiddenLand",
+    "HowlingForest2",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "MoonlitCourtyard",
+    "MysteryJungle1",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "PurityForest2",
+    "SilentChasm",
+    "SkyPeak4thPass",
+    "SkyTower",
+    "SouthernJungle",
+    "SteamCave",
+    "ThunderwaveCave",
+    "TreeshroudForest1",
+    "UnusedBrineCave",
+    "WesternCave1",
+    "WesternCave2",
+    "WyvernHill",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "CHIMCHAR": {
+   "maps": [
+    "BarrenValley",
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DarknightRelic",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "FrostyForest",
+    "FutureTemporalSpire",
+    "GreatCanyon",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MeteorCave",
+    "MtBlaze",
+    "MtTravail",
+    "MurkyCave",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "PitfallValley1",
+    "RescueTeamMaze",
+    "RockMaze",
+    "RockPathRB",
+    "SealedRuin",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SteamCave",
+    "SteelAegisCave",
+    "TemporalSpire",
+    "TemporalTower",
+    "UnusedSteamCave",
+    "WesternCave1",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "CLEFFA": {
+   "maps": [
+    "AppleWoods",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave2",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "ElectricMaze",
+    "ForestPath",
+    "FrostyForest",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "NorthernDesert1",
+    "PitfallValley1",
+    "PurityForest2",
+    "PurityForest4",
+    "PurityForest6",
+    "PurityForest7",
+    "SilentChasm",
+    "SkyTower",
+    "ThunderwaveCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "CORSOLA": {
+   "maps": [
+    "BarrenValley",
+    "BeachCave",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DeepBoulderQuarry",
+    "DeepLimestoneCavern",
+    "DrenchedBluff",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "SouthernCavern2",
+    "StormySea1",
+    "StormySea2",
+    "UnusedWaterfallPond",
+    "VastIceMountain",
+    "WaterMaze",
+    "WesternCave2",
+    "WishCave1",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "CUTIEFLY": {
+   "maps": [
+    "AppleWoods",
+    "CrystalCave1",
+    "DeepLimestoneCavern",
+    "DuskForest2",
+    "FinalMaze2",
+    "FoggyForest",
+    "ForestPath",
+    "HiddenHighland",
+    "HiddenLand",
+    "HowlingForest1",
+    "JoyousTower",
+    "LimestoneCavern",
+    "LushPrairie",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "PoisonMaze",
+    "PurityForest4",
+    "SkyPeak4thPass",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SouthernCavern2",
+    "SouthernJungle",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedWaterfallPond",
+    "WesternCave1",
+    "WesternCave2",
+    "WishCave1",
+    "WishCave2",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "DODUO": {
+   "maps": [
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "FinalMaze2",
+    "FoggyForest",
+    "GrassMaze",
+    "GreatCanyon",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthernRange1",
+    "PurityForest4",
+    "PurityForest6",
+    "QuicksandCave",
+    "QuicksandUnused",
+    "SidePath",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SnowPath",
+    "SouthernJungle",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalUnused",
+    "TinyWoods",
+    "UproarForest",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WyvernHill"
+   ],
+   "requires": ""
+  },
+  "DROWZEE": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "MagmaCavern3",
+    "MeteorCave",
+    "MtBristle",
+    "MtTravail",
+    "MurkyCave",
+    "NorthernRange2",
+    "PitfallValley1",
+    "PoisonMaze",
+    "QuicksandPit",
+    "RescueTeamMaze",
+    "RockPathTDS",
+    "SealedRuin",
+    "SolarCave1",
+    "SpacialRift1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TemporalTower",
+    "TestDungeon",
+    "TheNightmare",
+    "WesternCave1",
+    "WesternCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "GALAR_CORSOLA": {
+   "maps": [],
+   "requires": ""
+  },
+  "GALARIAN_DARUMAKA": {
+   "maps": [
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SurroundedSea",
+    "VastIceMountain",
+    "VastIceMountainPeak"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_PONYTA": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "ElectricMaze",
+    "FoggyForest",
+    "FrostyForest",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "PoisonMaze",
+    "PurityForest4",
+    "SilentChasm",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SolarCave1",
+    "SouthernCavern2",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "ThunderwaveCave",
+    "WishCave1",
+    "WishCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": "PONYTA"
+  },
+  "GALARIAN_SLOWPOKE": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": "SLOWPOKE"
+  },
+  "GALARIAN_YAMASK": {
+   "maps": [
+    "CraggyCoast",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FutureTemporalTower",
+    "MagmaCavern3",
+    "MtBristle",
+    "NorthernRange2",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SpacialRift1",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": "YAMASK"
+  },
+  "GALARIAN_ZIGZAGOON": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "GALAR_MEOWTH": {
+   "maps": [
+    "ConcealedRuins",
+    "DeepBoulderQuarry",
+    "FoggyForest",
+    "GoldenChamber",
+    "GreatCanyon",
+    "IceMaze",
+    "MtBlaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SilentChasm",
+    "SouthernCavern1",
+    "SouthernJungle",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalTower",
+    "UproarForest",
+    "VastIceMountain",
+    "ZeroIsleEast3"
+   ],
+   "requires": "MEOWTH"
+  },
+  "GOSSIFLEUR": {
+   "maps": [
+    "AmpPlains",
+    "CrystalCave1",
+    "CrystalCave2",
+    "DuskForest2",
+    "FinalMaze2",
+    "FoggyForest",
+    "HiddenHighland",
+    "HiddenLand",
+    "HowlingForest1",
+    "HowlingForest2",
+    "LushPrairie",
+    "MoonlitCourtyard",
+    "MtFaraway4",
+    "MtHorn",
+    "MysteryJungle1",
+    "MystifyingForest",
+    "NorthwindField",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SolarCave1",
+    "SouthernJungle",
+    "StormySea2",
+    "TreeshroudForest1",
+    "UproarForest",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WesternCave1",
+    "WesternCave2"
+   ],
+   "requires": ""
+  },
+  "HISUI_GROWLITHE": {
+   "maps": [
+    "BarrenValley",
+    "DeepBoulderQuarry",
+    "DeepLimestoneCavern",
+    "LimestoneCavern",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "VastIceMountain",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": "GROWLITHE"
+  },
+  "HISUI_SNEASEL": {
+   "maps": [
+    "BarrenValley",
+    "BrineCave",
+    "ConcealedRuins",
+    "CraggyCoast",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "FrostyForest",
+    "HowlingForest2",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MtTravail",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "NorthernRange2",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SkyPeakSummitPass",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "SteelAegisCave",
+    "TreeshroudForest2",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth2"
+   ],
+   "requires": "SNEASEL"
+  },
+  "HISUI_VOLTORB": {
+   "maps": [
+    "BeachCave",
+    "BrineCave",
+    "DarknightRelic",
+    "DeepBoulderQuarry",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DeepSealedRuin",
+    "DrenchedBluff",
+    "DuskForest1",
+    "DuskForest2",
+    "FarAmpPlains",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "LapisCave",
+    "LowerBrineCave",
+    "MtSteel1",
+    "MtTravail",
+    "MurkyForest",
+    "PurityForest6",
+    "PurityForest7",
+    "QuicksandCave",
+    "QuicksandPit",
+    "SkyPeak4thPass",
+    "SouthernJungle",
+    "TemporalUnused",
+    "TreeshroudForest2",
+    "WaterMaze"
+   ],
+   "requires": "VOLTORB"
+  },
+  "HISUI_ZORUA": {
+   "maps": [
+    "BarrenValley",
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkHill2",
+    "DeepDuskForest2",
+    "DeepSealedRuin",
+    "DuskForest2",
+    "MurkyCave",
+    "MurkyForest",
+    "RockAegisCave",
+    "SealedRuin",
+    "SpacialCliffs",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": "ZORUA"
+  },
+  "IMPIDIMP": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "DarknightRelic",
+    "FutureTemporalSpire",
+    "MeteorCave",
+    "MtTravail",
+    "MurkyCave",
+    "PitfallValley1",
+    "RescueTeamMaze",
+    "SealedRuin",
+    "TemporalSpire",
+    "TemporalTower",
+    "WesternCave1",
+    "WesternCave2"
+   ],
+   "requires": ""
+  },
+  "JANGMO_O": {
+   "maps": [
+    "AmpPlains",
+    "BarrenValley",
+    "CraggyCoast",
+    "CrystalCave1",
+    "CrystalCave2",
+    "FrostyForest",
+    "GoldenChamber",
+    "HiddenHighland",
+    "HowlingForest1",
+    "HowlingForest2",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "LowerBrineCave",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtHorn",
+    "MtTravail",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "NorthwindField",
+    "PurityForest7",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SteelAegisCave",
+    "StormySea2",
+    "UnusedBrineCave",
+    "UproarForest",
+    "VastIceMountainPeak",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "LARVESTA": {
+   "maps": [
+    "AppleWoods",
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DeepLimestoneCavern",
+    "DesertRegion",
+    "FinalMaze2",
+    "ForestPath",
+    "GreatCanyon",
+    "HiddenLand",
+    "HowlingForest1",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "PoisonMaze",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WishCave2",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "LOTAD": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DrenchedBluff",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "HowlingForest1",
+    "HowlingForest2",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "MtFaraway4",
+    "MtHorn",
+    "MurkyForest",
+    "NorthwindField",
+    "PurityForest6",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SolarCave1",
+    "SouthernCavern2",
+    "SouthernJungle",
+    "StormySea1",
+    "StormySea2",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "UproarForest",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "MUDKIP": {
+   "maps": [
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DeepLimestoneCavern",
+    "HiddenLand",
+    "IceAegisCave",
+    "LapisCave",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MurkyCave",
+    "NorthwindField",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "SkyPeak4thPass",
+    "StormySea1",
+    "StormySea2",
+    "SurroundedSea",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "UnusedSteamCave",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "NIDORANF": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "NUMEL": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "FarAmpPlains",
+    "GrassMaze",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IceAegisCave",
+    "IcicleForest",
+    "LightningField",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "MurkyCave",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthwindField",
+    "PitfallValley1",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SilentChasm",
+    "SnowPath",
+    "SolarCave1",
+    "SteamCave",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "UnusedSteamCave",
+    "UproarForest",
+    "WaterfallCave",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "PALDEA_WOOPER": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "PIDGEY": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "BuriedRelic2",
+    "CraggyCoast",
+    "CrystalCrossing",
+    "DarkHill2",
+    "DarknightRelic",
+    "DeepDarkCrater",
+    "DeepLimestoneCavern",
+    "DrenchedBluff",
+    "ElectricMaze",
+    "FoggyForest",
+    "FutureTemporalSpire",
+    "GrassMaze",
+    "HiddenLand",
+    "IceAegisCave",
+    "JoyousTower",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MtBristle",
+    "MtFreeze",
+    "MtSteel2",
+    "MtTravail",
+    "MysteryJungle1",
+    "NorthernDesert1",
+    "NorthernRange2",
+    "PoisonMaze",
+    "PurityForest6",
+    "QuicksandPit",
+    "RockAegisCave",
+    "RockPathTDS",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SouthernJungle",
+    "SpacialRift2",
+    "StormySea1",
+    "TemporalSpire",
+    "TestDungeon",
+    "TinyMeadow",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "VastIceMountainPeak",
+    "WaterMaze",
+    "WishCave1",
+    "WyvernHill",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "PIDOVE": {
+   "maps": [
+    "BarrenValley",
+    "BuriedRelic1",
+    "ConcealedRuins",
+    "CrystalCave2",
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "DuskForest2",
+    "FinalMaze2",
+    "FrostyForest",
+    "GoldenChamber",
+    "HiddenHighland",
+    "HowlingForest2",
+    "IcicleForest",
+    "LightningField",
+    "LushPrairie",
+    "MeteorCave",
+    "MtBlaze",
+    "MtFaraway4",
+    "MtSteel1",
+    "MtThunderPeak",
+    "MurkyForest",
+    "MystifyingForest",
+    "NorthernRange1",
+    "PitfallValley1",
+    "PurityForest4",
+    "QuicksandCave",
+    "RescueTeamMaze",
+    "RockPathRB",
+    "SidePath",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SouthernCavern2",
+    "SpacialRift1",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalUnused",
+    "ThunderwaveCave",
+    "TreeshroudForest1",
+    "UnusedSteamCave",
+    "VastIceMountain",
+    "WaterfallPond",
+    "WesternCave2",
+    "WorldAbyss2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "ROOKIDEE": {
+   "maps": [
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "GoldenChamber",
+    "IceMaze",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "TemporalTower",
+    "VastIceMountainPeak",
+    "WyvernHill",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "RUFFLET": {
+   "maps": [
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "FoggyForest",
+    "GreatCanyon",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthernRange1",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SouthernJungle",
+    "SurroundedSea",
+    "UproarForest",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WyvernHill"
+   ],
+   "requires": ""
+  },
+  "SEEDOT": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "SHELLOS_EAST_SEA": {
+   "maps": [
+    "BarrenValley",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DeepBoulderQuarry",
+    "DrenchedBluff",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "SouthernCavern2",
+    "UnusedWaterfallPond",
+    "VastIceMountain",
+    "WesternCave2",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "SHELLOS_WEST_SEA": {
+   "maps": [
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DeepLimestoneCavern",
+    "HiddenLand",
+    "IceAegisCave",
+    "LapisCave",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MurkyCave",
+    "NorthwindField",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "SkyPeak4thPass",
+    "StormySea1",
+    "StormySea2",
+    "SurroundedSea",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "UnusedSteamCave",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "SIZZLIPEDE": {
+   "maps": [
+    "AppleWoods",
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DeepLimestoneCavern",
+    "DesertRegion",
+    "FinalMaze2",
+    "ForestPath",
+    "GreatCanyon",
+    "HiddenLand",
+    "HowlingForest1",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "PoisonMaze",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WishCave2",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "SLAKOTH": {
+   "maps": [
+    "AmpPlains",
+    "DarkIceMountain",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FinalMaze2",
+    "GrassMaze",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IcicleForest",
+    "LightningField",
+    "MtFreeze",
+    "NorthwindField",
+    "PitfallValley1",
+    "PurityForest4",
+    "PurityForest6",
+    "QuicksandCave",
+    "QuicksandUnused",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SnowPath",
+    "SteelAegisCave",
+    "TemporalUnused",
+    "TinyWoods",
+    "UproarForest"
+   ],
+   "requires": ""
+  },
+  "SNOVER": {
+   "maps": [
+    "CraggyCoast",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DrenchedBluff",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "FrostyForest",
+    "FutureTemporalTower",
+    "GrassMaze",
+    "HiddenHighland",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern3",
+    "MtBristle",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MurkyForest",
+    "NorthernRange2",
+    "PurityForest6",
+    "PurityForest7",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SkyPeak4thPass",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SouthernJungle",
+    "SpacialRift1",
+    "SurroundedSea",
+    "TreeshroudForest2",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WaterMaze",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "SPOINK": {
+   "maps": [
+    "AmpPlains",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "GrassMaze",
+    "HowlingForest1",
+    "IcicleForest",
+    "LightningField",
+    "MeteorCave",
+    "NorthwindField",
+    "PitfallValley1",
+    "PoisonMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SnowPath",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "UproarForest",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "STARLY": {
+   "maps": [
+    "AppleWoods",
+    "BrineCave",
+    "BuriedRelic3",
+    "CrystalCave1",
+    "DarkCrater",
+    "DarkIceMountain",
+    "DarkWasteland",
+    "DeepDuskForest1",
+    "DeepSealedRuin",
+    "DuskForest1",
+    "FarAmpPlains",
+    "ForestPath",
+    "FutureTemporalTower",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IceMaze",
+    "LapisCave",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MoonlitCourtyard",
+    "MtFaraway2",
+    "MtHorn",
+    "MtThunder",
+    "MurkyCave",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthwindField",
+    "PurityForest2",
+    "PurityForest7",
+    "QuicksandUnused",
+    "RockMaze",
+    "SealedRuin",
+    "SkyPeak4thPass",
+    "SkyTower",
+    "SouthernCavern1",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea2",
+    "TemporalTower",
+    "TheNightmare",
+    "TinyWoods",
+    "UnusedBrineCave",
+    "UproarForest",
+    "WaterfallCave",
+    "WesternCave1",
+    "WishCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "TOXEL": {
+   "maps": [
+    "AmpPlains",
+    "AppleWoods",
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "ForestPath",
+    "HowlingForest2",
+    "JoyousTower",
+    "LightningField",
+    "MtBristle",
+    "MtThunder",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PitfallValley1",
+    "PoisonMaze",
+    "PurityForest2",
+    "PurityForest4",
+    "PurityForest6",
+    "PurityForest7",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea1",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest2",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WishCave1",
+    "WorldAbyss2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "TYNAMO": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "CrystalCrossing",
+    "DarkHill2",
+    "DarknightRelic",
+    "DeepSealedRuin",
+    "DrenchedBluff",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "GoldenChamber",
+    "LapisCave",
+    "LightningField",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "MtBristle",
+    "MtFaraway2",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "PurityForest2",
+    "RockAegisCave",
+    "SouthernCavern2",
+    "SpacialCliffs",
+    "SpacialRift1",
+    "SpacialRift2",
+    "SteamCave",
+    "StormySea1",
+    "StormySea2",
+    "TemporalSpire",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "TinyMeadow",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WaterfallPond",
+    "WaterMaze",
+    "WishCave1",
+    "WorldAbyss2",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "VAROOM": {
+   "maps": [
+    "BrineCave",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "DeepBoulderQuarry",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "GoldenChamber",
+    "HowlingForest2",
+    "IceMaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "NorthernRange2",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SidePath",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "SpacialRift1",
+    "SpacialRift2",
+    "SteelAegisCave",
+    "TemporalTower",
+    "TemporalUnused",
+    "TestDungeon",
+    "TreeshroudForest2",
+    "WesternCave1",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "ABOMASNOW": {
+   "maps": [
+    "CraggyCoast",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DrenchedBluff",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "FrostyForest",
+    "FutureTemporalTower",
+    "GrassMaze",
+    "HiddenHighland",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern3",
+    "MtBristle",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MurkyForest",
+    "NorthernRange2",
+    "PurityForest6",
+    "PurityForest7",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SkyPeak4thPass",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SouthernJungle",
+    "SpacialRift1",
+    "SurroundedSea",
+    "TreeshroudForest2",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WaterMaze",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "ALOLAN_DUGTRIO": {
+   "maps": [
+    "DeepBoulderQuarry",
+    "GoldenChamber",
+    "IceMaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "TemporalTower",
+    "ZeroIsleEast3"
+   ],
+   "requires": "DIGLETT"
+  },
+  "ALOLAN_EXEGGUTOR": {
+   "maps": [
+    "GoldenChamber",
+    "HiddenHighland",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MtFaraway2",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "UnusedBrineCave",
+    "VastIceMountainPeak",
+    "WishCave2",
+    "WyvernHill"
+   ],
+   "requires": "EXEGGCUTE"
+  },
+  "ALOLAN_GRAVELER": {
+   "maps": [
+    "AmpPlains",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "LightningField",
+    "MtBristle",
+    "MtThunder",
+    "MtThunderPeak",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea1",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "UnusedSteamCave",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "ALOLAN_MAROWAK": {
+   "maps": [
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "GreatCanyon",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "UnusedSteamCave"
+   ],
+   "requires": "CUBONE"
+  },
+  "ALOLAN_MUK": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": "GRIMER"
+  },
+  "ALOLAN_NINETALES": {
+   "maps": [
+    "CrystalCave1",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "FoggyForest",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "JoyousTower",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "PurityForest4",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SnowPath",
+    "SouthernCavern2",
+    "SurroundedSea",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WishCave1",
+    "WishCave2"
+   ],
+   "requires": "VULPIX"
+  },
+  "ALOLAN_PERSIAN": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": "MEOWTH"
+  },
+  "ALOLAN_RATICATE": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "ALOLAN_SANDSLASH": {
+   "maps": [
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "FrostyForest",
+    "GoldenChamber",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalTower",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "ZeroIsleEast3"
+   ],
+   "requires": "SANDSHREW"
+  },
+  "BRAVIARY": {
+   "maps": [
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "FoggyForest",
+    "GreatCanyon",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthernRange1",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SouthernJungle",
+    "SurroundedSea",
+    "UproarForest",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WyvernHill"
+   ],
+   "requires": ""
+  },
+  "CAMERUPT": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "FarAmpPlains",
+    "GrassMaze",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IceAegisCave",
+    "IcicleForest",
+    "LightningField",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "MurkyCave",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthwindField",
+    "PitfallValley1",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SilentChasm",
+    "SnowPath",
+    "SolarCave1",
+    "SteamCave",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "UnusedSteamCave",
+    "UproarForest",
+    "WaterfallCave",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "CENTISKORCH": {
+   "maps": [
+    "AppleWoods",
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DeepLimestoneCavern",
+    "DesertRegion",
+    "FinalMaze2",
+    "ForestPath",
+    "GreatCanyon",
+    "HiddenLand",
+    "HowlingForest1",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "PoisonMaze",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WishCave2",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "CETITAN": {
+   "maps": [
+    "AmpPlains",
+    "CrystalCave1",
+    "CrystalCave2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FrostyForest",
+    "GrassMaze",
+    "HowlingForest1",
+    "HowlingForest2",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "LightningField",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "NorthwindField",
+    "PitfallValley1",
+    "PurityForest7",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SolarCave1",
+    "StormySea2",
+    "SurroundedSea",
+    "UproarForest",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WaterfallCave",
+    "WaterfallPond"
+   ],
+   "requires": ""
+  },
+  "CHERRIM": {
+   "maps": [
+    "AppleWoods",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave2",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "DuskForest2",
+    "ElectricMaze",
+    "FinalMaze2",
+    "FoggyForest",
+    "FrostyForest",
+    "HiddenHighland",
+    "HiddenLand",
+    "HowlingForest2",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "MoonlitCourtyard",
+    "MysteryJungle1",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "PurityForest2",
+    "SilentChasm",
+    "SkyPeak4thPass",
+    "SkyTower",
+    "SouthernJungle",
+    "SteamCave",
+    "ThunderwaveCave",
+    "TreeshroudForest1",
+    "UnusedBrineCave",
+    "WesternCave1",
+    "WesternCave2",
+    "WyvernHill",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "CLEFAIRY": {
+   "maps": [
+    "AppleWoods",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave2",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "ElectricMaze",
+    "ForestPath",
+    "FrostyForest",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "NorthernDesert1",
+    "PitfallValley1",
+    "PurityForest2",
+    "PurityForest4",
+    "PurityForest6",
+    "PurityForest7",
+    "SilentChasm",
+    "SkyTower",
+    "ThunderwaveCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "CLODSIRE": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "CORVISQUIRE": {
+   "maps": [
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "GoldenChamber",
+    "IceMaze",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "TemporalTower",
+    "VastIceMountainPeak",
+    "WyvernHill",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "CURSOLA": {
+   "maps": [],
+   "requires": ""
+  },
+  "DODRIO": {
+   "maps": [
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "FinalMaze2",
+    "FoggyForest",
+    "GrassMaze",
+    "GreatCanyon",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthernRange1",
+    "PurityForest4",
+    "PurityForest6",
+    "QuicksandCave",
+    "QuicksandUnused",
+    "SidePath",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SnowPath",
+    "SouthernJungle",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalUnused",
+    "TinyWoods",
+    "UproarForest",
+    "VastIceMountain",
+    "VastIceMountainPeak",
+    "WyvernHill"
+   ],
+   "requires": ""
+  },
+  "DOTTLER": {
+   "maps": [
+    "AppleWoods",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DeepLimestoneCavern",
+    "FinalMaze2",
+    "ForestPath",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "HiddenLand",
+    "HowlingForest1",
+    "LimestoneCavern",
+    "MeteorCave",
+    "PoisonMaze",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedWaterfallPond",
+    "WishCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "EELEKTRIK": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "CrystalCrossing",
+    "DarkHill2",
+    "DarknightRelic",
+    "DeepSealedRuin",
+    "DrenchedBluff",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "GoldenChamber",
+    "LapisCave",
+    "LightningField",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "MtBristle",
+    "MtFaraway2",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "PurityForest2",
+    "RockAegisCave",
+    "SouthernCavern2",
+    "SpacialCliffs",
+    "SpacialRift1",
+    "SpacialRift2",
+    "SteamCave",
+    "StormySea1",
+    "StormySea2",
+    "TemporalSpire",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "TinyMeadow",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WaterfallPond",
+    "WaterMaze",
+    "WishCave1",
+    "WorldAbyss2",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "ELDEGOSS": {
+   "maps": [
+    "AmpPlains",
+    "CrystalCave1",
+    "CrystalCave2",
+    "DuskForest2",
+    "FinalMaze2",
+    "FoggyForest",
+    "HiddenHighland",
+    "HiddenLand",
+    "HowlingForest1",
+    "HowlingForest2",
+    "LushPrairie",
+    "MoonlitCourtyard",
+    "MtFaraway4",
+    "MtHorn",
+    "MysteryJungle1",
+    "MystifyingForest",
+    "NorthwindField",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SolarCave1",
+    "SouthernJungle",
+    "StormySea2",
+    "TreeshroudForest1",
+    "UproarForest",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WesternCave1",
+    "WesternCave2"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_DARMANITAN": {
+   "maps": [
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SurroundedSea",
+    "VastIceMountain",
+    "VastIceMountainPeak"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_DARMANITAN_ZEN": {
+   "maps": [
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SurroundedSea",
+    "VastIceMountain",
+    "VastIceMountainPeak"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_LINOONE": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_RAPIDASH": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "ElectricMaze",
+    "FoggyForest",
+    "FrostyForest",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "PoisonMaze",
+    "PurityForest4",
+    "SilentChasm",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SolarCave1",
+    "SouthernCavern2",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "ThunderwaveCave",
+    "WishCave1",
+    "WishCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": "PONYTA"
+  },
+  "GALARIAN_SLOWBRO": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": "SLOWPOKE"
+  },
+  "GALARIAN_SLOWKING": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": "SLOWPOKE"
+  },
+  "GALARIAN_WEEZING": {
+   "maps": [
+    "CrystalCave1",
+    "FoggyForest",
+    "JoyousTower",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "PurityForest4",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SouthernCavern2",
+    "WishCave1",
+    "WishCave2"
+   ],
+   "requires": ""
+  },
+  "GASTRODON_EAST_SEA": {
+   "maps": [
+    "BarrenValley",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DeepBoulderQuarry",
+    "DrenchedBluff",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "SouthernCavern2",
+    "UnusedWaterfallPond",
+    "VastIceMountain",
+    "WesternCave2",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "GASTRODON_WEST_SEA": {
+   "maps": [
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DeepLimestoneCavern",
+    "HiddenLand",
+    "IceAegisCave",
+    "LapisCave",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MurkyCave",
+    "NorthwindField",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "SkyPeak4thPass",
+    "StormySea1",
+    "StormySea2",
+    "SurroundedSea",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "UnusedSteamCave",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "GRUMPIG": {
+   "maps": [
+    "AmpPlains",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "GrassMaze",
+    "HowlingForest1",
+    "IcicleForest",
+    "LightningField",
+    "MeteorCave",
+    "NorthwindField",
+    "PitfallValley1",
+    "PoisonMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SnowPath",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "UproarForest",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "HAKAMO_O": {
+   "maps": [
+    "AmpPlains",
+    "BarrenValley",
+    "CraggyCoast",
+    "CrystalCave1",
+    "CrystalCave2",
+    "FrostyForest",
+    "GoldenChamber",
+    "HiddenHighland",
+    "HowlingForest1",
+    "HowlingForest2",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "LowerBrineCave",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtHorn",
+    "MtTravail",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "NorthwindField",
+    "PurityForest7",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SteelAegisCave",
+    "StormySea2",
+    "UnusedBrineCave",
+    "UproarForest",
+    "VastIceMountainPeak",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "HISUI_ARCANINE": {
+   "maps": [
+    "BarrenValley",
+    "DeepBoulderQuarry",
+    "DeepLimestoneCavern",
+    "LimestoneCavern",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "VastIceMountain",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": "GROWLITHE"
+  },
+  "HISUI_AVALUGG": {
+   "maps": [
+    "BarrenValley",
+    "DeepBoulderQuarry",
+    "DeepLimestoneCavern",
+    "LimestoneCavern",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "VastIceMountain",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": "BERGMITE"
+  },
+  "HISUI_ELECTRODE": {
+   "maps": [
+    "BeachCave",
+    "BrineCave",
+    "DarknightRelic",
+    "DeepBoulderQuarry",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DeepSealedRuin",
+    "DrenchedBluff",
+    "DuskForest1",
+    "DuskForest2",
+    "FarAmpPlains",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "LapisCave",
+    "LowerBrineCave",
+    "MtSteel1",
+    "MtTravail",
+    "MurkyForest",
+    "PurityForest6",
+    "PurityForest7",
+    "QuicksandCave",
+    "QuicksandPit",
+    "SkyPeak4thPass",
+    "SouthernJungle",
+    "TemporalUnused",
+    "TreeshroudForest2",
+    "WaterMaze"
+   ],
+   "requires": "VOLTORB"
+  },
+  "HISUI_SLIGGOO": {
+   "maps": [
+    "DeepBoulderQuarry",
+    "GoldenChamber",
+    "IceMaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "TemporalTower",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "HISUI_ZOROARK": {
+   "maps": [
+    "BarrenValley",
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkHill2",
+    "DeepDuskForest2",
+    "DeepSealedRuin",
+    "DuskForest2",
+    "MurkyCave",
+    "MurkyForest",
+    "RockAegisCave",
+    "SealedRuin",
+    "SpacialCliffs",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": "ZORUA"
+  },
+  "HISUIAN_LILLIGANT": {
+   "maps": [
+    "BarrenValley",
+    "CraggyCoast",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MtTravail",
+    "NorthernRange2",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SkyPeakSummitPass",
+    "SteelAegisCave",
+    "ZeroIsleSouth2"
+   ],
+   "requires": "PETILIL"
+  },
+  "HYPNO": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "MagmaCavern3",
+    "MeteorCave",
+    "MtBristle",
+    "MtTravail",
+    "MurkyCave",
+    "NorthernRange2",
+    "PitfallValley1",
+    "PoisonMaze",
+    "QuicksandPit",
+    "RescueTeamMaze",
+    "RockPathTDS",
+    "SealedRuin",
+    "SolarCave1",
+    "SpacialRift1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TemporalTower",
+    "TestDungeon",
+    "TheNightmare",
+    "WesternCave1",
+    "WesternCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "LOMBRE": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DrenchedBluff",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "HowlingForest1",
+    "HowlingForest2",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "MtFaraway4",
+    "MtHorn",
+    "MurkyForest",
+    "NorthwindField",
+    "PurityForest6",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SolarCave1",
+    "SouthernCavern2",
+    "SouthernJungle",
+    "StormySea1",
+    "StormySea2",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "UproarForest",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "LOPUNNY": {
+   "maps": [
+    "BarrenValley",
+    "CraggyCoast",
+    "DarkIceMountain",
+    "FinalMaze2",
+    "FrostyForest",
+    "GrassMaze",
+    "GreatCanyon",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MtFreeze",
+    "MtTravail",
+    "NorthernRange2",
+    "PurityForest4",
+    "PurityForest6",
+    "QuicksandCave",
+    "QuicksandUnused",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SidePath",
+    "SkyPeakSummitPass",
+    "SnowPath",
+    "SteelAegisCave",
+    "TemporalUnused",
+    "TinyWoods",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "MARSHTOMP": {
+   "maps": [
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DeepLimestoneCavern",
+    "HiddenLand",
+    "IceAegisCave",
+    "LapisCave",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MurkyCave",
+    "NorthwindField",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "SkyPeak4thPass",
+    "StormySea1",
+    "StormySea2",
+    "SurroundedSea",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "UnusedSteamCave",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "MONFERNO": {
+   "maps": [
+    "BarrenValley",
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DarknightRelic",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "FrostyForest",
+    "FutureTemporalSpire",
+    "GreatCanyon",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MeteorCave",
+    "MtBlaze",
+    "MtTravail",
+    "MurkyCave",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "PitfallValley1",
+    "RescueTeamMaze",
+    "RockMaze",
+    "RockPathRB",
+    "SealedRuin",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SteamCave",
+    "SteelAegisCave",
+    "TemporalSpire",
+    "TemporalTower",
+    "UnusedSteamCave",
+    "WesternCave1",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "MORGREM": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "DarknightRelic",
+    "FutureTemporalSpire",
+    "MeteorCave",
+    "MtTravail",
+    "MurkyCave",
+    "PitfallValley1",
+    "RescueTeamMaze",
+    "SealedRuin",
+    "TemporalSpire",
+    "TemporalTower",
+    "WesternCave1",
+    "WesternCave2"
+   ],
+   "requires": ""
+  },
+  "MOTHIM": {
+   "maps": [],
+   "requires": ""
+  },
+  "NIDORINA": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "NUZLEAF": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "PERRSERKER": {
+   "maps": [
+    "ConcealedRuins",
+    "DeepBoulderQuarry",
+    "FoggyForest",
+    "GoldenChamber",
+    "GreatCanyon",
+    "IceMaze",
+    "MtBlaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SilentChasm",
+    "SouthernCavern1",
+    "SouthernJungle",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalTower",
+    "UproarForest",
+    "VastIceMountain",
+    "ZeroIsleEast3"
+   ],
+   "requires": "MEOWTH"
+  },
+  "PIDGEOTTO": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "BuriedRelic2",
+    "CraggyCoast",
+    "CrystalCrossing",
+    "DarkHill2",
+    "DarknightRelic",
+    "DeepDarkCrater",
+    "DeepLimestoneCavern",
+    "DrenchedBluff",
+    "ElectricMaze",
+    "FoggyForest",
+    "FutureTemporalSpire",
+    "GrassMaze",
+    "HiddenLand",
+    "IceAegisCave",
+    "JoyousTower",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MtBristle",
+    "MtFreeze",
+    "MtSteel2",
+    "MtTravail",
+    "MysteryJungle1",
+    "NorthernDesert1",
+    "NorthernRange2",
+    "PoisonMaze",
+    "PurityForest6",
+    "QuicksandPit",
+    "RockAegisCave",
+    "RockPathTDS",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SouthernJungle",
+    "SpacialRift2",
+    "StormySea1",
+    "TemporalSpire",
+    "TestDungeon",
+    "TinyMeadow",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "VastIceMountainPeak",
+    "WaterMaze",
+    "WishCave1",
+    "WyvernHill",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "REVAVROOM": {
+   "maps": [
+    "BrineCave",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "DeepBoulderQuarry",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "GoldenChamber",
+    "HowlingForest2",
+    "IceMaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "NorthernRange2",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SidePath",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "SpacialRift1",
+    "SpacialRift2",
+    "SteelAegisCave",
+    "TemporalTower",
+    "TemporalUnused",
+    "TestDungeon",
+    "TreeshroudForest2",
+    "WesternCave1",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "RIBOMBEE": {
+   "maps": [
+    "AppleWoods",
+    "CrystalCave1",
+    "DeepLimestoneCavern",
+    "DuskForest2",
+    "FinalMaze2",
+    "FoggyForest",
+    "ForestPath",
+    "HiddenHighland",
+    "HiddenLand",
+    "HowlingForest1",
+    "JoyousTower",
+    "LimestoneCavern",
+    "LushPrairie",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "PoisonMaze",
+    "PurityForest4",
+    "SkyPeak4thPass",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SouthernCavern2",
+    "SouthernJungle",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedWaterfallPond",
+    "WesternCave1",
+    "WesternCave2",
+    "WishCave1",
+    "WishCave2",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "RUNERIGUS": {
+   "maps": [
+    "CraggyCoast",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FutureTemporalTower",
+    "MagmaCavern3",
+    "MtBristle",
+    "NorthernRange2",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SpacialRift1",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": "YAMASK"
+  },
+  "SHELGON": {
+   "maps": [
+    "CraggyCoast",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FutureTemporalTower",
+    "GoldenChamber",
+    "HiddenHighland",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MtBristle",
+    "MtFaraway2",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "SpacialRift1",
+    "UnusedBrineCave",
+    "VastIceMountainPeak",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "SNEASLER": {
+   "maps": [
+    "BarrenValley",
+    "BrineCave",
+    "ConcealedRuins",
+    "CraggyCoast",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "FrostyForest",
+    "HowlingForest2",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MtTravail",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "NorthernRange2",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SkyPeakSummitPass",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "SteelAegisCave",
+    "TreeshroudForest2",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth2"
+   ],
+   "requires": "SNEASEL"
+  },
+  "STARAVIA": {
+   "maps": [
+    "AppleWoods",
+    "BrineCave",
+    "BuriedRelic3",
+    "CrystalCave1",
+    "DarkCrater",
+    "DarkIceMountain",
+    "DarkWasteland",
+    "DeepDuskForest1",
+    "DeepSealedRuin",
+    "DuskForest1",
+    "FarAmpPlains",
+    "ForestPath",
+    "FutureTemporalTower",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IceMaze",
+    "LapisCave",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MoonlitCourtyard",
+    "MtFaraway2",
+    "MtHorn",
+    "MtThunder",
+    "MurkyCave",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthwindField",
+    "PurityForest2",
+    "PurityForest7",
+    "QuicksandUnused",
+    "RockMaze",
+    "SealedRuin",
+    "SkyPeak4thPass",
+    "SkyTower",
+    "SouthernCavern1",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea2",
+    "TemporalTower",
+    "TheNightmare",
+    "TinyWoods",
+    "UnusedBrineCave",
+    "UproarForest",
+    "WaterfallCave",
+    "WesternCave1",
+    "WishCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "TOXTRICITY": {
+   "maps": [
+    "AmpPlains",
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "HowlingForest1",
+    "HowlingForest2",
+    "LightningField",
+    "MtBristle",
+    "MtFaraway4",
+    "MtHorn",
+    "MtThunder",
+    "MtThunderPeak",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "NorthwindField",
+    "PoisonMaze",
+    "PurityForest7",
+    "QuicksandUnused",
+    "SolarCave1",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea1",
+    "StormySea2",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "TreeshroudForest2",
+    "UnusedSteamCave",
+    "UproarForest",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WorldAbyss2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "TRANQUILL": {
+   "maps": [
+    "BarrenValley",
+    "BuriedRelic1",
+    "ConcealedRuins",
+    "CrystalCave2",
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "DuskForest2",
+    "FinalMaze2",
+    "FrostyForest",
+    "GoldenChamber",
+    "HiddenHighland",
+    "HowlingForest2",
+    "IcicleForest",
+    "LightningField",
+    "LushPrairie",
+    "MeteorCave",
+    "MtBlaze",
+    "MtFaraway4",
+    "MtSteel1",
+    "MtThunderPeak",
+    "MurkyForest",
+    "MystifyingForest",
+    "NorthernRange1",
+    "PitfallValley1",
+    "PurityForest4",
+    "QuicksandCave",
+    "RescueTeamMaze",
+    "RockPathRB",
+    "SidePath",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SouthernCavern2",
+    "SpacialRift1",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalUnused",
+    "ThunderwaveCave",
+    "TreeshroudForest1",
+    "UnusedSteamCave",
+    "VastIceMountain",
+    "WaterfallPond",
+    "WesternCave2",
+    "WorldAbyss2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "VIGOROTH": {
+   "maps": [
+    "AmpPlains",
+    "DarkIceMountain",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FinalMaze2",
+    "GrassMaze",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IcicleForest",
+    "LightningField",
+    "MtFreeze",
+    "NorthwindField",
+    "PitfallValley1",
+    "PurityForest4",
+    "PurityForest6",
+    "QuicksandCave",
+    "QuicksandUnused",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SnowPath",
+    "SteelAegisCave",
+    "TemporalUnused",
+    "TinyWoods",
+    "UproarForest"
+   ],
+   "requires": ""
+  },
+  "VOLCARONA": {
+   "maps": [
+    "AppleWoods",
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DeepLimestoneCavern",
+    "DesertRegion",
+    "FinalMaze2",
+    "ForestPath",
+    "GreatCanyon",
+    "HiddenLand",
+    "HowlingForest1",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "PoisonMaze",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WishCave2",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "WORMADAM_PLANT": {
+   "maps": [
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "MurkyForest",
+    "PurityForest6",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SouthernJungle",
+    "TreeshroudForest2",
+    "WaterMaze"
+   ],
+   "requires": ""
+  },
+  "WORMADAM_SANDY": {
+   "maps": [
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "DarkCrater",
+    "IceAegisCave",
+    "MagmaCavern2",
+    "MurkyCave",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "WaterfallCave",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "WORMADAM_TRASH": {
+   "maps": [
+    "BuriedRelic1",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "RescueTeamMaze",
+    "SouthernCavern1",
+    "SpacialRift1",
+    "SpacialRift2",
+    "TemporalTower",
+    "TemporalUnused",
+    "TestDungeon",
+    "WesternCave1"
+   ],
+   "requires": ""
+  },
+  "ALOLAN_GOLEM": {
+   "maps": [
+    "AmpPlains",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "LightningField",
+    "MtBristle",
+    "MtThunder",
+    "MtThunderPeak",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea1",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "UnusedSteamCave",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "ALOLAN_RAICHU": {
+   "maps": [
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "MeteorCave",
+    "PoisonMaze",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "CHERRIM_SUNLIGHT": {
+   "maps": [
+    "AppleWoods",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave2",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "DuskForest2",
+    "ElectricMaze",
+    "FinalMaze2",
+    "FoggyForest",
+    "FrostyForest",
+    "HiddenHighland",
+    "HiddenLand",
+    "HowlingForest2",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "MoonlitCourtyard",
+    "MysteryJungle1",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "PurityForest2",
+    "SilentChasm",
+    "SkyPeak4thPass",
+    "SkyTower",
+    "SouthernJungle",
+    "SteamCave",
+    "ThunderwaveCave",
+    "TreeshroudForest1",
+    "UnusedBrineCave",
+    "WesternCave1",
+    "WesternCave2",
+    "WyvernHill",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "CLEFABLE": {
+   "maps": [
+    "AppleWoods",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave2",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "ElectricMaze",
+    "ForestPath",
+    "FrostyForest",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "NorthernDesert1",
+    "PitfallValley1",
+    "PurityForest2",
+    "PurityForest4",
+    "PurityForest6",
+    "PurityForest7",
+    "SilentChasm",
+    "SkyTower",
+    "ThunderwaveCave",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "CORVIKNIGHT": {
+   "maps": [
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "GoldenChamber",
+    "IceMaze",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "TemporalTower",
+    "VastIceMountainPeak",
+    "WyvernHill",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "EELEKTROSS": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "CrystalCrossing",
+    "DarkHill2",
+    "DarknightRelic",
+    "DeepSealedRuin",
+    "DrenchedBluff",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "GoldenChamber",
+    "LapisCave",
+    "LightningField",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "MtBristle",
+    "MtFaraway2",
+    "MtSteel2",
+    "MtThunder",
+    "MtThunderPeak",
+    "PurityForest2",
+    "RockAegisCave",
+    "SouthernCavern2",
+    "SpacialCliffs",
+    "SpacialRift1",
+    "SpacialRift2",
+    "SteamCave",
+    "StormySea1",
+    "StormySea2",
+    "TemporalSpire",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "TinyMeadow",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WaterfallPond",
+    "WaterMaze",
+    "WishCave1",
+    "WorldAbyss2",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_ARTICUNO": {
+   "maps": [
+    "BrineCave",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "FoggyForest",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "JoyousTower",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "PoisonMaze",
+    "PurityForest4",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SolarCave1",
+    "SouthernCavern2",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "WishCave1",
+    "WishCave2",
+    "WorldAbyss2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_FARFETCH_D": {
+   "maps": [
+    "BarrenValley",
+    "BrineCave",
+    "CraggyCoast",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MoonlitCourtyard",
+    "MtTravail",
+    "MurkyForest",
+    "NorthernRange2",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SkyPeakSummitPass",
+    "SteelAegisCave",
+    "TheNightmare",
+    "WorldAbyss2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_MOLTRES": {
+   "maps": [
+    "BarrenValley",
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DeepSealedRuin",
+    "DuskForest1",
+    "DuskForest2",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "MeteorCave",
+    "MoonlitCourtyard",
+    "MurkyCave",
+    "MurkyForest",
+    "PoisonMaze",
+    "RockAegisCave",
+    "SealedRuin",
+    "SolarCave1",
+    "SpacialCliffs",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "WorldAbyss2",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "GALARIAN_ZAPDOS": {
+   "maps": [
+    "AmpPlains",
+    "BarrenValley",
+    "ConcealedRuins",
+    "CraggyCoast",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FoggyForest",
+    "FrostyForest",
+    "GrassMaze",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "LightningField",
+    "MagmaCavern2",
+    "MtBlaze",
+    "MtThunderPeak",
+    "MtTravail",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthernRange1",
+    "NorthernRange2",
+    "NorthwindField",
+    "PitfallValley1",
+    "RescueTeamMaze",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SnowPath",
+    "SouthernJungle",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "UproarForest",
+    "VastIceMountain",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "GRIMMSNARL": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "DarknightRelic",
+    "FutureTemporalSpire",
+    "MeteorCave",
+    "MtTravail",
+    "MurkyCave",
+    "PitfallValley1",
+    "RescueTeamMaze",
+    "SealedRuin",
+    "TemporalSpire",
+    "TemporalTower",
+    "WesternCave1",
+    "WesternCave2"
+   ],
+   "requires": ""
+  },
+  "HISUI_GOODRA": {
+   "maps": [
+    "DeepBoulderQuarry",
+    "GoldenChamber",
+    "IceMaze",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RockMaze",
+    "SidePath",
+    "SouthernCavern1",
+    "SteelAegisCave",
+    "TemporalTower",
+    "ZeroIsleEast3"
+   ],
+   "requires": ""
+  },
+  "HISUIAN_QWILFISH": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "HISUI_SAMUROTT": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "HISUIAN_TYPHLOSION": {
+   "maps": [
+    "BarrenValley",
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkHill2",
+    "DeepDuskForest2",
+    "DeepSealedRuin",
+    "DuskForest2",
+    "MurkyCave",
+    "MurkyForest",
+    "RockAegisCave",
+    "SealedRuin",
+    "SpacialCliffs",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "INFERNAPE": {
+   "maps": [
+    "BarrenValley",
+    "BuriedRelic1",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DarknightRelic",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "FrostyForest",
+    "FutureTemporalSpire",
+    "GreatCanyon",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MeteorCave",
+    "MtBlaze",
+    "MtTravail",
+    "MurkyCave",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "PitfallValley1",
+    "RescueTeamMaze",
+    "RockMaze",
+    "RockPathRB",
+    "SealedRuin",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SteamCave",
+    "SteelAegisCave",
+    "TemporalSpire",
+    "TemporalTower",
+    "UnusedSteamCave",
+    "WesternCave1",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "KECLEON_PURPLE": {
+   "maps": [],
+   "requires": ""
+  },
+  "KLEAVOR": {
+   "maps": [
+    "BarrenValley",
+    "BeachCave",
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarknightRelic",
+    "DarkWasteland",
+    "DeepBoulderQuarry",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DeepLimestoneCavern",
+    "DeepSealedRuin",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FarAmpPlains",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MoonlitCourtyard",
+    "MtHorn",
+    "MtSteel1",
+    "MtThunder",
+    "MtTravail",
+    "MurkyForest",
+    "QuicksandCave",
+    "QuicksandPit",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "TemporalUnused",
+    "TheNightmare",
+    "VastIceMountain",
+    "WesternCave2",
+    "WorldAbyss2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "KOMMO_O": {
+   "maps": [
+    "AmpPlains",
+    "BarrenValley",
+    "CraggyCoast",
+    "CrystalCave1",
+    "CrystalCave2",
+    "FrostyForest",
+    "GoldenChamber",
+    "HiddenHighland",
+    "HowlingForest1",
+    "HowlingForest2",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "LowerBrineCave",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtHorn",
+    "MtTravail",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "NorthwindField",
+    "PurityForest7",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SteelAegisCave",
+    "StormySea2",
+    "UnusedBrineCave",
+    "UproarForest",
+    "VastIceMountainPeak",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "LUDICOLO": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DrenchedBluff",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "HowlingForest1",
+    "HowlingForest2",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "MtFaraway4",
+    "MtHorn",
+    "MurkyForest",
+    "NorthwindField",
+    "PurityForest6",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SolarCave1",
+    "SouthernCavern2",
+    "SouthernJungle",
+    "StormySea1",
+    "StormySea2",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "UproarForest",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "NIDOQUEEN": {
+   "maps": [
+    "BrineCave",
+    "ConcealedRuins",
+    "CrystalCrossing",
+    "DarkWasteland",
+    "HowlingForest2",
+    "MysteryJungle1",
+    "MysteryJungle2",
+    "NorthernRange1",
+    "PoisonMaze",
+    "QuicksandUnused",
+    "SouthernCavern1",
+    "SouthernCavern2",
+    "TreeshroudForest2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "OBSTAGOON": {
+   "maps": [
+    "AmpPlains",
+    "BrineCave",
+    "CrystalCave1",
+    "CrystalCave2",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "HowlingForest1",
+    "HowlingForest2",
+    "MoonlitCourtyard",
+    "MtFaraway4",
+    "MtHorn",
+    "MurkyForest",
+    "NorthwindField",
+    "PurityForest7",
+    "SolarCave1",
+    "StormySea2",
+    "TheNightmare",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "OGERPON_CORNERSTONE": {
+   "maps": [
+    "BarrenValley",
+    "DeepBoulderQuarry",
+    "DeepLimestoneCavern",
+    "LimestoneCavern",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "VastIceMountain",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "OGERPON_CORNERSTONE_MASK": {
+   "maps": [
+    "BarrenValley",
+    "DeepBoulderQuarry",
+    "DeepLimestoneCavern",
+    "LimestoneCavern",
+    "MtHorn",
+    "MtThunder",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "VastIceMountain",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "OGERPON_HEARTHFLAME": {
+   "maps": [
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "GreatCanyon",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "UnusedSteamCave"
+   ],
+   "requires": ""
+  },
+  "OGERPON_HEARTHFLAME_MASK": {
+   "maps": [
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "GreatCanyon",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "UnusedSteamCave"
+   ],
+   "requires": ""
+  },
+  "OGERPON_TEAL": {
+   "maps": [
+    "DuskForest2",
+    "FinalMaze2",
+    "FoggyForest",
+    "HiddenHighland",
+    "HiddenLand",
+    "LushPrairie",
+    "MoonlitCourtyard",
+    "MysteryJungle1",
+    "MystifyingForest",
+    "SkyPeak4thPass",
+    "SouthernJungle",
+    "TreeshroudForest1",
+    "WesternCave1",
+    "WesternCave2"
+   ],
+   "requires": ""
+  },
+  "OGERPON_TEAL_MASK": {
+   "maps": [
+    "DuskForest2",
+    "FinalMaze2",
+    "FoggyForest",
+    "HiddenHighland",
+    "HiddenLand",
+    "LushPrairie",
+    "MoonlitCourtyard",
+    "MysteryJungle1",
+    "MystifyingForest",
+    "SkyPeak4thPass",
+    "SouthernJungle",
+    "TreeshroudForest1",
+    "WesternCave1",
+    "WesternCave2"
+   ],
+   "requires": ""
+  },
+  "OGERPON_WELLSPRING": {
+   "maps": [
+    "BeachCave",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DrenchedBluff",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "SouthernCavern2",
+    "StormySea1",
+    "StormySea2",
+    "UnusedWaterfallPond",
+    "WaterMaze",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "OGERPON_WELLSPRING_MASK": {
+   "maps": [
+    "BeachCave",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DrenchedBluff",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "SouthernCavern2",
+    "StormySea1",
+    "StormySea2",
+    "UnusedWaterfallPond",
+    "WaterMaze",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "ORBEETLE": {
+   "maps": [
+    "AppleWoods",
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DeepLimestoneCavern",
+    "FinalMaze2",
+    "ForestPath",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "HiddenLand",
+    "HowlingForest1",
+    "LimestoneCavern",
+    "MeteorCave",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunderPeak",
+    "PoisonMaze",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "TinyMeadow",
+    "TinyWoods",
+    "TreeshroudForest1",
+    "UnusedWaterfallPond",
+    "VastIceMountainPeak",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "ORICORIO_BAILE": {
+   "maps": [
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DesertRegion",
+    "GreatCanyon",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "RockPathRB",
+    "SilentChasm",
+    "SolarCave1",
+    "SteamCave",
+    "UnusedSteamCave"
+   ],
+   "requires": ""
+  },
+  "ORICORIO_PA_U": {
+   "maps": [
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "MeteorCave",
+    "PoisonMaze",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "ORICORIO_POMPOM": {
+   "maps": [
+    "AmpPlains",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "LightningField",
+    "MtBristle",
+    "MtThunder",
+    "MtThunderPeak",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea1",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "UnusedSteamCave",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "ORICORIO_SENSU": {
+   "maps": [
+    "BarrenValley",
+    "ConcealedRuins",
+    "DarkHill1",
+    "DarkHill2",
+    "DeepDuskForest2",
+    "DeepSealedRuin",
+    "DuskForest2",
+    "MurkyCave",
+    "MurkyForest",
+    "RockAegisCave",
+    "SealedRuin",
+    "SpacialCliffs",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "PIDGEOT": {
+   "maps": [
+    "AmpPlains",
+    "BeachCave",
+    "BuriedRelic2",
+    "CraggyCoast",
+    "CrystalCrossing",
+    "DarkHill2",
+    "DarknightRelic",
+    "DeepDarkCrater",
+    "DeepLimestoneCavern",
+    "DrenchedBluff",
+    "ElectricMaze",
+    "FoggyForest",
+    "FutureTemporalSpire",
+    "GrassMaze",
+    "HiddenLand",
+    "IceAegisCave",
+    "JoyousTower",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MtBristle",
+    "MtFreeze",
+    "MtSteel2",
+    "MtTravail",
+    "MysteryJungle1",
+    "NorthernDesert1",
+    "NorthernRange2",
+    "PoisonMaze",
+    "PurityForest6",
+    "QuicksandPit",
+    "RockAegisCave",
+    "RockPathTDS",
+    "SilentChasm",
+    "SkyPeakSummitPass",
+    "SolarCave1",
+    "SouthernJungle",
+    "SpacialRift2",
+    "StormySea1",
+    "TemporalSpire",
+    "TestDungeon",
+    "TinyMeadow",
+    "TreeshroudForest2",
+    "UnusedWaterfallPond",
+    "VastIceMountainPeak",
+    "WaterMaze",
+    "WishCave1",
+    "WyvernHill",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "ROTOM": {
+   "maps": [
+    "AmpPlains",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "LightningField",
+    "MtBristle",
+    "MtThunder",
+    "MtThunderPeak",
+    "RescueTeamMaze",
+    "SouthernCavern1",
+    "SpacialCliffs",
+    "SpacialRift1",
+    "SpacialRift2",
+    "SteamCave",
+    "StormySea1",
+    "TemporalTower",
+    "TemporalUnused",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "UnusedSteamCave",
+    "WesternCave1",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "SALAMENCE": {
+   "maps": [
+    "CraggyCoast",
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FutureTemporalTower",
+    "GoldenChamber",
+    "HiddenHighland",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MtBlaze",
+    "MtBristle",
+    "MtFaraway2",
+    "MtFaraway4",
+    "MtFreeze",
+    "MtHorn",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunderPeak",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "SkyPeakSummitPass",
+    "SkyTower",
+    "SpacialRift1",
+    "UnusedBrineCave",
+    "VastIceMountainPeak",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "SCIZOR": {
+   "maps": [
+    "BarrenValley",
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DeepBoulderQuarry",
+    "FrostyForest",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "GoldenChamber",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "MagmaCavern2",
+    "MtSteel1",
+    "MtSteel2",
+    "MtThunder",
+    "MtTravail",
+    "NorthernRange1",
+    "NorthernRange2",
+    "RescueTeamMaze",
+    "RockMaze",
+    "SidePath",
+    "SkyPeakSummitPass",
+    "SouthernCavern1",
+    "SpacialRift1",
+    "SpacialRift2",
+    "SteelAegisCave",
+    "TemporalTower",
+    "TemporalUnused",
+    "TestDungeon",
+    "WesternCave1",
+    "ZeroIsleEast3",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "SHADOW_LUGIA": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "SHADOW_MEWTWO": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "SHIFTRY": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "SLAKING": {
+   "maps": [
+    "AmpPlains",
+    "DarkIceMountain",
+    "DesertRegion",
+    "FarAmpPlains",
+    "FinalMaze2",
+    "GrassMaze",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IcicleForest",
+    "LightningField",
+    "MtFreeze",
+    "NorthwindField",
+    "PitfallValley1",
+    "PurityForest4",
+    "PurityForest6",
+    "QuicksandCave",
+    "QuicksandUnused",
+    "RockPathRB",
+    "RockPathTDS",
+    "SidePath",
+    "SnowPath",
+    "SteelAegisCave",
+    "TemporalUnused",
+    "TinyWoods",
+    "UproarForest"
+   ],
+   "requires": ""
+  },
+  "STARAPTOR": {
+   "maps": [
+    "AppleWoods",
+    "BrineCave",
+    "BuriedRelic3",
+    "CrystalCave1",
+    "DarkCrater",
+    "DarkIceMountain",
+    "DarkWasteland",
+    "DeepDuskForest1",
+    "DeepSealedRuin",
+    "DuskForest1",
+    "FarAmpPlains",
+    "ForestPath",
+    "FutureTemporalTower",
+    "GreatCanyon",
+    "HowlingForest1",
+    "IceMaze",
+    "LapisCave",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MoonlitCourtyard",
+    "MtFaraway2",
+    "MtHorn",
+    "MtThunder",
+    "MurkyCave",
+    "MysteryJungle2",
+    "NorthernDesert2",
+    "NorthwindField",
+    "PurityForest2",
+    "PurityForest7",
+    "QuicksandUnused",
+    "RockMaze",
+    "SealedRuin",
+    "SkyPeak4thPass",
+    "SkyTower",
+    "SouthernCavern1",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea2",
+    "TemporalTower",
+    "TheNightmare",
+    "TinyWoods",
+    "UnusedBrineCave",
+    "UproarForest",
+    "WaterfallCave",
+    "WesternCave1",
+    "WishCave2",
+    "ZeroIsleEast3",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "SWAMPERT": {
+   "maps": [
+    "BeachCave",
+    "BuriedRelic2",
+    "BuriedRelic3",
+    "CraggyCoast",
+    "DarkCrater",
+    "DeepLimestoneCavern",
+    "HiddenLand",
+    "IceAegisCave",
+    "LapisCave",
+    "MagmaCavern2",
+    "MiracleSea",
+    "MurkyCave",
+    "NorthwindField",
+    "QuicksandCave",
+    "QuicksandPit",
+    "QuicksandUnused",
+    "SkyPeak4thPass",
+    "StormySea1",
+    "StormySea2",
+    "SurroundedSea",
+    "ThunderwaveCave",
+    "UnusedBrineCave",
+    "UnusedSteamCave",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "TAPU_BULU": {
+   "maps": [
+    "DeepDuskForest1",
+    "DeepDuskForest2",
+    "DuskForest1",
+    "DuskForest2",
+    "ForestPath",
+    "GrassMaze",
+    "HiddenHighland",
+    "MurkyForest",
+    "PurityForest6",
+    "PurityForest7",
+    "SkyPeak4thPass",
+    "SouthernJungle",
+    "TreeshroudForest2",
+    "WaterMaze"
+   ],
+   "requires": ""
+  },
+  "TAPU_FINI": {
+   "maps": [
+    "CrystalCave1",
+    "FoggyForest",
+    "JoyousTower",
+    "MeteorCave",
+    "MiracleSea",
+    "MoonlitCourtyard",
+    "MysteryJungle2",
+    "MystifyingForest",
+    "PurityForest4",
+    "SkyPeak7thPass",
+    "SkyTower",
+    "SouthernCavern2",
+    "WishCave1",
+    "WishCave2"
+   ],
+   "requires": ""
+  },
+  "TAPU_KOKO": {
+   "maps": [
+    "AmpPlains",
+    "ElectricMaze",
+    "FarAmpPlains",
+    "LightningField",
+    "MtBristle",
+    "MtThunder",
+    "MtThunderPeak",
+    "SpacialCliffs",
+    "SteamCave",
+    "StormySea1",
+    "TestDungeon",
+    "ThunderwaveCave",
+    "UnusedSteamCave",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  },
+  "TAPU_LELE": {
+   "maps": [
+    "CrystalCave1",
+    "CrystalCave2",
+    "CrystalCrossing",
+    "FutureTemporalSpire",
+    "FutureTemporalTower",
+    "MeteorCave",
+    "PoisonMaze",
+    "SolarCave1",
+    "SpacialRift2",
+    "TemporalSpire",
+    "TestDungeon",
+    "TheNightmare",
+    "ZeroIsleEast3",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "TAUROS_COMBAT_BREED": {
+   "maps": [
+    "BarrenValley",
+    "CraggyCoast",
+    "DeepBoulderQuarry",
+    "DeepLimestoneCavern",
+    "FrostyForest",
+    "IceAegisCave",
+    "IceMaze",
+    "IcicleForest",
+    "LimestoneCavern",
+    "MagmaCavern2",
+    "MtHorn",
+    "MtThunder",
+    "MtTravail",
+    "NorthernRange2",
+    "RescueTeamMaze",
+    "RockAegisCave",
+    "RockMaze",
+    "RockPathRB",
+    "RockPathTDS",
+    "SkyPeakSummitPass",
+    "SteelAegisCave",
+    "VastIceMountain",
+    "WesternCave2",
+    "ZeroIsleSouth2"
+   ],
+   "requires": ""
+  },
+  "TAUROS_BLAZE_BREED": {
+   "maps": [
+    "BuriedRelic1",
+    "BuriedRelic2",
+    "CrystalCave2",
+    "DarkCrater",
+    "DeepDarkCrater",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "ElectricMaze",
+    "FrostyForest",
+    "GreatCanyon",
+    "JoyousTower",
+    "LightningField",
+    "LushPrairie",
+    "MagmaCavern2",
+    "MagmaCavern3",
+    "MtBlaze",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "RockPathRB",
+    "SilentChasm",
+    "SkyTower",
+    "SolarCave1",
+    "SteamCave",
+    "ThunderwaveCave",
+    "UnusedSteamCave"
+   ],
+   "requires": ""
+  },
+  "TAUROS_AQUA_BREED": {
+   "maps": [
+    "BeachCave",
+    "CraggyCoast",
+    "CrystalCrossing",
+    "DarknightRelic",
+    "DeepLimestoneCavern",
+    "DrenchedBluff",
+    "HiddenLand",
+    "LapisCave",
+    "LimestoneCavern",
+    "LowerBrineCave",
+    "MiracleSea",
+    "NorthwindField",
+    "SkyPeak4thPass",
+    "SouthernCavern2",
+    "StormySea1",
+    "StormySea2",
+    "SurroundedSea",
+    "UnusedSteamCave",
+    "UnusedWaterfallPond",
+    "WaterfallCave",
+    "WaterfallPond",
+    "WaterMaze",
+    "WishCave1"
+   ],
+   "requires": ""
+  },
+  "UNFEZANT": {
+   "maps": [
+    "BarrenValley",
+    "BuriedRelic1",
+    "ConcealedRuins",
+    "CrystalCave2",
+    "DarkHill1",
+    "DarkIceMountainPeak",
+    "DeepBoulderQuarry",
+    "DeepDuskForest2",
+    "DesertRegion",
+    "DuskForest2",
+    "FinalMaze2",
+    "FrostyForest",
+    "GoldenChamber",
+    "HiddenHighland",
+    "HowlingForest2",
+    "IcicleForest",
+    "LightningField",
+    "LushPrairie",
+    "MeteorCave",
+    "MtBlaze",
+    "MtFaraway4",
+    "MtSteel1",
+    "MtThunderPeak",
+    "MurkyForest",
+    "MystifyingForest",
+    "NorthernRange1",
+    "PitfallValley1",
+    "PurityForest4",
+    "QuicksandCave",
+    "RescueTeamMaze",
+    "RockPathRB",
+    "SidePath",
+    "SkyPeak7thPass",
+    "SnowPath",
+    "SouthernCavern2",
+    "SpacialRift1",
+    "SteelAegisCave",
+    "SurroundedSea",
+    "TemporalUnused",
+    "ThunderwaveCave",
+    "TreeshroudForest1",
+    "UnusedSteamCave",
+    "VastIceMountain",
+    "WaterfallPond",
+    "WesternCave2",
+    "WorldAbyss2",
+    "ZeroIsleEast4"
+   ],
+   "requires": ""
+  },
+  "WALKING_WAKE": {
+   "maps": [
+    "BeachCave",
+    "BrineCave",
+    "CraggyCoast",
+    "DarknightRelic",
+    "DarkWasteland",
+    "DeepBoulderQuarry",
+    "DeepDarkCrater",
+    "DeepSealedRuin",
+    "DrenchedBluff",
+    "DuskForest1",
+    "FarAmpPlains",
+    "FutureTemporalTower",
+    "GoldenChamber",
+    "HiddenHighland",
+    "LapisCave",
+    "LowerBrineCave",
+    "MagmaCavern3",
+    "MtBristle",
+    "MtFaraway2",
+    "MtSteel1",
+    "MtTravail",
+    "MystifyingForest",
+    "NorthernDesert1",
+    "NorthernDesert2",
+    "NorthernRange2",
+    "QuicksandCave",
+    "QuicksandPit",
+    "RockPathTDS",
+    "SealedRuin",
+    "SkyPeak7thPass",
+    "SpacialRift1",
+    "TemporalUnused",
+    "UnusedBrineCave",
+    "VastIceMountainPeak",
+    "WishCave2",
+    "WyvernHill",
+    "ZeroIsleEast4",
+    "ZeroIsleSouth1"
+   ],
+   "requires": ""
+  },
+  "OVERQWIL": {
+   "maps": [
+    "BrineCave",
+    "DarkCrater",
+    "DarkHill1",
+    "DarkHill2",
+    "DarkIceMountain",
+    "DarkIceMountainPeak",
+    "DarkWasteland",
+    "DeepDarkCrater",
+    "DeepDuskForest1",
+    "DuskForest1",
+    "MoonlitCourtyard",
+    "MurkyForest",
+    "TheNightmare",
+    "WorldAbyss2"
+   ],
+   "requires": ""
+  }
+ },
+ "regionalVariants": {
+  "RATTATA": [
+   "ALOLAN_RATTATA"
+  ],
+  "GROWLITHE": [
+   "HISUI_GROWLITHE"
+  ],
+  "VULPIX": [
+   "ALOLAN_VULPIX"
+  ],
+  "GEODUDE": [
+   "ALOLAN_GEODUDE"
+  ],
+  "DIGLETT": [
+   "ALOLAN_DIGLETT"
+  ],
+  "ZORUA": [
+   "HISUI_ZORUA"
+  ],
+  "GRIMER": [
+   "ALOLAN_GRIMER"
+  ],
+  "NIDORANM": [
+   "NIDORANF"
+  ],
+  "SNEASEL": [
+   "HISUI_SNEASEL"
+  ],
+  "MEOWTH": [
+   "ALOLAN_MEOWTH",
+   "GALAR_MEOWTH"
+  ],
+  "PONYTA": [
+   "GALARIAN_PONYTA"
+  ],
+  "VOLTORB": [
+   "HISUI_VOLTORB"
+  ],
+  "SANDSHREW": [
+   "ALOLAN_SANDSHREW"
+  ],
+  "WOOPER": [
+   "PALDEA_WOOPER"
+  ],
+  "FARFETCH_D": [
+   "GALARIAN_FARFETCH_D"
+  ],
+  "ZIGZAGOON": [
+   "GALARIAN_ZIGZAGOON"
+  ],
+  "ARTICUNO": [
+   "GALARIAN_ARTICUNO"
+  ],
+  "ZAPDOS": [
+   "GALARIAN_ZAPDOS"
+  ],
+  "MOLTRES": [
+   "GALARIAN_MOLTRES"
+  ],
+  "QWILFISH": [
+   "HISUIAN_QWILFISH"
+  ],
+  "YAMASK": [
+   "GALARIAN_YAMASK"
+  ],
+  "SLOWPOKE": [
+   "GALARIAN_SLOWPOKE"
+  ],
+  "WEEZING": [
+   "GALARIAN_WEEZING"
+  ],
+  "SUICUNE": [
+   "WALKING_WAKE"
+  ],
+  "SCYTHER": [
+   "SCIZOR",
+   "KLEAVOR"
+  ],
+  "TAUROS": [
+   "TAUROS_COMBAT_BREED",
+   "TAUROS_BLAZE_BREED",
+   "TAUROS_AQUA_BREED"
+  ],
+  "LUGIA": [
+   "SHADOW_LUGIA"
+  ],
+  "MEWTWO": [
+   "SHADOW_MEWTWO"
+  ],
+  "DARUMAKA": [
+   "GALARIAN_DARUMAKA"
+  ]
+ },
+ "endless": {
+  "unitsPerStage": 0.3,
+  "minUnits": 3,
+  "maxUnits": 9,
+  "twoStarsStages": [
+   4,
+   16
+  ],
+  "threeStarsStages": [
+   14,
+   30
+  ],
+  "firstItemStage": 8,
+  "stagesPerItem": 2,
+  "fullItemsStage": 14,
+  "fullItemRewardsStage": 20,
+  "scalingStartStage": 25,
+  "statBoostsPerStage": {
+   "HP": 15,
+   "ATK": 2,
+   "AP": 5,
+   "DEF": 0.5,
+   "SPE_DEF": 0.5
+  },
+  "bossInterval": 5,
+  "rewardInterval": 3,
+  "componentPool": [
+   "MIRACLE_SEED",
+   "MYSTIC_WATER",
+   "HEART_SCALE",
+   "NEVER_MELT_ICE",
+   "CHARCOAL",
+   "MAGNET",
+   "BLACK_GLASSES",
+   "TWISTED_SPOON"
+  ],
+  "fullItemPool": [
+   "CHOICE_SPECS",
+   "SOUL_DEW",
+   "UPGRADE",
+   "REAPER_CLOTH",
+   "ABILITY_SHIELD",
+   "POWER_LENS",
+   "POKEMONOMICON",
+   "HEAVY_DUTY_BOOTS",
+   "AQUA_EGG",
+   "BLUE_ORB",
+   "SCOPE_LENS",
+   "STAR_DUST",
+   "GREEN_ORB",
+   "DEEP_SEA_TOOTH",
+   "SHINY_CHARM",
+   "XRAY_VISION",
+   "RAZOR_FANG",
+   "GRACIDEA_FLOWER",
+   "LOADED_DICE",
+   "PUNCHING_GLOVE",
+   "MUSCLE_BAND",
+   "SMOKE_BALL",
+   "WIDE_LENS",
+   "RAZOR_CLAW",
+   "SAFETY_GOGGLES",
+   "KINGS_ROCK",
+   "STICKY_BARB",
+   "PROTECTIVE_PADS",
+   "MAX_REVIVE",
+   "ASSAULT_VEST",
+   "SHELL_BELL",
+   "POKE_DOLL",
+   "RED_ORB",
+   "FLAME_ORB",
+   "ROCKY_HELMET"
+  ]
+ }
+}

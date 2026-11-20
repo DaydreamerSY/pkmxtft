@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfqyjd5idprwd"
+path="res://.godot/imported/Random Dungeon 3.ogg-db8d4dea7311327d3ae931738eb8650a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Random Dungeon 3.ogg"
+dest_files=["res://.godot/imported/Random Dungeon 3.ogg-db8d4dea7311327d3ae931738eb8650a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

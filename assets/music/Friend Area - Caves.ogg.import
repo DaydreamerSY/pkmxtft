@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4w4pm33rysyy"
+path="res://.godot/imported/Friend Area - Caves.ogg-419c52c04da1ab1a51677bd5ea4971f4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Friend Area - Caves.ogg"
+dest_files=["res://.godot/imported/Friend Area - Caves.ogg-419c52c04da1ab1a51677bd5ea4971f4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

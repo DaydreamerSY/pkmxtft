@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bwjms7tqhmrat"
+path="res://.godot/imported/Quicksand Cave.ogg-5e1f024b0496d71e2eaf8c640e1453a1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Quicksand Cave.ogg"
+dest_files=["res://.godot/imported/Quicksand Cave.ogg-5e1f024b0496d71e2eaf8c640e1453a1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

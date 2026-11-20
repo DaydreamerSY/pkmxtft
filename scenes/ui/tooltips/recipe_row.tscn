@@ -1,0 +1,45 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/tooltips/recipe_row.gd" id="2_recipe_row"]
+
+[node name="RecipeRow" type="HBoxContainer"]
+mouse_filter = 0
+theme_override_constants/separation = 6
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_recipe_row")
+
+[node name="Plus" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 18
+text = "+"
+
+[node name="Other" type="TextureRect" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Arrow" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 16
+text = ">"
+
+[node name="Result" type="TextureRect" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 15
+text = "Item"
+custom_minimum_size = Vector2(170, 0)

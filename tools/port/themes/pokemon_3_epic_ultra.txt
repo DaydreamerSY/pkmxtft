@@ -1,0 +1,91 @@
+# HỌ | tag | ghi chú — độ hiếm EPIC, ULTRA
+# --- EPIC ---
+AMAURA | | Khủng long cổ dài vùng băng (Tundra) → Aurorus phát cực quang.
+BALTOY | relic object | Búp bê đất sét cổ (Clay Doll), giống tượng dogū của Nhật → Claydol.
+BARBOACH | folklore weather | Cá chạch (Whiskers) → Whiscash: như cá trê Namazu trong truyện Nhật, cựa mình là động đất.
+BELDUM | | Quả cầu sắt một mắt (Iron Ball) → Metang → Metagross bốn bộ não, tính nhanh hơn siêu máy tính.
+BONSLEY | disguise | Cây bonsai (Bonsai) → Sudowoodo (Imitation) giả làm cái cây chắn đường.
+BOUNSWEET | food royal | Trái cây thơm (Fruit) → Steenee → Tsareena: nữ hoàng, đá rất cao.
+BUDEW | | Nụ hoa (Bud) → Roselia → Roserade (Bouquet) cầm hai bó hoa độc.
+BUIZEL | sea_mammal medic | Chồn biển (Sea Weasel) → Floatzel có phao ở cổ, hay cứu người đuối nước.
+CARBINK | treasure | Viên đá quý sống dưới lòng đất (Jewel).
+CHERUBI | festival food? | Quả anh đào (Cherry) → Cherrim (Blossom) nở khi trời nắng — như mùa ngắm hoa hanami.
+CLAMPERL | treasure | Ngọc trai trong vỏ sò (Bivalve) → Huntail (Deep Sea) / Gorebyss (South Sea).
+CORSOLA | | San hô (Coral), sừng mọc lại khi gãy; Corsola Galar là hồn san hô chết.
+CUBCHOO | bear | Gấu con thò lò mũi (Chill) → Beartic (Freezing).
+CUBONE | family | Đội sọ của mẹ đã mất (Lonely) → Marowak (Bone Keeper); Marowak Alola múa lửa.
+DARUMAKA | folklore | Búp bê daruma (Zen Charm) → Darmanitan (Blazing), chế độ Zen ngồi thiền như tượng.
+DODUO | | Chim hai đầu chạy rất nhanh (Twin Bird) → Dodrio ba đầu (Triple Bird), như đà điểu.
+DRATINI | transport medic | Rồng biển (Dragon) → Dragonair → Dragonite: hiền lành, dẫn tàu gặp nạn và người trôi dạt vào bờ.
+DROWZEE | dream folklore magic | Heo vòi ăn giấc mơ (Hypnosis), dựa trên baku → Hypno đung đưa con lắc thôi miên.
+DUCKLETT | waterbird fowl | Vịt con (Water Bird) → Swanna (White Bird), thiên nga.
+DWEBBLE | crab | Cua ẩn sĩ mang đá làm nhà (Rock Inn) → Crustle (Stone Home).
+ELEKID | folklore? | Điện (Electric) → Electabuzz → Electivire (Thunderbolt): dáng như quỷ sấm (oni / lôi thần).
+EXEGGCUTE | food | Chùm trứng / hạt (Egg) → Exeggutor (Coconut) như cây dừa biết đi; Exeggutor Alola cao vút.
+FERROSEED | | Hạt gai sắt bám trần hang (Thorn Seed) → Ferrothorn.
+FUECOCO | reptile artist? | Cá sấu lửa (Fire Croc) → Crocalor → Skeledirge (Singer) hát bằng chú chim lửa trên đầu.
+GALARIAN_DARUMAKA | folklore | Darumaka Galar sống ở xứ tuyết, như búp bê daruma tuyết → Darmanitan Galar.
+GALARIAN_PONYTA | horse medic | Ponyta Galar (Unique Horn) → Rapidash Galar: kỳ lân bờm cầu vồng, sừng có sức chữa vết thương.
+GIBLE | | Cá mập đất (Land Shark) → Gabite → Garchomp (Mach) bay như máy bay phản lực.
+GIRAFARIG | | Hươu cao cổ hai đầu (Long Neck), đuôi cũng có não → Farigiraf.
+GLIGAR | spider bat? | Bọ cạp bay (Fly Scorpion) → Gliscor (Fang Scorpion) như dơi.
+GULPIN | glutton | Cái dạ dày biết đi (Stomach) → Swalot (Poison Bag) nuốt chửng mọi thứ.
+HELIOPTILE | reptile desert | Thằn lằn diềm (Generator) phơi nắng sa mạc để lấy điện → Heliolisk.
+HIPPOPOTAS | elephant desert weather | Hà mã cát (Hippo) → Hippowdon (Heavyweight) thổi bão cát.
+HISUI_SNEASEL | ninja transport | Sneasel Hisui (độc) → Sneasler (Free Climb) leo vách đá — Poké Ride ở Hisui.
+HOUNDOUR | dog myth? | Chó săn bóng tối (Dark) → Houndoom: lửa thiêu da, như chó săn địa ngục, săn theo bầy.
+INKAY | octopus magic | Mực con (Revolving) → Malamar (Overturning) thôi miên, có thể lộn ngược.
+JANGMO_O | knight | Rồng giáp vảy (Scaly) → Hakamo-o → Kommo-o, đập vảy như chiến binh gõ khiên.
+KARRABLAST | knight | Bọ (Clamping) → Escavalier (Cavalry): hiệp sĩ giáp, hai cây thương.
+LARVESTA | myth desert? | Sâu lửa (Torch) → Volcarona (Sun): tương truyền thay mặt trời sưởi ấm khi trời tối vì tro núi lửa.
+LITTEN | cat tiger sport | Mèo lửa (Fire Cat) → Torracat → Incineroar (Heel): đô vật vai phản diện, dáng hổ.
+MANKEY | monkey pig? | Khỉ lợn (Pig Monkey) hay nổi giận → Primeape → Annihilape (Rage Monkey) giận tới mức thành ma.
+MEDITITE | sport | Tập thiền (Meditate) → Medicham — yoga.
+MISDREAVUS | magic | Hồn ma tinh nghịch (Screech) → Mismagius (Magical) như phù thuỷ đội mũ.
+MUDBRAY | horse farm transport | Lừa (Donkey) → Mudsdale (Draft Horse), ngựa kéo; Poké Ride chở người qua đá (Alola).
+MUNCHLAX | glutton dream | Ăn tạp (Big Eater) → Snorlax (Sleeping): ăn xong lăn ra ngủ chắn đường.
+MURKROW | raptor magic rogue | Quạ (Darkness) đội "mũ phù thuỷ", điềm xấu, nhặt đồ sáng → Honchkrow (Big Boss) như trùm mafia.
+NINCADA | ninja | Ve sầu (Trainee) → Ninjask (Ninja) bay cực nhanh; xác lột hoá Shedinja.
+NUMEL | desert | Lạc đà lửa (Numb) → Camerupt (Eruption) mang núi lửa trên lưng.
+ONIX | snake miner | Rắn đá (Rock Snake) đào hầm dưới đất → Steelix (Iron Snake) thân thép.
+OSHAWOTT | sea_mammal knight | Rái cá biển (Sea Otter) → Dewott (Discipline) → Samurott (Formidable): samurai với kiếm vỏ sò.
+PONYTA | horse transport? | Ngựa lửa (Fire Horse): bờm và đuôi là lửa → Rapidash chạy cực nhanh.
+PUMPKABOO | festival object | Quả bí ngô có hồn (Pumpkin) → Gourgeist — Halloween, dẫn linh hồn lạc đường.
+RALTS | guardian magic knight | Cảm xúc (Feeling) → Kirlia → Gardevoir (Embrace) liều mình bảo vệ chủ / Gallade (Blade) hiệp sĩ kiếm tay.
+ROCKRUFF | dog | Chó sói đá (Puppy) → Lycanroc (Wolf): dạng ngày, đêm, hoàng hôn.
+ROGGENROLA | miner | Đá khoáng (Mantle) → Boldore (Ore) → Gigalith (Compressed) hấp thụ nắng.
+SHEDINJA | ninja? folklore? | Vỏ ve lột rỗng có hồn (Shed) — sinh ra khi Nincada tiến hoá.
+SHELLOS* | | Sên biển (Sea Slug) → Gastrodon; màu khác nhau ở bờ biển phía Đông / Tây.
+SHUPPET | object folklore? | Hồn ma ăn cảm xúc oán hận (Puppet) → Banette (Marionette): búp bê bị vứt bỏ.
+SKIDDO | goat farm transport | Dê (Mount) → Gogoat (Mount): người cưỡi đi lại trong thành phố Lumiose.
+SKORUPI | spider desert | Bọ cạp sa mạc (Scorpion) → Drapion (Ogre Scorpion).
+SLAKOTH | dream monkey? | Con lười (Slacker) → Vigoroth (Wild Monkey) → Slaking (Lazy) nằm cả ngày.
+SNEASEL | rogue ninja? | Chồn vuốt sắc (Sharp Claw) trộm trứng → Weavile săn theo bầy.
+SNORUNT | folklore | Mũ tuyết (Snow Hat) → Glalie (Face) / Froslass (Snow Land) — yuki-onna (tuyết nữ Nhật).
+SNOVER | festival weather | Cây tuyết (Frost Tree) → Abomasnow: như cây thông Noel, gọi mưa tuyết.
+SNUBULL | dog | Chó bulldog (Fairy) → Granbull.
+STUFFUL | bear | Gấu bông (Flailing) → Bewear (Strong Arm) ôm thân thiện nhưng gãy xương.
+STUNKY | | Chồn hôi (Skunk) → Skuntank.
+SWABLU | artist? | Chim bông (Cotton Bird) → Altaria (Humming) hát hay như ca sĩ soprano.
+TINKATINK | worker | Thợ rèn (Metalsmith) → Tinkatuff → Tinkaton (Hammer): tự rèn búa, có khi từ thép của Corviknight.
+TRUBBISH | urban object | Túi rác (Trash Bag) → Garbodor (Trash Heap).
+WAILMER | sea_mammal | Cá voi bóng (Ball Whale) → Wailord (Float Whale), Pokémon to nhất.
+WATTREL | waterbird weather | Hải âu bão (Storm Petrel) → Kilowattrel (Frigatebird) cưỡi gió bão.
+WIMPOD | crab knight | Bọ biển nhút nhát (Turn Tail) → Golisopod (Hard Scale) như hiệp sĩ giáp.
+WINGULL | waterbird transport weather? | Mòng biển (Seagull) → Pelipper (Water Bird) chở Pokémon nhỏ trong mỏ, đưa thư; gọi mưa.
+WURMPLE | | Sâu (Worm) → Beautifly (bướm) hoặc Dustox (ngài).
+# --- ULTRA ---
+FLETCHLING | raptor | Chim cổ đỏ (Tiny Robin) → Fletchinder → Talonflame (Scorching), chim cắt lửa.
+FRIGIBAX | knight? | Rồng băng (Ice Fin) → Arctibax → Baxcalibur (Ice Dragon) có vây lưng như thanh kiếm Excalibur.
+GASTLY | rogue | Khí ma (Gas) → Haunter → Gengar (Shadow) trốn trong bóng tối, chơi khăm.
+GROOKEY | monkey artist | Khỉ cỏ (Chimp) → Thwackey (Beat) → Rillaboom (Drummer) đánh trống làm từ gốc cây.
+HAPPINY | medic family food | Búp bê trứng (Playhouse) → Chansey (Egg) → Blissey (Happiness): y tá ở Trung tâm Pokémon, trứng rất bổ.
+PAWNIARD | knight royal | Lưỡi dao (Sharp Blade) → Bisharp (Sword Blade) → Kingambit (Big Blade): tướng samurai đứng đầu cả đàn.
+PORYGON | space? | Pokémon nhân tạo bằng dữ liệu (Virtual) → Porygon2 → Porygon-Z, nâng cấp để đi tới chiều không gian khác.
+RHYHORN | elephant transport | Tê giác (Spikes) → Rhydon (Drill) → Rhyperior; ở Kalos có lớp dạy cưỡi Rhyhorn.
+SHINX | tiger | Sư tử / linh miêu con (Flash) → Luxio (Spark) → Luxray (Gleam Eyes) nhìn xuyên vật.
+SOBBLE | reptile ninja gunner | Tắc kè nước hay khóc (Water Lizard) → Drizzile → Inteleon (Secret Agent), điệp viên bắn nước từ ngón tay.
+SOLOSIS | | Tế bào (Cell) → Duosion (Mitosis) → Reuniclus (Multiplying).
+TEDDIURSA | bear transport | Gấu con (Little Bear) → Ursaring (Hibernator) → Ursaluna (Peat): Poké Ride ở Hisui, đánh hơi tìm đồ.
+TIMBURR | worker | Thợ xây (Muscular): Timburr vác gỗ, Gurdurr vác dầm thép, Conkeldurr chống trụ bê tông.
+VENIPEDE | | Rết (Centipede) → Whirlipede → Scolipede.

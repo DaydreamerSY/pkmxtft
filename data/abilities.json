@@ -1,0 +1,1014 @@
+{
+ "_doc": "Data-driven abilities ported from pokemonAutoChess/app/core/abilities. Schema: docs/ABILITIES.md. Values are per star [1,2,3,(4)]. 'approx' marks simplified ports.",
+
+ "NUZZLE": {"name": "Nuzzle", "desc": "Dashes next to the farthest enemy, paralyses it 3s and deals 25/50/100 special damage.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "status": "paralysis", "durations": [3000, 3000, 3000, 6000]},
+   {"type": "damage", "values": [25, 50, 100, 200]}]}]},
+
+ "HEAVY_SLAM": {"name": "Heavy Slam", "desc": "Slams the ground: 15/30/60 special damage to the adjacent enemies, more the more max HP it has than its target (x 1 + half the difference in % of the target's max HP).", "script": "heavy_slam"},
+
+ "PLAY_ROUGH": {"name": "Play Rough", "desc": "Charms the target 2.5s and deals 30/60/120 special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "status": "charm", "duration": 2500},
+   {"type": "damage", "values": [30, 60, 120, 240]}]}]},
+
+ "STRING_SHOT": {"name": "String Shot", "desc": "Paralyses the target 5s and deals 10/20/50 special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "status": "paralysis", "duration": 5000},
+   {"type": "damage", "values": [10, 20, 50, 100]}]}]},
+
+ "BLAST_BURN": {"name": "Blast Burn", "desc": "Explodes on the 8 cells around itself for 30/60/120 special damage.",
+  "steps": [{"area": "adjacent", "origin": "caster", "effects": [
+   {"type": "damage", "values": [30, 60, 120, 240]}]}]},
+
+ "SPIKY_SHIELD": {"name": "Spiky Shield", "desc": "Deals 60/80/100% of DEF as special damage to the target and wears spiky armor for 3/5/10s.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "stat": "def", "values": [0.6, 0.8, 1, 2]},
+   {"type": "status", "to": "self", "status": "spike_armor", "durations": [3000, 5000, 10000, 10000]}]}]},
+
+ "MYSTICAL_FIRE": {"name": "Mystical Fire", "desc": "Deals 20/40/80 special damage and lowers the target AP by 15/20/25.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160]},
+   {"type": "buff", "stat": "ap", "values": [-15, -20, -25, -50]}]}]},
+
+ "ROCK_SLIDE": {"name": "Rock Slide", "desc": "Deals 30/60/120 special damage to the target, doubled against FLYING.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [30, 60, 120, 240], "if": {"target_type": "FLYING"}, "if_mult": 2}]}]},
+
+ "ACID_ARMOR": {"name": "Acid Armor", "desc": "Gains 3/6/12 DEF.",
+  "steps": [{"area": "self", "effects": [
+   {"type": "buff", "to": "self", "stat": "def", "values": [3, 6, 12, 25]}]}]},
+
+ "GEAR_GRIND": {"name": "Gear Grind", "desc": "Throws 2 gears at the target, each dealing 25/50/100% of SPEED as special damage.",
+  "steps": [{"area": "single", "repeat": 2, "interval": 250, "effects": [
+   {"type": "damage", "stat": "speed", "values": [0.25, 0.5, 1, 2]}]}]},
+
+ "RETALIATE": {"name": "Retaliate", "desc": "Hits the target for 150% ATK as special damage, one more time per fallen ally.",
+  "steps": [{"area": "single", "repeat": "fallen+1", "effects": [
+   {"type": "damage", "stat": "atk", "values": [1.5, 1.5, 1.5, 3]}]}]},
+
+ "HEX": {"name": "Hex", "desc": "Deals 20/40/80 special damage, doubled if the target has a negative status.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160], "if": {"target_negative": true}, "if_mult": 2}]}]},
+
+ "THUNDER_SHOCK": {"name": "Thunder Shock", "desc": "Deals 30/60/120 special damage to the target.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [30, 60, 120, 240]}]}]},
+
+ "SOAK": {"name": "Soak", "desc": "Deals 20/40/80 special damage and gives 10 PP to every ally.",
+  "steps": [
+   {"area": "single", "effects": [{"type": "damage", "values": [20, 40, 80, 160]}]},
+   {"area": "board", "affects": "allies", "effects": [{"type": "buff", "stat": "pp", "values": [10], "no_ap": true}]}]},
+
+ "AGILITY": {"name": "Agility", "desc": "Gains 10/20/30 SPEED.", "no_target": true,
+  "steps": [{"area": "self", "effects": [
+   {"type": "buff", "to": "self", "stat": "speed", "values": [10, 20, 30, 60]}]}]},
+
+ "TERRAIN_PULSE": {"name": "Terrain Pulse", "desc": "Without a field, gets a Grassy field. The fields of its team spread to the adjacent allies without one, then each ally with a field: Grass heals 5/7/10% max HP, Electric +10/12/15 SPEED, Psychic +10/12/15 PP, Fairy 5/7/10% max HP as shield.", "no_target": true, "script": "terrain_pulse"},
+
+ "PECK": {"name": "Peck", "desc": "Deals 10/30/50 special damage to the target.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [10, 30, 50, 100]}]}]},
+
+ "FLOWER_TRICK": {"name": "Flower Trick", "desc": "Plants a flower on the target that explodes after 3s on the target and the 8 cells around it for 15/40/85 special damage.",
+  "steps": [{"area": "adjacent", "origin": "focus", "center": true, "delay": 3000, "effects": [
+   {"type": "damage", "values": [15, 40, 85, 170]}]}]},
+
+ "HYDRO_PUMP": {"name": "Hydro Pump", "desc": "Fires a jet in a straight line through the target to the board edge, 20/40/80 special damage to every enemy on it.",
+  "steps": [{"area": "line", "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160]}]}]},
+
+ "ICICLE_CRASH": {"name": "Icicle Crash", "desc": "Drops icicles on the target and the 8 cells around it, 20/40/80 special damage.",
+  "steps": [{"area": "adjacent", "origin": "focus", "center": true, "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160]}]}]},
+
+ "BUG_BUZZ": {"name": "Bug Buzz", "desc": "Deals 20/40/80 special damage, doubled on a paralysed target.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160], "if": {"target_status": "paralysis"}, "if_mult": 2}]}]},
+
+ "LEECH_LIFE": {"name": "Leech Life", "desc": "Deals 20/40/80 special damage and heals itself by the damage dealt.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160]},
+   {"type": "drain", "ratio": 1.0}]}]},
+
+ "TICKLE": {"name": "Tickle", "desc": "The 1/2/3 closest enemies lose 3 ATK and 3 DEF.",
+  "steps": [{"area": "closest", "size": [1, 2, 3, 5], "effects": [
+   {"type": "buff", "stat": "atk", "values": [-3]},
+   {"type": "buff", "stat": "def", "values": [-3]}]}]},
+
+ "WHEEL_OF_FIRE": {"name": "Wheel of Fire", "desc": "Rolls toward the farthest enemy: every enemy on the cells in between takes 10/20/40 special damage twice.",
+  "focus": "farthest",
+  "steps": [{"area": "between", "guarantee_focus": true, "repeat": 2, "interval": 500, "effects": [
+   {"type": "damage", "values": [10, 20, 40, 80]}]}]},
+
+ "SHADOW_BALL": {"name": "Shadow Ball", "desc": "Deals 30/60/100 special damage to the target; every enemy loses 2 SPE_DEF.",
+  "steps": [
+   {"area": "single", "effects": [{"type": "damage", "values": [30, 60, 100, 200]}]},
+   {"area": "board", "effects": [{"type": "buff", "stat": "speDef", "values": [-2], "no_ap": true}]}]},
+
+ "REFLECT": {"name": "Reflect", "desc": "Reflects half of the physical damage it takes for 3s.",
+  "steps": [{"area": "self", "effects": [
+   {"type": "status", "to": "self", "status": "reflect", "durations": [3000, 3000, 3000, 5000]}]}]},
+
+ "FAIRY_WIND": {"name": "Fairy Wind", "desc": "Every other ally gains 5/10/20 PP.", "no_target": true,
+  "steps": [{"area": "board", "affects": "allies_others", "effects": [
+   {"type": "buff", "stat": "pp", "values": [5, 10, 20, 40]}]}]},
+
+ "MAGIC_POWDER": {"name": "Magic Powder", "desc": "Gains 15/30/60 shield and silences the enemies on the 8 cells around it for 2/3/4s.",
+  "steps": [{"area": "adjacent", "origin": "caster", "effects": [
+   {"type": "shield", "to": "self", "values": [15, 30, 60, 120]},
+   {"type": "status", "status": "silence", "durations": [2000, 3000, 4000, 8000]}]}]},
+
+ "WHIRLPOOL": {"name": "Whirlpool", "desc": "Sends a whirlpool toward the farthest enemy; the first enemy on its path takes 4 hits of 100% ATK as special damage.",
+  "focus": "farthest",
+  "steps": [{"area": "between", "first_only": true, "guarantee_focus": true, "repeat": 4, "effects": [
+   {"type": "damage", "stat": "atk", "values": [1, 1, 1, 2]}]}]},
+
+ "SING": {"name": "Sing", "desc": "Puts the 1/2/3 front-most enemies to sleep for 2s.", "no_target": true,
+  "steps": [{"area": "front", "size": [1, 2, 3, 5], "effects": [
+   {"type": "status", "status": "sleep", "durations": [2000, 2000, 2000, 4000], "ap_scale": true}]}]},
+
+ "LICK": {"name": "Lick", "desc": "Confuses and paralyses the target 3s, and deals 30/60/120 special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "status": "confusion", "duration": 3000},
+   {"type": "status", "status": "paralysis", "duration": 3000},
+   {"type": "damage", "values": [30, 60, 120, 240]}]}]},
+
+ "GUILLOTINE": {"name": "Guillotine", "desc": "Deals 300% ATK as special damage. Refunds half of its PP on kill.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "stat": "atk", "values": [3, 3, 3, 6], "on_kill_pp": 0.5}]}]},
+
+ "MAGNET_BOMB": {"name": "Magnet Bomb", "desc": "20/40/80 special damage to the target and 10/20/40 to the enemies around it; enemies 2 cells away are pulled next to it. Every enemy hit or pulled is locked 1.5s.", "script": "magnet_bomb"},
+
+ "SALT_CURE": {"name": "Salt Cure", "desc": "Allies within 2 cells gain 10/20/40 shield and are cured; WATER, STEEL and GHOST enemies within 2 cells burn for 5s.",
+  "steps": [
+   {"area": "radius", "origin": "caster", "size": 2, "affects": "allies", "effects": [
+    {"type": "shield", "values": [10, 20, 40, 80]},
+    {"type": "cleanse"}]},
+   {"area": "radius", "origin": "caster", "size": 2, "effects": [
+    {"type": "status", "status": "burn", "duration": 5000, "if": {"target_types_any": ["WATER", "STEEL", "GHOST"]}}]}]},
+
+ "HORN_ATTACK": {"name": "Horn Attack", "desc": "Deals 300/400/500% ATK as special damage and breaks the target armor for 8s.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "stat": "atk", "values": [3, 4, 5, 10]},
+   {"type": "status", "status": "armor_reduction", "duration": 8000}]}]},
+
+ "WAVE_SPLASH": {"name": "Wave Splash", "desc": "Gains 20% of max HP as shield, then slams the target for 20% of its max HP as special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "shield", "to": "self", "stat": "maxHP", "values": [0.2, 0.2, 0.2, 0.5]},
+   {"type": "damage", "stat": "maxHP", "values": [0.2, 0.2, 0.2, 0.5]}]}]},
+
+ "AQUA_STEP": {"name": "Aqua Step", "desc": "Steps toward the target, then deals 25/50/100 special damage and gains 10/15/20 SPEED.",
+  "dash": "toward_focus",
+  "steps": [{"area": "single", "delay": 300, "effects": [
+   {"type": "damage", "values": [25, 50, 100, 200]},
+   {"type": "buff", "to": "self", "stat": "speed", "values": [10, 15, 20, 25]}]}]},
+
+ "MANTIS_BLADES": {"name": "Mantis Blades", "desc": "Strikes 3 times for 10/20/40: one physical, one special and one true damage hit.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "kind": "physical", "values": [10, 20, 40, 80]},
+   {"type": "damage", "kind": "special", "values": [10, 20, 40, 80]},
+   {"type": "damage", "kind": "true", "values": [10, 20, 40, 80]}]}]},
+
+ "ICE_BALL": {"name": "Ice Ball", "desc": "Gains 10 SPE_DEF, then deals 10/20/30 + 50/100/150% SPE_DEF as special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "buff", "to": "self", "stat": "speDef", "values": [10], "no_ap": true},
+   {"type": "damage", "values": [10, 20, 30, 60], "plus_stat": "speDef", "plus_values": [0.5, 1, 1.5, 3]}]}]},
+
+ "LEAF_BLADE": {"name": "Leaf Blade", "desc": "A guaranteed critical strike for 100/125/150% ATK as true damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "kind": "true", "stat": "atk", "values": [1, 1.25, 1.5, 2.5], "always_crit": true}]}]},
+
+ "TELEPORT": {"name": "Teleport", "desc": "Teleports to a safe cell. Its next attack deals 15/30/60 more special damage; it cannot cast until then.", "no_target": true, "script": "teleport"},
+
+ "MAGICAL_LEAF": {"name": "Magical Leaf", "desc": "Throws leaves toward the farthest enemy: enemies on the cells in between take 10/20/40 special damage and lose armor for 3s.",
+  "focus": "farthest",
+  "steps": [{"area": "between", "guarantee_focus": true, "effects": [
+   {"type": "status", "status": "armor_reduction", "duration": 3000},
+   {"type": "damage", "values": [10, 20, 40, 80]}]}]},
+
+ "DARK_HARVEST": {"name": "Dark Harvest", "desc": "Jumps to the cell surrounded by the most enemies, then for 3s the 8 cells around it take 5/10/20 special damage per second; heals 30% of it.", "no_target": true,
+  "dash": "most_surrounded",
+  "steps": [
+   {"area": "self", "effects": [{"type": "status", "to": "self", "status": "silence", "duration": 3000}]},
+   {"area": "adjacent", "origin": "caster", "delay": 1000, "repeat": 3, "interval": 1000, "effects": [
+    {"type": "damage", "values": [5, 10, 20, 40]},
+    {"type": "drain", "ratio": 0.3}]}]},
+
+ "KING_SHIELD": {"name": "King's Shield", "desc": "Protects itself 1.5s, gains 10/20/40 shield and swaps place with the farthest enemy.",
+  "dash": "swap_farthest",
+  "steps": [{"area": "self", "effects": [
+   {"type": "status", "to": "self", "status": "protect", "duration": 1500},
+   {"type": "shield", "to": "self", "values": [10, 20, 40, 80]}]}]},
+
+ "PURSUIT": {"name": "Pursuit", "desc": "Deals 35/70/140 special damage to the target and marks it: if it jumps or teleports, jumps next to it and casts again.", "script": "pursuit"},
+
+ "FLAMETHROWER": {"name": "Flamethrower", "desc": "Breathes fire in the target direction, up to 3 cells: 30/60/120 special damage and burn 4s.",
+  "steps": [{"area": "ray", "size": 3, "effects": [
+   {"type": "damage", "values": [30, 60, 120, 240]},
+   {"type": "status", "status": "burn", "duration": 4000}]}]},
+
+ "DOUBLE_SHOCK": {"name": "Double Shock", "desc": "Paralyses itself 3s to deal 50/100/200 special damage to the target.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "to": "self", "status": "paralysis", "duration": 3000},
+   {"type": "damage", "values": [50, 100, 200, 400]}]}]},
+
+ "RAPID_SPIN": {"name": "Rapid Spin", "desc": "Deals 20/50/100 special damage and gains 50% of ATK as DEF and SPE_DEF.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [20, 50, 100, 200]},
+   {"type": "buff", "to": "self", "stat": "def", "scale_stat": "atk", "values": [0.5]},
+   {"type": "buff", "to": "self", "stat": "speDef", "scale_stat": "atk", "values": [0.5]}]}]},
+
+ "GROWL": {"name": "Growl", "desc": "Enemies on the 8 cells around it flinch 3s and lose 3/5/7 ATK.",
+  "steps": [{"area": "adjacent", "origin": "caster", "effects": [
+   {"type": "status", "status": "flinch", "duration": 3000},
+   {"type": "buff", "stat": "atk", "values": [-3, -5, -7, -14]}]}]},
+
+ "AIR_SLASH": {"name": "Air Slash", "desc": "Makes the target flinch 7s and deals 25/50/100 special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "status": "flinch", "duration": 7000},
+   {"type": "damage", "values": [25, 50, 100, 200]}]}]},
+
+ "WISH": {"name": "Wish", "desc": "The lowest HP% ally gains 30/60/120 shield and is protected 1.5s.", "no_target": true,
+  "focus": "lowest_ally",
+  "steps": [{"area": "single", "affects": "allies", "effects": [
+   {"type": "shield", "values": [30, 60, 120, 240]},
+   {"type": "status", "status": "protect", "duration": 1500}]}]},
+
+ "BLAZE_KICK": {"name": "Blaze Kick", "desc": "Deals 30/60/120 special damage (x1.3 if burned), burns 2s and kicks the target back as far as possible.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [30, 60, 120, 240], "if": {"target_status": "burn"}, "if_mult": 1.3},
+   {"type": "status", "status": "burn", "duration": 2000},
+   {"type": "knockback", "distance": 8}]}]},
+
+ "BITE": {"name": "Bite", "desc": "Deals 300/400/500% ATK as special damage, heals 50% of it and makes the target flinch 5s.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "stat": "atk", "values": [3, 4, 5, 10]},
+   {"type": "drain", "ratio": 0.5},
+   {"type": "status", "status": "flinch", "duration": 5000}]}]},
+
+ "DRAGON_TAIL": {"name": "Dragon Tail", "desc": "Deals 30/60/100 special damage and gains 2/4/6 DEF and SPE_DEF.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [30, 60, 100, 150]},
+   {"type": "buff", "to": "self", "stat": "def", "values": [2, 4, 6, 10]},
+   {"type": "buff", "to": "self", "stat": "speDef", "values": [2, 4, 6, 10]}]}]},
+
+ "BULLDOZE": {"name": "Bulldoze", "desc": "Enemies on the 8 cells around it take 25/45/85 special damage, lose 10 SPEED and are pushed back 1 cell.",
+  "steps": [{"area": "adjacent", "origin": "caster", "effects": [
+   {"type": "knockback", "distance": 1},
+   {"type": "buff", "stat": "speed", "values": [-10], "no_ap": true},
+   {"type": "damage", "values": [25, 45, 85, 160]}]}]},
+
+ "ICICLE_MISSILE": {"name": "Icicle Missile", "desc": "After 1s, icicles hit the 1/2/3 front-most enemies: 50 special damage and freeze 2s.", "no_target": true,
+  "steps": [{"area": "front", "size": [1, 2, 3, 5], "delay": 1000, "effects": [
+   {"type": "status", "status": "freeze", "duration": 2000},
+   {"type": "damage", "values": [50]}]}]},
+
+ "UPROAR": {"name": "Uproar", "desc": "For 3s, deals 5/10/20 special damage per second to every enemy within its attack range.", "no_target": true,
+  "steps": [{"area": "square", "origin": "caster", "size": "range", "delay": 1000, "repeat": 3, "interval": 1000, "effects": [
+   {"type": "damage", "values": [5, 10, 20, 40]}]}]},
+
+ "SLASH": {"name": "Slash", "desc": "Deals 10/20/40 special damage with +30/60/90% crit chance.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [10, 20, 40, 80], "crit_bonus": [30, 60, 90, 100]}]}]},
+
+ "METEOR_MASH": {"name": "Meteor Mash", "desc": "Hits the target 3 times for 100/120/140% ATK as special damage, gaining 2 ATK per hit.",
+  "steps": [{"area": "single", "repeat": 3, "effects": [
+   {"type": "damage", "stat": "atk", "values": [1, 1.2, 1.4, 2]},
+   {"type": "buff", "to": "self", "stat": "atk", "values": [2], "no_ap": true}]}]},
+
+ "TROP_KICK": {"name": "Trop Kick", "desc": "Lowers the target ATK by 3/5/7 and deals 50/100/200 special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "buff", "stat": "atk", "values": [-3, -5, -7, -14]},
+   {"type": "damage", "values": [50, 100, 200, 400]}]}]},
+
+ "PETAL_DANCE": {"name": "Petal Dance", "desc": "Throws 3/4/5 petals at the closest enemies, 20/30/50 special damage each.", "no_target": true,
+  "steps": [{"area": "closest", "size": [3, 4, 5, 6], "cycle_targets": true, "effects": [
+   {"type": "damage", "values": [20, 30, 50, 100]}]}]},
+
+ "HEADBUTT": {"name": "Headbutt", "desc": "Deals 20/40/80 special damage (doubled on a shielded target) and makes it flinch 5s.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160], "if": {"target_shield": true}, "if_mult": 2},
+   {"type": "status", "status": "flinch", "duration": 5000}]}]},
+
+ "TWISTER": {"name": "Twister", "desc": "Enemies on the 8 cells around it take 25/50/100 special damage and are blown away 1/2/3 cells.",
+  "steps": [{"area": "adjacent", "origin": "caster", "effects": [
+   {"type": "damage", "values": [25, 50, 100, 200]},
+   {"type": "knockback", "distances": [1, 2, 3, 6]}]}]},
+
+ "SHOCKWAVE": {"name": "Shockwave", "desc": "A shockwave on every cell within 2 of it: 30/60/120 special damage, -20% per cell of distance.",
+  "steps": [{"area": "radius", "origin": "caster", "size": 2, "effects": [
+   {"type": "damage", "values": [30, 60, 120, 240], "falloff": 0.2}]}]},
+
+ "TORCH_SONG": {"name": "Torch Song", "desc": "Blows 4 flames at random enemies: 50% ATK as special damage, 30% chance to burn 2s, +1/2/3 AP per flame.", "no_target": true,
+  "steps": [{"area": "random", "size": [4], "interval": 100, "effects": [
+   {"type": "damage", "stat": "atk", "values": [0.5], "no_ap": true},
+   {"type": "status", "status": "burn", "duration": 2000, "chance": 0.3},
+   {"type": "buff", "to": "self", "stat": "ap", "values": [1, 2, 3, 6], "no_ap": true}]}]},
+
+ "DRAGON_BREATH": {"name": "Dragon Breath", "desc": "Breathes in the target direction up to range+1 cells: 25/50/100 special damage.",
+  "steps": [{"area": "ray", "size": "range+1", "effects": [
+   {"type": "damage", "values": [25, 50, 100, 200]}]}]},
+
+ "DARKEST_LARIAT": {"name": "Darkest Lariat", "desc": "Moves behind the target and hits it several times (more with SPEED) for 100% ATK as special damage each.",
+  "dash": "behind_focus",
+  "steps": [
+   {"area": "single", "effects": [{"type": "status", "status": "flinch", "duration": 1000}]},
+   {"area": "single", "repeat": "speed3", "interval": 250, "effects": [
+    {"type": "damage", "stat": "atk", "values": [1, 1, 1, 2]}]}]},
+
+ "AQUA_TAIL": {"name": "Aqua Tail", "desc": "Deals 30/60/100 special damage and gains 30/60/100 shield.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [30, 60, 100, 200]},
+   {"type": "shield", "to": "self", "values": [30, 60, 100, 200]}]}]},
+
+ "FUTURE_SIGHT": {"name": "Future Sight", "desc": "Marks the 3/4/5 closest enemies; 2s later each takes 20/30/50 special damage and 20% of it splashes on the 8 cells around.", "no_target": true,
+  "steps": [{"area": "closest", "size": [3, 4, 5, 6], "delay": 2000, "effects": [
+   {"type": "damage", "values": [20, 30, 50, 80], "splash": 0.2}]}]},
+
+ "ACCELEROCK": {"name": "Accelerock", "desc": "Dashes next to the farthest enemy and deals 100/125/250% ATK as special damage, trading DEF for SPEED.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "stat": "atk", "values": [1, 1.25, 2.5]},
+   {"type": "buff", "to": "self", "stat": "def", "values": [-10], "no_ap": true},
+   {"type": "buff", "to": "self", "stat": "speed", "values": [25]}]}]},
+
+ "ROCK_ARTILLERY": {"name": "Rock Artillery", "desc": "Fires 10/15/25 rocks on random cells around enemies, 20/30/40 special damage each.", "no_target": true,
+  "steps": [{"area": "random", "size": [10, 15, 25, 50], "scatter": true, "interval": 100, "effects": [
+   {"type": "damage", "values": [20, 30, 40, 80]}]}]},
+
+ "ICY_WIND": {"name": "Icy Wind", "desc": "A freezing wind in a line through the target to the board edge: 25/50/100 special damage and -10/20/40 SPEED.",
+  "steps": [{"area": "line", "effects": [
+   {"type": "damage", "values": [25, 50, 100, 200]},
+   {"type": "buff", "stat": "speed", "values": [-10, -20, -40, -80], "no_ap": true}]}]},
+
+ "GIGATON_HAMMER": {"name": "Gigaton Hammer", "desc": "Deals 100/200/400 special damage, then is fatigued for 6s.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "to": "self", "status": "fatigue", "duration": 6000},
+   {"type": "damage", "values": [100, 200, 400, 800]}]}]},
+
+ "ENTANGLING_THREAD": {"name": "Entangling Thread", "desc": "The target and the 8 cells around it: 10/20/40 special damage and paralysis 4s.",
+  "steps": [{"area": "adjacent", "origin": "focus", "center": true, "effects": [
+   {"type": "status", "status": "paralysis", "duration": 4000},
+   {"type": "damage", "values": [10, 20, 40, 80]}]}]},
+
+ "FIRESTARTER": {"name": "Firestarter", "desc": "Flies away, burning the cells on its path: 20/40/80 special damage, then gains 10/20/40 SPEED.",
+  "dash": "fly_away",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160]},
+   {"type": "buff", "to": "self", "stat": "speed", "values": [10, 20, 40, 80]}]}]},
+
+ "GLAIVE_RUSH": {"name": "Glaive Rush", "desc": "Charges to the other end of the board: enemies on its path take 50/100/200 special damage; everyone hit (and itself) loses armor 6s.",
+  "dash": "far_row",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "status", "to": "self", "status": "armor_reduction", "duration": 6000},
+   {"type": "status", "status": "armor_reduction", "duration": 6000},
+   {"type": "damage", "values": [50, 100, 200, 400]}]}]},
+
+ "NIGHTMARE": {"name": "Nightmare", "desc": "Every enemy is fatigued (halved PP gain) for 2/4/6s; the ones under a Ghost curse also take 25/50/100 special damage.", "no_target": true, "script": "nightmare"},
+
+ "DRUM_BEATING": {"name": "Drum Beating", "desc": "Cycles between 3 beats: team +10/20/40 SPEED, team +10/20/40 shield, all enemies take 10/20/40 special damage.",
+  "cycle": true,
+  "steps": [
+   {"area": "board", "affects": "allies", "effects": [{"type": "buff", "stat": "speed", "values": [10, 20, 40, 80], "no_ap": true}]},
+   {"area": "board", "affects": "allies", "effects": [{"type": "shield", "values": [10, 20, 40, 80]}]},
+   {"area": "board", "effects": [{"type": "damage", "values": [10, 20, 40, 80]}]}]},
+
+ "SOFT_BOILED": {"name": "Soft-Boiled", "desc": "Every ally gains 20/40/80 shield and is cured of negative statuses.", "no_target": true,
+  "steps": [{"area": "board", "affects": "allies", "effects": [
+   {"type": "shield", "values": [20, 40, 80, 160]},
+   {"type": "cleanse"}]}]},
+
+ "KOWTOW_CLEAVE": {"name": "Kowtow Cleave", "desc": "A guaranteed crit for 150% ATK as true damage, +20% ATK per fallen ally.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "kind": "true", "stat": "atk", "values": [1.5], "per_fallen": [0.2, 0.2, 0.2, 0.5], "always_crit": true}]}]},
+
+ "TRI_ATTACK": {"name": "Tri Attack", "desc": "Freezes 3s, burns 5s or paralyses 7s the target (random), and deals 60/120/250 special damage.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "status", "options": [["freeze", 3000], ["burn", 5000], ["paralysis", 7000]]},
+   {"type": "damage", "values": [60, 120, 250, 500]}]}]},
+
+ "HORN_DRILL": {"name": "Horn Drill", "desc": "Deals 300/400/500% ATK as special damage, with a 30% chance (higher if its ATK is higher) to one-shot the target.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "stat": "atk", "values": [3, 4, 5, 10], "execute_chance": 0.3}]}]},
+
+ "VOLT_SWITCH": {"name": "Volt Switch", "desc": "Dashes next to the farthest enemy; enemies on its path take 25/50/100 special damage.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "damage", "values": [25, 50, 100, 200]}]}]},
+
+ "SNIPE_SHOT": {"name": "Snipe Shot", "desc": "Shoots the farthest enemy: every enemy on the cells in between takes 40/80/160 special damage.",
+  "focus": "farthest",
+  "steps": [{"area": "between", "guarantee_focus": true, "effects": [
+   {"type": "damage", "values": [40, 80, 160, 320]}]}]},
+
+ "PSYCHIC": {"name": "Psychic", "desc": "The target and the 8 cells around it: 40/80/160 special damage and -15 PP.",
+  "steps": [{"area": "adjacent", "origin": "focus", "center": true, "effects": [
+   {"type": "damage", "values": [40, 80, 160, 320]},
+   {"type": "buff", "stat": "pp", "values": [-15], "no_ap": true}]}]},
+
+ "FURY_SWIPES": {"name": "Fury Swipes", "desc": "Swipes the target 5 times in 1s for 100% ATK as physical damage each.",
+  "steps": [{"area": "single", "repeat": 5, "interval": 200, "effects": [
+   {"type": "damage", "kind": "physical", "stat": "atk", "values": [1], "no_ap": true}]}]},
+
+ "COLUMN_CRUSH": {"name": "Column Crush", "desc": "Builds a pillar (wood/iron/concrete) on the closest free cell. If a pillar of its team is already on the board, jumps on it and throws it at the nearest enemy: 50/100/150 + the HP the pillar had left as special damage.", "no_target": true, "script": "column_crush"},
+
+ "STEAMROLLER": {"name": "Steamroller", "desc": "Rolls next to the farthest enemy: enemies on its path take 40/80/150% SPEED as special damage, 50% chance to flinch 3s.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "damage", "stat": "speed", "values": [0.4, 0.8, 1.5, 3]},
+   {"type": "status", "status": "flinch", "duration": 3000, "chance": 0.5}]}]},
+
+ "SPLASH": {"name": "Splash", "desc": "Splashes around. Nothing happens.", "no_target": true, "steps": []},
+
+ "DRAGON_RAGE": {"name": "Dragon Rage", "desc": "Gains 15/30/45 shield. Each second for 6s: +5/10/15 shield and 5/10/15 special damage to the adjacent enemies. Then the shield it gave left turns into a heal of 40% of it.", "no_target": true, "script": "dragon_rage"},
+
+ "PSYSTRIKE": {"name": "Psystrike", "desc": "A psychic wave toward the farthest enemy: 20/40/80 special damage to the enemies on its path, each teleported to the back of its side.", "script": "psystrike"},
+
+ "SKY_ATTACK": {"name": "Sky Attack", "desc": "Soars out of reach, lands next to the farthest enemy and strikes it 1s later for 30/60/120 special damage.", "no_target": true, "script": "sky_attack"},
+
+ "FIRE_BLAST": {"name": "Fire Blast", "desc": "A star-shaped blast on the target: 30/60/110 special damage to every enemy in it.", "script": "fire_blast"},
+
+ "THUNDER": {"name": "Thunder", "desc": "Lightning strikes 3 random enemies, 0.5s apart: 25/50/100 special damage, 30% chance of paralysis 3s.", "no_target": true, "script": "thunder"},
+
+ "OVERHEAT": {"name": "Overheat", "desc": "Every enemy within 4 cells of the target takes 12/25/50 special damage (x1.3 if burned).",
+  "steps": [{"area": "radius", "origin": "focus", "size": 4, "center": true, "effects": [
+   {"type": "damage", "values": [12, 25, 50, 100], "if": {"target_status": "burn"}, "if_mult": 1.3}]}]},
+
+ "BLIZZARD": {"name": "Blizzard", "desc": "Every enemy within 4 cells takes 10/20/40 special damage (x1.3 if frozen) and freezes 1.5s.",
+  "steps": [{"area": "radius", "origin": "caster", "size": 4, "effects": [
+   {"type": "damage", "values": [10, 20, 40, 80], "if": {"target_status": "freeze"}, "if_mult": 1.3},
+   {"type": "status", "status": "freeze", "duration": 1500}]}]},
+
+ "FLAME_CHARGE": {"name": "Flame Charge", "desc": "Charges next to the farthest enemy: enemies on its path take 30/60/120 special damage.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "damage", "values": [30, 60, 120, 240]}]}]},
+
+ "AQUA_JET": {"name": "Aqua Jet", "desc": "Jets next to the farthest enemy: enemies on its path take 20/40/80 special damage.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160]}]}]},
+
+ "ORIGIN_PULSE": {"name": "Origin Pulse", "desc": "A wave along the target's row: 50/75/100 special damage to every enemy on it.", "script": "origin_pulse"},
+
+ "DRACO_METEOR": {"name": "Draco Meteor", "desc": "A meteor falls on the target 1s later: 30/60/120 special damage to it and the adjacent enemies, then it loses 20 AP.", "script": "draco_meteor"},
+
+ "PRECIPICE_BLADES": {"name": "Precipice Blades", "desc": "Deals 25/50/100 special damage to every enemy on its row or its column.", "script": "precipice_blades"},
+
+ "THUNDER_CAGE": {"name": "Thunder Cage", "desc": "Cages the target and the 8 cells around it: 15/30/60 special damage, locked and paralysed 3s.",
+  "steps": [{"area": "adjacent", "origin": "focus", "center": true, "effects": [
+   {"type": "status", "status": "locked", "duration": 3000},
+   {"type": "status", "status": "paralysis", "duration": 3000},
+   {"type": "damage", "values": [15, 30, 60, 120]}]}]},
+
+ "HAIL": {"name": "Hail", "desc": "8/15/30 hailstones fall on random cells of the target's side: 50 special damage and freeze 1s to an enemy there; the cells keep hail (10 special damage and freeze 1s to whoever steps on them).", "script": "hail"},
+
+ "CRUSH_GRIP": {"name": "Crush Grip", "desc": "Deals 15/25/50 + up to 50/100/200 special damage, the healthier the target the more.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [15, 25, 50, 100], "target_hp_bonus": [50, 100, 200, 400]}]}]},
+
+ "STEALTH_ROCKS": {"name": "Stealth Rock", "desc": "Lays stealth rocks on a cone of 1/2/3 cells toward the target; the enemies there take 30/40/50 special damage.", "script": "stealth_rocks"},
+
+ "IRON_HEAD": {"name": "Iron Head", "desc": "Gains 5/10/15 DEF and SPE_DEF, then deals its DEF + SPE_DEF as special damage to the target.", "script": "iron_head"},
+
+ "DRAGON_ENERGY": {"name": "Dragon Energy", "desc": "Deals its current HP as special damage to the target.", "script": "dragon_energy"},
+
+ "ROAR_OF_TIME": {"name": "Roar of Time", "desc": "The strongest ally without one gets a resurrection and 10/15/20 SPEED.", "no_target": true, "script": "roar_of_time"},
+
+ "SHADOW_FORCE": {"name": "Shadow Force", "desc": "Takes its Origin form, teleports into the largest group of enemies and deals 30/45/60 special damage to the adjacent ones, breaking Protect, Reflect and Magic Bounce. Its ability becomes Shadow Claw.", "no_target": true, "inimitable": true, "script": "shadow_force"},
+
+ "SPACIAL_REND": {"name": "Spacial Rend", "desc": "Reverses the positions of the enemy team, then deals 20/60/100 special damage to every enemy on the target's row.", "script": "spacial_rend"},
+
+ "JUDGEMENT": {"name": "Judgement", "desc": "Deals 10 special damage to the target, multiplied by the sum of its team's synergy levels of its own types.", "script": "judgement"},
+
+ "CRABHAMMER": {"name": "Crabhammer", "desc": "Deals 40/80/160 special damage with +30% crit chance. A target under 30% HP is knocked out.",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [40, 80, 160, 320], "crit_bonus": [30], "execute_below": 0.3}]}]},
+
+ "STORED_POWER": {"name": "Stored Power", "desc": "Deals 10/15/20 special damage, increased by each of its stat boosts (ATK, DEF, SPE_DEF, SPEED above base, AP above 100).",
+  "steps": [{"area": "single", "effects": [
+   {"type": "damage", "values": [10, 15, 20, 40], "stored_power": true}]}]},
+
+ "PSYCHO_CUT": {"name": "Psycho Cut", "desc": "Slashes in a straight line toward the target to the board edge: every enemy on it takes 10/20/40 special damage 3 times.",
+  "steps": [{"area": "ray", "effects": [
+   {"type": "damage", "values": [10, 20, 40, 80]},
+   {"type": "damage", "values": [10, 20, 40, 80]},
+   {"type": "damage", "values": [10, 20, 40, 80]}]}]},
+
+ "SILVER_WIND": {"name": "Silver Wind", "desc": "Gains 1 ATK, DEF and SPE_DEF, 10 SPEED and 10 AP, then dashes next to the farthest enemy: enemies on its path take 20/40/80 special damage.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "damage", "values": [20, 40, 80, 160]},
+   {"type": "buff", "to": "self", "stat": "atk", "values": [1], "no_ap": true},
+   {"type": "buff", "to": "self", "stat": "def", "values": [1], "no_ap": true},
+   {"type": "buff", "to": "self", "stat": "speDef", "values": [1], "no_ap": true},
+   {"type": "buff", "to": "self", "stat": "speed", "values": [10], "no_ap": true},
+   {"type": "buff", "to": "self", "stat": "ap", "values": [10], "no_ap": true}]}]},
+
+ "POISON_POWDER": {"name": "Poison Powder", "desc": "Dashes next to the farthest enemy: enemies on its path are POISONED 3s and take 20/40/80 special damage.",
+  "dash": "farthest_spot",
+  "steps": [{"area": "path", "guarantee_focus": true, "effects": [
+   {"type": "status", "status": "poison", "durations": [3000, 3000, 3000, 6000]},
+   {"type": "damage", "values": [20, 40, 80, 160]}]}]},
+
+ "BLOOD_MOON": {"name": "Blood Moon", "desc": "A beam through the target to the board edge: 200% ATK as special damage and WOUND 3s to every enemy on it.",
+  "steps": [{"area": "line", "effects": [
+   {"type": "damage", "values": [2, 2, 2, 4], "stat": "atk"},
+   {"type": "status", "status": "wound", "duration": 3000}]}]},
+
+ "TRANSE": {"name": "Transe", "desc": "Leaves Zen mode: back to Standard mode, healing 30% of its max HP.",
+  "no_target": true, "special": "transe", "focus": "self",
+  "steps": []},
+
+ "ATTRACT": {"name": "Attract", "desc": "Charms 1/2/3 random enemies for 1s.", "no_target": true, "focus": "self",
+  "script": "attract"},
+ "OCTAZOOKA": {"name": "Octazooka", "desc": "Deals 300% ATK as special damage to the target and blinds it for 4s.",
+  "script": "octazooka"},
+ "SCHOOLING": {"name": "Schooling", "desc": "Deals 15% of its max HP as special damage to adjacent enemies. Wishiwashi on your bench join the school: +50 max HP for good each.",
+  "script": "schooling"},
+
+ "RAGE": {"name": "Rage", "desc": "Enrages itself for 3s and gains 10% of its base ATK per 10% of max HP missing.", "focus": "self",
+  "script": "rage"},
+ "RETURN": {"name": "Return", "desc": "Deals 20/40/80 special damage to the target and gains 2 AP permanently.", "script": "return_"},
+ "COUNTER": {"name": "Counter", "desc": "Deals 50% of its missing HP as special damage to adjacent enemies.", "script": "counter"},
+ "DISABLE": {"name": "Disable", "desc": "Silences the target and the enemies around it for 2/3/4s and deals 12/25/50 special damage.",
+  "script": "disable"},
+ "BULK_UP": {"name": "Bulk Up", "desc": "Gains 50% of its base ATK and base DEF.", "no_target": true, "focus": "self",
+  "script": "bulk_up"},
+ "CHARGE": {"name": "Charge", "desc": "Its basic attacks now deal additional special damage equal to its ATK times the number of abilities cast.",
+  "script": "charge"},
+ "PAYDAY": {"name": "Pay Day", "desc": "Deals 15/30/60 special damage, doubled with AP. Gains gold equal to its stars if the target is KO.",
+  "script": "payday"},
+ "HYPER_BEAM": {"name": "Hyper Beam", "desc": "After charging 1s, fires a beam through the target to the board edge: 65/130/250 special damage. Then fatigued for 5s.",
+  "script": "hyper_beam"},
+ "FOCUS_PUNCH": {"name": "Focus Punch", "desc": "After 0.9s, punches the target out of the board if nothing stands behind it; otherwise deals 500% ATK as special damage and pushes it as far as possible.",
+  "script": "focus_punch"},
+ "SUBSTITUTE": {"name": "Substitute", "desc": "Jumps to the closest free cell and leaves a Substitute doll with 25% of its max HP; enemies attacking it switch to the doll.",
+  "no_target": true, "focus": "self", "script": "substitute"},
+ "SKILL_SWAP": {"name": "Skill Swap", "desc": "Copies the ability of the target for the rest of the fight and uses it immediately.",
+  "script": "skill_swap"},
+
+ "SURF": {"name": "Surf", "desc": "Surfs to the farthest enemy: enemies on the way take 20/40/80 special damage and are pushed aside.",
+  "no_target": true, "script": "surf"},
+
+ "DRAGON_DARTS": {"name": "Dragon Darts", "desc": "Throws 3 darts at the target, each dealing 10/20/40 special damage. Regains 40 PP if the target is KO.", "script": "dragon_darts"},
+ "FAKE_TEARS": {"name": "Fake Tears", "desc": "Every enemy suffers ARMOR_BREAK for 3s and takes 5/10/15 special damage.", "no_target": true, "script": "fake_tears"},
+ "FOUL_PLAY": {"name": "Foul Play", "desc": "Deals 2/4/6 times the ATK of the target as special damage.", "script": "foul_play"},
+ "HEAT_CRASH": {"name": "Heat Crash", "desc": "Crashes into the target: 40/60/80 special damage plus twice its ATK above the ATK of the target, and knocks it back.", "script": "heat_crash"},
+ "OUTRAGE": {"name": "Outrage", "desc": "Gets confused for 2s and deals 300% ATK as special damage to the target and its allies next to the user.", "script": "outrage"},
+ "POWDER": {"name": "Powder", "desc": "Blows powder toward the fastest enemy in range: enemies on the way take 10/20/30 special damage and lose 10/20/30 SPEED for 5s.", "script": "powder"},
+ "PYRO_BALL": {"name": "Pyro Ball", "desc": "Kicks a fireball to the farthest enemy: enemies on the way burn for 2s and take 10/20/40 special damage.", "script": "pyro_ball"},
+ "SLUDGE_WAVE": {"name": "Sludge Wave", "desc": "The target and the enemies around it are POISONED for 2/3/4s and take 10/20/40 special damage.", "script": "sludge_wave"},
+ "SPARKLING_ARIA": {"name": "Sparkling Aria", "desc": "Deals 15/25/50 special damage to the target and enemies around it; cures the burn of allies around it.", "script": "sparkling_aria"},
+ "SPIRIT_SHACKLE": {"name": "Spirit Shackle", "desc": "Shoots an arrow through the target to the board edge: 25/50/75 special damage and WOUND for 4s.", "script": "spirit_shackle"},
+ "WATER_SHURIKEN": {"name": "Water Shuriken", "desc": "Throws 3 shurikens toward the target and 45 degrees aside, to the board edge: 20/40/60 special damage to every enemy hit.", "script": "water_shuriken"},
+ "ZAP_CANNON": {"name": "Zap Cannon", "desc": "ARMOR_BREAK and PARALYSIS on the target for 1/2/4s, then 25/50/100 special damage.", "script": "zap_cannon"},
+
+ "ACROBATICS": {"name": "Acrobatics", "desc": "Deals 20/40/80 special damage, then leaps to a free cell in range of the target, farther with fewer items held.", "script": "acrobatics"},
+ "INGRAIN": {"name": "Ingrain", "desc": "Allies around it heal 15/30/60 HP; enemies around it are LOCKED for 4s and take 15/30/60 special damage.", "no_target": true, "script": "ingrain"},
+ "SWEET_SCENT": {"name": "Sweet Scent", "desc": "Enemies within 3 cells can no longer dodge, lose 4/6/8 SPE_DEF and 10/12/15 SPEED, and have 30% chance to be CHARM for 1s.", "no_target": true, "script": "sweet_scent"},
+ "STUN_SPORE": {"name": "Stun Spore", "desc": "The target and the enemies around it are PARALYSIS for 5s and take 15/30/60 special damage.", "script": "stun_spore"},
+ "PETAL_BLIZZARD": {"name": "Petal Blizzard", "desc": "Deals 10/20/30 special damage to adjacent enemies and gains 10 AP.", "script": "petal_blizzard"},
+
+ "HIDDEN_POWER_A": {"name": "Hidden Power (ABRA)", "desc": "Summon 4 Abra, one at each corner of the battlefield.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_a"},
+ "HIDDEN_POWER_B": {"name": "Hidden Power (BURN)", "desc": "BURN all enemy Pokémon for 30 seconds.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_b"},
+ "HIDDEN_POWER_C": {"name": "Hidden Power (COIN)", "desc": "Give AMULET_COIN to all allied Pokémon. The item is removed at the end of the fight.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_c"},
+ "HIDDEN_POWER_D": {"name": "Hidden Power (DUPE)", "desc": "Transform into a copy of your STRONGEST ally without its items and permanent buffs.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_d"},
+ "HIDDEN_POWER_E": {"name": "Hidden Power (EGGS)", "desc": "Add a EGG_FOR_SELL to the allied player's bench. It hatches in the next stage.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_e"},
+ "HIDDEN_POWER_F": {"name": "Hidden Power (FISH)", "desc": "Fish 2 random WATER Pokémon at max fishing level.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_f"},
+ "HIDDEN_POWER_G": {"name": "Hidden Power (GOLD)", "desc": "The allied player gains 5 GOLD.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_g"},
+ "HIDDEN_POWER_H": {"name": "Hidden Power (HEAL)", "desc": "Heal all allied Pokémon to max HP.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_h"},
+ "HIDDEN_POWER_I": {"name": "Hidden Power (ITEM)", "desc": "The allied player gets a random item component.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_i"},
+ "HIDDEN_POWER_J": {"name": "Hidden Power (JAWS)", "desc": "Summon 2 Sharpedo with RAZOR_CLAW.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_j"},
+ "HIDDEN_POWER_K": {"name": "Hidden Power (KICK)", "desc": "Summon Hitmonlee with a RED_ORB and max PP.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_k"},
+ "HIDDEN_POWER_L": {"name": "Hidden Power (LOCK)", "desc": "All enemy Pokémon are LOCKED for 5 seconds.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_l"},
+ "HIDDEN_POWER_M": {"name": "Hidden Power (MANA)", "desc": "All allied Pokémon gain 50 PP.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_m"},
+ "HIDDEN_POWER_N": {"name": "Hidden Power (NUKE)", "desc": "All allied Pokémon gain [50,SP] SHIELD then explode, dealing [50,SP] SPECIAL to all ADJACENT enemy Pokémon and to themselves.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_n"},
+ "HIDDEN_POWER_O": {"name": "Hidden Power (OVEN)", "desc": "Cook a random dish for all your Pokémon next fight.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_o"},
+ "HIDDEN_POWER_P": {"name": "Hidden Power (PEST)", "desc": "Summon 5 random STAR BUG Pokémon.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_p"},
+ "HIDDEN_POWER_Q": {"name": "Hidden Power (QUIT)", "desc": "Immediately end the fight with a draw.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_q"},
+ "HIDDEN_POWER_R": {"name": "Hidden Power (ROLL)", "desc": "The allied player gets 6 free shop rerolls.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_r"},
+ "HIDDEN_POWER_S": {"name": "Hidden Power (SURF)", "desc": "BOARD_EFFECT: a TIDAL_WAVE cleans up negative status and field effects, heals 20% HP of all your team and knocks back and damages enemies for 10% of their HP as TRUE.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_s"},
+ "HIDDEN_POWER_T": {"name": "Hidden Power (TREE)", "desc": "The allied player gets 3 random berries.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_t"},
+ "HIDDEN_POWER_U": {"name": "Hidden Power (UXIE)", "desc": "Summon Uxie with AQUA_EGG and max PP.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_u"},
+ "HIDDEN_POWER_V": {"name": "Hidden Power (VOLT)", "desc": "Lightning strikes all enemies, dealing [30,SP] SPECIAL to all enemy Pokémon.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_v"},
+ "HIDDEN_POWER_W": {"name": "Hidden Power (WISH)", "desc": "The allied player gets a high rarity Pokémon matching one of their 2 highest synergies.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_w"},
+ "HIDDEN_POWER_X": {"name": "Hidden Power (XRAY)", "desc": "Gives XRAY_VISION to all allied Pokémon. The item is removed at the end of the fight.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_x"},
+ "HIDDEN_POWER_Y": {"name": "Hidden Power (YOGA)", "desc": "All your team increase their ATK by [100,SP]% of its BASE value.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_y"},
+ "HIDDEN_POWER_Z": {"name": "Hidden Power (ZERO)", "desc": "FREEZE all enemy Pokémon for 2 seconds.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_z"},
+ "HIDDEN_POWER_QM": {"name": "Hidden Power (?)", "desc": "The allied player gets 4 random Unown on their bench.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_qm"},
+ "HIDDEN_POWER_EM": {"name": "Hidden Power (!)", "desc": "Summon 4 random Unown, one at each corner of the battlefield.", "no_target": true, "focus": "self", "inimitable": true, "script": "hidden_power_em"},
+
+ "HORN_LEECH": {"name": "Horn Leech", "desc": "Deals 200% ATK as special damage and heals 50% of the damage dealt; half of the overheal becomes SHIELD.", "script": "horn_leech"},
+ "EXPLOSION": {"name": "Explosion", "desc": "Deals 50/100/200 special damage to adjacent enemies and to itself.", "script": "explosion"},
+ "LEECH_SEED": {"name": "Leech Seed", "desc": "Heals 20/40/80 HP and POISON the target for 3/6/12s.", "script": "leech_seed"},
+ "AERIAL_ACE": {"name": "Aerial Ace", "desc": "Deals 25/50/100 TRUE damage to the target.", "script": "aerial_ace"},
+ "AQUA_RING": {"name": "Aqua Ring", "desc": "Moves to the spot surrounded by the most allies; itself and the allies around are cured and heal 20/40/80 HP.", "no_target": true, "script": "aqua_ring"},
+ "IRON_DEFENSE": {"name": "Iron Defense", "desc": "Every ally on its row gains 20/40/80 SHIELD.", "no_target": true, "script": "iron_defense"},
+ "SLASHING_CLAW": {"name": "Slashing Claw", "desc": "Deals 15/30/60 special damage (x1.3 if the target is wounded) and WOUND for 5s.", "script": "slashing_claw"},
+ "WONDER_GUARD": {"name": "Wonder Guard", "desc": "Adjacent enemies are PARALYSIS for 3s and take 30/60/120 special damage.", "script": "wonder_guard"},
+ "ABSORB": {"name": "Absorb", "desc": "Deals 30/60/120 special damage; itself and the allies around heal 10% of it.", "script": "absorb"},
+ "ARM_THRUST": {"name": "Arm Thrust", "desc": "Hits the target 2 to 5 times (more with LUCK), each hit dealing 100% ATK as physical damage with its own crit chance.", "script": "arm_thrust"},
+
+ "AROMATHERAPY": {"name": "Aromatherapy", "desc": "Adjacent allies are cured of negative statuses and heal 20/40/80 HP.", "no_target": true, "script": "aromatherapy"},
+ "ASSURANCE": {"name": "Assurance", "desc": "Deals 25/50/100 special damage, doubled if the user is under 50% HP.", "script": "assurance"},
+ "AURASPHERE": {"name": "Aura Sphere", "desc": "Fires a sphere through the target to the board edge: 25/50/100 special damage and SILENCE for 3s.", "script": "aurasphere"},
+ "AURORA_BEAM": {"name": "Aurora Beam", "desc": "A beam through the target to the board edge: 25/50/100 special damage, 50% chance to FREEZE for 2s.", "script": "aurora_beam"},
+ "AXE_KICK": {"name": "Axe Kick", "desc": "Leaps next to the enemy with the most PP: 25/50/100 special damage, burns 15 PP, 30% chance of CONFUSION for 3s.", "no_target": true, "script": "axe_kick"},
+ "BANEFUL_BUNKER": {"name": "Baneful Bunker", "desc": "PROTECT for 2s; melee attackers take 10/20/30 special damage and are POISONED for 3s. Taunts adjacent enemies.", "no_target": true, "script": "baneful_bunker"},
+ "BEAT_UP": {"name": "Beat Up", "desc": "Summons 1/2/3 Houndour, their max HP increased by AP.", "no_target": true, "script": "beat_up"},
+ "BODY_SLAM": {"name": "Body Slam", "desc": "Deals 30% of its max HP as special damage (50% at 3 stars).", "script": "body_slam"},
+ "BONEMERANG": {"name": "Bonemerang", "desc": "Throws a bone through the target to the board edge that comes back 1s later: 15/30/60 special damage each way.", "script": "bonemerang"},
+ "BONE_ARMOR": {"name": "Bone Armor", "desc": "Jumps next to the enemy with the lowest HP%: 20/40/80 special damage, heals the damage dealt; a kill gives 4/8/12 DEF and SPE_DEF.", "no_target": true, "script": "bone_armor"},
+
+ "CITY_SHUTTLE": {"name": "City Shuttle", "desc": "Carries the closest ally to the farthest enemy: enemies on the way take 10/20/40 special damage plus the ATK of the passenger; both gain 20/40/80 SHIELD.", "no_target": true, "script": "city_shuttle"},
+ "COIL": {"name": "Coil", "desc": "LOCKED and PARALYSIS on the target for 3s; gains 3/5/10 ATK and DEF.", "script": "coil"},
+ "CONFUSION": {"name": "Confusion", "desc": "A confused target takes 75/150/300 special damage; otherwise it is SILENCE and CONFUSION for 3/5/7s.", "script": "confusion"},
+ "COTTON_SPORE": {"name": "Cotton Spore", "desc": "The 3 closest enemies lose 10/20/30 SPEED and a cotton ball is left under each of them (sleep 1s).", "script": "cotton_spore"},
+ "CROSS_POISON": {"name": "Cross Poison", "desc": "The target and the enemies around it take 30/60/120 special damage and are POISONED for 2s.", "script": "cross_poison"},
+ "DEFENSE_CURL": {"name": "Defense Curl", "desc": "Gains 5/10/20 DEF and SPE_DEF.", "no_target": true, "script": "defense_curl"},
+ "DETECT": {"name": "Detect", "desc": "Adjacent allies get PROTECT for 0.5/0.6/0.8s per enemy within 2 cells.", "no_target": true, "script": "detect"},
+ "DIAMOND_STORM": {"name": "Diamond Storm", "desc": "Deals 100% of its DEF (150% at 3 stars) as special damage to adjacent enemies.", "script": "diamond_storm"},
+ "DIG": {"name": "Dig", "desc": "Digs to the farthest enemy: enemies on the way take 10/20/40 special damage.", "script": "dig"},
+ "DISARMING_VOICE": {"name": "Disarming Voice", "desc": "Enemies within 1/2/3 cells are CHARM for 1s.", "script": "disarming_voice"},
+
+ "DRILL_RUN": {"name": "Drill Run", "desc": "Deals 15/30/60 TRUE damage (can crit) and takes the place of the target; an enemy right behind becomes the next target with full PP.", "script": "drill_run"},
+ "EAR_DIG": {"name": "Ear Dig", "desc": "Deals 30/60/120 special damage, +5/10/20 per depth of the hole under the target; digs a hole if there is none.", "script": "ear_dig"},
+ "ELECTRIFY": {"name": "Electrify", "desc": "The strongest non-ELECTRIC ally gets ELECTRIC_FIELD, the ELECTRIC synergy of the team and 15/30/60 SHIELD.", "no_target": true, "script": "electrify"},
+ "ELECTRO_BALL": {"name": "Electro Ball", "desc": "A ball bouncing from enemy to enemy, 10/20/40 special damage each; faster users bounce more.", "script": "electro_ball"},
+ "ENCORE": {"name": "Encore", "desc": "Casts again the last ability used by its team.", "inimitable": true, "script": "encore"},
+ "FAKE_OUT": {"name": "Fake Out", "desc": "FLINCH for 3s and 40/80/150 special damage; the user loses 30 AP.", "script": "fake_out"},
+ "FIRE_FANG": {"name": "Fire Fang", "desc": "Deals 30/60/120 special damage and BURN for 2s.", "script": "fire_fang"},
+ "HARDEN": {"name": "Harden", "desc": "Gains 4/8/12 DEF.", "no_target": true, "script": "harden"},
+ "HEAD_SMASH": {"name": "Head Smash", "desc": "Deals 40/80/150 special damage (a sleeping or frozen target is KO); takes 10/20/40 recoil damage.", "script": "head_smash"},
+
+ "CAVERNOUS_CHOMP": {"name": "Cavernous Chomp", "desc": "Deals 40/80/160 special damage; if the target is KO, the user is enraged for 1/2/3s.", "script": "cavernous_chomp"},
+ "DIVE": {"name": "Dive", "desc": "Gains 15/30/60 SHIELD and dives where the enemies are the most packed: 10/20/40 special damage to adjacent enemies.", "no_target": true, "script": "dive"},
+ "DRAIN_PUNCH": {"name": "Drain Punch", "desc": "Deals 200% ATK as special damage and heals twice the damage dealt.", "script": "drain_punch"},
+ "DYNAMIC_PUNCH": {"name": "Dynamic Punch", "desc": "CONFUSION for 2/4/6s and 40/80/160 special damage.", "script": "dynamic_punch"},
+ "EGG_BOMB": {"name": "Egg Bomb", "desc": "The target and its allies around take 25/50/100 special damage and ARMOR_BREAK for 4s; a KO has 25% chance to give an egg.", "script": "egg_bomb"},
+ "ELECTRO_WEB": {"name": "Electro Web", "desc": "Adjacent enemies take 15/30/60 special damage and the user steals 15/30/60 of their SPEED.", "script": "electro_web"},
+ "HEAL_BLOCK": {"name": "Heal Block", "desc": "Adjacent enemies take 20/40/80 special damage and WOUND for 5s.", "script": "heal_block"},
+ "HYPNOSIS": {"name": "Hypnosis", "desc": "The farthest enemy falls asleep for 1/1.75/3s, doubled by AP.", "no_target": true, "script": "hypnosis"},
+ "ICE_HAMMER": {"name": "Ice Hammer", "desc": "FREEZE on the target for 3s and PARALYSIS on itself for 3s, then 50/100/200 special damage.", "script": "ice_hammer"},
+
+ "FEATHER_DANCE": {"name": "Feather Dance", "desc": "Flies to the farthest enemy; 8/10/12 feathers fall on its path: allies gain and enemies lose HP, ATK, DEF, AP, SPE_DEF, SPEED or LUCK.", "script": "feather_dance"},
+ "FIRE_LASH": {"name": "Fire Lash", "desc": "ARMOR_BREAK for 4s and 30/60/120 special damage.", "script": "fire_lash"},
+ "FIRE_SPIN": {"name": "Fire Spin", "desc": "The target and the enemies around it take 25/50/100 special damage and BURN for 3s.", "script": "fire_spin"},
+ "FIRST_IMPRESSION": {"name": "First Impression", "desc": "Deals 45/90/180 special damage and FLINCH for 5s. On its first cast, jumps to safety and a Bug Pokémon appears where it stood.", "script": "first_impression"},
+ "FISSURE": {"name": "Fissure", "desc": "Opens 2/3/4 rifts on random cells: 25/50/75 special damage to enemies on the cell and around.", "script": "fissure"},
+ "FROST_BREATH": {"name": "Frost Breath", "desc": "Breathes a cone in front of it: 35/70/140 special damage (can crit), 50% chance to FREEZE for 2s.", "script": "frost_breath"},
+ "GUNK_SHOT": {"name": "Gunk Shot", "desc": "Deals 50/100/200 special damage and POISON for 2/4/8s.", "script": "gunk_shot"},
+ "HELPING_HAND": {"name": "Helping Hand", "desc": "The 2 closest allies gain 30/60/100 SHIELD and their next ability deals double damage.", "no_target": true, "script": "helping_hand"},
+ "HIGH_HORSEPOWER": {"name": "High Horsepower", "desc": "Charges behind the target, then deals 15/30/60 special damage to adjacent enemies (doubled if there is only one).", "script": "high_horsepower"},
+ "HYPER_VOICE": {"name": "Hyper Voice", "desc": "Every enemy on the row of the target takes 25/50/100 special damage, 30% chance of CONFUSION.", "script": "hyper_voice"},
+
+ "IRON_TAIL": {"name": "Iron Tail", "desc": "Enemies in front of it take 100% of its DEF as special damage and are knocked back.", "script": "iron_tail"},
+ "JAW_LOCK": {"name": "Jaw Lock", "desc": "LOCKED for 3s and 125% ATK + 10/15/20 special damage; biting the same target again heals 25/50/100 HP.", "script": "jaw_lock"},
+ "LAST_RESPECTS": {"name": "Last Respects", "desc": "Deals 30/60/90 special damage to an adjacent enemy and curses it: KO after 10/8/6s.", "script": "last_respects"},
+ "LAVA_PLUME": {"name": "Lava Plume", "desc": "Enemies in front of it take 20/40/80 special damage; EMBER is left on the cells.", "script": "lava_plume"},
+ "LINGERING_AROMA": {"name": "Lingering Aroma", "desc": "For 5s, melee attackers take 10/20/30 special damage and lose 5 PP.", "script": "lingering_aroma"},
+ "LOVELY_KISS": {"name": "Lovely Kiss", "desc": "A sleeping target takes 50/100/150 special damage; otherwise it falls asleep for 2/4/6s.", "script": "lovely_kiss"},
+ "MACH_PUNCH": {"name": "Mach Punch", "desc": "Deals 25/50/100 special damage and acts again right away.", "script": "mach_punch"},
+ "MAGIC_BOUNCE": {"name": "Magic Bounce", "desc": "Reflects the abilities it receives for 4s (special damage bounced back), but is SILENCE meanwhile.", "no_target": true, "script": "magic_bounce"},
+ "MAGNET_RISE": {"name": "Magnet Rise", "desc": "Itself and its 2/4/6 weakest adjacent allies get PROTECT for 2s and 10% dodge chance.", "script": "magnet_rise"},
+ "MEDITATE": {"name": "Meditate", "desc": "Gains 100% of its base ATK.", "no_target": true, "script": "meditate"},
+
+ "MIMIC": {"name": "Mimic", "desc": "Uses the ability of its target.", "inimitable": true, "script": "mimic"},
+ "MOON_DREAM": {"name": "Moon Dream", "desc": "Puts the target to SLEEP for 3/6/9s; the 3 allies closest to it gain 10/20/30 SHIELD.", "script": "moon_dream"},
+ "MORTAL_SPIN": {"name": "Mortal Spin", "desc": "Adjacent enemies targeting it take 20/40/80 special damage, POISON for 4/4/8s and are pushed back.", "script": "mortal_spin"},
+ "MOUNTAIN_GALE": {"name": "Mountain Gale", "desc": "Throws 1/3/5 icicles at adjacent enemies or the target: 40 special damage and FLINCH for 3s each.", "script": "mountain_gale"},
+ "MUD_SHOT": {"name": "Mud Shot", "desc": "Deals 25/50/100 special damage and lowers SPEED by 10/20/30.", "script": "mud_shot"},
+ "NIGHT_DAZE": {"name": "Night Daze", "desc": "Deals 25/50/100 special damage and BLINDED for 3s.", "script": "night_daze"},
+ "NIGHT_SHADE": {"name": "Night Shade", "desc": "Deals 25/33/50% of the target max HP as true damage (more with AP).", "script": "night_shade"},
+ "OCTOLOCK": {"name": "Octolock", "desc": "Deals 30/60/90 special damage, LOCKED and ARMOR_BREAK for 3/3/6s.", "script": "octolock"},
+ "PARABOLIC_CHARGE": {"name": "Parabolic Charge", "desc": "Heals 25/50/75 HP, then deals 25/50/100 special damage plus the overheal.", "script": "parabolic_charge"},
+ "POISON_GAS": {"name": "Poison Gas", "desc": "Fills the cells around with POISON_GAS: enemies take 15/30/60 special damage and POISON for 3s.", "script": "poison_gas"},
+
+ "POISON_JAB": {"name": "Poison Jab", "desc": "Deals 30/60/120 special damage, POISON for 3s on the target and on itself, and trades places with the target.", "script": "poison_jab"},
+ "POISON_STING": {"name": "Poison Sting", "desc": "Adds 2/3/4 POISON stacks; each stack over the limit deals 25/50/100 special damage.", "script": "poison_sting"},
+ "POLTERGEIST": {"name": "Poltergeist", "desc": "Deals 30/60/120 special damage, +20 per item held by the target (+40 per tool).", "script": "poltergeist"},
+ "POWDER_SNOW": {"name": "Powder Snow", "desc": "Enemies in a line take 20/40/80 special damage, 15/30/50% chance to FREEZE for 2s.", "script": "powder_snow"},
+ "POWER_HUG": {"name": "Power Hug", "desc": "LOCKED and PARALYSIS for 3/3/6s, then 40/80/160 special damage.", "script": "power_hug"},
+ "PROTECT": {"name": "Protect", "desc": "PROTECT for 1/3/5s (more with AP).", "no_target": true, "script": "protect"},
+ "PSYBEAM": {"name": "Psybeam", "desc": "Enemies in a line take 25/50/100 special damage, 50% chance of CONFUSION for 2/3/4s.", "script": "psybeam"},
+ "PSYSHOCK": {"name": "Psyshock", "desc": "Burns 20/40/80 PP of the target and gains as much SHIELD; missing PP is dealt as special damage.", "script": "psyshock"},
+ "RAZOR_WIND": {"name": "Razor Wind", "desc": "Deals 20/40/80 special damage; can critically hit.", "script": "razor_wind"},
+ "ROAR": {"name": "Roar", "desc": "Deals 20/40/80 special damage and blows the target to the far end of the line, hitting the enemies on the way.", "script": "roar"},
+
+ "ROCK_HEAD": {"name": "Rock Head", "desc": "Deals 120/120/150% of its ATK + DEF as special damage.", "script": "rock_head"},
+ "ROCK_SMASH": {"name": "Rock Smash", "desc": "Deals 25/50/100 special damage and ARMOR_BREAK for 3/6/9s.", "script": "rock_smash"},
+ "ROCK_TOMB": {"name": "Rock Tomb", "desc": "Deals 30/60/120 special damage and lowers SPEED by 10/20/40.", "script": "rock_tomb"},
+ "ROCK_WRECKER": {"name": "Rock Wrecker", "desc": "FLINCH for 2s and 80/160/320 special damage, then FATIGUE on itself for 4s.", "script": "rock_wrecker"},
+ "ROLLOUT": {"name": "Rollout", "desc": "Gains 2/5/10 DEF, then deals 200% of its DEF as special damage.", "script": "rollout"},
+ "SAND_SPIT": {"name": "Sand Spit", "desc": "Enemies in front of it take 30/60/120 special damage and BLINDED for 2s.", "script": "sand_spit"},
+ "SAND_TOMB": {"name": "Sand Tomb", "desc": "PARALYSIS and SILENCE for 3/5/8s, and 10/20/40 special damage.", "script": "sand_tomb"},
+ "SCREECH": {"name": "Screech", "desc": "Enemies within 2 cells lose 2/4/8 DEF.", "no_target": true, "script": "screech"},
+ "SHADOW_CLONE": {"name": "Shadow Clone", "desc": "A copy of itself appears with 50/50/90% of its max HP, holding an item stolen from the target.", "script": "shadow_clone"},
+ "SHADOW_PUNCH": {"name": "Shadow Punch", "desc": "Teleports next to the enemy with the lowest HP %; its next attack deals 30/60/120 more special damage.", "no_target": true, "script": "shadow_punch"},
+
+ "SHELL_SMASH": {"name": "Shell Smash", "desc": "Adjacent enemies take 15/30/60 special damage; gains 20 AP, 2 ATK and 20 SPEED but loses 2 DEF and 2 SPE_DEF.", "script": "shell_smash"},
+ "SHORE_UP": {"name": "Shore Up", "desc": "Heals 20/25/40% of its max HP (+10% in SANDSTORM).", "no_target": true, "script": "shore_up"},
+ "SILK_TRAP": {"name": "Silk Trap", "desc": "PROTECT for 1.5s; melee attackers meanwhile lose 5/10/15 SPEED and get PARALYSIS for 1.5s.", "no_target": true, "script": "silk_trap"},
+ "SLUDGE": {"name": "Sludge", "desc": "Enemies in front of it get 2/3/4 POISON stacks for 3s.", "script": "sludge"},
+ "SMOG": {"name": "Smog", "desc": "Leaves SMOKE in front of it; enemies there take 10/20/40 special damage.", "script": "smog"},
+ "SOLAR_BEAM": {"name": "Solar Beam", "desc": "Enemies in a line take 25/50/100 special damage and BURN for 3s; stronger in ZENITH or on the light cell.", "script": "solar_beam"},
+ "SOLAR_BLADE": {"name": "Solar Blade", "desc": "Charges for 2s (instant on the light cell), then enemies in front of it take 30/60/120 true damage.", "script": "solar_blade"},
+ "SPARK": {"name": "Spark", "desc": "Deals 30/60/90 special damage, then bounces to adjacent enemies, halving the damage each time.", "script": "spark"},
+ "SPICY_EXTRACT": {"name": "Spicy Extract", "desc": "Its 1/2/3 closest allies get RAGE for 2s.", "no_target": true, "script": "spicy_extract"},
+ "SPIKES": {"name": "Spikes", "desc": "Scatters 6 SPIKES in front of it; enemies there take 25/50/100 special damage.", "script": "spikes"},
+
+ "SPITE": {"name": "Spite", "desc": "Drains 20/40/60 PP from the target and shares it among its adjacent allies.", "script": "spite"},
+ "STICKY_WEB": {"name": "Sticky Web", "desc": "Deals 20/35/70 special damage and leaves STICKY_WEB in front of it (PARALYSIS).", "script": "sticky_web"},
+ "STONE_EDGE": {"name": "Stone Edge", "desc": "For 5/8/10s: SILENCE on itself, +20% crit chance and +2 range.", "no_target": true, "script": "stone_edge"},
+ "STUFF_CHEEKS": {"name": "Stuff Cheeks", "desc": "Eats a held berry (its heals become SHIELD); otherwise forages a random berry.", "no_target": true, "script": "stuff_cheeks"},
+ "SUPERCELL_SLAM": {"name": "Supercell Slam", "desc": "Gains 10/20/40 SHIELD and rushes where enemies are the most packed: 10/20/40 special damage around.", "no_target": true, "script": "supercell_slam"},
+ "SUPER_FANG": {"name": "Super Fang", "desc": "Deals 20/30/50% of the target max HP as true damage (more with AP).", "script": "super_fang"},
+ "SWAGGER": {"name": "Swagger", "desc": "CONFUSION and RAGE for 1.5/2/3s on the target.", "script": "swagger"},
+ "SWALLOW": {"name": "Swallow", "desc": "Stockpiles (+3 DEF and SPE_DEF); under 25% HP swallows to heal; at 3 stacks spits up 40/80/150 special damage.", "script": "swallow"},
+ "TAILWIND": {"name": "Tailwind", "desc": "Every ally gains 5/10/15 SPEED.", "no_target": true, "script": "tailwind"},
+ "TEA_TIME": {"name": "Tea Time", "desc": "Every ally heals 15/30/60 HP and eats its berry.", "no_target": true, "script": "tea_time"},
+
+ "THIEF": {"name": "Thief", "desc": "Steals the items of the target, then deals 15/30/60 special damage.", "script": "thief"},
+ "THRASH": {"name": "Thrash", "desc": "Gains 100/100/120% of its base ATK but gets CONFUSION for 3s.", "no_target": true, "script": "thrash"},
+ "THUNDER_FANG": {"name": "Thunder Fang", "desc": "PARALYSIS for 3s and 30/60/120 special damage.", "script": "thunder_fang"},
+ "TOPSY_TURVY": {"name": "Topsy-Turvy", "desc": "Deals 40/80/160 special damage and turns the target's ATK, AP, DEF and SPE_DEF changes upside down.", "script": "topsy_turvy"},
+ "TOXIC": {"name": "Toxic", "desc": "Its 1/2/3 closest enemies are POISONED for 3/6/9s.", "no_target": true, "script": "toxic"},
+ "TRICK_OR_TREAT": {"name": "Trick-or-Treat", "desc": "Steals an item of the target; if it has none, turns it into a Magikarp for 3/3/10s.", "script": "trick_or_treat"},
+ "TRIPLE_DIVE": {"name": "Triple Dive", "desc": "Dives at the 3 enemies with the lowest HP: 15/30/60 special damage each.", "no_target": true, "script": "triple_dive"},
+ "TWINEEDLE": {"name": "Twineedle", "desc": "Deals 25/50/80 special damage twice; the second hit has 50% chance to POISON for 4s.", "script": "twineedle"},
+ "TWIN_BEAM": {"name": "Twin Beam", "desc": "Two beams toward the farthest enemies: 30/60/100 special damage in each line.", "no_target": true, "script": "twin_beam"},
+ "VINE_WHIP": {"name": "Vine Whip", "desc": "PARALYSIS for 3s on the target and its neighbours, 30/60/100 special damage to the target.", "script": "vine_whip"},
+
+ "VISE_GRIP": {"name": "Vise Grip", "desc": "LOCKED for 4s on both, 30/60/100 special damage; gains the DEF and SPE_DEF of the target for 4s.", "script": "vise_grip"},
+ "WATERFALL": {"name": "Waterfall", "desc": "Gains 50/100/150 SHIELD and cleanses its negative statuses and the effects of its cell.", "no_target": true, "script": "waterfall"},
+ "WATER_PULSE": {"name": "Water Pulse", "desc": "The target and the enemies around it take 70/140/280 special damage, 30% chance of CONFUSION for 2s.", "script": "water_pulse"},
+ "WHIRLWIND": {"name": "Whirlwind", "desc": "Blows the target away, then deals 40/80/120 special damage.", "script": "whirlwind"},
+ "WONDER_ROOM": {"name": "Wonder Room", "desc": "For 5s, the enemies around the target swap DEF and SPE_DEF and take attacks as special damage.", "script": "wonder_room"},
+ "WOOD_HAMMER": {"name": "Wood Hammer", "desc": "Deals 400/400/800% of its ATK as special damage, then takes its ATK as recoil.", "script": "wood_hammer"},
+ "WISE_YAWN": {"name": "Wise Yawn", "desc": "The ally with the lowest HP gains 15/30/60 SHIELD; the enemies targeting it get FATIGUE for 3s and lose 20 AP.", "no_target": true, "script": "wise_yawn"},
+ "YAWN": {"name": "Yawn", "desc": "The enemies targeting it get FATIGUE for 3s and lose 20 AP; gains 15/30/60 SHIELD.", "no_target": true, "script": "yawn"},
+
+ "AFTER_YOU": {"name": "After You", "desc": "The strongest closest ally gains 5/10/15 PP and 5/10/15 SPEED.", "script": "after_you"},
+ "ANCHOR_SHOT": {"name": "Anchor Shot", "desc": "Drags the farthest enemy next to it and deals 20/40/80 special damage.", "no_target": true, "script": "anchor_shot"},
+ "APPLE_ACID": {"name": "Apple Acid", "desc": "Enemies in front of it take 15/30/50 special damage, doubled if their SPE_DEF is 0.", "script": "apple_acid"},
+ "ARMOR_CANNON": {"name": "Armor Cannon", "desc": "Deals 15/30/50 special damage to the target, bouncing to the 2 closest enemies and back.", "script": "armor_cannon"},
+ "AURA_WHEEL": {"name": "Aura Wheel", "desc": "Switches mode, gains 10 SPEED and deals 20/40/60 special damage; acts again quickly.", "script": "aura_wheel"},
+ "BARED_FANGS": {"name": "Bared Fangs", "desc": "Deals 120/140/160% of its ATK as special damage and steals 10 SPEED.", "script": "bared_fangs"},
+ "BIDE": {"name": "Bide", "desc": "Stores the damage received for 3s (no PP gain), then adjacent enemies take 100/150/200% of it as special damage.", "no_target": true, "script": "bide"},
+ "BITTER_BLADE": {"name": "Bitter Blade", "desc": "Adjacent enemies take 50/60/70 special damage; heals 10% max HP per enemy hit.", "script": "bitter_blade"},
+ "BOLT_BEAK": {"name": "Bolt Beak", "desc": "Deals 20/40/80 special damage, doubled if the target has more than 40 PP.", "script": "bolt_beak"},
+ "BOOMBURST": {"name": "Boomburst", "desc": "Every adjacent unit, allies included, takes 60 special damage and FLINCH for 4s.", "script": "boomburst"},
+
+ "BOUNCE": {"name": "Bounce", "desc": "Bounces 1/2/3 times next to the farthest enemy: adjacent enemies take 15/20/25 special damage.", "no_target": true, "script": "bounce"},
+ "CAMOUFLAGE": {"name": "Camouflage", "desc": "Heals 30/50/70 HP and takes the look, range and best ATK / DEF / SPE_DEF of the target.", "script": "camouflage"},
+ "CHARM": {"name": "Charm", "desc": "The target loses 2/3/4 ATK and is CHARMED for 3s.", "script": "charm"},
+ "CHATTER": {"name": "Chatter", "desc": "Enemies within 3 cells take 10/20/30 special damage, 50% chance of CONFUSION for 1s.", "no_target": true, "script": "chatter"},
+ "CLOSE_COMBAT": {"name": "Close Combat", "desc": "Loses 2 DEF and SPE_DEF, deals 30/65/130 special damage.", "script": "close_combat"},
+ "COSMIC_POWER_MOON": {"name": "Cosmic Power (Moon)", "desc": "Every other ally gains 25 AP.", "no_target": true, "script": "cosmic_power_moon"},
+ "COSMIC_POWER_SUN": {"name": "Cosmic Power (Sun)", "desc": "Every other ally gains 25% of its base ATK.", "no_target": true, "script": "cosmic_power_sun"},
+ "COTTON_GUARD": {"name": "Cotton Guard", "desc": "Gains 15/30/60 SHIELD and 3 DEF; cotton in front of it puts enemies to SLEEP for 1s.", "script": "cotton_guard"},
+ "DECORATE": {"name": "Decorate", "desc": "The strongest closest ally gains 1/2/3 ATK, 10/20/30 AP and the bonus of the Alcremie flavor.", "no_target": true, "script": "decorate"},
+ "DEEP_FREEZE": {"name": "Deep Freeze", "desc": "Fires 5/7/9 ice bolts: 10 special damage and -1 SPE_DEF each, chaining to the next enemy on a KO.", "script": "deep_freeze"},
+
+ "DIZZY_PUNCH": {"name": "Dizzy Punch", "desc": "Deals 20/40/80 special damage (doubled on a shielded target) and CONFUSION for 3s.", "script": "dizzy_punch"},
+ "DRAGON_PULSE": {"name": "Dragon Pulse", "desc": "Deals 10/15/20 special damage to the target, spreading twice to the enemies around; +5 AP per hit.", "script": "dragon_pulse"},
+ "ECHO": {"name": "Echo", "desc": "Enemies around take 3/6/9 special damage per cast so far; the range grows with each cast.", "no_target": true, "script": "echo"},
+ "ELECTRO_SHOT": {"name": "Electro Shot", "desc": "Charges for 2s (instant in STORM), gains 40 AP and deals 80/100/120 special damage in a line.", "script": "electro_shot"},
+ "ENTRAINMENT": {"name": "Entrainment", "desc": "Gains 10 PP; the target's ability becomes Entrainment.", "inimitable": true, "script": "entrainment"},
+ "FACADE": {"name": "Facade", "desc": "Deals 20/40/80 special damage, doubled when it has a negative status.", "script": "facade"},
+ "FAIRY_LOCK": {"name": "Fairy Lock", "desc": "LOCKED for 5s; 50/70/90 special damage shared among the target and the enemies around.", "script": "fairy_lock"},
+ "FELL_STINGER": {"name": "Fell Stinger", "desc": "Deals 400% of its base ATK as special damage; a KO gives +30% base ATK.", "script": "fell_stinger"},
+ "FICKLE_BEAM": {"name": "Fickle Beam", "desc": "Flips 5 coins: one beam per head at the fastest enemies, PARALYSIS for 2s and 20/30/40 special damage.", "script": "fickle_beam"},
+ "FILLET_AWAY": {"name": "Fillet Away", "desc": "Loses 30% max HP, gains 5/8/10 ATK and 10/15/20 SPEED, PROTECT for 1s and hides in a corner.", "no_target": true, "script": "fillet_away"},
+
+ "FISHIOUS_REND": {"name": "Fishious Rend", "desc": "Deals 20/40/80 special damage, doubled if it is faster than the target.", "script": "fishious_rend"},
+ "FLING": {"name": "Fling", "desc": "Throws its Ball: enemies on the way take 30% of its SPEED as special damage. Without a Ball, jumps to a corner and gets one.", "no_target": true, "script": "fling"},
+ "FLORAL_HEALING": {"name": "Floral Healing", "desc": "Heals as much HP as its max PP.", "no_target": true, "script": "floral_healing"},
+ "FLYING_PRESS": {"name": "Flying Press", "desc": "Skydives next to the farthest enemy and deals 50% of its max HP as special damage.", "no_target": true, "script": "flying_press"},
+ "FOLLOW_ME": {"name": "Follow Me", "desc": "Jumps away and gains 10/20/40 SHIELD; the enemies that targeted it are CHARMED for 1/2/3s.", "script": "follow_me"},
+ "FORCE_PALM": {"name": "Force Palm", "desc": "Deals 15/30/60 + 10% of the target max HP as special damage and PARALYSIS; a paralysed target is blown away instead.", "script": "force_palm"},
+ "FORECAST": {"name": "Forecast", "desc": "Every ally gains 10 SHIELD plus the Castform form bonus (Sun ATK, Rain PP, Hail DEF / SPE_DEF).", "no_target": true, "script": "forecast"},
+ "FREEZE_DRY": {"name": "Freeze-Dry", "desc": "Deals 30/50/70 + its SPE_DEF as special damage; on a KO, the enemies around take a part of it.", "script": "freeze_dry"},
+ "GOLD_RUSH": {"name": "Gold Rush", "desc": "Deals 20 special damage + 1 per gold of the player, and earns 2 gold.", "script": "gold_rush"},
+ "GRAVITY": {"name": "Gravity", "desc": "Every enemy is LOCKED for 2s.", "no_target": true, "script": "gravity"},
+
+ "GRAV_APPLE": {"name": "Grav Apple", "desc": "Deals 20/40/80 physical damage, doubled if the target has no DEF.", "script": "grav_apple"},
+ "GROWTH": {"name": "Growth", "desc": "Gains 3/5/7 ATK and 10/20/40 max HP (doubled in ZENITH).", "no_target": true, "script": "growth"},
+ "GRUDGE_DIVE": {"name": "Grudge Dive", "desc": "Deals 30/60/90 special damage + 5/10/15 per fallen ally; takes 10% max HP as recoil.", "script": "grudge_dive"},
+ "GULP_MISSILE": {"name": "Gulp Missile", "desc": "Shoots an Arrokuda (sometimes a Pikachu) next to the target, dealing 25/40/55 special damage.", "script": "gulp_missile"},
+ "HEADLONG_RUSH": {"name": "Headlong Rush", "desc": "Rushes to the farthest enemy, pushing aside the enemies on the way: 20/40/80 special damage to it, 10/20/30 to the others.", "script": "headlong_rush"},
+ "HYPERSPACE_FURY": {"name": "Hyperspace Fury", "desc": "Hits 1/2/3 times: -1 DEF and SPE_DEF and 15 special damage each.", "script": "hyperspace_fury"},
+ "HYPER_DRILL": {"name": "Hyper Drill", "desc": "Deals 10/20/40 true damage through PROTECT and digs a hole under the target.", "script": "hyper_drill"},
+ "ICE_FANG": {"name": "Ice Fang", "desc": "Deals 30/60/120 special damage and FREEZE for 1/1.5/2s.", "script": "ice_fang"},
+ "INFESTATION": {"name": "Infestation", "desc": "Deals 10 special damage per Bug ally; on its first cast, the strongest Bug of the bench joins the fight.", "script": "infestation"},
+ "JET_PUNCH": {"name": "Jet Punch", "desc": "Deals 100% of its SPEED as special damage.", "script": "jet_punch"},
+
+ "KNOCK_OFF": {"name": "Knock Off", "desc": "Deals 30/60/90 special damage + 15/20/30 per item of the target, which loses them for this fight.", "script": "knock_off"},
+ "KNOWLEDGE_THIEF": {"name": "Knowledge Thief", "desc": "Uses the ability of its target; the player gains 1 XP.", "inimitable": true, "script": "knowledge_thief"},
+ "LINK_CABLE": {"name": "Link Cable", "desc": "Rushes to the farthest enemy, then links with its partner: 40 special damage to the enemies on the link and around both.", "no_target": true, "script": "link_cable"},
+ "LUSTER_PURGE": {"name": "Luster Purge", "desc": "A ball goes and comes back through the line: 10/20/30 special damage and -5 SPE_DEF each time.", "script": "luster_purge"},
+ "MAKE_IT_RAIN": {"name": "Make It Rain", "desc": "Deals 25/50/100 special damage + 1 per gold of the player.", "script": "make_it_rain"},
+ "MAWASHI_GERI": {"name": "Mawashi Geri", "desc": "Deals 20/40/60 special damage (doubled if its ATK is higher) and kicks the target far away.", "script": "mawashi_geri"},
+ "MEGA_PUNCH": {"name": "Mega Punch", "desc": "Deals 20/40/60 special damage, doubled if its DEF is higher.", "script": "mega_punch"},
+ "MIST_BALL": {"name": "Mist Ball", "desc": "A ball goes and comes back through the line: 10/20/30 special damage and -30 AP each time.", "script": "mist_ball"},
+ "MOONBLAST": {"name": "Moonblast", "desc": "Sends 6 moons: 10/14/18 special damage each; a KO sends the rest to the next enemy with a bonus moon.", "script": "moonblast"},
+ "NASTY_PLOT": {"name": "Nasty Plot", "desc": "Gains 4/7/10 ATK and acts again quickly.", "no_target": true, "script": "nasty_plot"},
+
+ "NIGHT_SLASH": {"name": "Night Slash", "desc": "Deals 15/30/60 special damage; can critically hit.", "script": "night_slash"},
+ "NO_RETREAT": {"name": "No Retreat", "desc": "Per Falinks trooper in formation: +1 ATK, DEF, SPE_DEF, +5 SPEED and a 20 special damage tackle.", "script": "no_retreat"},
+ "NUTRIENTS": {"name": "Nutrients", "desc": "The ally with the lowest HP heals 20/30/40 HP and gains 1/2/3 DEF and SPE_DEF.", "no_target": true, "script": "nutrients"},
+ "ORDER_UP": {"name": "Order Up", "desc": "Deals 30/60/100 special damage; with a Tatsugiri, it and the Rice eaters get bonuses, else a Tatsugiri comes to the bench.", "script": "order_up"},
+ "PLASMA_FIST": {"name": "Plasma Fist", "desc": "Deals 60/90/120 special damage and heals 30% of it.", "script": "plasma_fist"},
+ "PLASMA_FLASH": {"name": "Plasma Flash", "desc": "Flashes 4 + casts times: 5/10/20 special damage each.", "script": "plasma_flash"},
+ "PLASMA_TEMPEST": {"name": "Plasma Tempest", "desc": "Flies away, then 3 beams through its closest enemies: 20/30/40 special damage.", "script": "plasma_tempest"},
+ "POPULATION_BOMB": {"name": "Population Bomb", "desc": "Hits 4/8/12 times for 10 special damage.", "script": "population_bomb"},
+ "POWER_WASH": {"name": "Power Wash", "desc": "Water sweeps the row with the most enemy HP: 80/120/160 special damage shared among its enemies.", "no_target": true, "script": "power_wash"},
+ "POWER_WHIP": {"name": "Power Whip", "desc": "Deals 15/30/60 + 30% of its HP as special damage.", "script": "power_whip"},
+
+ "PRESENT": {"name": "Present", "desc": "A random gift: 20/40/80, 50/100/150 or 100/200/300 special damage... or it heals the target 50 HP.", "script": "present"},
+ "PSYCHIC_FANGS": {"name": "Psychic Fangs", "desc": "The target's ATK, DEF and SPE_DEF fall back to base; deals 20/40/80 special damage.", "script": "psychic_fangs"},
+ "PSYCHO_SHIFT": {"name": "Psycho Shift", "desc": "The farthest enemy trades places with the target; both take 20/40/60 special damage.", "script": "psycho_shift"},
+ "PSYSHIELD_BASH": {"name": "Psyshield Bash", "desc": "Charges to the farthest enemy with PROTECT for 1s: enemies on the way take 30/40/50 special damage.", "no_target": true, "script": "psyshield_bash"},
+ "PUMMELING_PAYBACK": {"name": "Pummeling Payback", "desc": "Deals 20/40/60 + 125% of its ATK as special damage and heals 20/30/40 HP.", "script": "pummeling_payback"},
+ "PURIFY": {"name": "Purify", "desc": "Cleanses itself and the adjacent allies, heals 15/30/60 HP.", "no_target": true, "script": "purify"},
+ "RAGING_BULL": {"name": "Raging Bull", "desc": "Breaks PROTECT, REFLECT and MAGIC_BOUNCE, ARMOR_BREAK for 3s and 20/40/80 special damage.", "script": "raging_bull"},
+ "SHADOW_SNEAK": {"name": "Shadow Sneak", "desc": "Deals 25/40/50 special damage, true damage on a silenced target.", "script": "shadow_sneak"},
+ "SHED_TAIL": {"name": "Shed Tail", "desc": "The ally with the lowest HP gains 40/60/80 SHIELD; it joins it and leaves a Substitute behind.", "no_target": true, "script": "shed_tail"},
+ "SHELL_TRAP": {"name": "Shell Trap", "desc": "With a shield: bursts it, enemies around take 50 + the shield as special damage. Otherwise gains 25/50/75 SHIELD.", "no_target": true, "script": "shell_trap"},
+
+ "SHIELDS_DOWN": {"name": "Shields Down", "desc": "Drops its shell: turns into a Minior core and gets Shields Up.", "no_target": true, "inimitable": true, "script": "shields_down"},
+ "SHIELDS_UP": {"name": "Shields Up", "desc": "Puts its shell back on: turns into Minior and gets Shields Down.", "no_target": true, "inimitable": true, "script": "shields_up"},
+ "SKETCH": {"name": "Sketch", "desc": "Does nothing by itself: Smeargle sketches abilities with its passive.", "no_target": true, "script": "sketch"},
+ "SKITTER_SMACK": {"name": "Skitter Smack", "desc": "Skitters behind the target: 15/30/60 special damage and -20 AP.", "script": "skitter_smack"},
+ "SMOKE_SCREEN": {"name": "Smoke Screen", "desc": "Jumps where enemies are packed: 10/20/40 special damage around, and SMOKE on their row.", "no_target": true, "script": "smoke_screen"},
+ "SNORE": {"name": "Snore", "desc": "Enemies in front of it get FLINCH for 3s and take 20/40/60 special damage.", "script": "snore"},
+ "SONG_OF_DESIRE": {"name": "Song of Desire", "desc": "The 1/1/2 backmost enemies are CHARMED for 3s and lose 3 ATK.", "no_target": true, "script": "song_of_desire"},
+ "SOUL_TRAP": {"name": "Soul Trap", "desc": "Gains 25/50/108 SHIELD; enemies within 2 cells lose 10 PP and get FATIGUE for 2s.", "script": "soul_trap"},
+ "STATIC_SHOCK": {"name": "Static Shock", "desc": "Deals 30/50/70 special damage; heals per adjacent Fairy and gains SHIELD per adjacent Electric.", "script": "static_shock"},
+ "STOCKPILE": {"name": "Stockpile", "desc": "Gains 30/40/50 max HP but loses 10 SPEED; every 4th cast spits up 50% of its max HP as special damage.", "script": "stockpile"},
+
+ "STRUGGLE_BUG": {"name": "Struggle Bug", "desc": "Adjacent enemies lose 30 AP and take 10/20/30 special damage.", "no_target": true, "script": "struggle_bug"},
+ "SUPER_HEAT": {"name": "Super Heat", "desc": "9 bursts of heat in a cone: 4/7/10 special damage and ARMOR_BREAK for 1s each.", "script": "super_heat"},
+ "SYRUP_BOMB": {"name": "Syrup Bomb", "desc": "The fastest enemy loses 30 SPEED and takes 30/40/50 special damage.", "no_target": true, "script": "syrup_bomb"},
+ "TAIL_GLOW": {"name": "Tail Glow", "desc": "Gains 30 AP; adjacent enemies take 10/20/30 special damage.", "no_target": true, "script": "tail_glow"},
+ "TEETER_DANCE": {"name": "Teeter Dance", "desc": "Gains 20 SPEED; every Pokémon on the board gets CONFUSION for 3s.", "no_target": true, "script": "teeter_dance"},
+ "TRIMMING_MOWER": {"name": "Trimming Mower", "desc": "Dashes where the most enemies are, heals 30/45/60 HP (overheal as SHIELD), then 20/30/40 special damage around.", "no_target": true, "script": "trimming_mower"},
+ "TRIPLE_KICK": {"name": "Triple Kick", "desc": "Up to 3 adjacent enemies take 20/40/60 special damage.", "no_target": true, "script": "triple_kick"},
+ "UNBOUND": {"name": "Unbound", "desc": "Hoopa unleashes its true form: +1 star, +10 ATK, +100 max HP and Hyperspace Fury.", "no_target": true, "inimitable": true, "script": "unbound"},
+ "VENOSHOCK": {"name": "Venoshock", "desc": "Deals 30/60/120 special damage, doubled when it is poisoned itself.", "script": "venoshock"},
+ "VESPIQUEN_ORDERS": {"name": "Vespiquen's Orders", "desc": "Vespiquen gives orders to the Combee with its passive.", "no_target": true, "script": "vespiquen_orders"},
+ "VOLT_SURGE": {"name": "Volt Surge", "desc": "Gains 10/20/30 max HP, 20 SPEED and ELECTRIC_FIELD; then every 3rd attack bounces lightning through 4 enemies.", "no_target": true, "script": "volt_surge"},
+ "X_SCISSOR": {"name": "X-Scissor", "desc": "Deals 10/20/40 true damage twice.", "script": "x_scissor"},
+ "ZING_ZAP": {"name": "Zing Zap", "desc": "Deals 30/60/90 special damage and FLINCH for 3s, then bounces behind the target.", "script": "zing_zap"},
+
+ "BUG_BITE": {"name": "Bug Bite", "desc": "Deals 20/40/80 special damage and steals and eats the berry of the target.", "script": "bug_bite"},
+ "HAPPY_HOUR": {"name": "Happy Hour", "desc": "Every ally gains 2/4/7 ATK.", "no_target": true, "script": "happy_hour"},
+ "MAGNET_PULL": {"name": "Magnet Pull", "desc": "Attracts a random Steel Pokémon that can be caught by clicking it.", "no_target": true, "script": "magnet_pull"},
+ "SWARM": {"name": "Swarm", "desc": "A Bug of the team hatches from the Bug Nest, one stronger per cast.", "no_target": true, "script": "swarm"},
+ "TACKLE": {"name": "Tackle", "desc": "Deals 20/40/60 special damage.", "script": "tackle"},
+ "TAKE_HEART": {"name": "Take Heart", "desc": "Gains 4/6/8 ATK and SPE_DEF, cleanses itself and acts again quickly.", "no_target": true, "script": "take_heart"},
+ "THUNDERCLAP_PRESS": {"name": "Thunderclap Press", "desc": "Pushes the target to the far end of the line: it and the enemies on the way get PARALYSIS for 4s and take 20/40/80 special damage.", "script": "thunderclap_press"},
+ "TRANSFORM": {"name": "Transform", "desc": "Becomes a copy of the target: stars, ability, passive and stats.", "inimitable": true, "script": "transform"},
+
+ "ACID_SPRAY": {"name": "Acid Spray", "desc": "5 sprays chaining through adjacent enemies: -5 SPE_DEF and 11/22/33 special damage each.", "script": "acid_spray"},
+ "ASTRAL_BARRAGE": {"name": "Astral Barrage", "desc": "Jumps to a back corner and sends 3/5/7 ghosts at random enemies: 20 special damage each.", "no_target": true, "script": "astral_barrage"},
+ "BEHEMOTH_BLADE": {"name": "Behemoth Blade", "desc": "Deals 30/60/90 + its ATK as special damage, then jumps behind the target.", "script": "behemoth_blade"},
+ "BLEAKWIND_STORM": {"name": "Bleakwind Storm", "desc": "Enemies in a line take 45/60/75 special damage and FREEZE for 2s.", "script": "bleakwind_storm"},
+ "BLUE_FLARE": {"name": "Blue Flare", "desc": "The target and the enemies around take 12/25/50 special damage + 10 per Fire Pokémon of the team.", "script": "blue_flare"},
+ "BURNING_JEALOUSY": {"name": "Burning Jealousy", "desc": "The target and the enemies around take 30/50/70 special damage; those with ATK buffs lose them and BURN for 5s.", "script": "burning_jealousy"},
+ "CHAIN_CRAZED": {"name": "Chain Crazed", "desc": "Poisons itself, gains 10/15/20 SPEED, 5/10/15 ATK and 3/6/10 DEF.", "no_target": true, "script": "chain_crazed"},
+ "CHARGE_BEAM": {"name": "Charge Beam", "desc": "A beam chains through 3 enemies: 15/30/60 special damage each.", "script": "charge_beam"},
+
+ "CORE_ENFORCER": {"name": "Core Enforcer", "desc": "A Z-shaped blast around the target: SILENCE for 3s and 20/40/60 special damage.", "script": "core_enforcer"},
+ "CRUNCH": {"name": "Crunch", "desc": "Deals 40/80/160 special damage; a KO heals 50% of the target max HP.", "script": "crunch"},
+ "DARK_VOID": {"name": "Dark Void", "desc": "Enemies within 4 cells of the target take 10/20/30 special damage, 80% chance to SLEEP for 2s.", "script": "dark_void"},
+ "DOOM_DESIRE": {"name": "Doom Desire", "desc": "2s later, the target takes 100/125/150 special damage.", "script": "doom_desire"},
+ "DOUBLE_IRON_BASH": {"name": "Double Iron Bash", "desc": "Hits twice for 150% of its ATK as physical damage, FLINCH for 3s.", "script": "double_iron_bash"},
+ "DYNAMAX_CANNON": {"name": "Dynamax Cannon", "desc": "Enemies in a line take 30/40/50% of their max HP as special damage.", "script": "dynamax_cannon"},
+ "EXTREME_SPEED": {"name": "Extreme Speed", "desc": "Dashes to the farthest enemy: enemies on the way take 20/30/40 special damage.", "script": "extreme_speed"},
+ "FLEUR_CANNON": {"name": "Fleur Cannon", "desc": "Enemies in a line take 50/75/100 special damage; loses 20 AP.", "script": "fleur_cannon"},
+ "FUSION_BOLT": {"name": "Fusion Bolt", "desc": "The target and the enemies around take 30/40/50 special damage + 10 per Electric Pokémon of the team.", "script": "fusion_bolt"},
+
+ "GEOMANCY": {"name": "Geomancy", "desc": "Gains 15 ATK, 10 SPE_DEF and 15 SPEED.", "no_target": true, "script": "geomancy"},
+ "GLACIAL_LANCE": {"name": "Glacial Lance", "desc": "Goes to a back corner and throws a lance: 300% of its ATK as special damage, half to the enemies around.", "no_target": true, "script": "glacial_lance"},
+ "GLACIATE": {"name": "Glaciate", "desc": "The target and the enemies around take 30/40/50 special damage + 10 per Ice Pokémon of the team.", "script": "glaciate"},
+ "HEART_SWAP": {"name": "Heart Swap", "desc": "Deals 60/80/100 special damage, steals the target's SPE_DEF buffs and AP and gives it its own negative statuses.", "script": "heart_swap"},
+ "LANDS_WRATH": {"name": "Land's Wrath", "desc": "The target and the enemies around take 20/30/40 + its ATK as special damage and lose 5 DEF and SPE_DEF.", "script": "lands_wrath"},
+ "LASER_BLADE": {"name": "Laser Blade", "desc": "Alternates a spin behind the target (SHIELD, 25 special damage around) and a double slash (25 + ATK special damage).", "script": "laser_blade"},
+ "LOCK_ON": {"name": "Lock-On", "desc": "Its next attack cannot be dodged and deals 200% extra as true damage.", "script": "lock_on"},
+ "LUNAR_BLESSING": {"name": "Lunar Blessing", "desc": "Every wounded ally heals 25% of its max HP and is cleansed.", "no_target": true, "script": "lunar_blessing"},
+ "LUNGE": {"name": "Lunge", "desc": "Jumps at the enemy with the most ATK: -3/4/5 ATK and 30/40/50 special damage.", "no_target": true, "script": "lunge"},
+
+ "MAGMA_STORM": {"name": "Magma Storm", "desc": "A fire storm hops from enemy to adjacent enemy: 50/75/100 special damage, 20% weaker at each hop.", "script": "magma_storm"},
+ "MALIGNANT_CHAIN": {"name": "Malignant Chain", "desc": "The target is POSSESSED (fights for your team) and gets 3 POISON stacks for 3s.", "script": "malignant_chain"},
+ "MIND_BEND": {"name": "Mind Bend", "desc": "The target is POSSESSED for 2s; a protected or possessed target takes 100 special damage instead.", "script": "mind_bend"},
+ "MIND_BLOWN": {"name": "Mind Blown", "desc": "Loses 50% max HP; 3/4/5 fireworks burst over the enemies with random effects (burn, fatigue, true damage, or shields for allies).", "script": "mind_blown"},
+ "MOONGEIST_BEAM": {"name": "Moongeist Beam", "desc": "On the line: enemies get PARALYSIS for 3s and 60/80/100 special damage, allies gain as much SHIELD.", "script": "moongeist_beam"},
+ "MULTI_ATTACK": {"name": "Multi-Attack", "desc": "Adjacent enemies take 7/10/13 special damage per synergy level of its types.", "no_target": true, "script": "multi_attack"},
+ "OBLIVION_WING": {"name": "Oblivion Wing", "desc": "Deals 90/120/150 special damage and heals 75% of it.", "script": "oblivion_wing"},
+ "PRISMATIC_LASER": {"name": "Prismatic Laser", "desc": "A 3-column laser sweeps the board: 30/40/50 special damage, enemies pushed back.", "script": "prismatic_laser"},
+ "PSYCHO_BOOST": {"name": "Psycho Boost", "desc": "The target and its row neighbours take 90/120/150 special damage; loses 10 AP per hit.", "script": "psycho_boost"},
+
+ "RELIC_SONG": {"name": "Relic Song", "desc": "Every ally gains 10 SHIELD; every 3rd cast, every enemy falls asleep instead.", "no_target": true, "script": "relic_song"},
+ "SACRED_SWORD_CAVERN": {"name": "Sacred Sword (Cavern)", "desc": "Deals 40/60/80 true damage + 20 per enemy on its side of the board.", "script": "sacred_sword_cavern"},
+ "SACRED_SWORD_GRASS": {"name": "Sacred Sword (Grass)", "desc": "Deals 40/60/80 true damage + 10 per ally still standing.", "script": "sacred_sword_grass"},
+ "SACRED_SWORD_IRON": {"name": "Sacred Sword (Iron)", "desc": "Deals 40/60/80 true damage + 15 per fallen ally.", "script": "sacred_sword_iron"},
+ "SANDSEAR_STORM": {"name": "Sandsear Storm", "desc": "Enemies in a line take 45/60/75 special damage and BURN for 2s.", "script": "sandsear_storm"},
+ "SCALE_SHOT": {"name": "Scale Shot", "desc": "8 scales gather around it (40 special damage to adjacent enemies), then fly at the farthest enemy.", "no_target": true, "script": "scale_shot"},
+ "SEARING_SHOT": {"name": "Searing Shot", "desc": "Enemies within 2 cells take 30/40/50 special damage and BURN for 3s.", "script": "searing_shot"},
+ "SECRET_SWORD": {"name": "Secret Sword", "desc": "Deals 50/100/150 special damage, true damage once it has blocked 20 hits.", "script": "secret_sword"},
+ "SEED_FLARE": {"name": "Seed Flare", "desc": "Enemies within 5 cells lose 3 SPE_DEF and take 20/25/30 special damage.", "no_target": true, "script": "seed_flare"},
+
+ "SHADOW_CLAW": {"name": "Shadow Claw", "desc": "Enemies in front of it take 20/40/60 special damage (60/100/140 when alone); heals 25% of it.", "script": "shadow_claw"},
+ "SPECTRAL_THIEF": {"name": "Spectral Thief", "desc": "Deals 30/40/50 special damage, rushes away and steals every stat buff of the target.", "script": "spectral_thief"},
+ "SPRINGTIDE_STORM": {"name": "Springtide Storm", "desc": "Enemies in a line take 45/60/75 special damage and are CHARMED for 2s.", "script": "springtide_storm"},
+ "STEAM_ERUPTION": {"name": "Steam Eruption", "desc": "The target and the enemies around take 20/40/80 special damage and BURN for 3s.", "script": "steam_eruption"},
+ "SUNSTEEL_STRIKE": {"name": "Sunsteel Strike", "desc": "Skydives where enemies are packed: 40/60/80 special damage around.", "no_target": true, "script": "sunsteel_strike"},
+ "SURGING_STRIKES": {"name": "Surging Strikes", "desc": "Strikes 3 times for 100% of its ATK as special damage, always critical.", "script": "surging_strikes"},
+ "THOUSAND_ARROWS": {"name": "Thousand Arrows", "desc": "33 arrows rain on random cells: enemies hit are LOCKED for 1s and take 40/50/60 special damage.", "no_target": true, "script": "thousand_arrows"},
+
+ "TIME_TRAVEL": {"name": "Time Travel", "desc": "Every ally heals 25 HP and is cleansed; Celebi also gives you 1 life.", "no_target": true, "script": "time_travel"},
+ "ULTRA_THRUSTERS": {"name": "Ultra Thrusters", "desc": "Adjacent enemies take 20/40/80 special damage and BURN for 2s, then it blasts off to a back corner.", "script": "ultra_thrusters"},
+ "U_TURN": {"name": "U-turn", "desc": "Trades places with the target, gains 15/30/50 SHIELD and CHARMS the target for 1s.", "script": "u_turn"},
+ "WICKED_BLOW": {"name": "Wicked Blow", "desc": "Deals 30/45/60 true damage, always critical.", "script": "wicked_blow"},
+ "WILDBOLT_STORM": {"name": "Wildbolt Storm", "desc": "Enemies in a line get PARALYSIS for 4s and take 45/60/75 special damage.", "script": "wildbolt_storm"},
+
+ "BRAVE_BIRD": {"name": "Brave Bird", "desc": "Flies away to a safe spot, pulls the target next to it and deals 30/60/90 special damage.", "script": "brave_bird"},
+ "DISCHARGE": {"name": "Discharge", "desc": "Adjacent enemies get PARALYSIS for 5s and take 25/50/100 special damage.", "script": "discharge"},
+ "EXPANDING_FORCE": {"name": "Expanding Force", "desc": "Gains PSYCHIC_FIELD, or gives it to the closest ally without it. Every ally in a PSYCHIC_FIELD deals 10/20/40 special damage to adjacent enemies.", "no_target": true, "script": "expanding_force"},
+ "HURRICANE": {"name": "Hurricane", "desc": "Enemies in a line get PARALYSIS for 3s and take 25/50/100 special damage.", "script": "hurricane"},
+ "MUD_BUBBLE": {"name": "Mud Bubble", "desc": "Heals 10/20/40 HP and acts again sooner.", "no_target": true, "script": "mud_bubble"},
+ "RAZOR_LEAF": {"name": "Razor Leaf", "desc": "Deals 20/40/80 special damage to enemies in the direction of the target. Can crit.", "script": "razor_leaf"},
+ "ROOST": {"name": "Roost", "desc": "Flies away to a safe spot, SLEEP for 1s and gains 20/40/80 SHIELD.", "no_target": true, "script": "roost"},
+ "SHELTER": {"name": "Shelter", "desc": "Gains 3/6/12 DEF and creates SMOKE on the target's cell.", "script": "shelter"},
+ "TAIL_WHIP": {"name": "Tail Whip", "desc": "The target loses 20/30/40% of its DEF.", "script": "tail_whip"},
+ "TORMENT": {"name": "Torment", "desc": "Gains 20/35/50 SPEED and acts again sooner.", "no_target": true, "script": "torment"},
+
+ "BITTER_MALICE": {"name": "Bitter Malice", "desc": "Deals 25/50/100 special damage and FATIGUE for 3s to the target. While disguised, also hits the enemies ADJACENT to the target, breaking the disguise.", "script": "bitter_malice"},
+ "BURN_UP": {"name": "Burn Up", "desc": "Deals 50/100/200 special damage to the target, then BURN itself for 3s.", "script": "burn_up"},
+ "CHLOROBLAST": {"name": "Chloroblast", "desc": "Deals 50/100/200 special damage to ADJACENT enemies, and loses 50% of its max HP as true damage.", "script": "chloroblast"},
+ "CRUSH_CLAW": {"name": "Crush Claw", "desc": "The target loses 5/10/15 DEF, then takes 2 hits of 100/100/200% ATK as physical damage.", "script": "crush_claw"},
+ "DOUBLE_EDGE": {"name": "Double-Edge", "desc": "Deals 55/110/220 physical damage to the target and takes 20/40/60 physical damage.", "script": "double_edge"},
+ "DRAGON_CLAW": {"name": "Dragon Claw", "desc": "The ADJACENT enemy with the lowest max HP takes 30/60/120 special damage and WOUND for 4s.", "script": "dragon_claw"},
+ "EERIE_SPELL": {"name": "Eerie Spell", "desc": "A spell bounces 4 times toward the lowest HP units: allies heal 15/30/45 HP, enemies take 10/20/40 special damage.", "script": "eerie_spell"},
+ "ICE_SPINNER": {"name": "Ice Spinner", "desc": "Spins around, clearing board effects: ADJACENT enemies take 15/30/60 special damage and are knocked back.", "script": "ice_spinner"},
+ "INFERNAL_PARADE": {"name": "Infernal Parade", "desc": "Enemies between it and the farthest enemy take 30 special damage twice, with 50% chance of BURN for 3s.", "script": "infernal_parade"},
+ "METRONOME": {"name": "Metronome", "desc": "Casts the ability of a random Pokémon. Rarer abilities with LUCK.", "inimitable": true, "script": "metronome"},
+ "SHELL_SIDE_ARM": {"name": "Shell Side Arm", "desc": "A shell bounces 4 times toward the highest HP units: allies gain 10/20/30 AP, enemies get POISON for 2/3/4s.", "script": "shell_side_arm"},
+ "SPIN_OUT": {"name": "Spin Out", "desc": "Deals 25/50/100% of its SPEED as special damage and BLINDED for 1s to the target, then drives back to its backline, losing its Acceleration stacks.", "script": "spin_out"},
+ "SPIRIT_BREAK": {"name": "Spirit Break", "desc": "Deals 20/40/80 special damage to the target, which loses 20 AP.", "script": "spirit_break"},
+ "STRANGE_STEAM": {"name": "Strange Steam", "desc": "Spreads a strange steam around itself, wider each cast: enemies get CONFUSION for 3s (30/30/100% chance), allies get a FAIRY_FIELD. Abilities deal 20% more damage in the steam.", "script": "strange_steam"},
+ "SUCTION_HEAL": {"name": "Suction Heal", "desc": "Deals 15/30/60 special damage to enemies up to 2 cells in front, healing 50% of the damage dealt.", "script": "suction_heal"},
+ "VICTORY_DANCE": {"name": "Victory Dance", "desc": "Gains 3 ATK, 3 DEF and 10 SPEED.", "no_target": true, "script": "victory_dance"},
+
+ "AURORA_VEIL": {"name": "Aurora Veil", "desc": "Every ally gains 5/10/20 SHIELD and RUNE_PROTECT for 1s.", "no_target": true, "script": "aurora_veil"},
+ "GRUDGE": {"name": "Grudge", "desc": "The target gets SILENCE for 3s, then every silenced enemy takes 18/36/52 special damage.", "script": "grudge"},
+ "HIGH_JUMP_KICK": {"name": "High Jump Kick", "desc": "Steals up to 40 PP from the target and deals 15/30/60 special damage.", "script": "high_jump_kick"},
+ "METAL_CLAW": {"name": "Metal Claw", "desc": "Deals 10/20/40 true damage to the target and gains 2/4/6 ATK.", "script": "metal_claw"},
+ "OBSTRUCT": {"name": "Obstruct", "desc": "PROTECT for 0.5/0.75/1s x (2 + AP/100). Meanwhile its attackers lose 2 DEF.", "script": "obstruct"},
+ "OVERDRIVE": {"name": "Overdrive", "desc": "Enemies within 3 cells of the target take 120/120/150% ATK as special damage, 20% less per cell away.", "script": "overdrive"},
+ "PICKUP": {"name": "Pickup", "desc": "Takes the first item of the target, then deals 30/60/120 special damage.", "script": "pickup"},
+ "POLLEN_PUFF": {"name": "Pollen Puff", "desc": "The ally with the lowest HP heals 30/60/120 HP.", "no_target": true, "script": "pollen_puff"},
+ "QUIVER_DANCE": {"name": "Quiver Dance", "desc": "Gains 3/4/5 ATK and SPE_DEF, 10 SPEED and 20 AP.", "no_target": true, "script": "quiver_dance"},
+ "RECOVER": {"name": "Recover", "desc": "Heals 25/25/50% of its max HP.", "no_target": true, "script": "recover"},
+ "STEEL_WING": {"name": "Steel Wing", "desc": "Flies next to the farthest enemy. Enemies on the way take 10/20/40 + 200% DEF as special damage and give it 1 DEF each.", "script": "steel_wing"},
+
+ "ANCIENT_POWER": {"name": "Ancient Power", "desc": "Deals 40/80/120 special damage to the target and gains 25 AP.", "script": "ancient_power"},
+ "CEASELESS_EDGE": {"name": "Ceaseless Edge", "desc": "Creates SPIKES on the cells in front of it; enemies there take 20/40/80 special damage. Can crit.", "script": "ceaseless_edge"},
+ "CLANGOROUS_SOUL": {"name": "Clangorous Soul", "desc": "Itself and ADJACENT allies gain 2/4/8 ATK, DEF and SPE_DEF.", "script": "clangorous_soul"},
+ "CURSE": {"name": "Curse", "desc": "A random enemy among the ones with the highest max HP gets CURSE: KO after 8/5/3s, less with AP.", "no_target": true, "script": "curse"},
+ "DIRE_CLAW": {"name": "Dire Claw", "desc": "The target gets POISON, SLEEP or PARALYSIS for 3s and takes 15/30/60 special damage.", "script": "dire_claw"},
+ "DREAM_EATER": {"name": "Dream Eater", "desc": "Moves next to a sleeping enemy, deals 45/90/150 special damage and heals for the damage dealt. If no enemy sleeps, SLEEP for 3/4/5s to the target and PP refilled.", "script": "dream_eater"},
+ "DRILL_PECK": {"name": "Drill Peck", "desc": "Deals 30/60/120 special damage and trades places with the target. If an enemy is right behind, it becomes the next target and PP is refilled.", "script": "drill_peck"},
+ "ERUPTION": {"name": "Eruption", "desc": "20/30/45 rocks fall on random cells: enemies hit take 30/50/70 special damage and BURN for 5s.", "no_target": true, "script": "eruption"},
+ "FIERY_DANCE": {"name": "Fiery Dance", "desc": "Gains 30 AP, then deals 25/50/100 special damage to the target.", "script": "fiery_dance"},
+ "MUDDY_WATER": {"name": "Muddy Water", "desc": "Enemies in front take 40/80/160 special damage, ARMOR_REDUCTION and WOUND for 4s.", "script": "muddy_water"},
+ "NATURAL_GIFT": {"name": "Natural Gift", "desc": "The ally with the lowest HP heals 30/60/90 HP and gets RUNE_PROTECT for 1/2/3s.", "no_target": true, "script": "natural_gift"},
+ "PASTEL_VEIL": {"name": "Pastel Veil", "desc": "Dashes next to the farthest ally: allies on the way are cleansed and gain 20/40/80 SHIELD.", "no_target": true, "script": "pastel_veil"},
+ "SHADOW_BONE": {"name": "Shadow Bone", "desc": "Enemies in a line take 30/60/120 special damage, 50% chance to lose 6 DEF.", "script": "shadow_bone"},
+ "SHEER_COLD": {"name": "Sheer Cold", "desc": "Deals 50/100/200 special damage to the target, with 10/20/30% chance (more with more HP than the target) to KO it. Always KO a FREEZE target, never an ICE one.", "script": "sheer_cold"},
+ "SLACK_OFF": {"name": "Slack Off", "desc": "Removes its negative statuses, heals 30% of its max HP, then SLEEP for 3s.", "no_target": true, "script": "slack_off"},
+
+ "FIERY_WRATH": {"name": "Fiery Wrath", "desc": "Enemies within 4 cells take 30/40/50 special damage, with 50% chance of FLINCH for 4s.", "script": "fiery_wrath"},
+ "FREEZING_GLARE": {"name": "Freezing Glare", "desc": "Enemies in a line take 20/40/80 special damage, with 50% chance of FREEZE for 3s.", "script": "freezing_glare"},
+ "HYDRO_STEAM": {"name": "Hydro Steam", "desc": "Blasts steam in front of it: enemies hit take 30/60/100 special damage and BURN for 4s.", "script": "hydro_steam"},
+ "IVY_CUDGEL": {"name": "Ivy Cudgel", "desc": "Deals 50/75/100 special damage to the target, with a bonus by mask. Teal: +6 ATK per ADJACENT enemy. Wellspring: ADJACENT allies gain 25 PP and heal 50 HP. Hearthflame: ADJACENT enemies take 30 special damage and BURN for 5s. Cornerstone: ADJACENT enemies FLINCH for 5s and PROTECT for 1s x (2 + AP/100).", "script": "ivy_cudgel"},
+ "SKY_ATTACK_SHADOW": {"name": "Shadow Sky Attack", "desc": "Soars out of reach, lands next to the farthest enemy and strikes it 1s later for 30/60/120 special damage. Can crit.", "no_target": true, "script": "sky_attack_shadow"},
+ "THUNDEROUS_KICK": {"name": "Thunderous Kick", "desc": "Kicks the target back as far as possible, pushing aside the enemies on the way. Every enemy hit gets FLINCH for 4s, loses 10 DEF and takes 20/40/60 physical damage.", "script": "thunderous_kick"},
+ "BARB_BARRAGE": {"name": "Barb Barrage", "desc": "Jumps where the enemies are the most packed; the target and its ADJACENT allies get POISON for 3s and take 15/30/45 special damage.", "script": "barb_barrage"},
+ "BULLET_PUNCH": {"name": "Bullet Punch", "desc": "Deals 20/30/40 true damage to the target, gains 20/30/40 SPEED for 2s and acts again sooner.", "script": "bullet_punch"},
+ "ELECTRIC_SURGE": {"name": "Electric Surge", "desc": "Other ELECTRIC allies gain 10 SPEED.", "no_target": true, "script": "electric_surge"},
+ "GRASSY_SURGE": {"name": "Grassy Surge", "desc": "Other GRASS allies gain 5 ATK.", "no_target": true, "script": "grassy_surge"},
+ "MISTY_SURGE": {"name": "Misty Surge", "desc": "Other FAIRY allies gain 25 PP and heal 25 HP.", "no_target": true, "script": "misty_surge"},
+ "PSYCHIC_SURGE": {"name": "Psychic Surge", "desc": "Other PSYCHIC allies gain 20/25/30 SHIELD.", "no_target": true, "script": "psychic_surge"},
+ "PLASMA_FISSION": {"name": "Plasma Fission", "desc": "A beam hits the first enemy toward the target for 20/40/60 special damage, then splits in two perpendicular beams: enemies hit take the damage, halved after each one.", "script": "plasma_fission"},
+ "REVELATION_DANCE": {"name": "Revelation Dance", "desc": "Feathers fly on ADJACENT cells: enemies take 15/30/50 special damage, allies gain a bonus by style: Baile 3/6/10 SPEED, Pom-Pom 2/4/6 ATK, Pa'u 2/4/6 SPE_DEF, Sensu 15/30/50 SHIELD.", "inimitable": true, "script": "revelation_dance"},
+ "STONE_AXE": {"name": "Stone Axe", "desc": "Deals 30/40/50 true damage to the target and scatters STEALTH_ROCKS around it.", "script": "stone_axe"},
+ "ATTACK_ORDER": {"name": "Attack Order", "desc": "A Combee joins the fight and every Combee ally is enraged 3s. Its next attack deals 20/40/60 more special damage, +10/20/30 per Combee ally.", "no_target": true, "inimitable": true, "script": "attack_order"},
+ "HEAL_ORDER": {"name": "Heal Order", "desc": "A Combee joins the fight, then it and every Combee heal their adjacent allies 10/20/30 HP and clear their negative statuses.", "no_target": true, "inimitable": true, "script": "heal_order"},
+ "DEFEND_ORDER": {"name": "Defend Order", "desc": "A Combee joins the fight, every Combee gets 10/20/30 shield and it gets as much plus as much again per Combee ally.", "no_target": true, "inimitable": true, "script": "defend_order"}
+}

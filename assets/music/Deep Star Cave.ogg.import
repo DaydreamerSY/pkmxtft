@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://l3gvoleqhio3"
+path="res://.godot/imported/Deep Star Cave.ogg-8491ade98dd64668b9810643bd2204c7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Deep Star Cave.ogg"
+dest_files=["res://.godot/imported/Deep Star Cave.ogg-8491ade98dd64668b9810643bd2204c7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

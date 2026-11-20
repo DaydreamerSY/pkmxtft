@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cghk0wer2r6dc"
+path="res://.godot/imported/Icicle Forest.ogg-01d1b54fff3b8a48e960f0ad49806087.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Icicle Forest.ogg"
+dest_files=["res://.godot/imported/Icicle Forest.ogg-01d1b54fff3b8a48e960f0ad49806087.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crr5be7ylu20b"
+path="res://.godot/imported/Steam Cave.ogg-df5fe149fcebc02069353008faca61f4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Steam Cave.ogg"
+dest_files=["res://.godot/imported/Steam Cave.ogg-df5fe149fcebc02069353008faca61f4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8b5wnepkcb38"
+path="res://.godot/imported/Stop! Thief!.ogg-33dd1d541ebf541d493e122baf5ea68f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Stop! Thief!.ogg"
+dest_files=["res://.godot/imported/Stop! Thief!.ogg-33dd1d541ebf541d493e122baf5ea68f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

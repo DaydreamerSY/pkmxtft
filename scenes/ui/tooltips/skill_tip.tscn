@@ -1,0 +1,86 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/tooltips/skill_tip.gd" id="2_skill_tip"]
+[ext_resource type="Script" path="res://src/ui/ability_shape_view.gd" id="3_ability_shap"]
+
+[node name="SkillTip" type="VBoxContainer"]
+mouse_filter = 2
+theme_override_constants/separation = 6
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_skill_tip")
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_type_variation = &"TitleLabel"
+text = "Ability"
+size_flags_horizontal = 3
+
+[node name="Pp" type="RichTextLabel" parent="Header"]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+
+[node name="Desc" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+
+[node name="Cells" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+theme_override_colors/default_color = Color(1, 0.8, 0.6, 1)
+
+[node name="ShapeCenter" type="CenterContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Shape" type="Control" parent="ShapeCenter"]
+layout_mode = 2
+unique_name_in_owner = true
+mouse_filter = 2
+script = ExtResource("3_ability_shap")
+
+[node name="Note" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+theme_override_colors/default_color = Color(0.62, 0.66, 0.66, 1)

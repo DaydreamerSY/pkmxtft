@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b2u24a6j1w8st"
+path="res://.godot/imported/Temporal Pinnacle.ogg-a052861aca894ba2ccbb56bb570f84fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Temporal Pinnacle.ogg"
+dest_files=["res://.godot/imported/Temporal Pinnacle.ogg-a052861aca894ba2ccbb56bb570f84fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

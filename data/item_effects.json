@@ -1,0 +1,142 @@
+{
+ "_doc": "Hand-written item balance (docs/ITEMS.md). params = numbers read by the item code (src/core/item_effects.gd); desc = tooltip template: {name} param, {name|s} milliseconds shown in seconds, {name|%} ratio shown in percent, {stat.ATK} a stat of the item. stats = overrides of data/pac/items.json (generated). Change a number here and both the game and its tooltip follow.",
+
+ "TWISTED_SPOON": {"desc": "+{stat.AP} AP"},
+ "MYSTIC_WATER": {"desc": "+{stat.PP} PP"},
+ "MAGNET": {"desc": "+{stat.SPEED} SPEED"},
+ "BLACK_GLASSES": {"desc": "+{stat.CRIT_CHANCE}% CRIT_CHANCE"},
+ "MIRACLE_SEED": {"desc": "+{stat.HP} HP"},
+ "NEVER_MELT_ICE": {"desc": "+{stat.SPE_DEF} SPE_DEF"},
+ "CHARCOAL": {"desc": "+{stat.ATK} ATK"},
+ "HEART_SCALE": {"desc": "+{stat.DEF} DEF"},
+
+ "CHOICE_SPECS": {"desc": "The holder gains {stat.AP} bonus AP"},
+ "SOUL_DEW": {
+  "params": {"interval": 1000, "ap": 5, "pp": 5},
+  "desc": "During combat, the holder gains {ap} AP and {pp} PP every {interval|s} s"
+ },
+ "UPGRADE": {
+  "params": {"speed": 5},
+  "desc": "Holder gains +{speed} SPEED ON_ATTACK (stackable)"
+ },
+ "REAPER_CLOTH": {
+  "params": {"crit_power": 0.5},
+  "desc": "The holder's ability can now critically strike based on CRIT_CHANCE. If the ability can already critically strike by default, increase CRIT_POWER by {crit_power|%}% instead."
+ },
+ "POKEMONOMICON": {
+  "params": {"burn": 3000, "spe_def": 1},
+  "desc": "When the holder deals SPECIAL, they BURN the target for {burn|s} seconds and reduce its SPE_DEF by {spe_def}."
+ },
+ "ABILITY_SHIELD": {
+  "params": {"shield": 0.2, "safeguard": 5000},
+  "desc": "When combat begins, the holder and allies ADJACENT_IN_THE_SAME_ROW receive {shield|%}% of their max HP as SHIELD and SAFEGUARD for {safeguard|s} seconds"
+ },
+ "POWER_LENS": {
+  "desc": "The amount of SPECIAL blocked by SPE_DEF is inflicted back to the attacker"
+ },
+ "SHELL_BELL": {
+  "params": {"lifesteal": 0.33},
+  "desc": "Holder heals for {lifesteal|%}% of all damages inflicted"
+ },
+ "HEAVY_DUTY_BOOTS": {
+  "desc": "Holder is immune to any BOARD_EFFECT, forced displacement and LOCKED"
+ },
+ "AQUA_EGG": {
+  "params": {"pp_ratio": 0.2, "pp_per_cast": 2},
+  "desc": "The holder regains {pp_ratio|%}% of its max PP after casting its ability, + {pp_per_cast} PP for each cast done in the fight"
+ },
+ "BLUE_ORB": {
+  "params": {"every": 3, "bounces": 2, "damage": 10, "pp_burn": 15},
+  "desc": "Every {every} attacks, unleashes a chain lightning that bounces to the {bounces} closest enemies, dealing {damage} SPECIAL and burning {pp_burn} PP"
+ },
+ "SCOPE_LENS": {
+  "params": {"pp_steal": 10},
+  "desc": "Critical attacks steal {pp_steal} PP from the target ON_HIT."
+ },
+ "STAR_DUST": {
+  "params": {"shield_ratio": 0.5},
+  "desc": "After casting ability, gain {shield_ratio|%}% of max PP as SHIELD"
+ },
+ "GREEN_ORB": {
+  "params": {"interval": 2000, "heal": 0.05, "overheal_pp": 0.3},
+  "desc": "Holder and ADJACENT allies regain {heal|%}% of their max HP every {interval|s} seconds. {overheal_pp|%}% of overheal is converted to PP."
+ },
+ "DEEP_SEA_TOOTH": {
+  "params": {"pp": 5, "pp_on_kill": 15},
+  "desc": "Holder restore {pp} additional PP ON_ATTACK. If the attack knocks out the target, restore {pp_on_kill} additional PP."
+ },
+ "SMOKE_BALL": {
+  "params": {"hp_threshold": 0.4, "shield": 50, "duration": 4000},
+  "desc": "Once below {hp_threshold|%}% max HP, drop the smoke ball, gain {shield} SHIELD and jump to a tile away. Every ADJACENT enemy is PARALYSIS and BLINDED for {duration|s} seconds."
+ },
+ "XRAY_VISION": {
+  "desc": "Holder is immune to SLEEP and their attacks can no longer miss."
+ },
+ "RAZOR_FANG": {
+  "params": {"armor_break": 2000},
+  "desc": "Attacks apply ARMOR_BREAK for {armor_break|s} seconds ON_HIT."
+ },
+ "PROTECTIVE_PADS": {
+  "params": {"shield_mult": 2},
+  "desc": "Holder deals {shield_mult}x damage against units with SHIELD, and is protected from recoil damage and retaliation effects."
+ },
+ "LOADED_DICE": {
+  "params": {"chance": 0.5, "damage": 0.75},
+  "desc": "Attacks have [{chance|%},LK]% chance to also hit the lowest health enemy ADJACENT to target for {damage|%}% of the damage, which also trigger ON_HIT effects."
+ },
+ "PUNCHING_GLOVE": {
+  "params": {"max_hp_damage": 0.08},
+  "desc": "Attacks deal {max_hp_damage|%}% of target max HP as additional PHYSICAL ON_HIT"
+ },
+ "MUSCLE_BAND": {
+  "params": {"stacks_per_buff": 2, "def": 2, "atk": 1, "speed": 5, "max_stacks": 20},
+  "desc": "When the holder takes damage, gain 1 stack. Every {stacks_per_buff} stacks, the holder gains +{def} DEF, +{atk} ATK and +{speed} SPEED (max {max_stacks} stacks)"
+ },
+ "WONDER_BOX": {
+  "params": {"count": 2},
+  "desc": "At the beginning of each battle, WONDER_BOX is replaced by {count} temporary random craftable items (max 3 items held)"
+ },
+ "STICKY_BARB": {
+  "params": {"damage": 3, "def_ratio": 0.15, "wound": 3000},
+  "desc": "When struck by an attack at melee range, deal {damage} + {def_ratio|%}% of DEF as retaliation TRUE and inflict WOUND for {wound|s} seconds to the attacker."
+ },
+ "WIDE_LENS": {"desc": "The holder gains +{stat.RANGE} RANGE"},
+ "RAZOR_CLAW": {"desc": "The holder gains +{stat.CRIT_CHANCE}% CRIT_CHANCE"},
+ "SAFETY_GOGGLES": {
+  "desc": "Holder is immune to all negative status effects and to sandstorm damage"
+ },
+ "KINGS_ROCK": {
+  "params": {"shield": 0.2},
+  "desc": "+{stat.HP} HP. {shield|%}% of max HP are gained as SHIELD when combat begins."
+ },
+ "SHINY_CHARM": {
+  "params": {"hp_threshold": 0.3, "protect": 1500, "pp": 50},
+  "desc": "Prevents damage and give PROTECT for {protect|s} seconds and {pp} PP the first time the holder gets below {hp_threshold|%}% HP"
+ },
+ "GRACIDEA_FLOWER": {
+  "params": {"speed": 20},
+  "desc": "When combat begins, the holder and allies ADJACENT_IN_THE_SAME_ROW gain +{speed} SPEED"
+ },
+ "FLAME_ORB": {
+  "params": {"base_atk": 1.0},
+  "desc": "Holder increases its BASE ATK by {base_atk|%}% and is immune to FREEZE, but suffers from BURN during the entire fight."
+ },
+ "ASSAULT_VEST": {
+  "params": {"dot_reduction": 0.5},
+  "desc": "+{stat.SPE_DEF} SPE_DEF. Reduce BURN and POISONED damage by {dot_reduction|%}%"
+ },
+ "POKE_DOLL": {
+  "params": {"reduction": 0.3},
+  "desc": "Reduce all incoming PHYSICAL and SPECIAL by {reduction|%}%. Makes the holder more likely to be targeted."
+ },
+ "RED_ORB": {
+  "params": {"true_part": 0.25},
+  "desc": "{true_part|%}% of attack damage is dealt as TRUE"
+ },
+ "MAX_REVIVE": {
+  "desc": "Give RESURRECTION, preventing the holder first KO and restoring to max HP"
+ },
+ "ROCKY_HELMET": {
+  "desc": "+{stat.DEF} DEF. Negates critical bonus damage from all incoming critical hits."
+ }
+}

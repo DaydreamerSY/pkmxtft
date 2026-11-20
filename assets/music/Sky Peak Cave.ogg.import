@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbrsmrlbdvrgi"
+path="res://.godot/imported/Sky Peak Cave.ogg-fd38a3dcb8f0cc0d480557e8beef1420.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Sky Peak Cave.ogg"
+dest_files=["res://.godot/imported/Sky Peak Cave.ogg-fd38a3dcb8f0cc0d480557e8beef1420.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwcw573jen3by"
+path="res://.godot/imported/Drenched Bluff.ogg-fe5c4ce573e6908b0d6f5b4c8192d3d9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Drenched Bluff.ogg"
+dest_files=["res://.godot/imported/Drenched Bluff.ogg-fe5c4ce573e6908b0d6f5b4c8192d3d9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

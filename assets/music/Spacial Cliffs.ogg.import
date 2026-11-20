@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7lt7c0jyd1yf"
+path="res://.godot/imported/Spacial Cliffs.ogg-688c8ecf22b45dce5b0bbab90faf7249.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Spacial Cliffs.ogg"
+dest_files=["res://.godot/imported/Spacial Cliffs.ogg-688c8ecf22b45dce5b0bbab90faf7249.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

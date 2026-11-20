@@ -1,0 +1,4520 @@
+{
+ "anims": {
+  "abilities/EVOLUTION": {
+   "file": "abilities/EVOLUTION.png",
+   "w": 64,
+   "h": 64,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HEAVY_SLAM": {
+   "file": "abilities/HEAVY_SLAM.png",
+   "w": 112,
+   "h": 80,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PLAY_ROUGH": {
+   "file": "abilities/PLAY_ROUGH.png",
+   "w": 64,
+   "h": 56,
+   "cols": 23,
+   "frames": 23,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/STRING_SHOT": {
+   "file": "abilities/STRING_SHOT.png",
+   "w": 64,
+   "h": 64,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BLAST_BURN": {
+   "file": "abilities/BLAST_BURN.png",
+   "w": 80,
+   "h": 80,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPIKE": {
+   "file": "abilities/SPIKE.png",
+   "w": 5,
+   "h": 16,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MYSTICAL_FIRE": {
+   "file": "abilities/MYSTICAL_FIRE.png",
+   "w": 64,
+   "h": 64,
+   "cols": 22,
+   "frames": 22,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ROCK_SLIDE": {
+   "file": "abilities/ROCK_SLIDE.png",
+   "w": 80,
+   "h": 256,
+   "cols": 51,
+   "frames": 79,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ACID_ARMOR": {
+   "file": "abilities/ACID_ARMOR.png",
+   "w": 48,
+   "h": 48,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GEAR_GRIND": {
+   "file": "abilities/GEAR_GRIND.png",
+   "w": 38,
+   "h": 32,
+   "cols": 2,
+   "frames": 2,
+   "fps": 30,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/RETALIATE": {
+   "file": "abilities/RETALIATE.png",
+   "w": 48,
+   "h": 48,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HEX": {
+   "file": "abilities/HEX.png",
+   "w": 80,
+   "h": 72,
+   "cols": 37,
+   "frames": 37,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/THUNDER": {
+   "file": "abilities/THUNDER.png",
+   "w": 32,
+   "h": 224,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SOAK": {
+   "file": "abilities/SOAK.png",
+   "w": 64,
+   "h": 72,
+   "cols": 43,
+   "frames": 43,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLOWER_TRICK": {
+   "file": "abilities/FLOWER_TRICK.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HYDRO_PUMP": {
+   "file": "abilities/HYDRO_PUMP.png",
+   "w": 96,
+   "h": 160,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ICICLE_CRASH": {
+   "file": "abilities/ICICLE_CRASH.png",
+   "w": 128,
+   "h": 128,
+   "cols": 27,
+   "frames": 27,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BUG_BUZZ": {
+   "file": "abilities/BUG_BUZZ.png",
+   "w": 80,
+   "h": 64,
+   "cols": 29,
+   "frames": 29,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LEECH_LIFE": {
+   "file": "abilities/LEECH_LIFE.png",
+   "w": 80,
+   "h": 72,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WHEEL_OF_FIRE": {
+   "file": "abilities/WHEEL_OF_FIRE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/SHADOW_BALL": {
+   "file": "abilities/SHADOW_BALL.png",
+   "w": 64,
+   "h": 64,
+   "cols": 40,
+   "frames": 40,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/REFLECT": {
+   "file": "abilities/REFLECT.png",
+   "w": 32,
+   "h": 32,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/FAIRY_WIND": {
+   "file": "abilities/FAIRY_WIND.png",
+   "w": 56,
+   "h": 80,
+   "cols": 39,
+   "frames": 39,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MAGIC_POWDER": {
+   "file": "abilities/MAGIC_POWDER.png",
+   "w": 64,
+   "h": 64,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WHIRLPOOL": {
+   "file": "abilities/WHIRLPOOL.png",
+   "w": 32,
+   "h": 64,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 1,
+   "yoyo": false
+  },
+  "abilities/RELIC_SONG": {
+   "file": "abilities/RELIC_SONG.png",
+   "w": 64,
+   "h": 64,
+   "cols": 16,
+   "frames": 16,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LICK": {
+   "file": "abilities/LICK.png",
+   "w": 32,
+   "h": 32,
+   "cols": 5,
+   "frames": 5,
+   "fps": 10,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GUILLOTINE": {
+   "file": "abilities/GUILLOTINE.png",
+   "w": 48,
+   "h": 48,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MAGNET_BOMB": {
+   "file": "abilities/MAGNET_BOMB.png",
+   "w": 64,
+   "h": 64,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/CUT": {
+   "file": "abilities/CUT.png",
+   "w": 64,
+   "h": 56,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WAVE_SPLASH": {
+   "file": "abilities/WAVE_SPLASH.png",
+   "w": 32,
+   "h": 32,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AQUA_STEP": {
+   "file": "abilities/AQUA_STEP.png",
+   "w": 149,
+   "h": 100,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MANTIS_BLADES": {
+   "file": "abilities/MANTIS_BLADES.png",
+   "w": 72,
+   "h": 72,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ICE_BALL": {
+   "file": "abilities/ICE_BALL.png",
+   "w": 32,
+   "h": 32,
+   "cols": 8,
+   "frames": 8,
+   "fps": 15,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LEAF_BLADE": {
+   "file": "abilities/LEAF_BLADE.png",
+   "w": 64,
+   "h": 64,
+   "cols": 26,
+   "frames": 26,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TELEPORT": {
+   "file": "abilities/TELEPORT.png",
+   "w": 56,
+   "h": 80,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MAGICAL_LEAF": {
+   "file": "abilities/MAGICAL_LEAF.png",
+   "w": 48,
+   "h": 48,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MAGICAL_LEAF_CHARGE": {
+   "file": "abilities/MAGICAL_LEAF_CHARGE.png",
+   "w": 96,
+   "h": 96,
+   "cols": 27,
+   "frames": 27,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DARK_HARVEST": {
+   "file": "abilities/DARK_HARVEST.png",
+   "w": 32,
+   "h": 32,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLAMETHROWER": {
+   "file": "abilities/FLAMETHROWER.png",
+   "w": 80,
+   "h": 96,
+   "cols": 50,
+   "frames": 50,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DOUBLE_SHOCK": {
+   "file": "abilities/DOUBLE_SHOCK.png",
+   "w": 104,
+   "h": 104,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/RAPID_SPIN": {
+   "file": "abilities/RAPID_SPIN.png",
+   "w": 72,
+   "h": 72,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GROWL": {
+   "file": "abilities/GROWL.png",
+   "w": 80,
+   "h": 80,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AIR_SLASH": {
+   "file": "abilities/AIR_SLASH.png",
+   "w": 48,
+   "h": 48,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WISH": {
+   "file": "abilities/WISH.png",
+   "w": 80,
+   "h": 40,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BLAZE_KICK": {
+   "file": "abilities/BLAZE_KICK.png",
+   "w": 64,
+   "h": 72,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BITE": {
+   "file": "abilities/BITE.png",
+   "w": 32,
+   "h": 48,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRAGON_TAIL": {
+   "file": "abilities/DRAGON_TAIL.png",
+   "w": 80,
+   "h": 72,
+   "cols": 24,
+   "frames": 24,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ICICLE_MISSILE": {
+   "file": "abilities/ICICLE_MISSILE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/ECHO": {
+   "file": "abilities/ECHO.png",
+   "w": 96,
+   "h": 96,
+   "cols": 23,
+   "frames": 23,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SLASH": {
+   "file": "abilities/SLASH.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLASH": {
+   "file": "abilities/FLASH.png",
+   "w": 64,
+   "h": 64,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TROP_KICK": {
+   "file": "abilities/TROP_KICK.png",
+   "w": 64,
+   "h": 64,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PETAL_DANCE": {
+   "file": "abilities/PETAL_DANCE.png",
+   "w": 64,
+   "h": 88,
+   "cols": 54,
+   "frames": 54,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PETAL_DANCE_PROJECTILE": {
+   "file": "abilities/PETAL_DANCE_PROJECTILE.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FIGHTING_KNOCKBACK": {
+   "file": "abilities/FIGHTING_KNOCKBACK.png",
+   "w": 64,
+   "h": 64,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TWISTER": {
+   "file": "abilities/TWISTER.png",
+   "w": 80,
+   "h": 80,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SHOCKWAVE": {
+   "file": "abilities/SHOCKWAVE.png",
+   "w": 96,
+   "h": 80,
+   "cols": 3,
+   "frames": 3,
+   "fps": 15,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TORCH_SONG": {
+   "file": "abilities/TORCH_SONG.png",
+   "w": 48,
+   "h": 72,
+   "cols": 25,
+   "frames": 25,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRAGON_BREATH": {
+   "file": "abilities/DRAGON_BREATH.png",
+   "w": 32,
+   "h": 74,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DARKEST_LARIAT": {
+   "file": "abilities/DARKEST_LARIAT.png",
+   "w": 120,
+   "h": 104,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPIN_OUT": {
+   "file": "abilities/SPIN_OUT.png",
+   "w": 32,
+   "h": 32,
+   "cols": 5,
+   "frames": 5,
+   "fps": 10,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FUTURE_SIGHT": {
+   "file": "abilities/FUTURE_SIGHT.png",
+   "w": 64,
+   "h": 48,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ROCK_ARTILLERY": {
+   "file": "abilities/ROCK_ARTILLERY.png",
+   "w": 80,
+   "h": 96,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ICY_WIND": {
+   "file": "abilities/ICY_WIND.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/GIGATON_HAMMER": {
+   "file": "abilities/GIGATON_HAMMER.png",
+   "w": 63,
+   "h": 63,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 4,
+   "yoyo": false
+  },
+  "abilities/STICKY_WEB": {
+   "file": "abilities/STICKY_WEB.png",
+   "w": 40,
+   "h": 40,
+   "cols": 7,
+   "frames": 7,
+   "fps": 7,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/FIRESTARTER": {
+   "file": "abilities/FIRESTARTER.png",
+   "w": 32,
+   "h": 32,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GLAIVE_RUSH": {
+   "file": "abilities/GLAIVE_RUSH.png",
+   "w": 64,
+   "h": 64,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/NIGHTMARE": {
+   "file": "abilities/NIGHTMARE.png",
+   "w": 64,
+   "h": 48,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRUM_BEATING": {
+   "file": "abilities/DRUM_BEATING.png",
+   "w": 88,
+   "h": 48,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SOFT_BOILED": {
+   "file": "abilities/SOFT_BOILED.png",
+   "w": 64,
+   "h": 64,
+   "cols": 29,
+   "frames": 29,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/NIGHT_SLASH": {
+   "file": "abilities/NIGHT_SLASH.png",
+   "w": 56,
+   "h": 64,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TRI_ATTACK": {
+   "file": "abilities/TRI_ATTACK.png",
+   "w": 192,
+   "h": 152,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/VOLT_SWITCH": {
+   "file": "abilities/VOLT_SWITCH.png",
+   "w": 72,
+   "h": 128,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SNIPE_SHOT/projectile": {
+   "file": "abilities/SNIPE_SHOT_projectile.png",
+   "w": 32,
+   "h": 28,
+   "cols": 3,
+   "frames": 3,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/SNIPE_SHOT/shoot": {
+   "file": "abilities/SNIPE_SHOT_shoot.png",
+   "w": 68,
+   "h": 84,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYCHIC": {
+   "file": "abilities/PSYCHIC.png",
+   "w": 64,
+   "h": 64,
+   "cols": 17,
+   "frames": 17,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRAGON_RAGE": {
+   "file": "abilities/DRAGON_RAGE.png",
+   "w": 48,
+   "h": 48,
+   "cols": 4,
+   "frames": 4,
+   "fps": 10,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYSTRIKE": {
+   "file": "abilities/PSYSTRIKE.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 16,
+   "repeat": 4,
+   "yoyo": false
+  },
+  "abilities/SKY_ATTACK": {
+   "file": "abilities/SKY_ATTACK.png",
+   "w": 79,
+   "h": 146,
+   "cols": 6,
+   "frames": 6,
+   "fps": 15,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/FIRE_BLAST": {
+   "file": "abilities/FIRE_BLAST.png",
+   "w": 72,
+   "h": 73,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BLIZZARD": {
+   "file": "abilities/BLIZZARD.png",
+   "w": 96,
+   "h": 80,
+   "cols": 31,
+   "frames": 31,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLAME_CHARGE": {
+   "file": "abilities/FLAME_CHARGE.png",
+   "w": 40,
+   "h": 192,
+   "cols": 41,
+   "frames": 41,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AQUA_JET": {
+   "file": "abilities/AQUA_JET.png",
+   "w": 96,
+   "h": 160,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ORIGIN_PULSE": {
+   "file": "abilities/ORIGIN_PULSE.png",
+   "w": 128,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/DRACO_METEOR": {
+   "file": "abilities/DRACO_METEOR.png",
+   "w": 480,
+   "h": 288,
+   "cols": 8,
+   "frames": 33,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PRECIPICE_BLADES": {
+   "file": "abilities/PRECIPICE_BLADES.png",
+   "w": 48,
+   "h": 40,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/THUNDER_CAGE": {
+   "file": "abilities/THUNDER_CAGE.png",
+   "w": 72,
+   "h": 80,
+   "cols": 42,
+   "frames": 42,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HAIL": {
+   "file": "abilities/HAIL.png",
+   "w": 40,
+   "h": 24,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CRUSH_GRIP": {
+   "file": "abilities/CRUSH_GRIP.png",
+   "w": 80,
+   "h": 80,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/STEALTH_ROCKS": {
+   "file": "abilities/STEALTH_ROCKS.png",
+   "w": 80,
+   "h": 56,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRAGON_ENERGY": {
+   "file": "abilities/DRAGON_ENERGY.png",
+   "w": 64,
+   "h": 72,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ROAR_OF_TIME": {
+   "file": "abilities/ROAR_OF_TIME.png",
+   "w": 96,
+   "h": 96,
+   "cols": 28,
+   "frames": 28,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SMOKE_BLACK": {
+   "file": "abilities/SMOKE_BLACK.png",
+   "w": 32,
+   "h": 32,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPACIAL_REND": {
+   "file": "abilities/SPACIAL_REND.png",
+   "w": 256,
+   "h": 192,
+   "cols": 16,
+   "frames": 27,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/JUDGEMENT": {
+   "file": "abilities/JUDGEMENT.png",
+   "w": 16,
+   "h": 64,
+   "cols": 31,
+   "frames": 31,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CRABHAMMER": {
+   "file": "abilities/CRABHAMMER.png",
+   "w": 120,
+   "h": 120,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/POWER_WHIP": {
+   "file": "abilities/POWER_WHIP.png",
+   "w": 80,
+   "h": 48,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYCHO_CUT": {
+   "file": "abilities/PSYCHO_CUT.png",
+   "w": 32,
+   "h": 32,
+   "cols": 2,
+   "frames": 2,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/EXTREME_SPEED": {
+   "file": "abilities/EXTREME_SPEED.png",
+   "w": 72,
+   "h": 72,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/COSMIC_POWER": {
+   "file": "abilities/COSMIC_POWER.png",
+   "w": 64,
+   "h": 104,
+   "cols": 16,
+   "frames": 16,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DYNAMAX_CANNON": {
+   "file": "abilities/DYNAMAX_CANNON.png",
+   "w": 32,
+   "h": 240,
+   "cols": 39,
+   "frames": 39,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ROCK_SMASH": {
+   "file": "abilities/ROCK_SMASH.png",
+   "w": 48,
+   "h": 56,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ATTRACT": {
+   "file": "abilities/ATTRACT.png",
+   "w": 48,
+   "h": 40,
+   "cols": 44,
+   "frames": 44,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ARMOR_CANNON": {
+   "file": "abilities/ARMOR_CANNON.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SMOKE_SCREEN": {
+   "file": "abilities/SMOKE_SCREEN.png",
+   "w": 45,
+   "h": 45,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SCHOOLING": {
+   "file": "abilities/SCHOOLING.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 2,
+   "yoyo": false
+  },
+  "abilities/TORMENT": {
+   "file": "abilities/TORMENT.png",
+   "w": 72,
+   "h": 48,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BRICK_BREAK": {
+   "file": "abilities/BRICK_BREAK.png",
+   "w": 80,
+   "h": 72,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/COUNTER": {
+   "file": "abilities/COUNTER.png",
+   "w": 112,
+   "h": 80,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DISABLE": {
+   "file": "abilities/DISABLE.png",
+   "w": 48,
+   "h": 40,
+   "cols": 31,
+   "frames": 31,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BULK_UP": {
+   "file": "abilities/BULK_UP.png",
+   "w": 32,
+   "h": 32,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CHARGE": {
+   "file": "abilities/CHARGE.png",
+   "w": 40,
+   "h": 40,
+   "cols": 8,
+   "frames": 8,
+   "fps": 15,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PAYDAY": {
+   "file": "abilities/PAYDAY.png",
+   "w": 96,
+   "h": 96,
+   "cols": 42,
+   "frames": 81,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FACADE": {
+   "file": "abilities/FACADE.png",
+   "w": 48,
+   "h": 48,
+   "cols": 16,
+   "frames": 16,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HYPER_BEAM_CHARGE": {
+   "file": "abilities/HYPER_BEAM_CHARGE.png",
+   "w": 80,
+   "h": 80,
+   "cols": 42,
+   "frames": 42,
+   "fps": 42,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SURF": {
+   "file": "abilities/SURF.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/DRAGON_DARTS": {
+   "file": "abilities/DRAGON_DARTS.png",
+   "w": 32,
+   "h": 80,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PUFF_PINK": {
+   "file": "abilities/PUFF_PINK.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FAKE_TEARS": {
+   "file": "abilities/FAKE_TEARS.png",
+   "w": 32,
+   "h": 24,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SUNSTEEL_STRIKE": {
+   "file": "abilities/SUNSTEEL_STRIKE.png",
+   "w": 192,
+   "h": 192,
+   "cols": 6,
+   "frames": 6,
+   "fps": 30,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/OUTRAGE": {
+   "file": "abilities/OUTRAGE.png",
+   "w": 48,
+   "h": 72,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PYRO_BALL": {
+   "file": "abilities/PYRO_BALL.png",
+   "w": 40,
+   "h": 40,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/SLUDGE_WAVE": {
+   "file": "abilities/SLUDGE_WAVE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/DIVE": {
+   "file": "abilities/DIVE.png",
+   "w": 64,
+   "h": 48,
+   "cols": 7,
+   "frames": 7,
+   "fps": 10,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPARKLING_ARIA": {
+   "file": "abilities/SPARKLING_ARIA.png",
+   "w": 64,
+   "h": 64,
+   "cols": 44,
+   "frames": 44,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPIRIT_SHACKLE": {
+   "file": "abilities/SPIRIT_SHACKLE.png",
+   "w": 136,
+   "h": 40,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/ZAP_CANNON": {
+   "file": "abilities/ZAP_CANNON.png",
+   "w": 48,
+   "h": 48,
+   "cols": 35,
+   "frames": 35,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/INGRAIN": {
+   "file": "abilities/INGRAIN.png",
+   "w": 80,
+   "h": 64,
+   "cols": 46,
+   "frames": 46,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/STUN_SPORE": {
+   "file": "abilities/STUN_SPORE.png",
+   "w": 40,
+   "h": 64,
+   "cols": 22,
+   "frames": 22,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PETAL_BLIZZARD": {
+   "file": "abilities/PETAL_BLIZZARD.png",
+   "w": 88,
+   "h": 72,
+   "cols": 19,
+   "frames": 19,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SUCTION_HEAL": {
+   "file": "abilities/SUCTION_HEAL.png",
+   "w": 32,
+   "h": 32,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/EXPLOSION": {
+   "file": "abilities/EXPLOSION.png",
+   "w": 168,
+   "h": 128,
+   "cols": 24,
+   "frames": 37,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LEECH_SEED": {
+   "file": "abilities/LEECH_SEED.png",
+   "w": 40,
+   "h": 8,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AQUA_RING": {
+   "file": "abilities/AQUA_RING.png",
+   "w": 64,
+   "h": 64,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SLASHING_CLAW": {
+   "file": "abilities/SLASHING_CLAW.png",
+   "w": 72,
+   "h": 80,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WONDER_GUARD": {
+   "file": "abilities/WONDER_GUARD.png",
+   "w": 72,
+   "h": 72,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ABSORB": {
+   "file": "abilities/ABSORB.png",
+   "w": 80,
+   "h": 64,
+   "cols": 3,
+   "frames": 3,
+   "fps": 5,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AROMATHERAPY": {
+   "file": "abilities/AROMATHERAPY.png",
+   "w": 88,
+   "h": 72,
+   "cols": 19,
+   "frames": 19,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ASSURANCE": {
+   "file": "abilities/ASSURANCE.png",
+   "w": 64,
+   "h": 64,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AURASPHERE": {
+   "file": "abilities/AURASPHERE.png",
+   "w": 72,
+   "h": 64,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/MOONGEIST_BEAM": {
+   "file": "abilities/MOONGEIST_BEAM.png",
+   "w": 32,
+   "h": 195,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 3,
+   "yoyo": false
+  },
+  "abilities/BONEMERANG": {
+   "file": "abilities/BONEMERANG.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/SMOKE_BROWN": {
+   "file": "abilities/SMOKE_BROWN.png",
+   "w": 32,
+   "h": 32,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/COTTON_SPORE": {
+   "file": "abilities/COTTON_SPORE.png",
+   "w": 48,
+   "h": 48,
+   "cols": 33,
+   "frames": 33,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CROSS_POISON": {
+   "file": "abilities/CROSS_POISON.png",
+   "w": 32,
+   "h": 32,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DEFENSE_CURL": {
+   "file": "abilities/DEFENSE_CURL.png",
+   "w": 40,
+   "h": 32,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DIAMOND_STORM": {
+   "file": "abilities/DIAMOND_STORM.png",
+   "w": 32,
+   "h": 32,
+   "cols": 17,
+   "frames": 17,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HURRICANE": {
+   "file": "abilities/HURRICANE.png",
+   "w": 56,
+   "h": 80,
+   "cols": 52,
+   "frames": 52,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HELPING_HAND": {
+   "file": "abilities/HELPING_HAND.png",
+   "w": 72,
+   "h": 40,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FIRE_FANG": {
+   "file": "abilities/FIRE_FANG.png",
+   "w": 80,
+   "h": 64,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRAIN_PUNCH": {
+   "file": "abilities/DRAIN_PUNCH.png",
+   "w": 64,
+   "h": 72,
+   "cols": 29,
+   "frames": 29,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DYNAMIC_PUNCH": {
+   "file": "abilities/DYNAMIC_PUNCH.png",
+   "w": 80,
+   "h": 64,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/EGG_BOMB": {
+   "file": "abilities/EGG_BOMB.png",
+   "w": 80,
+   "h": 80,
+   "cols": 16,
+   "frames": 16,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ELECTRO_WEB": {
+   "file": "abilities/ELECTRO_WEB.png",
+   "w": 32,
+   "h": 40,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ICE_HAMMER": {
+   "file": "abilities/ICE_HAMMER.png",
+   "w": 53,
+   "h": 64,
+   "cols": 6,
+   "frames": 6,
+   "fps": 8,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FISHIOUS_REND": {
+   "file": "abilities/FISHIOUS_REND.png",
+   "w": 72,
+   "h": 56,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MAGMA_STORM": {
+   "file": "abilities/MAGMA_STORM.png",
+   "w": 80,
+   "h": 104,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PUFF_BROWN": {
+   "file": "abilities/PUFF_BROWN.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FISSURE": {
+   "file": "abilities/FISSURE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 7,
+   "yoyo": false
+  },
+  "abilities/FROST_BREATH": {
+   "file": "abilities/FROST_BREATH.png",
+   "w": 64,
+   "h": 64,
+   "cols": 3,
+   "frames": 3,
+   "fps": 15,
+   "repeat": 3,
+   "yoyo": false
+  },
+  "abilities/GUNK_SHOT": {
+   "file": "abilities/GUNK_SHOT.png",
+   "w": 32,
+   "h": 32,
+   "cols": 45,
+   "frames": 45,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/IRON_TAIL": {
+   "file": "abilities/IRON_TAIL.png",
+   "w": 40,
+   "h": 40,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ICE_FANG": {
+   "file": "abilities/ICE_FANG.png",
+   "w": 88,
+   "h": 72,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SMOKE_PURPLE": {
+   "file": "abilities/SMOKE_PURPLE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLAME_HIT": {
+   "file": "abilities/FLAME_HIT.png",
+   "w": 54,
+   "h": 54,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FIGHTING/FIST": {
+   "file": "abilities/FIGHTING_FIST.png",
+   "w": 32,
+   "h": 32,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MAGNET_RISE": {
+   "file": "abilities/MAGNET_RISE.png",
+   "w": 56,
+   "h": 56,
+   "cols": 31,
+   "frames": 31,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MEDITATE": {
+   "file": "abilities/MEDITATE.png",
+   "w": 48,
+   "h": 40,
+   "cols": 27,
+   "frames": 27,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MOON_DREAM": {
+   "file": "abilities/MOON_DREAM.png",
+   "w": 64,
+   "h": 64,
+   "cols": 5,
+   "frames": 5,
+   "fps": 8,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MUD_SHOT": {
+   "file": "abilities/MUD_SHOT.png",
+   "w": 16,
+   "h": 16,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/NIGHT_DAZE": {
+   "file": "abilities/NIGHT_DAZE.png",
+   "w": 80,
+   "h": 72,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/NIGHT_SHADE": {
+   "file": "abilities/NIGHT_SHADE.png",
+   "w": 64,
+   "h": 57,
+   "cols": 34,
+   "frames": 34,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/OCTOLOCK": {
+   "file": "abilities/OCTOLOCK.png",
+   "w": 64,
+   "h": 64,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PARABOLIC_CHARGE": {
+   "file": "abilities/PARABOLIC_CHARGE.png",
+   "w": 120,
+   "h": 120,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SMOG": {
+   "file": "abilities/SMOG.png",
+   "w": 45,
+   "h": 50,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/POLTERGEIST": {
+   "file": "abilities/POLTERGEIST.png",
+   "w": 32,
+   "h": 32,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/POWDER_SNOW": {
+   "file": "abilities/POWDER_SNOW.png",
+   "w": 64,
+   "h": 56,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ANCHOR_SHOT": {
+   "file": "abilities/ANCHOR_SHOT.png",
+   "w": 80,
+   "h": 80,
+   "cols": 35,
+   "frames": 35,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYBEAM": {
+   "file": "abilities/PSYBEAM.png",
+   "w": 32,
+   "h": 240,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYSHOCK": {
+   "file": "abilities/PSYSHOCK.png",
+   "w": 64,
+   "h": 64,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/RAZOR_WIND": {
+   "file": "abilities/RAZOR_WIND.png",
+   "w": 64,
+   "h": 48,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WHIRLWIND": {
+   "file": "abilities/WHIRLWIND.png",
+   "w": 80,
+   "h": 80,
+   "cols": 51,
+   "frames": 52,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ROCK_TOMB": {
+   "file": "abilities/ROCK_TOMB.png",
+   "w": 96,
+   "h": 280,
+   "cols": 22,
+   "frames": 22,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ROLLOUT": {
+   "file": "abilities/ROLLOUT.png",
+   "w": 64,
+   "h": 41,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DIG": {
+   "file": "abilities/DIG.png",
+   "w": 80,
+   "h": 32,
+   "cols": 28,
+   "frames": 28,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SAND_TOMB": {
+   "file": "abilities/SAND_TOMB.png",
+   "w": 104,
+   "h": 104,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SCREECH": {
+   "file": "abilities/SCREECH.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SHADOW_CLONE": {
+   "file": "abilities/SHADOW_CLONE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SOLAR_BEAM": {
+   "file": "abilities/SOLAR_BEAM.png",
+   "w": 32,
+   "h": 128,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 4,
+   "yoyo": false
+  },
+  "abilities/RECOVER": {
+   "file": "abilities/RECOVER.png",
+   "w": 64,
+   "h": 64,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPARK": {
+   "file": "abilities/SPARK.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/SPIKES": {
+   "file": "abilities/SPIKES.png",
+   "w": 32,
+   "h": 32,
+   "cols": 2,
+   "frames": 2,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYCHIC_FANGS": {
+   "file": "abilities/PSYCHIC_FANGS.png",
+   "w": 56,
+   "h": 56,
+   "cols": 31,
+   "frames": 31,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SUPER_FANG": {
+   "file": "abilities/SUPER_FANG.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TAILWIND": {
+   "file": "abilities/TAILWIND.png",
+   "w": 64,
+   "h": 64,
+   "cols": 25,
+   "frames": 25,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TEA_TIME": {
+   "file": "abilities/TEA_TIME.png",
+   "w": 88,
+   "h": 88,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/THIEF": {
+   "file": "abilities/THIEF.png",
+   "w": 32,
+   "h": 24,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/THRASH": {
+   "file": "abilities/THRASH.png",
+   "w": 48,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/THUNDER_FANG": {
+   "file": "abilities/THUNDER_FANG.png",
+   "w": 72,
+   "h": 72,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TOPSY_TURVY": {
+   "file": "abilities/TOPSY_TURVY.png",
+   "w": 40,
+   "h": 40,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TRICK_OR_TREAT": {
+   "file": "abilities/TRICK_OR_TREAT.png",
+   "w": 32,
+   "h": 24,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WATERFALL": {
+   "file": "abilities/WATERFALL.png",
+   "w": 32,
+   "h": 64,
+   "cols": 8,
+   "frames": 8,
+   "fps": 15,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/VINE_WHIP": {
+   "file": "abilities/VINE_WHIP.png",
+   "w": 80,
+   "h": 40,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WATER_PULSE": {
+   "file": "abilities/WATER_PULSE.png",
+   "w": 64,
+   "h": 56,
+   "cols": 22,
+   "frames": 22,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WONDER_ROOM": {
+   "file": "abilities/WONDER_ROOM.png",
+   "w": 64,
+   "h": 64,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WOOD_HAMMER": {
+   "file": "abilities/WOOD_HAMMER.png",
+   "w": 200,
+   "h": 150,
+   "cols": 16,
+   "frames": 16,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/YAWN": {
+   "file": "abilities/YAWN.png",
+   "w": 24,
+   "h": 24,
+   "cols": 2,
+   "frames": 2,
+   "fps": 20,
+   "repeat": 10,
+   "yoyo": false
+  },
+  "abilities/AFTER_YOU": {
+   "file": "abilities/AFTER_YOU.png",
+   "w": 64,
+   "h": 64,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/NUTRIENTS": {
+   "file": "abilities/NUTRIENTS.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 16,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PUFF_RED": {
+   "file": "abilities/PUFF_RED.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AURA_WHEEL": {
+   "file": "abilities/AURA_WHEEL.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 8,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BITTER_BLADE": {
+   "file": "abilities/BITTER_BLADE.png",
+   "w": 64,
+   "h": 48,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 2,
+   "yoyo": false
+  },
+  "abilities/BOLT_BEAK": {
+   "file": "abilities/BOLT_BEAK.png",
+   "w": 104,
+   "h": 104,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CHATTER": {
+   "file": "abilities/CHATTER.png",
+   "w": 80,
+   "h": 80,
+   "cols": 26,
+   "frames": 26,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BOUNCE": {
+   "file": "abilities/BOUNCE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CAMOUFLAGE": {
+   "file": "abilities/CAMOUFLAGE.png",
+   "w": 48,
+   "h": 56,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CLOSE_COMBAT": {
+   "file": "abilities/CLOSE_COMBAT.png",
+   "w": 65,
+   "h": 64,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PLASMA_FISSION": {
+   "file": "abilities/PLASMA_FISSION.png",
+   "w": 32,
+   "h": 32,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRAGON_PULSE": {
+   "file": "abilities/DRAGON_PULSE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 6,
+   "frames": 6,
+   "fps": 12,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FAIRY_LOCK": {
+   "file": "abilities/FAIRY_LOCK.png",
+   "w": 72,
+   "h": 72,
+   "cols": 41,
+   "frames": 41,
+   "fps": 30,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/VENOSHOCK": {
+   "file": "abilities/VENOSHOCK.png",
+   "w": 32,
+   "h": 80,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FICKLE_BEAM": {
+   "file": "abilities/FICKLE_BEAM.png",
+   "w": 88,
+   "h": 88,
+   "cols": 20,
+   "frames": 20,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SHIELDS_UP": {
+   "file": "abilities/SHIELDS_UP.png",
+   "w": 80,
+   "h": 80,
+   "cols": 43,
+   "frames": 43,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLORAL_HEALING": {
+   "file": "abilities/FLORAL_HEALING.png",
+   "w": 40,
+   "h": 64,
+   "cols": 22,
+   "frames": 22,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLYING_PRESS": {
+   "file": "abilities/FLYING_PRESS.png",
+   "w": 40,
+   "h": 34,
+   "cols": 2,
+   "frames": 2,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FOLLOW_ME": {
+   "file": "abilities/FOLLOW_ME.png",
+   "w": 64,
+   "h": 64,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/FORECAST": {
+   "file": "abilities/FORECAST.png",
+   "w": 56,
+   "h": 80,
+   "cols": 52,
+   "frames": 52,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FREEZE_DRY": {
+   "file": "abilities/FREEZE_DRY.png",
+   "w": 63,
+   "h": 56,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/KNOCK_OFF": {
+   "file": "abilities/KNOCK_OFF.png",
+   "w": 64,
+   "h": 64,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LUSTER_PURGE": {
+   "file": "abilities/LUSTER_PURGE.png",
+   "w": 56,
+   "h": 56,
+   "cols": 3,
+   "frames": 3,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/FIGHTING/FOOT": {
+   "file": "abilities/FIGHTING_FOOT.png",
+   "w": 32,
+   "h": 32,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MIST_BALL": {
+   "file": "abilities/MIST_BALL.png",
+   "w": 56,
+   "h": 56,
+   "cols": 3,
+   "frames": 3,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/NASTY_PLOT": {
+   "file": "abilities/NASTY_PLOT.png",
+   "w": 64,
+   "h": 56,
+   "cols": 30,
+   "frames": 30,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PUFF_GREEN": {
+   "file": "abilities/PUFF_GREEN.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ORDER_UP": {
+   "file": "abilities/ORDER_UP.png",
+   "w": 67,
+   "h": 56,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PLASMA_FIST": {
+   "file": "abilities/PLASMA_FIST.png",
+   "w": 64,
+   "h": 64,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/POPULATION_BOMB": {
+   "file": "abilities/POPULATION_BOMB.png",
+   "w": 64,
+   "h": 63,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/POWER_WHIP/hit": {
+   "file": "abilities/POWER_WHIP_hit.png",
+   "w": 88,
+   "h": 88,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PRESENT": {
+   "file": "abilities/PRESENT.png",
+   "w": 64,
+   "h": 72,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYSHIELD_BASH": {
+   "file": "abilities/PSYSHIELD_BASH.png",
+   "w": 80,
+   "h": 80,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MUD_BUBBLE": {
+   "file": "abilities/MUD_BUBBLE.png",
+   "w": 16,
+   "h": 16,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SHADOW_SNEAK": {
+   "file": "abilities/SHADOW_SNEAK.png",
+   "w": 136,
+   "h": 64,
+   "cols": 30,
+   "frames": 32,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SONG_OF_DESIRE": {
+   "file": "abilities/SONG_OF_DESIRE.png",
+   "w": 48,
+   "h": 40,
+   "cols": 42,
+   "frames": 42,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DARK_VOID": {
+   "file": "abilities/DARK_VOID.png",
+   "w": 64,
+   "h": 64,
+   "cols": 22,
+   "frames": 22,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DISCHARGE": {
+   "file": "abilities/DISCHARGE.png",
+   "w": 72,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SUPER_HEAT": {
+   "file": "abilities/SUPER_HEAT.png",
+   "w": 136,
+   "h": 40,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FIGHTING/PAW": {
+   "file": "abilities/FIGHTING_PAW.png",
+   "w": 32,
+   "h": 32,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/X_SCISSOR": {
+   "file": "abilities/X_SCISSOR.png",
+   "w": 32,
+   "h": 32,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HAPPY_HOUR": {
+   "file": "abilities/HAPPY_HOUR.png",
+   "w": 88,
+   "h": 72,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ACID_SPRAY": {
+   "file": "abilities/ACID_SPRAY.png",
+   "w": 80,
+   "h": 80,
+   "cols": 32,
+   "frames": 32,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BLEAKWIND_STORM": {
+   "file": "abilities/BLEAKWIND_STORM.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/BLUE_FLARE": {
+   "file": "abilities/BLUE_FLARE.png",
+   "w": 120,
+   "h": 104,
+   "cols": 15,
+   "frames": 15,
+   "fps": 15,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BURNING_JEALOUSY": {
+   "file": "abilities/BURNING_JEALOUSY.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CORE_ENFORCER": {
+   "file": "abilities/CORE_ENFORCER.png",
+   "w": 128,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DOOM_DESIRE": {
+   "file": "abilities/DOOM_DESIRE.png",
+   "w": 64,
+   "h": 160,
+   "cols": 36,
+   "frames": 36,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLEUR_CANNON": {
+   "file": "abilities/FLEUR_CANNON.png",
+   "w": 64,
+   "h": 64,
+   "cols": 17,
+   "frames": 17,
+   "fps": 17,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FUSION_BOLT": {
+   "file": "abilities/FUSION_BOLT.png",
+   "w": 120,
+   "h": 120,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GEOMANCY": {
+   "file": "abilities/GEOMANCY.png",
+   "w": 40,
+   "h": 88,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GLACIATE": {
+   "file": "abilities/GLACIATE.png",
+   "w": 72,
+   "h": 72,
+   "cols": 41,
+   "frames": 41,
+   "fps": 41,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LANDS_WRATH": {
+   "file": "abilities/LANDS_WRATH.png",
+   "w": 112,
+   "h": 112,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LOCK_ON": {
+   "file": "abilities/LOCK_ON.png",
+   "w": 72,
+   "h": 72,
+   "cols": 26,
+   "frames": 26,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LUNAR_BLESSING": {
+   "file": "abilities/LUNAR_BLESSING.png",
+   "w": 64,
+   "h": 72,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HIGH_JUMP_KICK": {
+   "file": "abilities/HIGH_JUMP_KICK.png",
+   "w": 96,
+   "h": 80,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MULTI_ATTACK": {
+   "file": "abilities/MULTI_ATTACK.png",
+   "w": 80,
+   "h": 80,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/OBLIVION_WING": {
+   "file": "abilities/OBLIVION_WING.png",
+   "w": 64,
+   "h": 48,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PSYCHO_BOOST": {
+   "file": "abilities/PSYCHO_BOOST.png",
+   "w": 72,
+   "h": 72,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SACRED_SWORD": {
+   "file": "abilities/SACRED_SWORD.png",
+   "w": 16,
+   "h": 64,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SANDSEAR_STORM": {
+   "file": "abilities/SANDSEAR_STORM.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/SEARING_SHOT": {
+   "file": "abilities/SEARING_SHOT.png",
+   "w": 96,
+   "h": 64,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SEED_FLARE": {
+   "file": "abilities/SEED_FLARE.png",
+   "w": 96,
+   "h": 80,
+   "cols": 31,
+   "frames": 31,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPECTRAL_THIEF": {
+   "file": "abilities/SPECTRAL_THIEF.png",
+   "w": 32,
+   "h": 32,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPRINGTIDE_STORM": {
+   "file": "abilities/SPRINGTIDE_STORM.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/STEAM_ERUPTION": {
+   "file": "abilities/STEAM_ERUPTION.png",
+   "w": 80,
+   "h": 112,
+   "cols": 16,
+   "frames": 16,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WILDBOLT_STORM": {
+   "file": "abilities/WILDBOLT_STORM.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/BRAVE_BIRD": {
+   "file": "abilities/BRAVE_BIRD.png",
+   "w": 64,
+   "h": 64,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/RAZOR_LEAF": {
+   "file": "abilities/RAZOR_LEAF.png",
+   "w": 32,
+   "h": 32,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/BURN_UP": {
+   "file": "abilities/BURN_UP.png",
+   "w": 24,
+   "h": 24,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CRUSH_CLAW": {
+   "file": "abilities/CRUSH_CLAW.png",
+   "w": 48,
+   "h": 40,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DRAGON_CLAW": {
+   "file": "abilities/DRAGON_CLAW.png",
+   "w": 108,
+   "h": 88,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ICE_SPINNER": {
+   "file": "abilities/ICE_SPINNER.png",
+   "w": 72,
+   "h": 72,
+   "cols": 41,
+   "frames": 41,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/INFERNAL_PARADE": {
+   "file": "abilities/INFERNAL_PARADE.png",
+   "w": 40,
+   "h": 40,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/METRONOME": {
+   "file": "abilities/METRONOME.png",
+   "w": 32,
+   "h": 24,
+   "cols": 37,
+   "frames": 37,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPIRIT_BREAK": {
+   "file": "abilities/SPIRIT_BREAK.png",
+   "w": 64,
+   "h": 56,
+   "cols": 35,
+   "frames": 35,
+   "fps": 30,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/OVERDRIVE": {
+   "file": "abilities/OVERDRIVE.png",
+   "w": 112,
+   "h": 112,
+   "cols": 22,
+   "frames": 22,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HEAL_ORDER": {
+   "file": "abilities/HEAL_ORDER.png",
+   "w": 80,
+   "h": 64,
+   "cols": 36,
+   "frames": 36,
+   "fps": 30,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/STEEL_WING": {
+   "file": "abilities/STEEL_WING.png",
+   "w": 80,
+   "h": 80,
+   "cols": 38,
+   "frames": 38,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ANCIENT_POWER": {
+   "file": "abilities/ANCIENT_POWER.png",
+   "w": 80,
+   "h": 80,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CEASELESS_EDGE": {
+   "file": "abilities/CEASELESS_EDGE.png",
+   "w": 96,
+   "h": 80,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CLANGOROUS_SOUL": {
+   "file": "abilities/CLANGOROUS_SOUL.png",
+   "w": 88,
+   "h": 64,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/DREAM_EATER": {
+   "file": "abilities/DREAM_EATER.png",
+   "w": 56,
+   "h": 56,
+   "cols": 34,
+   "frames": 34,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ERUPTION": {
+   "file": "abilities/ERUPTION.png",
+   "w": 112,
+   "h": 96,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MUDDY_WATER": {
+   "file": "abilities/MUDDY_WATER.png",
+   "w": 72,
+   "h": 216,
+   "cols": 45,
+   "frames": 45,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/NATURAL_GIFT": {
+   "file": "abilities/NATURAL_GIFT.png",
+   "w": 72,
+   "h": 72,
+   "cols": 45,
+   "frames": 45,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/PASTEL_VEIL": {
+   "file": "abilities/PASTEL_VEIL.png",
+   "w": 128,
+   "h": 64,
+   "cols": 19,
+   "frames": 19,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SHEER_COLD": {
+   "file": "abilities/SHEER_COLD.png",
+   "w": 64,
+   "h": 56,
+   "cols": 32,
+   "frames": 32,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FREEZING_GLARE": {
+   "file": "abilities/FREEZING_GLARE.png",
+   "w": 32,
+   "h": 136,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/IVY_CUDGEL": {
+   "file": "abilities/IVY_CUDGEL.png",
+   "w": 64,
+   "h": 64,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BARB_BARRAGE": {
+   "file": "abilities/BARB_BARRAGE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/STONE_AXE": {
+   "file": "abilities/STONE_AXE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/WATER_SHURIKEN": {
+   "file": "abilities/WATER_SHURIKEN.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/ACROBATICS": {
+   "file": "abilities/ACROBATICS.png",
+   "w": 40,
+   "h": 38,
+   "cols": 4,
+   "frames": 4,
+   "fps": 15,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/AERIAL_ACE": {
+   "file": "abilities/AERIAL_ACE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HYPER_VOICE": {
+   "file": "abilities/HYPER_VOICE.png",
+   "w": 136,
+   "h": 40,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/MOUNTAIN_GALE": {
+   "file": "abilities/MOUNTAIN_GALE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/ROCK_WRECKER": {
+   "file": "abilities/ROCK_WRECKER.png",
+   "w": 26,
+   "h": 23,
+   "cols": 2,
+   "frames": 2,
+   "fps": 0,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SMOKE_BALL": {
+   "file": "abilities/SMOKE_BALL.png",
+   "w": 80,
+   "h": 72,
+   "cols": 21,
+   "frames": 21,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HYPERSPACE_FURY": {
+   "file": "abilities/HYPERSPACE_FURY.png",
+   "w": 80,
+   "h": 80,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/HYPER_DRILL": {
+   "file": "abilities/HYPER_DRILL.png",
+   "w": 33,
+   "h": 27,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/ATTACK_ORDER": {
+   "file": "abilities/ATTACK_ORDER.png",
+   "w": 80,
+   "h": 64,
+   "cols": 29,
+   "frames": 29,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MOONBLAST": {
+   "file": "abilities/MOONBLAST.png",
+   "w": 40,
+   "h": 40,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TEETER_DANCE": {
+   "file": "abilities/TEETER_DANCE.png",
+   "w": 64,
+   "h": 56,
+   "cols": 42,
+   "frames": 42,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/ASTRAL_BARRAGE": {
+   "file": "abilities/ASTRAL_BARRAGE.png",
+   "w": 46,
+   "h": 18,
+   "cols": 3,
+   "frames": 3,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/GLACIAL_LANCE": {
+   "file": "abilities/GLACIAL_LANCE.png",
+   "w": 32,
+   "h": 64,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MALIGNANT_CHAIN": {
+   "file": "abilities/MALIGNANT_CHAIN.png",
+   "w": 40,
+   "h": 80,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MIND_BLOWN": {
+   "file": "abilities/MIND_BLOWN.png",
+   "w": 11,
+   "h": 11,
+   "cols": 2,
+   "frames": 2,
+   "fps": 5,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/PRISMATIC_LASER": {
+   "file": "abilities/PRISMATIC_LASER.png",
+   "w": 48,
+   "h": 48,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SCALE_SHOT": {
+   "file": "abilities/SCALE_SHOT.png",
+   "w": 32,
+   "h": 48,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/THOUSAND_ARROWS": {
+   "file": "abilities/THOUSAND_ARROWS.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/REVELATION_DANCE": {
+   "file": "abilities/REVELATION_DANCE.png",
+   "w": 72,
+   "h": 64,
+   "cols": 23,
+   "frames": 23,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/TAUNT_HIT": {
+   "file": "abilities/TAUNT_HIT.png",
+   "w": 32,
+   "h": 16,
+   "cols": 6,
+   "frames": 6,
+   "fps": 6,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LINK_CABLE": {
+   "file": "abilities/LINK_CABLE.png",
+   "w": 32,
+   "h": 240,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/BOOST": {
+   "file": "abilities/BOOST.png",
+   "w": 40,
+   "h": 48,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GRASS_HEAL": {
+   "file": "abilities/GRASS_HEAL.png",
+   "w": 48,
+   "h": 48,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/CONFUSING_MIND": {
+   "file": "abilities/CONFUSING_MIND.png",
+   "w": 32,
+   "h": 24,
+   "cols": 37,
+   "frames": 37,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/MAGIC_BOUNCE": {
+   "file": "abilities/MAGIC_BOUNCE.png",
+   "w": 32,
+   "h": 32,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "abilities/BALL": {
+   "file": "abilities/BALL.png",
+   "w": 40,
+   "h": 40,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GOLD_RUSH": {
+   "file": "abilities/GOLD_RUSH.png",
+   "w": 64,
+   "h": 64,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GROUND_GROW": {
+   "file": "abilities/GROUND_GROW.png",
+   "w": 80,
+   "h": 104,
+   "cols": 51,
+   "frames": 57,
+   "fps": 60,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/GULP_MISSILE/arrokuda": {
+   "file": "abilities/GULP_MISSILE_arrokuda.png",
+   "w": 19,
+   "h": 36,
+   "cols": 1,
+   "frames": 1,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/SPAWN": {
+   "file": "abilities/SPAWN.png",
+   "w": 32,
+   "h": 32,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/LIQUIDATION": {
+   "file": "abilities/LIQUIDATION.png",
+   "w": 64,
+   "h": 120,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "abilities/FLYING_TAKEOFF": {
+   "file": "abilities/FLYING_TAKEOFF.png",
+   "w": 64,
+   "h": 64,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/BALL/range": {
+   "file": "attacks/BALL_range.png",
+   "w": 40,
+   "h": 40,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/BUG/hit": {
+   "file": "attacks/BUG_hit.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/BUG/melee": {
+   "file": "attacks/BUG_melee.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/BUG/range": {
+   "file": "attacks/BUG_range.png",
+   "w": 24,
+   "h": 24,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/DARK/hit": {
+   "file": "attacks/DARK_hit.png",
+   "w": 64,
+   "h": 62,
+   "cols": 13,
+   "frames": 13,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/DARK/melee": {
+   "file": "attacks/DARK_melee.png",
+   "w": 64,
+   "h": 64,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/DARK/range": {
+   "file": "attacks/DARK_range.png",
+   "w": 32,
+   "h": 32,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/DRAGON/melee": {
+   "file": "attacks/DRAGON_melee.png",
+   "w": 48,
+   "h": 40,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/DRAGON/range": {
+   "file": "attacks/DRAGON_range.png",
+   "w": 72,
+   "h": 64,
+   "cols": 36,
+   "frames": 36,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/ELECTRIC/hit": {
+   "file": "attacks/ELECTRIC_hit.png",
+   "w": 88,
+   "h": 48,
+   "cols": 6,
+   "frames": 6,
+   "fps": 60,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ELECTRIC/melee": {
+   "file": "attacks/ELECTRIC_melee.png",
+   "w": 72,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ELECTRIC/range": {
+   "file": "attacks/ELECTRIC_range.png",
+   "w": 16,
+   "h": 16,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/FAIRY/hit": {
+   "file": "attacks/FAIRY_hit.png",
+   "w": 40,
+   "h": 32,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FAIRY/melee": {
+   "file": "attacks/FAIRY_melee.png",
+   "w": 48,
+   "h": 32,
+   "cols": 26,
+   "frames": 26,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FAIRY/range": {
+   "file": "attacks/FAIRY_range.png",
+   "w": 16,
+   "h": 16,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/FIGHTING/hit": {
+   "file": "attacks/FIGHTING_hit.png",
+   "w": 72,
+   "h": 72,
+   "cols": 3,
+   "frames": 3,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FIGHTING/melee": {
+   "file": "attacks/FIGHTING_melee.png",
+   "w": 72,
+   "h": 72,
+   "cols": 2,
+   "frames": 2,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FIGHTING/range": {
+   "file": "attacks/FIGHTING_range.png",
+   "w": 32,
+   "h": 32,
+   "cols": 29,
+   "frames": 29,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/FIRE/cell": {
+   "file": "attacks/FIRE_cell.png",
+   "w": 72,
+   "h": 88,
+   "cols": 56,
+   "frames": 57,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FIRE/hit": {
+   "file": "attacks/FIRE_hit.png",
+   "w": 32,
+   "h": 32,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FIRE/melee": {
+   "file": "attacks/FIRE_melee.png",
+   "w": 64,
+   "h": 32,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FIRE/range": {
+   "file": "attacks/FIRE_range.png",
+   "w": 40,
+   "h": 64,
+   "cols": 31,
+   "frames": 31,
+   "fps": 30,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/FLORA/range": {
+   "file": "attacks/FLORA_range.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "attacks/FLYING/hit": {
+   "file": "attacks/FLYING_hit.png",
+   "w": 56,
+   "h": 48,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FLYING/melee": {
+   "file": "attacks/FLYING_melee.png",
+   "w": 72,
+   "h": 72,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/FLYING/range": {
+   "file": "attacks/FLYING_range.png",
+   "w": 48,
+   "h": 24,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "attacks/GHOST/hit": {
+   "file": "attacks/GHOST_hit.png",
+   "w": 32,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/GHOST/melee": {
+   "file": "attacks/GHOST_melee.png",
+   "w": 32,
+   "h": 32,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/GHOST/range": {
+   "file": "attacks/GHOST_range.png",
+   "w": 40,
+   "h": 48,
+   "cols": 24,
+   "frames": 24,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/GRASS/cell": {
+   "file": "attacks/GRASS_cell.png",
+   "w": 48,
+   "h": 48,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/GRASS/hit": {
+   "file": "attacks/GRASS_hit.png",
+   "w": 32,
+   "h": 32,
+   "cols": 3,
+   "frames": 3,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/GRASS/melee": {
+   "file": "attacks/GRASS_melee.png",
+   "w": 64,
+   "h": 64,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/GRASS/range": {
+   "file": "attacks/GRASS_range.png",
+   "w": 24,
+   "h": 16,
+   "cols": 20,
+   "frames": 20,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/GROUND/hit": {
+   "file": "attacks/GROUND_hit.png",
+   "w": 32,
+   "h": 32,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/GROUND/melee": {
+   "file": "attacks/GROUND_melee.png",
+   "w": 80,
+   "h": 80,
+   "cols": 12,
+   "frames": 12,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ICE/cell": {
+   "file": "attacks/ICE_cell.png",
+   "w": 40,
+   "h": 48,
+   "cols": 15,
+   "frames": 15,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ICE/hit": {
+   "file": "attacks/ICE_hit.png",
+   "w": 32,
+   "h": 32,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ICE/melee": {
+   "file": "attacks/ICE_melee.png",
+   "w": 96,
+   "h": 96,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ICE/range": {
+   "file": "attacks/ICE_range.png",
+   "w": 64,
+   "h": 56,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/NORMAL/cell": {
+   "file": "attacks/NORMAL_cell.png",
+   "w": 56,
+   "h": 80,
+   "cols": 52,
+   "frames": 52,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/NORMAL/hit": {
+   "file": "attacks/NORMAL_hit.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/NORMAL/hit2": {
+   "file": "attacks/NORMAL_hit2.png",
+   "w": 16,
+   "h": 16,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/NORMAL/hit3": {
+   "file": "attacks/NORMAL_hit3.png",
+   "w": 16,
+   "h": 16,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/NORMAL/hit4": {
+   "file": "attacks/NORMAL_hit4.png",
+   "w": 16,
+   "h": 16,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/NORMAL/melee": {
+   "file": "attacks/NORMAL_melee.png",
+   "w": 64,
+   "h": 64,
+   "cols": 3,
+   "frames": 3,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/POISON/hit": {
+   "file": "attacks/POISON_hit.png",
+   "w": 32,
+   "h": 32,
+   "cols": 5,
+   "frames": 5,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/POISON/melee": {
+   "file": "attacks/POISON_melee.png",
+   "w": 56,
+   "h": 64,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/POISON/range": {
+   "file": "attacks/POISON_range.png",
+   "w": 16,
+   "h": 16,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/PSYCHIC/hit": {
+   "file": "attacks/PSYCHIC_hit.png",
+   "w": 72,
+   "h": 72,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/PSYCHIC/melee": {
+   "file": "attacks/PSYCHIC_melee.png",
+   "w": 72,
+   "h": 80,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/PSYCHIC/range": {
+   "file": "attacks/PSYCHIC_range.png",
+   "w": 32,
+   "h": 32,
+   "cols": 39,
+   "frames": 39,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/ROCK/hit": {
+   "file": "attacks/ROCK_hit.png",
+   "w": 80,
+   "h": 80,
+   "cols": 14,
+   "frames": 14,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ROCK/melee": {
+   "file": "attacks/ROCK_melee.png",
+   "w": 72,
+   "h": 56,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/ROCK/range": {
+   "file": "attacks/ROCK_range.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/SOUND/hit": {
+   "file": "attacks/SOUND_hit.png",
+   "w": 88,
+   "h": 88,
+   "cols": 18,
+   "frames": 18,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/SOUND/range": {
+   "file": "attacks/SOUND_range.png",
+   "w": 32,
+   "h": 24,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/STEEL/hit": {
+   "file": "attacks/STEEL_hit.png",
+   "w": 48,
+   "h": 48,
+   "cols": 14,
+   "frames": 14,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/STEEL/melee": {
+   "file": "attacks/STEEL_melee.png",
+   "w": 64,
+   "h": 56,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/STEEL/range": {
+   "file": "attacks/STEEL_range.png",
+   "w": 32,
+   "h": 32,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "attacks/WATER/cell": {
+   "file": "attacks/WATER_cell.png",
+   "w": 64,
+   "h": 32,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/WATER/hit": {
+   "file": "attacks/WATER_hit.png",
+   "w": 16,
+   "h": 16,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/WATER/melee": {
+   "file": "attacks/WATER_melee.png",
+   "w": 56,
+   "h": 56,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/WATER/range": {
+   "file": "attacks/WATER_range.png",
+   "w": 8,
+   "h": 8,
+   "cols": 19,
+   "frames": 19,
+   "fps": 20,
+   "repeat": 5,
+   "yoyo": false
+  },
+  "attacks/WILD/hit": {
+   "file": "attacks/WILD_hit.png",
+   "w": 48,
+   "h": 48,
+   "cols": 13,
+   "frames": 13,
+   "fps": 40,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "attacks/WILD/melee": {
+   "file": "attacks/WILD_melee.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "status/ARMOR_BREAK": {
+   "file": "status/ARMOR_BREAK.png",
+   "w": 20,
+   "h": 13,
+   "cols": 5,
+   "frames": 5,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": true
+  },
+  "status/BLINDED": {
+   "file": "status/BLINDED.png",
+   "w": 8,
+   "h": 8,
+   "cols": 14,
+   "frames": 14,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/BURN": {
+   "file": "status/BURN.png",
+   "w": 16,
+   "h": 16,
+   "cols": 7,
+   "frames": 7,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/CHARM": {
+   "file": "status/CHARM.png",
+   "w": 36,
+   "h": 36,
+   "cols": 5,
+   "frames": 5,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/CONFUSION": {
+   "file": "status/CONFUSION.png",
+   "w": 32,
+   "h": 16,
+   "cols": 4,
+   "frames": 4,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/CURSE": {
+   "file": "status/CURSE.png",
+   "w": 32,
+   "h": 29,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/CURSE_EFFECT": {
+   "file": "status/CURSE_EFFECT.png",
+   "w": 40,
+   "h": 40,
+   "cols": 11,
+   "frames": 11,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "status/ELECTRIC_FIELD": {
+   "file": "status/ELECTRIC_FIELD.png",
+   "w": 64,
+   "h": 64,
+   "cols": 14,
+   "frames": 14,
+   "fps": 8,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/FAIRY_FIELD": {
+   "file": "status/FAIRY_FIELD.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/FATIGUE": {
+   "file": "status/FATIGUE.png",
+   "w": 64,
+   "h": 24,
+   "cols": 13,
+   "frames": 13,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/FLINCH": {
+   "file": "status/FLINCH.png",
+   "w": 8,
+   "h": 16,
+   "cols": 9,
+   "frames": 9,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/FREEZE": {
+   "file": "status/FREEZE.png",
+   "w": 31,
+   "h": 31,
+   "cols": 6,
+   "frames": 6,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/GRASSY_FIELD": {
+   "file": "status/GRASSY_FIELD.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 8,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/LOCKED": {
+   "file": "status/LOCKED.png",
+   "w": 16,
+   "h": 16,
+   "cols": 15,
+   "frames": 15,
+   "fps": 15,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/PARALYSIS": {
+   "file": "status/PARALYSIS.png",
+   "w": 64,
+   "h": 64,
+   "cols": 4,
+   "frames": 4,
+   "fps": 5,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/POISON": {
+   "file": "status/POISON.png",
+   "w": 16,
+   "h": 16,
+   "cols": 15,
+   "frames": 15,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/POISON_BADLY": {
+   "file": "status/POISON_BADLY.png",
+   "w": 16,
+   "h": 16,
+   "cols": 15,
+   "frames": 15,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/POKERUS": {
+   "file": "status/POKERUS.png",
+   "w": 48,
+   "h": 48,
+   "cols": 24,
+   "frames": 24,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/POSSESSED": {
+   "file": "status/POSSESSED.png",
+   "w": 29,
+   "h": 21,
+   "cols": 2,
+   "frames": 2,
+   "fps": 2,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/PROTECT": {
+   "file": "status/PROTECT.png",
+   "w": 12,
+   "h": 14,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/PSYCHIC_FIELD": {
+   "file": "status/PSYCHIC_FIELD.png",
+   "w": 64,
+   "h": 48,
+   "cols": 4,
+   "frames": 4,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": true
+  },
+  "status/RESURRECT": {
+   "file": "status/RESURRECT.png",
+   "w": 64,
+   "h": 64,
+   "cols": 57,
+   "frames": 57,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "status/RESURRECTION": {
+   "file": "status/RESURRECTION.png",
+   "w": 23,
+   "h": 16,
+   "cols": 4,
+   "frames": 4,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": true
+  },
+  "status/SAFEGUARD": {
+   "file": "status/SAFEGUARD.png",
+   "w": 12,
+   "h": 14,
+   "cols": 10,
+   "frames": 10,
+   "fps": 20,
+   "repeat": 0,
+   "yoyo": false
+  },
+  "status/SILENCE": {
+   "file": "status/SILENCE.png",
+   "w": 12,
+   "h": 12,
+   "cols": 9,
+   "frames": 9,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/SLEEP": {
+   "file": "status/SLEEP.png",
+   "w": 16,
+   "h": 16,
+   "cols": 10,
+   "frames": 10,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/VOID_BOOST": {
+   "file": "status/VOID_BOOST.png",
+   "w": 16,
+   "h": 16,
+   "cols": 8,
+   "frames": 8,
+   "fps": 20,
+   "repeat": -1,
+   "yoyo": false
+  },
+  "status/WOUND": {
+   "file": "status/WOUND.png",
+   "w": 21,
+   "h": 21,
+   "cols": 6,
+   "frames": 6,
+   "fps": 10,
+   "repeat": -1,
+   "yoyo": false
+  }
+ },
+ "attackScale": {
+  "BALL/range": [
+   0.5,
+   0.5
+  ],
+  "BUG/melee": [
+   1.5,
+   1.5
+  ],
+  "BUG/range": [
+   2,
+   2
+  ],
+  "BUG/hit": [
+   2,
+   2
+  ],
+  "DARK/melee": [
+   1.5,
+   1.5
+  ],
+  "DARK/range": [
+   1.5,
+   1.5
+  ],
+  "DARK/hit": [
+   2,
+   2
+  ],
+  "DRAGON/melee": [
+   1,
+   1
+  ],
+  "DRAGON/range": [
+   2,
+   2
+  ],
+  "DRAGON_GREEN/range": [
+   2,
+   2
+  ],
+  "ELECTRIC/melee": [
+   1,
+   1
+  ],
+  "ELECTRIC/range": [
+   2,
+   2
+  ],
+  "ELECTRIC/hit": [
+   2,
+   2
+  ],
+  "FAIRY/melee": [
+   2,
+   2
+  ],
+  "FAIRY/range": [
+   2,
+   2
+  ],
+  "FAIRY/hit": [
+   2,
+   2
+  ],
+  "FIGHTING/melee": [
+   2,
+   2
+  ],
+  "FIGHTING/range": [
+   2,
+   2
+  ],
+  "FIGHTING/hit": [
+   1,
+   1
+  ],
+  "FIRE/melee": [
+   1.5,
+   1.5
+  ],
+  "FIRE/range": [
+   2,
+   2
+  ],
+  "FIRE/hit": [
+   1.5,
+   1.5
+  ],
+  "FLORA/range": [
+   1.5,
+   1.5
+  ],
+  "FLYING/melee": [
+   1,
+   1
+  ],
+  "FLYING/range": [
+   1.5,
+   1.5
+  ],
+  "FLYING/hit": [
+   1,
+   1
+  ],
+  "GHOST/melee": [
+   1,
+   1
+  ],
+  "GHOST/range": [
+   1.5,
+   1.5
+  ],
+  "GHOST/hit": [
+   1,
+   1
+  ],
+  "GRASS/melee": [
+   1,
+   1
+  ],
+  "GRASS/range": [
+   3,
+   3
+  ],
+  "GRASS/hit": [
+   1,
+   1
+  ],
+  "GROUND/melee": [
+   1,
+   1
+  ],
+  "GROUND/hit": [
+   1,
+   1
+  ],
+  "ICE/melee": [
+   1,
+   1
+  ],
+  "ICE/range": [
+   1.5,
+   1.5
+  ],
+  "ICE/hit": [
+   2,
+   2
+  ],
+  "NORMAL/melee": [
+   1,
+   1
+  ],
+  "NORMAL/hit": [
+   2,
+   2
+  ],
+  "NORMAL/hit2": [
+   2,
+   2
+  ],
+  "NORMAL/hit3": [
+   2,
+   2
+  ],
+  "NORMAL/hit4": [
+   2,
+   2
+  ],
+  "POISON/melee": [
+   2,
+   2
+  ],
+  "POISON/range": [
+   1.5,
+   1.5
+  ],
+  "POISON/hit": [
+   1.5,
+   1.5
+  ],
+  "PSYCHIC/melee": [
+   1.5,
+   1.5
+  ],
+  "PSYCHIC/range": [
+   2,
+   2
+  ],
+  "PSYCHIC/hit": [
+   1.5,
+   1.5
+  ],
+  "ROCK/melee": [
+   1.5,
+   1.5
+  ],
+  "ROCK/range": [
+   2,
+   2
+  ],
+  "ROCK/hit": [
+   1,
+   1
+  ],
+  "STEEL/melee": [
+   1.5,
+   1.5
+  ],
+  "STEEL/range": [
+   2,
+   2
+  ],
+  "STEEL/hit": [
+   1,
+   1
+  ],
+  "SOUND/range": [
+   2,
+   2
+  ],
+  "SOUND/hit": [
+   1,
+   1
+  ],
+  "WATER/melee": [
+   1.5,
+   1.5
+  ],
+  "WATER/range": [
+   3,
+   3
+  ],
+  "WATER/hit": [
+   3,
+   3
+  ],
+  "WILD/melee": [
+   2,
+   2
+  ],
+  "WILD/hit": [
+   1,
+   1
+  ]
+ }
+}

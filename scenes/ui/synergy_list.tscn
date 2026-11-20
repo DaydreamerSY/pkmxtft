@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/synergy_list.gd" id="2_synergy_list"]
+
+[node name="SynergyList" type="VBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
+mouse_filter = 2
+theme_override_constants/separation = 4
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_synergy_list")
+
+[node name="Empty" type="Label" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+theme_type_variation = &"HintLabel"
+theme_override_font_sizes/font_size = 13
+text = "Place Pokémon on the board
+to activate synergies"

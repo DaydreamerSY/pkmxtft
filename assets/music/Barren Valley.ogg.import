@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cc8mqiin5idr0"
+path="res://.godot/imported/Barren Valley.ogg-38f19f4dad0362a93f2b08c786ac1b35.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Barren Valley.ogg"
+dest_files=["res://.godot/imported/Barren Valley.ogg-38f19f4dad0362a93f2b08c786ac1b35.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

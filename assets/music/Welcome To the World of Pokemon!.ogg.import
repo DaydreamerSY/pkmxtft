@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://duvjes0dn6wt"
+path="res://.godot/imported/Welcome To the World of Pokemon!.ogg-6170e18804c3cf9e04e58f382f56efaa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Welcome To the World of Pokemon!.ogg"
+dest_files=["res://.godot/imported/Welcome To the World of Pokemon!.ogg-6170e18804c3cf9e04e58f382f56efaa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

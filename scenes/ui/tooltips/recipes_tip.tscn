@@ -1,0 +1,49 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/tooltips/recipes_tip.gd" id="2_recipes_tip"]
+[ext_resource type="PackedScene" path="res://scenes/ui/tooltips/item_header.tscn" id="3_item_header"]
+
+[node name="RecipesTip" type="VBoxContainer"]
+mouse_filter = 2
+theme_override_constants/separation = 6
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_recipes_tip")
+
+[node name="Header" parent="." instance=ExtResource("3_item_header")]
+layout_mode = 2
+unique_name_in_owner = true
+
+[node name="Sep" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Desc" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+
+[node name="MadeFrom" type="HBoxContainer" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="MadeFromLabel" type="Label" parent="MadeFrom"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 14
+text = "Made from"

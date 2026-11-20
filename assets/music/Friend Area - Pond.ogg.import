@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dg6j26t2pgd7a"
+path="res://.godot/imported/Friend Area - Pond.ogg-5d1cfacc47a0ff03f680a53d76c7b5c1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Friend Area - Pond.ogg"
+dest_files=["res://.godot/imported/Friend Area - Pond.ogg-5d1cfacc47a0ff03f680a53d76c7b5c1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,94 @@
+# HỌ | tag | ghi chú — LEGENDARY, HATCH (trứng), SPECIAL
+# --- LEGENDARY ---
+ARCEUS | myth | Thần sáng thế (Alpha): tương truyền nở ra từ quả trứng và tạo nên vũ trụ.
+ARTICUNO | myth weather | Chim băng huyền thoại (Freeze), gọi bão tuyết.
+BLACEPHALON | space gunner | Ultra Beast pháo hoa (Fireworks): ném cái đầu nổ tung như diễn hề.
+BUZZWOLE | space sport | Ultra Beast cơ bắp (Swollen), như con muỗi khoe cơ.
+CELEBI | myth | Thần rừng du hành thời gian (Time Travel).
+CELESTEELA | space folklore | Ultra Beast tên lửa (Launch), dáng ống tre — gợi chuyện công chúa Kaguya.
+CHI_YU | myth folklore | Bảo vật tai ương (Ruinous): con cá lửa sinh từ ngọc bội; gợi tên Xi Vưu, thần chiến tranh Trung Hoa.
+COBALION | knight guardian horse? | Thanh kiếm công lý (Iron Will), như Athos (Ba chàng lính ngự lâm): bảo vệ Pokémon khỏi con người.
+CRESSELIA | dream myth medic? | Thiên nga trăng (Lunar): mang giấc mơ đẹp, giải ác mộng của Darkrai.
+DARKRAI | dream myth | Bóng tối (Pitch-Black): gây ác mộng.
+DEOXYS | space | DNA: virus ngoài vũ trụ đột biến sau khi va vào tia laser.
+DIALGA | myth | Thần thời gian (Temporal).
+ENAMORUS | myth festival? | Nữ thần mùa xuân và tình yêu (Love-Hate) trong bộ ba thần mây.
+ENTEI | myth tiger? | Núi lửa (Volcano): một trong ba thú huyền thoại tái sinh nhờ Ho-Oh.
+ETERNATUS | space | Khổng lồ (Gigantic): đến từ thiên thạch rơi xuống Galar 20.000 năm trước.
+FEZANDIPITI | folklore fowl | Gà lôi độc (Retainer), một trong ba "trung thần" — dựa trên truyện Momotarō (chó, khỉ, gà lôi).
+GENESECT | gunner | Bọ cổ đại 300 triệu năm bị cải tạo (Paleozoic), đeo pháo trên lưng.
+GIRATINA | myth | Thần phản vật chất (Renegade) của Thế giới Méo.
+GLASTRIER | horse transport | Ngựa băng (Wild Horse), chiến mã của vua Calyrex.
+GROUDON | myth weather | Lục địa (Continent): nâng đất liền, gây hạn hán.
+GUZZLORD | space glutton | Ultra Beast ăn tạp (Junkivore) nuốt mọi thứ.
+HEATRAN | | Hang dung nham (Lava Dome) sống trong núi lửa, chân bám vách hang.
+HO_OH | myth medic | Phượng hoàng (Rainbow): hồi sinh ba thú huyền thoại sau vụ cháy tháp.
+IRON_VALIANT | knight | Pokémon Nghịch lý tương lai (Gardevoir + Gallade), như hiệp sĩ robot.
+JIRACHI | space festival | Điều ước (Wish): thức dậy 7 ngày mỗi 1000 năm — gợi lễ Tanabata, sao chổi.
+KARTANA | space knight | Ultra Beast (Drawn Sword) như con hạc giấy gấp origami, sắc như kiếm.
+KELDEO | horse knight | Ngựa con (Colt): thanh kiếm công lý trẻ tuổi, như d'Artagnan.
+KYOGRE | myth weather | Biển (Sea Basin): mưa lớn mở rộng đại dương.
+KYUREM | myth | Ranh giới (Boundary): rồng băng thiếu năng lượng, nhập với Reshiram / Zekrom.
+LANDORUS | myth farm weather | Thần đất (Abundance): vùng nó đi qua được mùa.
+LUGIA | myth guardian weather | Lặn (Diving): thần bảo hộ biển cả, vỗ cánh gây bão.
+MAGEARNA | relic object | Nhân tạo (Artificial): búp bê máy chế tạo 500 năm trước.
+MANAPHY | myth royal | Đi biển (Seafaring): "hoàng tử biển", hoán đổi tâm hồn (Heart Swap).
+MARSHADOW | ninja sport | Ẩn trong bóng (Gloomdweller), bắt chước võ của người nó nấp theo.
+MELMETAL | | Đai ốc (Hex Nut): Meltan → Melmetal, thân kim loại lỏng.
+MELOETTA | artist myth | Giai điệu (Melody): hát và nhảy, hai dạng Aria / Pirouette.
+MEW | myth | Loài mới (New Species): mang DNA của mọi Pokémon.
+MEWTWO | | Gen (Genetic): tạo ra trong phòng thí nghiệm từ DNA của Mew.
+MOLTRES | myth | Chim lửa huyền thoại (Flame), như phượng hoàng.
+MUNKIDORI | folklore monkey | Khỉ độc (Retainer), một trong ba "trung thần" (Momotarō).
+NECROZMA | space | Lăng kính (Prism): đến từ Ultra Space, hấp thụ ánh sáng.
+NIHILEGO | space | Ultra Beast ký sinh (Parasite) như con sứa.
+OGERPON_TEAL | folklore disguise | Mặt nạ (Mask): quỷ oni nhỏ ở Kitakami, đeo 4 loại mặt nạ.
+OKIDOGI | folklore dog | Chó độc (Retainer), một trong ba "trung thần" (Momotarō).
+PALKIA | myth | Thần không gian (Spatial).
+PECHARUNT | folklore | Khuất phục (Subjugation): quả đào độc, chủ của ba "trung thần" (Momotarō = cậu bé quả đào).
+PHEROMOSA | space | Ultra Beast duyên dáng (Lissome).
+RAIKOU | myth tiger weather | Sấm (Thunder): hổ sấm, một trong ba thú huyền thoại.
+RAYQUAZA | myth weather snake | Trời cao (Sky High): rồng thân rắn sống ở tầng ôzôn, dàn xếp Groudon và Kyogre.
+REGICE | relic | Núi băng (Iceberg): người khổng lồ băng bị phong ấn.
+REGIDRAGO | relic | Ngọc rồng (Dragon Orb).
+REGIELEKI | relic | Điện tử (Electron).
+REGIGIGAS | relic myth | Khổng lồ (Colossal): tương truyền đã kéo các lục địa.
+REGIROCK | relic | Đỉnh đá (Rock Peak).
+REGISTEEL | relic | Sắt (Iron).
+RESHIRAM | myth | Trắng mênh mông (Vast White): chân lý (cặp âm dương với Zekrom).
+ROARING_MOON | | Pokémon Nghịch lý cổ đại giống Salamence.
+SHAYMIN | myth farm? | Biết ơn (Gratitude): hoa nở nơi nó đi, biến đất bẩn thành cánh đồng hoa.
+SPECTRIER | horse transport | Ngựa ma (Swift Horse), chiến mã của vua Calyrex.
+STAKATAKA | space object | Ultra Beast tường thành (Rampart) ghép từ nhiều viên đá.
+SUICUNE | myth | Cực quang (Aurora): làm sạch nước bẩn, một trong ba thú huyền thoại.
+TERRAKION | knight guardian bovine? | Hang động (Cavern): thanh kiếm công lý (như Porthos), dáng như bò rừng.
+THUNDURUS | myth weather folklore | Sấm (Bolt Strike), như Lôi thần Raijin.
+TORNADUS | myth weather folklore | Gió lốc (Cyclone), như Phong thần Fūjin.
+TYPE_NULL | | Tổng hợp (Synthetic) → Silvally: vũ khí sinh học chế ra để chống Ultra Beast.
+VICTINI | myth | Chiến thắng (Victory): mang thắng lợi cho người nó chọn.
+VIRIZION | knight guardian deer | Đồng cỏ (Grassland): thanh kiếm công lý (như Aramis), dáng hươu.
+VOLCANION | gunner | Hơi nước (Steam): bắn hơi nước từ vòng tay trên lưng.
+XERNEAS | deer myth medic | Sự sống (Life): ban sự sống vĩnh cửu, gạc như cây đời.
+XURKITREE | space | Ultra Beast phát sáng (Glowing) như mớ dây điện.
+YVELTAL | myth | Huỷ diệt (Destruction): hút sinh lực khi chết đi.
+ZACIAN | knight dog myth | Chiến binh (Warrior): sói anh hùng ngậm kiếm cứu Galar.
+ZAPDOS | myth weather | Chim sấm huyền thoại (Electric) sống trong mây giông.
+ZEKROM | myth | Đen sâu thẳm (Deep Black): lý tưởng (cặp âm dương với Reshiram).
+ZYGARDE_10 | myth guardian | Trật tự (Order): canh giữ hệ sinh thái; dạng 10% như con chó.
+# --- HATCH (nở từ trứng) ---
+AXEW | | Rồng ngà (Tusk) → Fraxure → Haxorus (Axe Jaw), ngà sắc như rìu.
+DREEPY | family gunner | Rồng ma (Lingering) → Drakloak (Caretaker) chăm Dreepy → Dragapult phóng Dreepy như tên lửa.
+FROAKIE | frog ninja | Ếch bọt (Bubble Frog) → Frogadier → Greninja (Ninja) phóng phi tiêu nước.
+GOTHITA | magic | Gothita (Fixation) → Gothorita (Manipulate) → Gothitelle (Astral Body) nhìn sao đoán tương lai.
+GRUBBIN | gunner | Ấu trùng (Larva) → Charjabug (Battery, làm pin cho người cắm trại) → Vikavolt bắn điện từ hàm.
+POPPLIO | sea_mammal artist | Sư tử biển (Sea Lion) → Brionne (Pop Star) → Primarina (Soloist), ca sĩ / nghệ sĩ xiếc.
+ROWLET | raptor gunner ninja | Cú (Grass Quill) → Dartrix → Decidueye (Arrow Quill), cung thủ áo choàng như ninja.
+SANDILE | reptile desert | Cá sấu sa mạc (Desert Croc) → Krokorok → Krookodile (Intimidation).
+SCATTERBUG | festival? | Sâu (Scatterdust) → Spewpa → Vivillon (Scale): hoa văn cánh khác nhau theo vùng trên thế giới.
+SCORBUNNY | rabbit sport | Thỏ lửa (Rabbit) → Raboot → Cinderace (Striker), cầu thủ bóng đá.
+SNIVY | snake royal | Rắn cỏ (Grass Snake) → Servine → Serperior (Regal), quý tộc kiêu hãnh.
+TEPIG | pig sport | Lợn lửa (Fire Pig) → Pignite → Emboar (Mega Fire Pig), đô vật.
+TYMPOLE | frog | Nòng nọc (Tadpole) → Palpitoad → Seismitoad rung u trên da (Vibration).
+# --- SPECIAL ---
+COMBEE | royal food farm | Ong con (Tiny Bee) → Vespiquen (Beehive), ong chúa; mật ong.
+FALINKS_TROOPER | knight | Đội hình (Formation): sáu "lính" hành quân theo hàng.

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b02b0bxfb28ev"
+path="res://.godot/imported/Friend Area - Grasslands.ogg-c4c3afbcdde19b58cce5af84acf1612e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Friend Area - Grasslands.ogg"
+dest_files=["res://.godot/imported/Friend Area - Grasslands.ogg-c4c3afbcdde19b58cce5af84acf1612e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

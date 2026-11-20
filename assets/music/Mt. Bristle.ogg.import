@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4oah6khsw0l5"
+path="res://.godot/imported/Mt. Bristle.ogg-bcfba000cbb764496ef1e46e4498474b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Mt. Bristle.ogg"
+dest_files=["res://.godot/imported/Mt. Bristle.ogg-bcfba000cbb764496ef1e46e4498474b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpwfhxryq8mrb"
+path="res://.godot/imported/Sinister Woods.ogg-82abd4df2fb5509c04e8d27f44746067.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Sinister Woods.ogg"
+dest_files=["res://.godot/imported/Sinister Woods.ogg-82abd4df2fb5509c04e8d27f44746067.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

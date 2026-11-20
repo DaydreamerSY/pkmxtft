@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5e66unegaskb"
+path="res://.godot/imported/Monster House!.ogg-803d528717fb4b1b924a71622d34b0df.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Monster House!.ogg"
+dest_files=["res://.godot/imported/Monster House!.ogg-803d528717fb4b1b924a71622d34b0df.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

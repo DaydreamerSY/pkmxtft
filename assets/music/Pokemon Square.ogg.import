@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dkhq4dhalkb8a"
+path="res://.godot/imported/Pokemon Square.ogg-d5fb13958cb8a0e8f5ae4a1aa0373061.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Pokemon Square.ogg"
+dest_files=["res://.godot/imported/Pokemon Square.ogg-d5fb13958cb8a0e8f5ae4a1aa0373061.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

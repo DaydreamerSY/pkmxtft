@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/tooltips/text_tip.gd" id="2_text_tip"]
+
+[node name="TextTip" type="VBoxContainer"]
+mouse_filter = 2
+theme_override_constants/separation = 4
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_text_tip")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 17
+text = "Title"
+
+[node name="Body" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3

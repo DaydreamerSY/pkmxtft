@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wjgf5iatva7d"
+path="res://.godot/imported/Through the Sea of Time.ogg-ce4d4c2a3711c41a379dce345ac8cfdc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Through the Sea of Time.ogg"
+dest_files=["res://.godot/imported/Through the Sea of Time.ogg-ce4d4c2a3711c41a379dce345ac8cfdc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

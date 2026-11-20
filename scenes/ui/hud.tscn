@@ -1,0 +1,412 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/ui/hud.gd" id="1_hud"]
+[ext_resource type="Script" path="res://src/ui/unit_overlay.gd" id="2_unit_overlay"]
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="3_ui_theme"]
+[ext_resource type="PackedScene" path="res://scenes/ui/item_bench.tscn" id="4_item_bench"]
+[ext_resource type="PackedScene" path="res://scenes/ui/synergy_list.tscn" id="5_synergy_list"]
+[ext_resource type="PackedScene" path="res://scenes/ui/shop_bar.tscn" id="6_shop_bar"]
+[ext_resource type="Texture2D" path="res://assets/icons/battle.svg" id="7_battle"]
+[ext_resource type="PackedScene" path="res://scenes/ui/unit_info_panel.tscn" id="8_unit_info_pa"]
+[ext_resource type="PackedScene" path="res://scenes/ui/item_choice.tscn" id="9_item_choice"]
+[ext_resource type="Script" path="res://src/ui/hover_tip.gd" id="10_hover_tip"]
+[ext_resource type="PackedScene" path="res://scenes/ui/town_choice.tscn" id="11_town_choice"]
+
+[node name="Hud" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_hud")
+
+[node name="Overlay" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_unit_overlay")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_ui_theme")
+
+[node name="StageBar" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -410.0
+offset_top = 10.0
+offset_right = 410.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 1
+mouse_filter = 0
+theme_type_variation = &"HudPanel"
+
+[node name="V" type="VBoxContainer" parent="Root/StageBar"]
+layout_mode = 2
+
+[node name="Row" type="HBoxContainer" parent="Root/StageBar/V"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Stage" type="Label" parent="Root/StageBar/V/Row"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 22
+text = "Stage 1"
+
+[node name="Wave" type="Label" parent="Root/StageBar/V/Row"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 18
+size_flags_horizontal = 3
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Weather" type="Label" parent="Root/StageBar/V/Row"]
+layout_mode = 2
+unique_name_in_owner = true
+mouse_filter = 0
+theme_override_font_sizes/font_size = 16
+
+[node name="Phase" type="Label" parent="Root/StageBar/V/Row"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 18
+
+[node name="Speed" type="Button" parent="Root/StageBar/V/Row"]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 0)
+focus_mode = 0
+text = "x1"
+
+[node name="TimerBar" type="ProgressBar" parent="Root/StageBar/V"]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 8)
+theme_type_variation = &"TimerBar"
+show_percentage = false
+value = 100.0
+
+[node name="Hint" type="Label" parent="Root"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -460.0
+offset_top = 80.0
+offset_right = 460.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 1
+theme_type_variation = &"HintLabel"
+theme_override_font_sizes/font_size = 13
+text = "Drag Pokémon and items  •  right click: details / recipes  •  drop on the shop: sell  •  wheel: zoom"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="PlayerPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -230.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 110.0
+grow_horizontal = 0
+grow_vertical = 1
+theme_type_variation = &"HudPanel"
+
+[node name="V" type="VBoxContainer" parent="Root/PlayerPanel"]
+layout_mode = 2
+
+[node name="Life" type="Label" parent="Root/PlayerPanel/V"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 24
+text = "Life 100"
+theme_override_colors/font_color = Color(0.45, 0.85, 0.4, 1)
+
+[node name="Level" type="Label" parent="Root/PlayerPanel/V"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 16
+text = "Level 2"
+
+[node name="Menu" type="Button" parent="Root/PlayerPanel/V"]
+layout_mode = 2
+unique_name_in_owner = true
+focus_mode = 0
+text = "Menu"
+
+[node name="ItemBench" parent="Root" instance=ExtResource("4_item_bench")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -348.0
+offset_right = 66.0
+offset_bottom = 348.0
+grow_horizontal = 1
+grow_vertical = 2
+
+[node name="Synergies" parent="Root" instance=ExtResource("5_synergy_list")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 240.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="ShopBar" parent="Root" instance=ExtResource("6_shop_bar")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -700.0
+offset_top = -222.0
+offset_right = 604.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Fight" type="Button" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -126.0
+offset_right = -26.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_type_variation = &"FightButton"
+
+[node name="H" type="HBoxContainer" parent="Root/Fight"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Root/Fight/H"]
+layout_mode = 2
+custom_minimum_size = Vector2(30, 30)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+texture = ExtResource("7_battle")
+
+[node name="Label" type="Label" parent="Root/Fight/H"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Fight!"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="UnitInfoPanel" parent="Root" instance=ExtResource("8_unit_info_pa")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -330.0
+offset_right = -18.0
+offset_bottom = -320.0
+grow_horizontal = 0
+visible = false
+
+[node name="ItemChoice" parent="Root" instance=ExtResource("9_item_choice")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 120.0
+offset_right = 200.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 1
+
+[node name="TownChoice" parent="Root" instance=ExtResource("11_town_choice")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 110.0
+offset_right = 210.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 1
+
+[node name="Banner" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -250.0
+offset_right = 500.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BannerLabel"
+horizontal_alignment = 1
+mouse_filter = 2
+visible = false
+
+[node name="BannerNotes" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -170.0
+offset_right = 500.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BannerLabel"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+autowrap_mode = 3
+mouse_filter = 2
+visible = false
+
+[node name="GameOver" type="ColorRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+visible = false
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="Root/GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Root/GameOver/Center"]
+layout_mode = 2
+custom_minimum_size = Vector2(520, 0)
+theme_type_variation = &"HudPanel"
+
+[node name="V" type="VBoxContainer" parent="Root/GameOver/Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Title" type="Label" parent="Root/GameOver/Center/Panel/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "GAME OVER"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 0.38, 0.32, 1)
+
+[node name="GameOverText" type="Label" parent="Root/GameOver/Center/Panel/V"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 22
+text = "You reached stage 1"
+horizontal_alignment = 1
+
+[node name="GameOverRecord" type="Label" parent="Root/GameOver/Center/Panel/V"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 18
+text = "New record!"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Root/GameOver/Center/Panel/V"]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 56)
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Main Menu"
+
+[node name="DragIcon" type="TextureRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 52.0
+visible = false
+z_index = 10
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DragHint" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+visible = false
+z_index = 10
+mouse_filter = 2
+theme_type_variation = &"TipPanel"
+
+[node name="DragHintText" type="Label" parent="Root/DragHint"]
+layout_mode = 2
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 16
+text = "Equip"
+
+[node name="Tips" type="Control" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("10_hover_tip")

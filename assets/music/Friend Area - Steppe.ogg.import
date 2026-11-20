@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bh78lu48uxsqw"
+path="res://.godot/imported/Friend Area - Steppe.ogg-69fc3baef8926c3c165405432057eb8b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Friend Area - Steppe.ogg"
+dest_files=["res://.godot/imported/Friend Area - Steppe.ogg-69fc3baef8926c3c165405432057eb8b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

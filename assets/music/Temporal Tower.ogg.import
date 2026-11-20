@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dpuu8go4s5f7k"
+path="res://.godot/imported/Temporal Tower.ogg-0696c2bd9a8749da7f912d9f0cc90092.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Temporal Tower.ogg"
+dest_files=["res://.godot/imported/Temporal Tower.ogg-0696c2bd9a8749da7f912d9f0cc90092.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

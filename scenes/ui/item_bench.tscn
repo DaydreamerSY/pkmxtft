@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/item_bench.gd" id="2_item_bench"]
+[ext_resource type="PackedScene" path="res://scenes/ui/item_slot.tscn" id="3_item_slot"]
+
+[node name="ItemBench" type="VBoxContainer"]
+mouse_filter = 2
+theme_override_constants/separation = 4
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_item_bench")
+
+[node name="Slot1" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot3" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot4" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot5" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot6" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot7" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot8" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot9" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2
+
+[node name="Slot10" parent="." instance=ExtResource("3_item_slot")]
+layout_mode = 2

@@ -1,0 +1,32 @@
+{
+ "_doc": [
+  "Mục tiêu của tự cân bằng (tools/bot/autobalance.py, docs/BOT.md “Tự cân bằng”). Sửa tay; mỗi bước đọc lại.",
+  "casts: số lần dùng skill trung bình mỗi trận (wave) của một Pokémon KHÔNG cầm item, theo vai trò. PP tối đa riêng của từng Pokémon được chỉnh cho gần số này (PP nhận được mỗi trận đo từ bot: cột ppgain).",
+  "refFight: số giây của một trận mà các số casts nhắm tới (16 = trận TB lúc cast còn ít, 2026-11-19): khi mọi Pokémon cast nhiều hơn thì trận ngắn lại, nên mục tiêu mỗi trận = casts x (độ dài TB của lô / refFight) — giữ nhịp cast theo thời gian, không hạ PP mãi để đuổi theo trận ngắn dần.",
+  "webPP: giữ một phần khác biệt maxPP của bản web (0 = mọi Pokémon cùng vai trò như nhau, 1 = giữ hết): maxPP web cao (skill lớn) thì mục tiêu thấp hơn, x (100 / maxPP web) ^ webPP; kẹp trong castRange.",
+  "castsWithItems: tối đa số lần dùng skill trung bình mỗi trận khi cầm từ 2 item; vượt thì PP tăng. castsP99: 1 % trận nhiều nhất (mọi trận, cả có item) không quá ngần này lần (vòng lặp cast của PP cố định / hoàn PP).",
+  "ppStep: mỗi bước PP đổi tối đa bao nhiêu (log; 1.2 = x0.3 .. x3.3: dự đoán từ ppgain khá sát, nên nhảy thẳng tới số cần). ppFreeze: PP thật (hàng chục) của một Pokémon đổi quá ngần này (log; 0.35 ~ 40 %) trong bước thì bước đó KHÔNG đổi sức mạnh / vai trò của nó (đo lại sau khi số lần cast đổi).",
+  "roleProfile: hồ sơ công / thủ phải có của vai trò: q = ln(D / T), D = sát thương gây ra, T = sát thương nhận (mỗi số so với phần chia đều của đội, 1 = trung bình). [min, max] (null = không giới hạn): tank tối đa -0.25 (nhận nhiều hơn gây ~30 %), carry tối thiểu 0.15. Ra ngoài khoảng thì dịch một phần công sang thủ hoặc ngược lại (không đổi sức mạnh).",
+  "supportSustain: support phải có ln(S / D) tối thiểu ngần này (S = hồi máu + khiên); thiếu thì tăng skill, sát thương thường quá cao thì giảm ATK.",
+  "skillShare: [min, max] phần đầu ra đến từ skill (sát thương + hồi + khiên của skill, cột sdealt / ssus) so với skill + đòn đánh thường, theo vai trò: caster sống bằng skill, marksman bằng đòn tay. Ra ngoài thì dịch giữa ATK / tốc đánh và AP (cùng sức công); chỉ với skill scale theo AP. Sức mạnh của skill luôn đổi qua đúng chỉ số skill scale (AP, ATK; tool đọc data/abilities.json + src/core/ability_scripts.gd).",
+  "roleStrength: phần của độ lệch được dịch mỗi bước; roleStep: tối đa mỗi bước (log) giữa công và thủ.",
+  "rarityGap: nhóm hiếm hơn (cùng sao) phải mạnh hơn ít nhất ngần này mỗi bậc hiếm (log-odds); nhóm vi phạm cả nhóm dịch.",
+  "itemWeight: độ lệch dùng để cân = lệch khi không item + itemWeight x lệch của phần mỗi item thêm (1.5 = trung bình của 0 và 3 item)."
+ ],
+ "casts": {"caster": 3.0, "support": 2.5, "tank": 2.0, "assassin": 2.0, "fighter": 2.0, "marksman": 1.5},
+ "refFight": 16.0,
+ "webPP": 0.5,
+ "castRange": [1.0, 4.0],
+ "castsWithItems": 6.0,
+ "castsP99": 10.0,
+ "ppStep": 1.2,
+ "ppFreeze": 0.35,
+ "roleProfile": {"tank": [null, -0.25], "fighter": [-0.3, 0.3], "assassin": [0.15, null], "marksman": [0.15, null],
+                 "caster": [0.15, null], "support": [null, null]},
+ "supportSustain": 0.4,
+ "skillShare": {"caster": [0.55, null], "support": [0.5, null], "marksman": [null, 0.5]},
+ "roleStrength": 0.5,
+ "roleStep": 0.1,
+ "rarityGap": 0.03,
+ "itemWeight": 1.5
+}

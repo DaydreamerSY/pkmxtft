@@ -1,0 +1,95 @@
+{
+ "_doc": [
+  "Độ khó của chế độ Endless (bản Godot). Sửa tay hoặc bằng tools\\wave_editor.bat (tab “Độ khó”). Chi tiết: docs/DIFFICULTY.md.",
+  "Mỗi mức = “base” + phần ghi đè trong “levels.<id>” (dictionary lồng nhau được gộp theo từng khoá).",
+  "active: mức mặc định khi người chơi chưa chọn ở menu chính.",
+  "endless: ghi đè các số của data/pac/config.json “endless” (sinh từ bản web) - khoá nào không ghi thì lấy của web.",
+  "  unitsBase + stage × unitsPerStage = số con của bầy hoang dã (kẹp trong minUnits..maxUnits).",
+  "  twoStarsStages / threeStarsStages [a, b]: tỉ lệ 2★ / 3★ tăng đều từ 0% ở stage a tới 100% ở stage b.",
+  "  firstItemStage: bầy hoang dã bắt đầu cầm item; stagesPerItem: thêm 1 item mỗi N stage; fullItemsStage: từ đây là item ghép.",
+  "  scalingStartStage + statBoostsPerStage: từ stage này mỗi stage cộng thẳng chỉ số cho cả wave.",
+  "  bossInterval: sau boss gốc cuối cùng, cứ N stage một boss quay lại. rewardInterval: bầy hoang dã thưởng item mỗi N stage.",
+  "enemySynergies / enemySynergiesFromStage / bossSynergies: wave địch có kích hệ không, từ stage nào, boss có không.",
+  "synergyBonus: cộng thêm N điểm cho mỗi hệ mà wave đang có (để đạt mốc cao hơn).",
+  "bossItems: boss cầm “marowakItems” của bản web ngay cả khi không gặp Marowak. itemsPerUnit: tối đa item mỗi con địch.",
+  "statScale: nhân chỉ số gốc của mỗi con địch (1 = giữ nguyên). statScalePerStage: cộng thêm vào hệ số mỗi stage kể từ statScaleStartStage.",
+  "statBoosts: cộng thẳng cho mỗi con địch ở mọi stage (HP, ATK, DEF, SPE_DEF, AP, SPEED, PP, CRIT_CHANCE).",
+  "startLife / startGold: máu và vàng đầu run. lifeLossScale: nhân lượng máu mất khi thua / hoà.",
+  "mana: PP (mana) cơ bản của MỌI Pokémon trong trận (hai đội; item, hệ, passive, thời tiết vẫn có PP riêng).",
+  "  perSecond: PP hồi mỗi giây (web: 10; RAIN +3 / DROUGHT -3 vẫn cộng vào số này). perAttack: PP mỗi đòn đánh thường (web: 5).",
+  "  perHit: PP cộng cố định mỗi lần bị đánh trúng (không tính đòn bị chặn hoàn toàn; web: 0). perDamage: 1 PP mỗi N sát thương thủng khiên (web: 10, 0 = tắt).",
+  "  roles.<vai trò>: ghi đè các số trên theo vai trò (tank, fighter, assassin, caster, marksman, support). PP cần để dùng skill KHÔNG theo vai trò: mỗi Pokémon có maxPP riêng (data/balance.json “pp”, làm tròn hàng chục).",
+  "  Mặc định ở base cho mọi mức. Muốn luật web ở một mức, thêm vào mức đó: mana {perSecond 10, perAttack 5, perHit 0, perDamage 10}.",
+  "benchSize: số ô hàng chờ (web: 8; mỗi 8 ô là một hàng trên sàn, tối đa 24). benchStack: số bản sao cùng một Pokémon một ô chứa được (web: 1; 3 bản thì gộp). goldPerWave: vàng cơ bản nhận đầu mỗi stage, chưa tính lãi (web: 5).",
+  "cheats: bật bảng cheat trong trận (phím F1) để playtest / cân bằng."
+ ],
+ "active": "normal",
+ "base": {
+  "endless": {
+   "unitsBase": 2,
+   "unitsPerStage": 0.3,
+   "minUnits": 3,
+   "maxUnits": 9,
+   "twoStarsStages": [4, 16],
+   "threeStarsStages": [14, 30],
+   "firstItemStage": 8,
+   "stagesPerItem": 5,
+   "fullItemsStage": 14,
+   "fullItemRewardsStage": 20,
+   "scalingStartStage": 25,
+   "statBoostsPerStage": {"HP": 0, "ATK": 0, "AP": 0, "DEF": 0, "SPE_DEF": 0},
+   "bossInterval": 5,
+   "rewardInterval": 3
+  },
+  "enemySynergies": true,
+  "enemySynergiesFromStage": 10,
+  "bossSynergies": true,
+  "synergyBonus": 0,
+  "bossItems": true,
+  "itemsPerUnit": 3,
+  "statScale": {"HP": 1, "ATK": 1, "DEF": 1, "SPE_DEF": 1, "SPEED": 1},
+  "statScalePerStage": {"HP": 0, "ATK": 0, "DEF": 0, "SPE_DEF": 0, "SPEED": 0},
+  "statScaleStartStage": 1,
+  "statBoosts": {"HP": 0, "ATK": 0, "DEF": 0, "SPE_DEF": 0, "AP": 0, "SPEED": 0},
+  "startLife": 100,
+  "startGold": 5,
+  "lifeLossScale": 1,
+  "mana": {"perSecond": 0, "perAttack": 10, "perHit": 5, "perDamage": 0, "roles": {
+    "marksman": {"perAttack": 10, "perHit": 5},
+    "caster": {"perAttack": 10, "perHit": 5},
+    "support": {"perAttack": 10, "perHit": 5},
+    "tank": {"perAttack": 15, "perHit": 5},
+    "fighter": {"perAttack": 10, "perHit": 10},
+    "assassin": {"perAttack": 10, "perHit": 5}}},
+  "benchSize": 8,
+  "benchStack": 2,
+  "goldPerWave": 5,
+  "cheats": true
+ },
+ "levels": {
+  "classic": {
+   "label": "Classic",
+   "desc": "Like the web game: waves have no synergies, bosses hold no items.",
+   "enemySynergies": false,
+   "bossItems": false,
+   "startGold": 50
+  },
+  "normal": {"label": "Normal", "desc": "Enemy waves activate their synergies from stage 5 and bosses hold items."},
+  "hard": {
+   "label": "Hard",
+   "desc": "Synergies from stage 1 with +1 point, earlier stars and items, stronger and growing stats, more life lost.",
+   "endless": {
+    "twoStarsStages": [3, 12],
+    "threeStarsStages": [10, 24],
+    "firstItemStage": 5,
+    "fullItemsStage": 10,
+    "scalingStartStage": 15
+   },
+   "enemySynergiesFromStage": 1,
+   "synergyBonus": 1,
+   "statScale": {"HP": 1.15, "ATK": 1.1},
+   "statScalePerStage": {"HP": 0.01, "ATK": 0.005},
+   "lifeLossScale": 1.5
+  }
+ }
+}

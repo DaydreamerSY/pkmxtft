@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://da653mrlwsggk"
+path="res://.godot/imported/Trouble in Town.ogg-80ff85e7a3455188cf4b405c763abd9e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Trouble in Town.ogg"
+dest_files=["res://.godot/imported/Trouble in Town.ogg-80ff85e7a3455188cf4b405c763abd9e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

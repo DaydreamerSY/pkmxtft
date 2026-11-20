@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7xmnp2hyb2gc"
+path="res://.godot/imported/Mt. Freeze.ogg-a306303ea7d40ddb66e4589a1682bb1a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Mt. Freeze.ogg"
+dest_files=["res://.godot/imported/Mt. Freeze.ogg-a306303ea7d40ddb66e4589a1682bb1a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

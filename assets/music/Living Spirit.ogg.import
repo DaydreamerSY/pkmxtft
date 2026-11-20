@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dk1mwxjr8nyyq"
+path="res://.godot/imported/Living Spirit.ogg-f76edb4be9eba1a2868a08a635234b9b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Living Spirit.ogg"
+dest_files=["res://.godot/imported/Living Spirit.ogg-f76edb4be9eba1a2868a08a635234b9b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

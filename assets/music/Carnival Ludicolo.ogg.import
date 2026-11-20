@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://csdn3avy6mtpl"
+path="res://.godot/imported/Carnival Ludicolo.ogg-b8490826d834068d58a861e05010f3a6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Carnival Ludicolo.ogg"
+dest_files=["res://.godot/imported/Carnival Ludicolo.ogg-b8490826d834068d58a861e05010f3a6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

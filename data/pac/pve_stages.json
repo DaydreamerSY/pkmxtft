@@ -1,0 +1,890 @@
+{
+ "1": {
+  "name": "pkm.MAGIKARP",
+  "avatar": "MAGIKARP",
+  "board": [
+   [
+    "MAGIKARP",
+    3,
+    1
+   ],
+   [
+    "MAGIKARP",
+    5,
+    1
+   ]
+  ],
+  "statBoosts": {},
+  "marowakItems": [
+   [],
+   []
+  ],
+  "shinyChance": 0.025,
+  "reward": {
+   "kind": "random",
+   "pool": [
+    "MIRACLE_SEED",
+    "MYSTIC_WATER",
+    "HEART_SCALE",
+    "NEVER_MELT_ICE",
+    "CHARCOAL",
+    "MAGNET",
+    "BLACK_GLASSES",
+    "TWISTED_SPOON"
+   ],
+   "count": 1,
+   "remember": true
+  }
+ },
+ "2": {
+  "name": "pkm.RATTATA",
+  "avatar": "RATTATA",
+  "board": [
+   [
+    "RATTATA",
+    3,
+    1
+   ],
+   [
+    "RATTATA",
+    5,
+    1
+   ]
+  ],
+  "statBoosts": {},
+  "marowakItems": [
+   [],
+   []
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "choice",
+   "pool": [
+    "MIRACLE_SEED",
+    "MYSTIC_WATER",
+    "HEART_SCALE",
+    "NEVER_MELT_ICE",
+    "CHARCOAL",
+    "MAGNET",
+    "BLACK_GLASSES",
+    "TWISTED_SPOON"
+   ],
+   "count": 3,
+   "unique": true
+  }
+ },
+ "3": {
+  "name": "pkm.SPEAROW",
+  "avatar": "SPEAROW",
+  "board": [
+   [
+    "SPEAROW",
+    3,
+    1
+   ],
+   [
+    "SPEAROW",
+    5,
+    1
+   ],
+   [
+    "SPEAROW",
+    4,
+    2
+   ]
+  ],
+  "statBoosts": {},
+  "marowakItems": [
+   [],
+   [],
+   []
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "random",
+   "pool": [
+    "MIRACLE_SEED",
+    "MYSTIC_WATER",
+    "HEART_SCALE",
+    "NEVER_MELT_ICE",
+    "CHARCOAL",
+    "MAGNET",
+    "BLACK_GLASSES",
+    "TWISTED_SPOON"
+   ],
+   "count": 1,
+   "unique": true,
+   "remember": true
+  }
+ },
+ "9": {
+  "name": "pkm.GYARADOS",
+  "avatar": "GYARADOS",
+  "board": [
+   [
+    "GYARADOS",
+    4,
+    2
+   ]
+  ],
+  "statBoosts": {
+   "AP": -50
+  },
+  "marowakItems": [
+   [
+    "KINGS_ROCK"
+   ]
+  ],
+  "shinyChance": 0.025,
+  "reward": {
+   "kind": "random",
+   "pool": [
+    "MIRACLE_SEED",
+    "MYSTIC_WATER",
+    "HEART_SCALE",
+    "NEVER_MELT_ICE",
+    "CHARCOAL",
+    "MAGNET",
+    "BLACK_GLASSES",
+    "TWISTED_SPOON"
+   ],
+   "count": 1,
+   "shiny": {
+    "kind": "random",
+    "pool": [
+     "MIRACLE_SEED",
+     "MYSTIC_WATER",
+     "HEART_SCALE",
+     "NEVER_MELT_ICE",
+     "CHARCOAL",
+     "MAGNET",
+     "BLACK_GLASSES",
+     "TWISTED_SPOON"
+    ],
+    "count": 1,
+    "extra": [
+     "RED_SCALE"
+    ]
+   }
+  }
+ },
+ "14": {
+  "name": "pkm.MEWTWO",
+  "avatar": "MEWTWO",
+  "board": [
+   [
+    "MEWTWO",
+    0,
+    1
+   ],
+   [
+    "MEW",
+    7,
+    1
+   ]
+  ],
+  "statBoosts": {},
+  "marowakItems": [
+   [
+    "METAL_COAT"
+   ],
+   [
+    "DEEP_SEA_TOOTH"
+   ]
+  ],
+  "shinyChance": 0.01,
+  "reward": {
+   "kind": "choice",
+   "pool": [
+    "MIRACLE_SEED",
+    "MYSTIC_WATER",
+    "HEART_SCALE",
+    "NEVER_MELT_ICE",
+    "CHARCOAL",
+    "MAGNET",
+    "BLACK_GLASSES",
+    "TWISTED_SPOON",
+    "FOSSIL_STONE"
+   ],
+   "count": 3,
+   "shiny": {
+    "kind": "choice",
+    "pool": [
+     "DYNAMAX_BAND",
+     "SHINY_STONE",
+     "RARE_CANDY",
+     "EVIOLITE",
+     "GOLD_MASK",
+     "GOLD_BOTTLE_CAP",
+     "ABSORB_BULB",
+     "SACRED_ASH",
+     "STAR_PIECE",
+     "REPEAT_BALL",
+     "GOLD_BOW"
+    ],
+    "count": 3
+   },
+   "if_board": {
+    "CHARCADET": "ARMOR"
+   }
+  }
+ },
+ "19": {
+  "name": "tower_duo",
+  "avatar": "LUGIA",
+  "board": [
+   [
+    "LUGIA",
+    3,
+    1
+   ],
+   [
+    "HO_OH",
+    5,
+    1
+   ]
+  ],
+  "statBoosts": {
+   "HP": 50,
+   "DEF": 5,
+   "SPE_DEF": 5
+  },
+  "marowakItems": [
+   [
+    "STAR_PIECE"
+   ],
+   [
+    "SACRED_ASH"
+   ]
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "weighted",
+   "pool": [
+    "MIRACLE_SEED",
+    "MYSTIC_WATER",
+    "HEART_SCALE",
+    "NEVER_MELT_ICE",
+    "CHARCOAL",
+    "MAGNET",
+    "BLACK_GLASSES",
+    "TWISTED_SPOON"
+   ],
+   "count": 2,
+   "remember": true
+  }
+ },
+ "24": {
+  "name": "legendary_birds",
+  "avatar": "ZAPDOS",
+  "board": [
+   [
+    "ZAPDOS",
+    2,
+    2
+   ],
+   [
+    "MOLTRES",
+    4,
+    2
+   ],
+   [
+    "ARTICUNO",
+    6,
+    2
+   ]
+  ],
+  "statBoosts": {
+   "HP": 100,
+   "DEF": 10,
+   "SPE_DEF": 10,
+   "AP": 50
+  },
+  "marowakItems": [
+   [
+    "XRAY_VISION",
+    "BLUE_ORB"
+   ],
+   [
+    "SOUL_DEW",
+    "POKEMONOMICON"
+   ],
+   [
+    "AQUA_EGG",
+    "STAR_DUST"
+   ]
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "choice",
+   "pool": [
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "count": 2,
+   "extra_pool": [
+    "OLD_AMBER",
+    "DAWN_STONE",
+    "WATER_STONE",
+    "THUNDER_STONE",
+    "FIRE_STONE",
+    "MOON_STONE",
+    "DUSK_STONE",
+    "LEAF_STONE",
+    "ICE_STONE",
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "extra": 1,
+   "if_board": {
+    "ZACIAN": "RUSTED_SWORD"
+   }
+  }
+ },
+ "28": {
+  "name": "legendary_beasts",
+  "avatar": "SUICUNE",
+  "board": [
+   [
+    "ENTEI",
+    2,
+    2
+   ],
+   [
+    "RAIKOU",
+    4,
+    2
+   ],
+   [
+    "SUICUNE",
+    6,
+    2
+   ]
+  ],
+  "statBoosts": {
+   "HP": 100,
+   "DEF": 10,
+   "SPE_DEF": 10,
+   "ATK": 10,
+   "SPEED": 10,
+   "PP": 80,
+   "AP": 50
+  },
+  "marowakItems": [
+   [
+    "ASSAULT_VEST",
+    "ROCKY_HELMET"
+   ],
+   [
+    "XRAY_VISION",
+    "PUNCHING_GLOVE"
+   ],
+   [
+    "DEEP_SEA_TOOTH",
+    "CHOICE_SPECS"
+   ]
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "choice",
+   "pool": [
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "count": 2,
+   "extra_pool": [
+    "OLD_AMBER",
+    "DAWN_STONE",
+    "WATER_STONE",
+    "THUNDER_STONE",
+    "FIRE_STONE",
+    "MOON_STONE",
+    "DUSK_STONE",
+    "LEAF_STONE",
+    "ICE_STONE",
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "extra": 1
+  }
+ },
+ "32": {
+  "name": "super_ancients",
+  "avatar": "RAYQUAZA",
+  "board": [
+   [
+    "PRIMAL_KYOGRE",
+    2,
+    2
+   ],
+   [
+    "MEGA_RAYQUAZA",
+    4,
+    2
+   ],
+   [
+    "PRIMAL_GROUDON",
+    6,
+    2
+   ]
+  ],
+  "statBoosts": {
+   "HP": 200,
+   "DEF": 15,
+   "SPE_DEF": 15,
+   "ATK": 10
+  },
+  "marowakItems": [
+   [
+    "BLUE_ORB",
+    "AQUA_EGG",
+    "SOUL_DEW"
+   ],
+   [
+    "GREEN_ORB",
+    "STAR_DUST",
+    "POWER_LENS"
+   ],
+   [
+    "RED_ORB",
+    "FLAME_ORB",
+    "PROTECTIVE_PADS"
+   ]
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "choice",
+   "pool": [
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "count": 2,
+   "extra_pool": [
+    "OLD_AMBER",
+    "DAWN_STONE",
+    "WATER_STONE",
+    "THUNDER_STONE",
+    "FIRE_STONE",
+    "MOON_STONE",
+    "DUSK_STONE",
+    "LEAF_STONE",
+    "ICE_STONE",
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "extra": 1
+  }
+ },
+ "36": {
+  "name": "legendary_giants",
+  "avatar": "REGICE",
+  "board": [
+   [
+    "REGIELEKI",
+    1,
+    3
+   ],
+   [
+    "REGICE",
+    2,
+    3
+   ],
+   [
+    "REGIGIGAS",
+    3,
+    3
+   ],
+   [
+    "REGIROCK",
+    4,
+    3
+   ],
+   [
+    "REGISTEEL",
+    5,
+    3
+   ],
+   [
+    "REGIDRAGO",
+    6,
+    3
+   ]
+  ],
+  "statBoosts": {
+   "HP": 50
+  },
+  "marowakItems": [
+   [],
+   [
+    "ABILITY_SHIELD",
+    "GRACIDEA_FLOWER",
+    "GREEN_ORB"
+   ],
+   [
+    "DYNAMAX_BAND"
+   ],
+   [
+    "ABILITY_SHIELD",
+    "GRACIDEA_FLOWER",
+    "GREEN_ORB"
+   ],
+   [
+    "ABILITY_SHIELD",
+    "GRACIDEA_FLOWER",
+    "GREEN_ORB"
+   ],
+   []
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "choice",
+   "pool": [
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "count": 2,
+   "extra_pool": [
+    "OLD_AMBER",
+    "DAWN_STONE",
+    "WATER_STONE",
+    "THUNDER_STONE",
+    "FIRE_STONE",
+    "MOON_STONE",
+    "DUSK_STONE",
+    "LEAF_STONE",
+    "ICE_STONE",
+    "CHOICE_SPECS",
+    "SOUL_DEW",
+    "UPGRADE",
+    "REAPER_CLOTH",
+    "ABILITY_SHIELD",
+    "POWER_LENS",
+    "POKEMONOMICON",
+    "HEAVY_DUTY_BOOTS",
+    "AQUA_EGG",
+    "BLUE_ORB",
+    "SCOPE_LENS",
+    "STAR_DUST",
+    "GREEN_ORB",
+    "DEEP_SEA_TOOTH",
+    "SHINY_CHARM",
+    "XRAY_VISION",
+    "RAZOR_FANG",
+    "GRACIDEA_FLOWER",
+    "LOADED_DICE",
+    "PUNCHING_GLOVE",
+    "MUSCLE_BAND",
+    "WONDER_BOX",
+    "SMOKE_BALL",
+    "WIDE_LENS",
+    "RAZOR_CLAW",
+    "SAFETY_GOGGLES",
+    "KINGS_ROCK",
+    "STICKY_BARB",
+    "PROTECTIVE_PADS",
+    "MAX_REVIVE",
+    "ASSAULT_VEST",
+    "SHELL_BELL",
+    "POKE_DOLL",
+    "RED_ORB",
+    "FLAME_ORB",
+    "ROCKY_HELMET"
+   ],
+   "extra": 1
+  }
+ },
+ "40": {
+  "name": "pkm.ARCEUS",
+  "avatar": "ARCEUS",
+  "board": [
+   [
+    "DIALGA",
+    2,
+    3
+   ],
+   [
+    "GIRATINA",
+    4,
+    3
+   ],
+   [
+    "PALKIA",
+    6,
+    3
+   ],
+   [
+    "ARCEUS",
+    4,
+    1
+   ]
+  ],
+  "statBoosts": {
+   "HP": 200,
+   "DEF": 15,
+   "SPE_DEF": 15,
+   "ATK": 10,
+   "AP": 50
+  },
+  "marowakItems": [
+   [
+    "DYNAMAX_BAND"
+   ],
+   [
+    "DYNAMAX_BAND"
+   ],
+   [
+    "DYNAMAX_BAND"
+   ],
+   [
+    "DYNAMAX_BAND"
+   ]
+  ],
+  "shinyChance": 0,
+  "reward": {
+   "kind": "fixed",
+   "pool": [
+    "RARE_CANDY",
+    "SACRED_ASH",
+    "GOLD_BOW"
+   ]
+  }
+ }
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://o8hl4hbfopmc"
+path="res://.godot/imported/Kecleon's Shop.ogg-df775de317700b78e7be952ae25f2d85.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Kecleon's Shop.ogg"
+dest_files=["res://.godot/imported/Kecleon's Shop.ogg-df775de317700b78e7be952ae25f2d85.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://hjmol5x0vdpy"
+path="res://.godot/imported/Treasure Town Stage 20.ogg-d5574514479d015284a2100edc96c8d5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Treasure Town Stage 20.ogg"
+dest_files=["res://.godot/imported/Treasure Town Stage 20.ogg-d5574514479d015284a2100edc96c8d5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

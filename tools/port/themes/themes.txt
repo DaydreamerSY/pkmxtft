@@ -1,0 +1,61 @@
+# Điểm chung (theme) để dựng hệ mới theo mùa — docs/THEMES.md. Sinh doc: python tools/port/gen_themes.py
+# id | tên (VI) | name (EN) | nhóm | mô tả
+# nhóm: animal = Tộc, con vật / sinh vật gốc của thiết kế; role = Hệ, vai trò / nghề trong lore;
+#       lore = truyền thuyết, văn hoá, vũ trụ; world = đồ vật, nơi chốn, thiên nhiên.
+# 12 con giáp (bản Việt): Tý rodent, Sửu bovine, Dần tiger, Mão cat, Thìn = hệ Dragon có sẵn, Tỵ snake,
+#   Ngọ horse, Mùi goat, Thân monkey, Dậu fowl, Tuất dog, Hợi pig.
+rodent | Chuột & gặm nhấm | Rodents | animal | Tý — chuột, sóc, hamster, hải ly, sinsila
+bovine | Trâu bò | Cattle | animal | Sửu — bò, bò tót, trâu; ít họ, nên gộp vào "Nông trại" nếu muốn hệ to
+tiger | Hổ, báo, sư tử | Big cats | animal | Dần — mèo lớn
+cat | Mèo | Cats | animal | Mão (12 con giáp Việt dùng mèo thay thỏ)
+snake | Rắn & mãng xà | Snakes & serpents | animal | Tỵ — cả lươn, rồng thân rắn
+horse | Ngựa | Horses | animal | Ngọ — ngựa, lừa, kỳ lân, ngựa con; gần đúng: cá ngựa
+goat | Dê & cừu | Goats & sheep | animal | Mùi
+monkey | Khỉ & vượn | Monkeys & apes | animal | Thân
+fowl | Gà, vịt & gà lôi | Poultry | animal | Dậu — gia cầm
+dog | Chó & sói | Dogs & wolves | animal | Tuất — chó, sói, linh cẩu, chó rừng
+pig | Lợn | Pigs | animal | Hợi — lợn, lợn rừng
+rabbit | Thỏ | Rabbits | animal | thỏ và Pokémon tai thỏ
+deer | Hươu nai | Deer | animal | hươu, nai, tuần lộc
+bear | Gấu & gấu trúc | Bears & pandas | animal | gấu, gấu trúc, koala
+fox | Cáo | Foxes | animal | cáo (kitsune)
+bat | Dơi | Bats | animal | dơi
+raptor | Chim săn mồi & quạ | Birds of prey | animal | ưng, đại bàng, cú, quạ, kền kền, chim cắt
+waterbird | Chim biển & cánh cụt | Seabirds | animal | mòng biển, bồ nông, chim cốc, cánh cụt, thiên nga
+frog | Ếch & nòng nọc | Frogs | animal | ếch, cóc, nòng nọc
+turtle | Rùa | Turtles | animal | rùa cạn, rùa biển
+reptile | Thằn lằn & cá sấu | Lizards & crocodiles | animal | thằn lằn, tắc kè, cá sấu, kỳ nhông
+sea_mammal | Thú biển | Sea mammals | animal | cá voi, cá heo, hải cẩu, sư tử biển, rái cá
+crab | Cua, tôm & giáp xác | Crustaceans | animal | cua, tôm, tôm hùm, hà, bọ biển
+octopus | Bạch tuộc & mực | Cephalopods | animal | bạch tuộc, mực, ốc anh vũ
+spider | Nhện & bọ cạp | Arachnids | animal | nhện, bọ cạp
+elephant | Voi & thú khổng lồ | Giant mammals | animal | voi, ma mút, tê giác, hà mã, lạc đà
+medic | Y tế & cứu hộ | Medic & rescue | role | chữa lành, y tá, thuốc, cứu người gặp nạn
+transport | Vận chuyển | Transport | role | chở người / hàng, Pokémon để cưỡi (Poké Ride), đưa thư, xe cộ
+worker | Lao động & xây dựng | Workers | role | khuân vác, xây dựng, thợ rèn
+miner | Đào mỏ | Miners | role | đào đường hầm, quặng, than, đá quý dưới đất
+farm | Nông trại | Farm | role | gia súc, cây trồng, làm vườn, chăn nuôi
+knight | Hiệp sĩ & kiếm sĩ | Knights | role | kiếm, giáo, giáp, samurai, lính
+guardian | Hộ vệ & canh gác | Guardians | role | bảo vệ người khác, canh cổng, cảnh giới, thần hộ mệnh
+ninja | Ninja & điệp viên | Ninjas & spies | role | ninja, sát thủ, điệp viên, ẩn mình
+gunner | Xạ thủ & pháo thủ | Marksmen | role | cung tên, súng nước, pháo, bắn từ xa
+magic | Pháp sư & phù thuỷ | Mages & witches | role | phép thuật, thôi miên, bói toán, ảo thuật
+royal | Hoàng gia & thủ lĩnh | Royalty & bosses | role | vua, hoàng hậu, hoàng đế, trùm
+artist | Nghệ sĩ biểu diễn | Performers | role | múa, kịch câm, vẽ, ca sĩ (âm nhạc thuần đã có hệ Sound)
+sport | Thể thao & võ thuật | Athletes | role | bóng đá, đấu vật, quyền anh, sumo, kung fu, yoga
+rogue | Kẻ gian & lưu manh | Rogues | role | trộm, lừa đảo, côn đồ, chơi khăm
+family | Gia đình & bảo mẫu | Family & caretakers | role | chăm con, nuôi trẻ, quản gia
+folklore | Truyện cổ & yêu quái | Folklore | lore | yêu quái Nhật, truyện cổ châu Á (kitsune, tengu, kappa, Momotarō...)
+myth | Thần thoại & thần linh | Myths & deities | lore | thần sáng thế, thần thời tiết, thần hộ mệnh (phần lớn là Legendary)
+relic | Cổ vật & di tích | Relics & ruins | lore | tượng cổ, đồ đồng, phế tích, hoá thạch sống
+desert | Sa mạc & Ai Cập cổ | Desert & ancient Egypt | lore | sa mạc, xương rồng, quan tài, kim tự tháp
+space | Vũ trụ & ngoài hành tinh | Space & aliens | lore | thiên thạch, sao, người ngoài hành tinh, Ultra Beast
+dream | Giấc ngủ & giấc mơ | Sleep & dreams | lore | ngủ, lười, ăn giấc mơ, ác mộng
+festival | Lễ hội & mùa | Festivals & seasons | lore | Giáng sinh, Halloween, hoa anh đào, đom đóm, bốn mùa
+food | Món ăn | Food | world | Pokémon trông như món ăn / nguyên liệu (khác hệ Gourmet = đầu bếp)
+glutton | Ham ăn | Big eaters | world | ăn không ngừng, nuốt mọi thứ
+treasure | Kho báu & đá quý | Treasure & gems | world | vàng, tiền xu, ngọc trai, đá quý
+object | Đồ vật sống | Living objects | world | đồ vật có hồn: nến, ấm trà, chìa khoá, búp bê, gương...
+urban | Thành phố & ô nhiễm | City & pollution | world | sống quanh người, rác, khí thải, nhà máy
+weather | Thời tiết & thiên tai | Weather & disasters | world | gọi mưa / nắng / bão, báo thiên tai
+disguise | Nguỵ trang & ảo ảnh | Disguise & illusion | world | giả dạng, đổi màu, ảo ảnh

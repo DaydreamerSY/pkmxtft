@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dyv0o72wvcdbf"
+path="res://.godot/imported/A New World.ogg-bf64c42afa07aebf229a131a2fcc2759.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/A New World.ogg"
+dest_files=["res://.godot/imported/A New World.ogg-bf64c42afa07aebf229a131a2fcc2759.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

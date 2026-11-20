@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bagoed17mml55"
+path="res://.godot/imported/Versus Boss.ogg-e6964acad802699d4b9d7af20c48dd2c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Versus Boss.ogg"
+dest_files=["res://.godot/imported/Versus Boss.ogg-e6964acad802699d4b9d7af20c48dd2c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

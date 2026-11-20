@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://31xstqg12x6a"
+path="res://.godot/imported/Temporal Spire.ogg-7b6129913cd75e8b0620812a5e912e56.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Temporal Spire.ogg"
+dest_files=["res://.godot/imported/Temporal Spire.ogg-7b6129913cd75e8b0620812a5e912e56.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

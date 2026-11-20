@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brxa46u8b0chr"
+path="res://.godot/imported/Treasure Town Stage 0 alt.ogg-5d41e7c6a151e51ba7558d433715dc2d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Treasure Town Stage 0 alt.ogg"
+dest_files=["res://.godot/imported/Treasure Town Stage 0 alt.ogg-5d41e7c6a151e51ba7558d433715dc2d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

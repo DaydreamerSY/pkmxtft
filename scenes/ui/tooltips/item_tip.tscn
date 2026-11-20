@@ -1,0 +1,55 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/tooltips/item_tip.gd" id="2_item_tip"]
+[ext_resource type="PackedScene" path="res://scenes/ui/tooltips/item_header.tscn" id="3_item_header"]
+
+[node name="ItemTip" type="VBoxContainer"]
+mouse_filter = 2
+theme_override_constants/separation = 6
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_item_tip")
+
+[node name="Header" parent="." instance=ExtResource("3_item_header")]
+layout_mode = 2
+unique_name_in_owner = true
+
+[node name="Desc" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+theme_override_font_sizes/italics_font_size = 15
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+
+[node name="Recipe" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+
+[node name="Hint" type="RichTextLabel" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+theme_override_font_sizes/italics_font_size = 13
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+theme_override_colors/default_color = Color(0.62, 0.66, 0.66, 1)

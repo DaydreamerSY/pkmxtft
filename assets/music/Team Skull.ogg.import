@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://csw3m4a1vdx5c"
+path="res://.godot/imported/Team Skull.ogg-1887e980c9ee142dd9b19e303eb8cdef.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Team Skull.ogg"
+dest_files=["res://.godot/imported/Team Skull.ogg-1887e980c9ee142dd9b19e303eb8cdef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

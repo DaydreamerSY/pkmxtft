@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://beurhjxc1x3m1"
+path="res://.godot/imported/Friend Area - Oceanic.ogg-9c14c543e541746b25867810616062ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Friend Area - Oceanic.ogg"
+dest_files=["res://.godot/imported/Friend Area - Oceanic.ogg-9c14c543e541746b25867810616062ee.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

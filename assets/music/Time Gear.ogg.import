@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://blw8a7es1jf68"
+path="res://.godot/imported/Time Gear.ogg-8dbd66f34d7d8f3c3f223a3d1fd5beef.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Time Gear.ogg"
+dest_files=["res://.godot/imported/Time Gear.ogg-8dbd66f34d7d8f3c3f223a3d1fd5beef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

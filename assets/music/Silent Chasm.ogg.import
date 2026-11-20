@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://03levwp0gv6u"
+path="res://.godot/imported/Silent Chasm.ogg-44fa7c94c40777e4d2a92e53ea30bdbe.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Silent Chasm.ogg"
+dest_files=["res://.godot/imported/Silent Chasm.ogg-44fa7c94c40777e4d2a92e53ea30bdbe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

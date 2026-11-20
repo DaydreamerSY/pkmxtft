@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ckky4xtn05xoh"
+path="res://.godot/imported/Vast Ice Mountain.ogg-2ce6456378cf395c626efe62ef5bc172.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Vast Ice Mountain.ogg"
+dest_files=["res://.godot/imported/Vast Ice Mountain.ogg-2ce6456378cf395c626efe62ef5bc172.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

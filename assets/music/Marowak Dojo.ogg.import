@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bny8iw77sppnj"
+path="res://.godot/imported/Marowak Dojo.ogg-9ce44f4be2f0d70097a06fbc6e4e7d92.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Marowak Dojo.ogg"
+dest_files=["res://.godot/imported/Marowak Dojo.ogg-9ce44f4be2f0d70097a06fbc6e4e7d92.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

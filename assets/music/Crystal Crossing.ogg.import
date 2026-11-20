@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ck4juf26c0ycr"
+path="res://.godot/imported/Crystal Crossing.ogg-38bb94acb5702ef9539e85979f46e3a0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Crystal Crossing.ogg"
+dest_files=["res://.godot/imported/Crystal Crossing.ogg-38bb94acb5702ef9539e85979f46e3a0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

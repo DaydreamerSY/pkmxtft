@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjh7x7dgo6x5r"
+path="res://.godot/imported/Northern Desert.ogg-f8ce577647af6b1278d4b6815778dcaa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Northern Desert.ogg"
+dest_files=["res://.godot/imported/Northern Desert.ogg-f8ce577647af6b1278d4b6815778dcaa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

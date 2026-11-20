@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cu6i6el38ragf"
+path="res://.godot/imported/There's Trouble!.ogg-c5112400458a5627ddecdd849925bbfc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/There's Trouble!.ogg"
+dest_files=["res://.godot/imported/There's Trouble!.ogg-c5112400458a5627ddecdd849925bbfc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

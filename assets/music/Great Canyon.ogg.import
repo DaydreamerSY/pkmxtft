@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7qegly1ohhc0"
+path="res://.godot/imported/Great Canyon.ogg-3f69dc59e3443f0923bd50ea3a8cd688.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Great Canyon.ogg"
+dest_files=["res://.godot/imported/Great Canyon.ogg-3f69dc59e3443f0923bd50ea3a8cd688.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

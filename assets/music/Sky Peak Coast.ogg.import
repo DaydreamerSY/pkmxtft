@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5b5akewxbyhl"
+path="res://.godot/imported/Sky Peak Coast.ogg-1c9e345ebcf953332f4158ee270163e8.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Sky Peak Coast.ogg"
+dest_files=["res://.godot/imported/Sky Peak Coast.ogg-1c9e345ebcf953332f4158ee270163e8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

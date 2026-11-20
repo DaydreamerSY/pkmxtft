@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cpfygtjbuiir"
+path="res://.godot/imported/World Calamity.ogg-e7e3e93b023e209c2379918b8842ddef.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/World Calamity.ogg"
+dest_files=["res://.godot/imported/World Calamity.ogg-e7e3e93b023e209c2379918b8842ddef.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

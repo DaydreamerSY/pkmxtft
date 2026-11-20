@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dsmyb8uoabxjv"
+path="res://.godot/imported/At the Snowy Mountain.ogg-2bdae25f47810ebea8146f4de2e8d772.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/At the Snowy Mountain.ogg"
+dest_files=["res://.godot/imported/At the Snowy Mountain.ogg-2bdae25f47810ebea8146f4de2e8d772.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/tooltips/synergy_member.gd" id="2_synergy_memb"]
+
+[node name="SynergyMember" type="PanelContainer"]
+mouse_filter = 0
+theme_type_variation = &"PortraitCell"
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_synergy_memb")
+
+[node name="Portrait" type="TextureRect" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+texture_filter = 1

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt1y77xs07dqh"
+path="res://.godot/imported/Spring Cave.ogg-f11ce2700db79798ff1b1a6068971434.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Spring Cave.ogg"
+dest_files=["res://.godot/imported/Spring Cave.ogg-f11ce2700db79798ff1b1a6068971434.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

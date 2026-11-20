@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwsiso8hbe7o2"
+path="res://.godot/imported/Spring Cave Depths.ogg-a8b68d0e17af72b349f6d6b30975f98a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Spring Cave Depths.ogg"
+dest_files=["res://.godot/imported/Spring Cave Depths.ogg-a8b68d0e17af72b349f6d6b30975f98a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

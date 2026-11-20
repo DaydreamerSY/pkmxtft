@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d31rkoqh6n5kb"
+path="res://.godot/imported/Dark Hill.ogg-0ce517c07ecc9590438ec62071a88f2d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Dark Hill.ogg"
+dest_files=["res://.godot/imported/Dark Hill.ogg-0ce517c07ecc9590438ec62071a88f2d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

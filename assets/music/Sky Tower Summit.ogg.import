@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cralvwrj3wk7c"
+path="res://.godot/imported/Sky Tower Summit.ogg-66f0426c1c85f5c688e1ebdb861bfe47.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Sky Tower Summit.ogg"
+dest_files=["res://.godot/imported/Sky Tower Summit.ogg-66f0426c1c85f5c688e1ebdb861bfe47.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

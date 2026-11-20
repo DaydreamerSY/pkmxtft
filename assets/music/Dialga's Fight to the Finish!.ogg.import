@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sf5eigjcu3a"
+path="res://.godot/imported/Dialga's Fight to the Finish!.ogg-6345d2170bead8dfc417d5161fe14351.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Dialga's Fight to the Finish!.ogg"
+dest_files=["res://.godot/imported/Dialga's Fight to the Finish!.ogg-6345d2170bead8dfc417d5161fe14351.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

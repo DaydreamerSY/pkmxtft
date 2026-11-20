@@ -1,0 +1,112 @@
+# HỌ | tag | ghi chú — độ hiếm UNIQUE (đề xuất Unique ở thị trấn / cổng)
+ABSOL | weather guardian | Báo thiên tai (Disaster): xuất hiện để cảnh báo thảm hoạ nhưng bị người hiểu lầm là thủ phạm.
+AERODACTYL | | Thằn lằn bay cổ đại hồi sinh từ hổ phách (Fossil).
+APPLIN | food farm? | Sâu sống trong quả táo (Apple Core) → Flapple (Apple Wing) / Appletun (Apple Nectar, như bánh táo) / Dipplin (Candy Apple) → Hydrapple.
+ARCTOVISH | | Hoá thạch bị ghép sai (Fossil): đầu cá + thân băng — nhà khảo cổ ghép bừa hai mảnh.
+ARCTOZOLT | | Hoá thạch ghép sai (Fossil): thân trên điện + thân dưới băng.
+AUDINO | medic family | Thính giác (Hearing): nghe nhịp tim để biết sức khoẻ, làm trợ lý ở Trung tâm Pokémon (Unova).
+AZELF | myth | Thần ý chí (Willpower), một trong ba thần hồ của Sinnoh.
+BASCULIN* | transport? rogue? | Cá vược hung dữ (Hostile); chỉ sọc trắng tiến hoá → Basculegion (Big Fish), hồn cá chở người ở Hisui.
+BRUXISH | | Cá nghiến răng phát sóng siêu linh (Gnash Teeth).
+CARNIVINE | | Cây bẫy ruồi treo mình trên cây (Bug Catcher).
+CASTFORM | weather folklore? | Thời tiết (Weather): đổi dạng theo nắng / mưa / tuyết, giống búp bê cầu nắng teru teru bōzu.
+CHARCADET | knight gunner | Lửa con (Fire Child) → Armarouge (Fire Warrior, giáp + pháo tay) hoặc Ceruledge (Fire Blades, kiếm sĩ).
+CHATOT | artist disguise? | Vẹt bắt chước tiếng người và giai điệu (Music Note).
+CHINGLING | folklore object festival? | Chuông nhỏ (Bell) → Chimecho (Wind Chime) như chuông gió fūrin mùa hè Nhật.
+COMFEY | medic artist? | Kết vòng hoa (Posy Picker) và tặng Pokémon khác; hương hoa làm dịu, chữa lành.
+COSMOG | space myth | Tinh vân (Nebula) → Cosmoem (Protostar) → Solgaleo (Sunne) / Lunala (Moone), sứ giả của mặt trời / mặt trăng.
+CRAMORANT | waterbird glutton gunner | Chim cốc (Gulp) nuốt cá Arrokuda (cả Pikachu!) rồi phun ra như tên lửa.
+CRYOGONAL | weather | Bông tuyết pha lê (Crystallizing) sinh ra trong mây tuyết.
+CYCLIZAR | transport reptile | Thằn lằn chạy nhanh (Mount): người Paldea cưỡi như xe máy.
+DEDENNE | rodent urban? | Chuột ăng-ten (Antenna) hút điện từ ổ cắm.
+DELIBIRD | transport festival medic? | Chim đưa quà (Delivery) như ông già Noel: chia thức ăn cho người lạc trên núi.
+DHELMISE | object relic? disguise? | Hồn ma nhập vào mỏ neo + rong biển (Sea Creeper), như xác tàu đắm.
+DONDOZO | glutton transport | Cá trê khổng lồ (Big Catfish) ăn không ngừng; làm "xe" cho Tatsugiri cưỡi.
+DRACOVISH | | Hoá thạch ghép sai (Fossil): đầu cá + đuôi rồng.
+DRACOZOLT | | Hoá thạch ghép sai (Fossil): thân điện + đuôi rồng.
+DRAMPA | family | Rồng già hiền (Placid) sống trên núi, thích chơi với trẻ con.
+DRUDDIGON | | Rồng hang (Cave), sưởi nắng lấy nhiệt.
+DUNSPARCE | snake | Rắn đất có cánh nhỏ (Land Snake) → Dudunsparce đào hang dài.
+DURALUDON | urban | Hợp kim (Alloy): thân như toà nhà chọc trời → Archaludon.
+DURANT | | Kiến sắt (Iron Ant) sống theo đàn, kình địch của Heatmor.
+EISCUE | waterbird | Chim cánh cụt (Penguin) đội khối băng trên đầu.
+EMOLGA | rodent | Sóc bay điện (Sky Squirrel).
+FARFETCH_D | fowl food | Vịt cầm cọng hành (Wild Duck) — thành ngữ Nhật "vịt mang hành tới" = may quá; từng bị săn làm món ăn.
+FINIZEN | sea_mammal guardian? | Cá heo (Dolphin) → Palafin hoá thân anh hùng khi đồng đội gặp nguy.
+FLUTTER_MANE | | Pokémon Nghịch lý (Paradox) cổ đại giống Misdreavus.
+FURFROU | dog urban guardian royal? | Chó poodle (Poodle) được cắt tỉa nhiều kiểu ở Kalos; ngày xưa là vệ binh của vua.
+GALARIAN_FARFETCH_D | knight fowl | Farfetch'd Galar → Sirfetch'd (Wild Duck): hiệp sĩ cầm cọng hành như cây giáo, lá làm khiên.
+GIMMIGHOUL | treasure object | Rương báu có hồn (Coin Chest) → Gholdengo (Coin Entity) thân làm bằng tiền vàng.
+GREAT_TUSK | elephant | Pokémon Nghịch lý cổ đại giống Donphan (Paradox).
+HAWLUCHA | sport | Đô vật (Wrestling) — luchador Mexico.
+HEATMOR | | Thú ăn kiến lửa (Anteater), kình địch của Durant.
+HERACROSS | | Bọ hung tê giác (Single Horn) mê nhựa cây.
+HISUIAN_QWILFISH | | Cá nóc Hisui (Balloon) → Overqwil.
+HOOPA | myth rogue treasure | Thần đèn tinh nghịch (Mischief): vòng không gian trộm kho báu, như djinn Nghìn lẻ một đêm.
+ILLUMISE | festival | Đom đóm cái (Firefly) dẫn Volbeat vẽ hình bằng ánh sáng trên bầu trời đêm.
+INDEEDEE* | family | Cảm xúc (Emotion): dùng sừng cảm nhận cảm xúc; con đực làm quản gia, con cái chăm sóc người.
+IRON_BUNDLE | | Pokémon Nghịch lý tương lai giống Delibird, như robot.
+IRON_HANDS | sport | Pokémon Nghịch lý tương lai giống Hariyama — sumo robot.
+IRON_THORNS | | Pokémon Nghịch lý tương lai giống Tyranitar.
+KANGASKHAN | family | Mẹ (Parent): mang con trong túi, bảo vệ con dữ dội.
+KECLEON | disguise reptile | Tắc kè hoa (Color Swap) đổi màu để tàng hình; chủ tiệm trong Mystery Dungeon.
+KLEFKI | guardian treasure object | Chùm chìa khoá (Key Ring): người ta nhờ nó giữ chìa khoá két sắt vì nó không bao giờ đánh rơi.
+KOMALA | bear dream | Gấu koala ngủ suốt đời (Drowsing), ôm khúc gỗ.
+KUBFU | bear sport | Gấu con võ thuật (Wushu) → Urshifu hai trường phái (Single / Rapid Strike).
+LAPRAS | transport | Vận tải (Transport): chở người qua biển; Poké Ride Lapras Paddle.
+LATIAS | myth disguise? | Rồng vô hạn (Eon) cái: tàng hình, có thể giả dạng người; cặp với Latios.
+LATIOS | myth | Rồng vô hạn (Eon) đực: hiểu tiếng người; cặp với Latias.
+LUNATONE | space | Thiên thạch hình trăng khuyết (Meteorite).
+LUVDISC | festival | Cá trái tim (Rendezvous) mang lại tình yêu, gắn với ngày Valentine.
+MANTYKE | transport | Cá đuối con (Kite) → Mantine: Poké Ride lướt sóng (Mantine Surf).
+MARACTUS | desert artist | Xương rồng nhảy múa (Cactus), tay như đôi maracas.
+MAWILE | disguise rogue | Kẻ lừa đảo (Deceiver): mặt dễ thương, hàm to phía sau đầu.
+MESPRIT | myth | Thần cảm xúc (Emotion), một trong ba thần hồ.
+MILCERY | food | Kem tươi (Cream) → Alcremie được "trang trí" như bánh ngọt.
+MILTANK | bovine farm food medic | Bò sữa (Milk Cow): sữa rất bổ, uống vào là khoẻ lại.
+MIMIKYU | disguise | Nguỵ trang (Disguise): đội bộ đồ giả Pikachu để được yêu thương.
+MINIOR | space treasure | Thiên thạch (Meteor): vỏ đá, vỡ ra là lõi nhiều màu.
+MINUN | rodent | Cổ vũ (Cheering) — cặp với Plusle.
+MORPEKO | rodent glutton | Hai mặt (Two-Sided): đói là hoá dạng "hangry".
+ORICORIO_BAILE | artist | Vũ công (Dancing): bốn kiểu múa theo mật hoa (flamenco, cổ vũ, hula, buyō).
+ORTHWORM | miner | Giun đất thép (Earthworm) đào đường hầm.
+PACHIRISU | rodent | Sóc điện (EleSquirrel).
+PASSIMIAN | monkey sport | Đồng đội (Teamwork): chơi theo đội với "quả bóng", như rugby.
+PINCURCHIN | | Nhím biển (Sea Urchin).
+PINSIR | | Bọ kìm (Stag Beetle).
+PLUSLE | rodent | Cổ vũ (Cheering) — cặp với Minun.
+POIPOLE | space | Ultra Beast (Poison Pin) → Naganadel.
+PYUKUMUKU | | Hải sâm (Sea Cucumber).
+QWILFISH | | Cá nóc (Balloon).
+RELICANTH | relic | Cá vây tay (Longevity), "hoá thạch sống".
+ROTOM | object urban | Plasma: nhập vào đồ điện (máy giặt, tủ lạnh, quạt, lò vi sóng, máy cắt cỏ).
+SABLEYE | treasure rogue miner? | Bóng tối (Darkness): sống trong hang, ăn đá quý, mắt là kim cương.
+SCREAM_TAIL | | Pokémon Nghịch lý cổ đại giống Jigglypuff.
+SCYTHER | knight ninja | Bọ ngựa lưỡi hái (Mantis) → Scizor (giáp thép) / Kleavor (Axe, rìu đá).
+SEVIPER | snake | Rắn nanh (Fang Snake), kình địch của Zangoose.
+SHUCKLE | food medic? | Mốc (Mold): ủ quả mọng trong vỏ thành nước ép.
+SIGILYPH | relic desert guardian | Chim cổ (Avianoid) giống hình vẽ sa mạc / tượng chim Ai Cập, canh giữ thành cổ.
+SKARMORY | raptor knight? | Chim giáp thép (Armor Bird), lông cánh sắc như kiếm.
+SLITHER_WING | | Pokémon Nghịch lý cổ đại giống Volcarona.
+SMEARGLE | dog artist | Hoạ sĩ (Painter): chó beagle vẽ bằng đuôi.
+SOLROCK | space | Thiên thạch hình mặt trời (Meteorite).
+SPINDA | bear artist | Gấu trúc chóng mặt (Spot Panda): đốm không con nào giống con nào, đi loạng choạng như nhảy.
+SPIRITOMB | folklore relic | Bị cấm (Forbidden): 108 linh hồn bị phong ấn trong một hòn đá.
+STANTLER | deer transport festival? | Tuần lộc (Big Horn) gạc gây ảo giác → Wyrdeer cõng người ở Hisui.
+STONJOURNER | relic | Đá lớn (Big Rock) — như vòng đá Stonehenge.
+TANDEMAUS | rodent family | Cặp chuột (Couple) → Maushold (Family): cả gia đình đi cùng nhau.
+TAPU_BULU | myth guardian | Thần hộ mệnh (Land Spirit) đảo Ula'ula.
+TAPU_FINI | myth guardian medic | Thần hộ mệnh đảo Poni: sương mù thanh tẩy, chữa lành.
+TAPU_KOKO | myth guardian weather? | Thần hộ mệnh đảo Melemele, sấm sét.
+TAPU_LELE | myth guardian medic | Thần hộ mệnh đảo Akala: vảy phấn chữa bệnh (nhiều quá lại hại).
+TAUROS | bovine transport farm | Bò tót (Wild Bull): Poké Ride húc đá (Alola); Tauros Paldea.
+TOGEDEMARU | rodent | Lăn tròn (Roly-Poly), lông gai thu sét.
+TORKOAL | turtle weather | Rùa than (Coal) phả khói, làm nắng gắt.
+TROPIUS | food farm? | Khủng long chuối (Fruit): chùm chuối ở cổ, trẻ con rất thích ăn.
+TURTONATOR | turtle | Rùa nổ (Blast Turtle): mai chứa chất nổ.
+TYROGUE | sport artist? | Võ sinh (Scuffle) → Hitmonlee (Kicking) / Hitmonchan (Punching) / Hitmontop (Handstand, xoay như breakdance).
+UXIE | myth | Thần tri thức (Knowledge), một trong ba thần hồ.
+VELUZA | | Cá chó (Jettison) bỏ bớt thịt để nhẹ người.
+VOLBEAT | festival | Đom đóm đực (Firefly) vẽ hình bằng ánh sáng trên trời đêm.
+ZANGOOSE | | Chồn mangut (Cat Ferret), kình địch của Seviper.
+ZERAORA | tiger? myth? | Sấm (Thunderclap): mèo / hổ điện thần thoại (Mythical).

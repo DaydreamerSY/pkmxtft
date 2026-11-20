@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d0ns2vtbivxln"
+path="res://.godot/imported/Dusk Forest.ogg-da46e40d4ad8144de1e31c8a3bae045d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Dusk Forest.ogg"
+dest_files=["res://.godot/imported/Dusk Forest.ogg-da46e40d4ad8144de1e31c8a3bae045d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

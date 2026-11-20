@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmumsoram7wjh"
+path="res://.godot/imported/Run Away.ogg-6f5b23f6c8cb4f7f3971050945b84dfa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Run Away.ogg"
+dest_files=["res://.godot/imported/Run Away.ogg-6f5b23f6c8cb4f7f3971050945b84dfa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

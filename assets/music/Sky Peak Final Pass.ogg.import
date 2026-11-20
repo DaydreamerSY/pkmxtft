@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pux8nn8xhj2c"
+path="res://.godot/imported/Sky Peak Final Pass.ogg-ea6edae60c064dc6ce0572dbca95f64f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Sky Peak Final Pass.ogg"
+dest_files=["res://.godot/imported/Sky Peak Final Pass.ogg-ea6edae60c064dc6ce0572dbca95f64f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

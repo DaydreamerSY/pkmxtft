@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://db72nnicgt8kf"
+path="res://.godot/imported/Tiny Woods.ogg-2251afd6e0388ab782d9619fbf8830fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Tiny Woods.ogg"
+dest_files=["res://.godot/imported/Tiny Woods.ogg-2251afd6e0388ab782d9619fbf8830fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

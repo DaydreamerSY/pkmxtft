@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c5eei7dl2430l"
+path="res://.godot/imported/Star Cave.ogg-c1c0c2279880ffe8a1e9b114631f8f3f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Star Cave.ogg"
+dest_files=["res://.godot/imported/Star Cave.ogg-c1c0c2279880ffe8a1e9b114631f8f3f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

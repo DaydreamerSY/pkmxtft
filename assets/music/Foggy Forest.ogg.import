@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhc5spqdhtjv1"
+path="res://.godot/imported/Foggy Forest.ogg-8a07de01a51fc43cbe7c497c802c1bfc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Foggy Forest.ogg"
+dest_files=["res://.godot/imported/Foggy Forest.ogg-8a07de01a51fc43cbe7c497c802c1bfc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crjpqdt45o2r1"
+path="res://.godot/imported/Far Amp Plains.ogg-dec9d11cca7cbf60aa3a346fd7f222f6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Far Amp Plains.ogg"
+dest_files=["res://.godot/imported/Far Amp Plains.ogg-dec9d11cca7cbf60aa3a346fd7f222f6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

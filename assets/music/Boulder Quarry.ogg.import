@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ua3hkgw0q66d"
+path="res://.godot/imported/Boulder Quarry.ogg-f09b14da7dd2e76047317f9730499f44.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Boulder Quarry.ogg"
+dest_files=["res://.godot/imported/Boulder Quarry.ogg-f09b14da7dd2e76047317f9730499f44.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

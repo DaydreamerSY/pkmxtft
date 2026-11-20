@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b7vhga3jod5kc"
+path="res://.godot/imported/Upper Steam Cave.ogg-c7f7be3ceafd03e5cb5c13aeec5603b3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Upper Steam Cave.ogg"
+dest_files=["res://.godot/imported/Upper Steam Cave.ogg-c7f7be3ceafd03e5cb5c13aeec5603b3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

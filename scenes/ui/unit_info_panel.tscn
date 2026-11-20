@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://cylke0iwk7dou"]
+
+[ext_resource type="Theme" uid="uid://bmjtkrgtpa8yq" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" uid="uid://cnbjdo773t7p0" path="res://src/ui/unit_info_panel.gd" id="2_unit_info_pa"]
+[ext_resource type="Texture2D" uid="uid://s703unq75d0j" path="res://assets/icons/money.svg" id="3_money"]
+[ext_resource type="PackedScene" path="res://scenes/ui/value_bar.tscn" id="4_value_bar"]
+[ext_resource type="Script" uid="uid://wr740wcyf4b3" path="res://src/ui/ability_shape_view.gd" id="5_ability_shap"]
+[ext_resource type="Texture2D" uid="uid://cuduu3uo71xmk" path="res://assets/icons/RANGE.png" id="6_RANGE"]
+[ext_resource type="PackedScene" path="res://scenes/ui/item_slot.tscn" id="7_item_slot"]
+[ext_resource type="PackedScene" path="res://scenes/ui/stat_cell.tscn" id="8_stat_cell"]
+
+[sub_resource type="Gradient" id="Gradient_1"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.8)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2"]
+gradient = SubResource("Gradient_1")
+fill_from = Vector2(0, 0.35)
+fill_to = Vector2(0, 1)
+
+[node name="UnitInfoPanel" type="PanelContainer" unique_id=737861606]
+custom_minimum_size = Vector2(300, 0)
+theme = ExtResource("1_ui_theme")
+theme_type_variation = &"UnitPanel"
+script = ExtResource("2_unit_info_pa")
+
+[node name="V" type="VBoxContainer" parent="." unique_id=132161935]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Stars" type="HBoxContainer" parent="V" unique_id=1895419145]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Banner" type="PanelContainer" parent="V" unique_id=1882112608]
+custom_minimum_size = Vector2(0, 150)
+clip_contents = true
+layout_mode = 2
+theme_type_variation = &"UnitBanner"
+
+[node name="Portrait" type="TextureRect" parent="V/Banner" unique_id=170207190]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shade" type="TextureRect" parent="V/Banner" unique_id=1053532530]
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_2")
+expand_mode = 1
+
+[node name="TypesMargin" type="MarginContainer" parent="V/Banner" unique_id=1090781441]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Types" type="VBoxContainer" parent="V/Banner/TypesMargin" unique_id=402542110]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 2
+
+[node name="NameRow" type="HBoxContainer" parent="V" unique_id=146006386]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="V/NameRow" unique_id=429175749]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Pokémon"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ValueIcon" type="TextureRect" parent="V/NameRow" unique_id=92290862]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_money")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Value" type="Label" parent="V/NameRow" unique_id=743102254]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"GoldLabel"
+theme_override_font_sizes/font_size = 18
+text = "1"
+
+[node name="HpBar" parent="V" unique_id=854295891 instance=ExtResource("4_value_bar")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="PpBar" parent="V" unique_id=1598058098 instance=ExtResource("4_value_bar")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_type_variation = &"PpBar"
+
+[node name="Row3" type="HBoxContainer" parent="V" unique_id=1374473369]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SkillBox" type="PanelContainer" parent="V/Row3" unique_id=631116869]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"BoxPanel"
+
+[node name="SkillCenter" type="CenterContainer" parent="V/Row3/SkillBox" unique_id=1640399626]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SkillView" type="Control" parent="V/Row3/SkillBox/SkillCenter" unique_id=107323004]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_ability_shap")
+
+[node name="PositionBox" type="PanelContainer" parent="V/Row3" unique_id=1283573671]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"BoxPanel"
+
+[node name="Position" type="Label" parent="V/Row3/PositionBox" unique_id=170347395]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Front"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RangeBox" type="PanelContainer" parent="V/Row3" unique_id=1070408971]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"BoxPanel"
+
+[node name="RangeRow" type="HBoxContainer" parent="V/Row3/RangeBox" unique_id=1233369070]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="RangeIcon" type="TextureRect" parent="V/Row3/RangeBox/RangeRow" unique_id=1676767464]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6_RANGE")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Range" type="Label" parent="V/Row3/RangeBox/RangeRow" unique_id=1489556748]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = " 1"
+
+[node name="Items" type="HBoxContainer" parent="V" unique_id=992407793]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Item1" parent="V/Items" unique_id=558054062 instance=ExtResource("7_item_slot")]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+filled_variation = &"UnitItemSlot"
+empty_variation = &"UnitItemSlot"
+
+[node name="Item2" parent="V/Items" unique_id=532821521 instance=ExtResource("7_item_slot")]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+filled_variation = &"UnitItemSlot"
+empty_variation = &"UnitItemSlot"
+
+[node name="Item3" parent="V/Items" unique_id=1665815081 instance=ExtResource("7_item_slot")]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 2
+filled_variation = &"UnitItemSlot"
+empty_variation = &"UnitItemSlot"
+
+[node name="RoleChip" type="PanelContainer" parent="V" unique_id=1198335859]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Role" type="Label" parent="V/RoleChip" unique_id=7112870]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Role"
+horizontal_alignment = 1
+
+[node name="Passive" type="RichTextLabel" parent="V" unique_id=1020062884]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/bold_font_size = 13
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Sep" type="HSeparator" parent="V" unique_id=233013901]
+layout_mode = 2
+
+[node name="Stats" type="GridContainer" parent="V" unique_id=128855251]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 6
+columns = 5
+
+[node name="ATK" parent="V/Stats" unique_id=1058005110 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+
+[node name="AP" parent="V/Stats" unique_id=1267252516 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "AP"
+
+[node name="DEF" parent="V/Stats" unique_id=277598965 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "DEF"
+
+[node name="SPE_DEF" parent="V/Stats" unique_id=751494139 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "SPE_DEF"
+
+[node name="SPEED" parent="V/Stats" unique_id=791176296 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "SPEED"
+
+[node name="CRIT_CHANCE" parent="V/Stats" unique_id=688072570 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "CRIT_CHANCE"
+
+[node name="CRIT_POWER" parent="V/Stats" unique_id=2022141314 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "CRIT_POWER"
+
+[node name="SHIELD" parent="V/Stats" unique_id=760028407 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "SHIELD"
+
+[node name="LUCK" parent="V/Stats" unique_id=208649857 instance=ExtResource("8_stat_cell")]
+layout_mode = 2
+stat = "LUCK"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://coay5xt2631gi"
+path="res://.godot/imported/Mystifying Forest.ogg-e326bb4bbf8129b968e34fea4f5cc6e6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Mystifying Forest.ogg"
+dest_files=["res://.godot/imported/Mystifying Forest.ogg-e326bb4bbf8129b968e34fea4f5cc6e6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

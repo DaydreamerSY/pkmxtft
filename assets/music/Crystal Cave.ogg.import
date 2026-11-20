@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ll5pk2vdwwsd"
+path="res://.godot/imported/Crystal Cave.ogg-948ca402f548c75180607a3f1cf28150.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Crystal Cave.ogg"
+dest_files=["res://.godot/imported/Crystal Cave.ogg-948ca402f548c75180607a3f1cf28150.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

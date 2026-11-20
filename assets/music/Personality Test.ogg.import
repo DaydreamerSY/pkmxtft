@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5eel0uvrbv7u"
+path="res://.godot/imported/Personality Test.ogg-63cbf1e3f27e0bffb423790001785789.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Personality Test.ogg"
+dest_files=["res://.godot/imported/Personality Test.ogg-63cbf1e3f27e0bffb423790001785789.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

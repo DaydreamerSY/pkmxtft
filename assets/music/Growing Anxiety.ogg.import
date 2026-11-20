@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b3a0yd2by3834"
+path="res://.godot/imported/Growing Anxiety.ogg-333986055998c9b978d27915d99e19db.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Growing Anxiety.ogg"
+dest_files=["res://.godot/imported/Growing Anxiety.ogg-333986055998c9b978d27915d99e19db.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

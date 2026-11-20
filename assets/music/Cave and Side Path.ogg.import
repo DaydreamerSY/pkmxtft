@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d30pmh5l6ib2o"
+path="res://.godot/imported/Cave and Side Path.ogg-3aa2a939ced36f9af37232f914b9403e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Cave and Side Path.ogg"
+dest_files=["res://.godot/imported/Cave and Side Path.ogg-3aa2a939ced36f9af37232f914b9403e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnnv87vfeilul"
+path="res://.godot/imported/Sealed Ruin Pit.ogg-379a1fd11f3b140ca10e974fd4d02d20.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Sealed Ruin Pit.ogg"
+dest_files=["res://.godot/imported/Sealed Ruin Pit.ogg-379a1fd11f3b140ca10e974fd4d02d20.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

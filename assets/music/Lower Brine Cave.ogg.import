@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvctiq207xu5e"
+path="res://.godot/imported/Lower Brine Cave.ogg-d486ab9583a313952c284b3512f09dd1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Lower Brine Cave.ogg"
+dest_files=["res://.godot/imported/Lower Brine Cave.ogg-d486ab9583a313952c284b3512f09dd1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

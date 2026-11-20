@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://yik6k7jqvdp6"
+path="res://.godot/imported/Treeshroud Forest.ogg-7cafdc28509d996f0fd5b4edb12061dc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Treeshroud Forest.ogg"
+dest_files=["res://.godot/imported/Treeshroud Forest.ogg-7cafdc28509d996f0fd5b4edb12061dc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

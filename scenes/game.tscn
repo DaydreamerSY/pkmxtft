@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c7hayr8m6a01u"]
+
+[ext_resource type="Script" uid="uid://cg5fpg2gsp42s" path="res://src/game/game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://b2wk48x4os4oh" path="res://src/view/tft_camera.gd" id="2_camera"]
+[ext_resource type="Script" uid="uid://dheiwsb2r87wo" path="res://src/view/arena.gd" id="3_arena"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="4_hud"]
+
+[sub_resource type="Environment" id="Environment_world"]
+background_mode = 1
+background_color = Color(0.08, 0.1, 0.08, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Game" type="Node3D" unique_id=1168031042]
+script = ExtResource("1_game")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1343760032]
+environment = SubResource("Environment_world")
+
+[node name="TftCamera" type="Camera3D" parent="." unique_id=1382794869]
+transform = Transform3D(1, 0, 0, 0, 0.5735763, 0.8191518, 0, -0.8191518, 0.5735763, 0, 11.140469, 8.55064)
+v_offset = -0.5
+current = true
+fov = 38.0
+size = 9.5
+far = 200.0
+script = ExtResource("2_camera")
+
+[node name="Arena" type="Node3D" parent="." unique_id=1216137957]
+script = ExtResource("3_arena")
+bench_rows = null
+
+[node name="Units" type="Node3D" parent="." unique_id=71673970]
+
+[node name="Hud" parent="." unique_id=29521207 instance=ExtResource("4_hud")]

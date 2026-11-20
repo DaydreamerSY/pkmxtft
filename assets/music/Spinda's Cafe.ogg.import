@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6s2dei47ga2s"
+path="res://.godot/imported/Spinda's Cafe.ogg-943856f14a7e638b1ef6828ee6464cea.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Spinda's Cafe.ogg"
+dest_files=["res://.godot/imported/Spinda's Cafe.ogg-943856f14a7e638b1ef6828ee6464cea.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

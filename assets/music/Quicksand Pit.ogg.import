@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chvg4t333srv6"
+path="res://.godot/imported/Quicksand Pit.ogg-2075ed55f41176f039ad8b9f1296108d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Quicksand Pit.ogg"
+dest_files=["res://.godot/imported/Quicksand Pit.ogg-2075ed55f41176f039ad8b9f1296108d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

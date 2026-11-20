@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://be1jqd35llcmy"]
+
+[ext_resource type="Theme" uid="uid://bmjtkrgtpa8yq" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" uid="uid://kk4r2f6fcglk" path="res://src/ui/shop_card.gd" id="2_shop_card"]
+[ext_resource type="Texture2D" uid="uid://s703unq75d0j" path="res://assets/icons/money.svg" id="3_money"]
+[ext_resource type="Texture2D" path="res://assets/ui/skin/glow.png" id="4_glow"]
+
+[sub_resource type="Gradient" id="fade_left"]
+offsets = PackedFloat32Array(0, 0.34, 0.72)
+colors = PackedColorArray(0.01, 0.015, 0.025, 1, 0.01, 0.015, 0.025, 0.92, 0.01, 0.015, 0.025, 0)
+
+[sub_resource type="GradientTexture2D" id="fade_left_tex"]
+gradient = SubResource("fade_left")
+width = 128
+height = 4
+
+[sub_resource type="Gradient" id="fade_bottom"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(0.01, 0.015, 0.025, 0, 0.01, 0.015, 0.025, 0.7, 0.01, 0.015, 0.025, 0.95)
+
+[sub_resource type="GradientTexture2D" id="fade_bottom_tex"]
+gradient = SubResource("fade_bottom")
+width = 4
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="glow"]
+texture = ExtResource("4_glow")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(1, 0.82, 0.3, 1)
+
+[node name="ShopCard" type="Button" unique_id=1374147283]
+custom_minimum_size = Vector2(176, 150)
+clip_contents = true
+focus_mode = 0
+theme = ExtResource("1_ui_theme")
+theme_type_variation = &"ShopCard"
+script = ExtResource("2_shop_card")
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=1012189123]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FadeLeft" type="TextureRect" parent="." unique_id=136498737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("fade_left_tex")
+expand_mode = 1
+
+[node name="FadeBottom" type="TextureRect" parent="." unique_id=931082424]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -46.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = SubResource("fade_bottom_tex")
+expand_mode = 1
+
+[node name="Types" type="VBoxContainer" parent="." unique_id=338951898]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 132.0
+offset_bottom = 92.0
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Bottom" type="HBoxContainer" parent="." unique_id=72317657]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -30.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Name" type="Label" parent="Bottom" unique_id=1903597534]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"OutlinedLabel"
+theme_override_font_sizes/font_size = 16
+text = "Pokémon"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Coin" type="TextureRect" parent="Bottom" unique_id=1628976495]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_money")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="Bottom" unique_id=1233531537]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"GoldLabel"
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="Glow" type="Panel" parent="." unique_id=1656115791]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("glow")

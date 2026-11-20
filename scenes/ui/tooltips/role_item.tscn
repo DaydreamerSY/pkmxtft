@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/theme/ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Script" path="res://src/ui/tooltips/role_item.gd" id="2_role_item"]
+
+[node name="RoleItem" type="VBoxContainer"]
+mouse_filter = 0
+theme_override_constants/separation = 2
+theme = ExtResource("1_ui_theme")
+script = ExtResource("2_role_item")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 44)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+size_flags_horizontal = 4
+
+[node name="Recipe" type="HBoxContainer" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="A" type="TextureRect" parent="Recipe"]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Plus" type="Label" parent="Recipe"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+theme_override_font_sizes/font_size = 12
+text = "+"
+
+[node name="B" type="TextureRect" parent="Recipe"]
+layout_mode = 2
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

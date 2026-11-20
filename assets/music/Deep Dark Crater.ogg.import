@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bpvryd4w33vdp"
+path="res://.godot/imported/Deep Dark Crater.ogg-6ff0d1f9f1e3755baa5f009af225b380.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/Deep Dark Crater.ogg"
+dest_files=["res://.godot/imported/Deep Dark Crater.ogg-6ff0d1f9f1e3755baa5f009af225b380.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
