@@ -21,7 +21,9 @@ chơi hàng loạt → TSV để cân độ khó / cân bằng).
   trình bày kiểu TFT: camera 3D thật, sàn vẽ phẳng (sân Pokémon có quả Poké Ball ở giữa), Pokémon là sprite PMD 2D billboard.
 - **Nguyên tắc port**: đọc code web (`app/core/*.ts`, `app/models/...`, `app/rooms/commands/game-commands.ts`) rồi viết lại
   trung thành, ghi tên file web trong comment đầu hàm; chỗ đơn giản hoá thì ghi rõ (`approx` trong skill, "khác bản web" trong docs).
-- Không phải git repo. Không sửa tay `data/pac/*.json`, `assets/pokemons|portraits|items|types|icons` (sinh tự động).
+- Git: repo riêng tư `github.com/DaydreamerSY/pkmxtft` (nhánh `main`, tạo 2026-11-20), commit dưới tên DaydreamerSY
+  (`user.email` noreply, đặt trong `.git/config`); `build/`, `.godot/` không đưa lên (`.gitignore`). Không sửa tay
+  `data/pac/*.json`, `assets/pokemons|portraits|items|types|icons` (sinh tự động).
 
 ## Lệnh
 
