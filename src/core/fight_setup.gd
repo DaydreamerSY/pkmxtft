@@ -83,8 +83,10 @@ static func create(player: PlayerState, wave: Dictionary) -> Dictionary:
 		if o.tm != "": # a TM ability (web: maxPP 100)
 			u.ability_id = o.tm
 			u.max_pp = Difficulty.max_pp_of(100.0)
-		if u.passive == "VESPIQUEN": # its row gives its order (OnChangePositionEffect)
-			var order: Array = [["ATTACK_ORDER", 3], ["HEAL_ORDER", 2], ["DEFEND_ORDER", 1]][clampi(cell.y, 0, 2)]
+		if u.passive == "VESPIQUEN": # its row gives its order (OnChangePositionEffect): front row Defend (range 1),
+			# the next one Heal (2), farther back Attack (web: range 3; here the range of its role, marksman)
+			var order: Array = [["DEFEND_ORDER", 1], ["HEAL_ORDER", 2], ["ATTACK_ORDER", maxi(3, u.attack_range)]][
+				clampi(BattleBoard.SIDE_ROWS - 1 - cell.y, 0, 2)]
 			u.ability_id = order[0]
 			u.attack_range = order[1]
 			u.base_range = order[1]

@@ -3,7 +3,7 @@ extends RefCounted
 
 ## TFT-like role of a Pokémon ("type of character" in the unit panel): where to
 ## place it and which items suit it. PAC has no roles, so they are guessed from
-## the range, the bulk and what the ability does:
+## the range (of the web data), the bulk and what the ability does:
 ##   support   ability only helps allies (heal, shield, buff, cleanse)
 ##   assassin  melee with a dash
 ##   tank      melee, DEF + SPE_DEF >= 10, or bulky (HP >= 80, DEF + SPE_DEF >= 8), or shields
@@ -11,6 +11,8 @@ extends RefCounted
 ##   fighter   other melee
 ##   caster    ranged, ability deals damage
 ##   marksman  other ranged (fights with basic attacks)
+## A role with a "range" (caster, marksman: 5) gives at least that attack range: not in the web game, so they
+## shoot from the back rows of the hex board (GameData applies it to its data at load, `attack_range`).
 
 const ROLES := {
 	"tank": {
@@ -29,12 +31,12 @@ const ROLES := {
 		"items": ["RAZOR_CLAW", "RED_ORB", "SMOKE_BALL", "SCOPE_LENS", "REAPER_CLOTH", "SHELL_BELL", "XRAY_VISION", "PROTECTIVE_PADS"],
 	},
 	"caster": {
-		"name": "Caster", "front": false, "color": Color(0.55, 0.6, 1.0),
+		"name": "Caster", "front": false, "color": Color(0.55, 0.6, 1.0), "range": 5,
 		"desc": "Deals its damage with its ability from the back line. Wants AP and PP.",
 		"items": ["CHOICE_SPECS", "AQUA_EGG", "SOUL_DEW", "POKEMONOMICON", "REAPER_CLOTH", "BLUE_ORB", "DEEP_SEA_TOOTH", "STAR_DUST"],
 	},
 	"marksman": {
-		"name": "Marksman", "front": false, "color": Color(1.0, 0.85, 0.35),
+		"name": "Marksman", "front": false, "color": Color(1.0, 0.85, 0.35), "range": 5,
 		"desc": "Ranged basic attacker. Wants SPEED, crit and on-hit effects.",
 		"items": ["RAZOR_FANG", "LOADED_DICE", "XRAY_VISION", "WIDE_LENS", "SCOPE_LENS", "UPGRADE", "RED_ORB", "DEEP_SEA_TOOTH"],
 	},
@@ -58,6 +60,11 @@ static func info(role: String) -> Dictionary:
 	return ROLES.get(role, ROLES.fighter)
 
 
+## Attack range of a form: at least the "range" of its role, else `web_range` (its web data).
+static func attack_range(pkm: String, web_range: int) -> int:
+	return maxi(web_range, int(info(role_of(pkm)).get("range", 0)))
+
+
 static func _guess(pkm: String) -> String:
 	var data := GameData.get_pokemon(pkm)
 	if data.is_empty():
@@ -78,7 +85,7 @@ static func _guess(pkm: String) -> String:
 				hurts_enemies = true
 	if helps_allies and not hurts_enemies:
 		return "support"
-	if int(data.get("range", 1)) >= 2:
+	if int(GameData.web_stat(pkm, "range", 1)) >= 2: # the web range: the range of the role does not change a role
 		return "caster" if hurts_enemies else "marksman"
 	if ab.has("dash") and hurts_enemies:
 		return "assassin"

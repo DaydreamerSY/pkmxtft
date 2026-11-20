@@ -84,7 +84,8 @@ Một stage:
   ô của con khác thì hai bên đổi chỗ. Pokémon ở bench không đánh.
 - Số Pokémon trên sàn tối đa = **level** người chơi (2 → 9).
 - Một Pokémon luôn chiếm đúng một ô, dù sprite to hay nhỏ. Ô đích được giữ ngay khi bắt đầu bước đi.
-- Tầm đánh và tìm mục tiêu tính theo khoảng cách lục giác (số bước; tầm 1 = 6 ô xung quanh, tầm 2 = 18 ô). Đường đi qua
+- Tầm đánh và tìm mục tiêu tính theo khoảng cách lục giác (số bước; tầm 1 = 6 ô xung quanh, tầm 2 = 18 ô; marksman /
+  caster tầm 5, mục 3.4). Đường đi qua
   6 ô kề, Pokémon khác là vật cản. Skill theo hướng (tia, nón, đẩy lùi, nhảy ra sau) dùng 6 hướng, lệch ± 60° (web: 8
   hướng, ± 45°).
 
@@ -135,7 +136,9 @@ chiến thuật carry + item + hệ, không chiến thuật nào áp đảo. M�
 ### 3.4 Vai trò (gợi ý cho người chơi)
 
 Game suy ra vai trò từ dữ liệu để gợi ý vị trí và item: **tank**, **fighter**, **assassin** (cận chiến có lướt),
-**marksman**, **caster**, **support**. Vai trò không ảnh hưởng luật.
+**marksman**, **caster**, **support**. Vai trò chỉ đổi một luật: **marksman và caster có tầm đánh ít nhất 5** (đứng hàng
+sau cùng vẫn bắn tới hai hàng đầu của địch; bản web: tầm của từng Pokémon, phần lớn 2–4). Support và Pokémon cận chiến giữ
+tầm của bản web.
 
 ---
 

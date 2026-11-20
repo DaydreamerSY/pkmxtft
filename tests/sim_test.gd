@@ -414,6 +414,22 @@ func _check_roles_and_texts() -> void:
 			if not GameData.items.has(item):
 				_fail("role %s suggests unknown item %s" % [role, item])
 	print("roles: ", roles)
+	# caster / marksman: at least the range of the role (5), the others the web range; the web range stays readable
+	var raised := 0
+	for pkm in GameData.pokemon:
+		var role := UnitRoles.role_of(pkm)
+		var web := int(GameData.web_stat(pkm, "range", 1))
+		var r := int(GameData.get_pokemon(pkm).get("range", 1))
+		var want := maxi(web, int(UnitRoles.info(role).get("range", 0)))
+		if r != want:
+			_fail("range of %s (%s): %d, expected %d (web %d)" % [pkm, role, r, want, web])
+		if (role == "caster" or role == "marksman") != (web >= 2 and role != "support"):
+			_fail("role of %s from its web range %d: %s" % [pkm, web, role])
+		raised += 1 if r > web else 0
+	_expect(raised > 300, "role range: only %d forms raised" % raised)
+	var shooter := BattleUnit.create("ABRA", BattleUnit.Team.BLUE) # web range 4
+	_expect(shooter.role in ["caster", "marksman"] and shooter.attack_range == 5 and shooter.base_range == 5,
+		"Abra (%s): attack range %d, expected 5" % [shooter.role, shooter.attack_range])
 	var text := GameText.format("Attacks deal SPECIAL and [30,LK]% chance to BURN ADJACENT FIRE allies. +10 AP")
 	if text.contains("SPECIAL") or text.contains("[30") or not text.contains("Burn"):
 		_fail("text format: " + text)

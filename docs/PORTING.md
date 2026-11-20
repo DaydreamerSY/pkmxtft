@@ -220,7 +220,7 @@ Mỗi skill là dữ liệu (`data/abilities.json`), gồm các bước; mỗi b
 | `adjacent` (origin caster) | 8 ô quanh mình | Blast Burn, Heavy Slam, Growl |
 | `adjacent` (origin focus, center) | mục tiêu + 8 ô quanh | Icicle Crash, Psychic, Flower Trick |
 | `radius` N | hình tròn bán kính N (`dx²+dy² < (N+0.5)²`) | Shockwave (2), Blizzard (4), Salt Cure |
-| `square` N | hình vuông = tầm đánh | Uproar |
+| `square` N | hình vuông = tầm đánh | Uproar (caster: tầm 5) |
 | `cone` N | hình nón N ô về phía mục tiêu | Stealth Rocks |
 | `ray` N | đường thẳng 8 hướng về phía mục tiêu, tối đa N ô | Flamethrower (3), Dragon Breath (range+1) |
 | `line` | đường thẳng qua mục tiêu tới mép sàn (góc thật) | Hydro Pump, Icy Wind |
@@ -289,6 +289,8 @@ PAC không có vai trò kiểu TFT nên `src/core/unit_roles.gd` suy ra từ d�
 caster / marksman (tầm ≥ 2, skill có / không gây damage), assassin (cận chiến có dash), tank (cận chiến,
 DEF + SPE_DEF ≥ 10 hoặc HP ≥ 80 và ≥ 8, hoặc tự tạo khiên — tính trên dạng đầu của họ), còn lại fighter.
 Vai trò quyết định vị trí gợi ý (tank / fighter / assassin: hàng trước) và 8 item gợi ý.
+**Khác bản web** (2026-11-20, người dùng): caster / marksman có tầm đánh ít nhất 5 (`UnitRoles.ROLES` `"range"`), ghi vào
+`GameData.pokemon` lúc nạp (`_apply_role_ranges`; tầm web: `GameData.web_stat(pkm, "range")`, vai trò suy từ tầm web).
 
 ### Item (port của `app/core/effects/items.ts` và các chỗ kiểm tra item trong pokemon-state / simulation)
 

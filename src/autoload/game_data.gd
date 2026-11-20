@@ -7,6 +7,7 @@ extends Node
 ## data/abilities.json holds the abilities ported to Godot (see docs/ABILITIES.md),
 ## data/item_effects.json the item numbers and tooltip templates (see docs/ITEMS.md).
 ## data/balance.json: the auto balance (tools/bot/autobalance.py, docs/BOT.md), multipliers on top of the web stats.
+## The attack range of a caster / marksman is raised to the range of its role (UnitRoles.ROLES, _apply_role_ranges).
 
 const SHOP_RARITIES: Array[String] = ["COMMON", "UNCOMMON", "RARE", "EPIC", "ULTRA"]
 const BALANCED_STATS: Array[String] = ["hp", "atk", "def", "speDef", "speed", "maxPP"] # stats the auto balance may change
@@ -52,6 +53,7 @@ var config: Dictionary = {}           # shop odds, costs, xp table, synergy numb
 var balance: Dictionary = {}
 var balance_id := "0"                  # its "version" (the autobalance step that wrote it; bot batches record it)
 var _web_stats: Dictionary = {}       # form -> its stats of the web data (BALANCED_STATS), for use_balance(false)
+var _web_ranges: Dictionary = {}      # form -> its range of the web data, when its role gives more (_apply_role_ranges)
 var delays: Dictionary = {}           # sprite index -> {d, t} attack hit timing
 var pool: Array[String] = []          # Pokémon of the shop (and of the wild waves)
 var additional: Array[String] = []    # additional-pick families: join the shop at their stage
@@ -91,6 +93,7 @@ func _ready() -> void:
 	_apply_balance()
 	abilities = _load_json("res://data/abilities.json")
 	abilities.erase("_doc")
+	_apply_role_ranges()
 	config = _load_json("res://data/pac/config.json")
 	delays = _load_json("res://data/pac/delays.json")
 	_base_text = _load_json("res://data/pac/text.json")
@@ -862,11 +865,24 @@ func _apply_balance() -> void:
 	balance_id = str(int(balance.get("version", 0)))
 
 
-## A stat of the web data, before the auto balance (UnitRoles: the balance must not change a role).
+## A stat of the web data, before the auto balance and the range of the roles (UnitRoles: neither may change a role).
 func web_stat(pkm: String, stat: String, default: Variant = 0) -> Variant:
 	if _web_stats.has(pkm) and _web_stats[pkm].has(stat):
 		return _web_stats[pkm][stat]
+	if stat == "range" and _web_ranges.has(pkm):
+		return _web_ranges[pkm]
 	return pokemon.get(pkm, {}).get(stat, default)
+
+
+## Attack range of the roles (UnitRoles.ROLES "range": caster and marksman 5, not in the web game) on the data of the
+## forms, so the fight, the panels, the waves and the bots read one range. Needs the abilities (they give the role).
+func _apply_role_ranges() -> void:
+	for pkm in pokemon:
+		var web := int(pokemon[pkm].get("range", 1))
+		var r := UnitRoles.attack_range(pkm, web)
+		if r != web:
+			_web_ranges[pkm] = web
+			pokemon[pkm]["range"] = r
 
 
 ## The auto balance off (the web stats, as sim_test checks them) or on again (data/balance.json, read again).

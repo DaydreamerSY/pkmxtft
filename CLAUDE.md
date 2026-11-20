@@ -81,7 +81,7 @@ Bash tool: gọi `cmd //c "tools\\export_pac.bat"`; Godot console exe chạy đ�
 | `  town.gd` | sự kiện thị trấn: portal, propositions starter/unique/legendary, carousel, additional pick, town encounter |
 | `  progression.gd` | **không có ở web**: `Progression` = Battle Pass (`data/progression.json`, lưu `user://progress.cfg`): XP mỗi run chơi tới hết (`run_xp`), cấp, hệ mở theo cấp; `GameData.apply_progression()` gỡ hệ còn khoá khỏi Pokémon / vùng / pool / item — `docs/PROGRESSION.md` |
 | `  seasons.gd` | **không có ở web**: `Seasons` = mùa (`data/seasons.json`): danh sách họ shop / Unique / Legendary / trứng cố định cho run, mốc riêng của hệ ít Pokémon; chọn ở menu (`Settings.season`), `GameData.apply_progression()` áp vào các danh sách — `docs/SEASONS.md` |
-| `  unit_roles.gd` | vai trò suy ra (tank, caster...) + item gợi ý |
+| `  unit_roles.gd` | vai trò suy ra (tank, caster...) + item gợi ý; tầm đánh theo vai trò (caster / marksman ≥ 5, `GameData` ghi vào data lúc nạp; tầm web: `GameData.web_stat(pkm, "range")`) |
 | `src/view/` | `TftCamera` (@tool), `Arena` (@tool, sàn lục giác vẽ bằng shader `board.gdshader`: sân Poké Ball, viền ô mảnh, + lớp highlight theo ô; toạ độ ô ↔ thế giới), `UnitView` (AnimatedSprite3D billboard, icon trạng thái, chuyển động vẽ thêm `_animate_body`, shader `sprite_pixel_aa`), `SpriteLibrary` (cả shiny), `VfxLibrary` + `VfxPlayer` (hiệu ứng skill / đòn đánh / hit / tiến hoá), `Wanderers` (Pokémon lang thang bấm để bắt) |
 | `src/ui/` | HUD kiểu TFT (scene trong `scenes/ui/`, theme `scenes/ui/theme/ui_theme.tres`), tooltip nhiều tầng `HoverTip` + `Tooltips`, `GameText` (keyword web → BBCode), `L.t` (dịch UI), `OptionsPanel`, `TownChoice`, `DpsMeter`, `CheatPanel` (F1), `PassPanel` (màn Battle Pass ở menu chính), `SeasonPanel` (danh sách Pokémon của mùa theo từng hệ) |
 | `src/game/records.gd` | `Records`: kỷ lục theo độ khó (`user://records.cfg`; test đổi `Records.path`, screenshot `records=<file>`) |
@@ -271,6 +271,7 @@ còn: đội nhiều tank vẫn thắng nhất, support yếu. Balance **version
 logic trận (khoảng cách / 6 hướng / đường đi / tìm ô trống), skill theo hướng và hình dạng, wave (hàng thứ 4, boss web ép
 về 7 cột), bot, sơ đồ skill; sàn vẽ lại như sân Pokémon (Poké Ball giữa sân, viền ô mảnh nhạt), camera desktop lùi cho vừa
 sàn sâu hơn (`docs/HANDOFF.md` mục 13, `docs/PORTING.md` "Lưới lục giác"). Cân bằng / mô hình bot còn học trên sàn vuông.
+Sau đó: **Marksman / Caster tầm đánh 5** (`UnitRoles.ROLES` `"range"`; Support / cận chiến giữ tầm web).
 
 Hướng tiếp: người dùng chọn điểm chung → hệ mới cho từng mùa (`docs/THEMES.md`), duyệt / chỉnh 3 mùa, cân mốc riêng của
 hệ đặc biệt; xác nhận bố cục gọn bản 4 trên máy thật, ký release; chạy bot lô lớn (hàng chục nghìn run) rồi cân độ khó

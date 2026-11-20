@@ -399,4 +399,12 @@ Người dùng: viền ô mảnh và nhạt hơn, vẽ sân theo phong cách Pok
 - Bẫy: đừng cộng `cell + dir` (trừ `± Vector2i(1, 0)` cùng hàng); "cột" `(x, y ± 1)` là đường zigzag (vẫn là ô kề).
   **Cân bằng (`data/balance.json`) và mô hình bot (`tools/bot/model.json`) được học trên sàn vuông**: cần chạy lại lô bot /
   tự cân bằng trên sàn lục giác.
+- Sau đó (người dùng): **tầm đánh của Marksman và Caster (mage) = 5** (`UnitRoles.ROLES` `"range"`, ít nhất 5; con có tầm
+  web lớn hơn giữ tầm đó, Support / cận chiến giữ tầm web; thử 7 trước, người dùng thấy quá xa). Đứng hàng sau cùng vẫn bắn
+  tới hai hàng đầu của địch. `GameData._apply_role_ranges()` ghi tầm mới vào
+  `GameData.pokemon` lúc nạp, nên trận, panel, highlight khi kéo, xếp wave / tự xếp / bot đọc cùng một số; tầm web còn ở
+  `GameData.web_stat(pkm, "range")` (vai trò suy từ tầm web, để tầm của vai trò không đổi vai trò). Kéo theo: Uproar
+  (Whismur, "mọi địch trong tầm đánh") trúng mọi địch trong 5 ô; đạn bay xa hơn nên đòn trúng trễ hơn (công thức web theo
+  số ô); Vespiquen: hàng trước Defend, hàng 2 Heal, hai hàng sau Attack với tầm 5 (web 3; trước đó chỉ số hàng còn theo 3
+  hàng).
 
