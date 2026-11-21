@@ -62,7 +62,8 @@ def features(r, synergies=True, item_forms=False):
         pkm = unit.split("*")[0]
         f["u:" + pkm] = f.get("u:" + pkm, 0.0) + 1.0
         stars = int(unit.split("*")[1].split("[")[0]) if "*" in unit else 1
-        power += max(int(COST.get(POKEMON.get(pkm, {}).get("rarity", "COMMON"), 1)), 1) * 3 ** (stars - 1)
+        # <form>@<season>: the form with the skill a season gave it (autobalance.split_season_skills), same cost
+        power += max(int(COST.get(POKEMON.get(pkm.split("@")[0], {}).get("rarity", "COMMON"), 1)), 1) * 3 ** (stars - 1)
         threes += 1.0 if stars >= 3 else 0.0
         items = unit[unit.index("[") + 1:unit.index("]")] if "[" in unit else ""
         for it in items.split("+") if items else []:

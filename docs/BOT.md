@@ -73,6 +73,16 @@ dùng skill so với nhóm cùng độ hiếm / sao / vai trò, tần suất dù
 cùng dải stage, cùng số item mà không cầm nó), `roles` / `role_fit` (vai trò có làm đúng việc: % sát thương, % đòn nhận,
 sống sót, hồi + khiên, đứng hàng trước).
 
+**`tools/bot/season_report.py <dir> [<dir>...] [--season s1] [--min 30]`** (ghi `<dir đầu>/season_<id>.tsv`): mùa có skill /
+hệ riêng (`data/season_skills.json`, `data/season_synergies.json`) — `seasons` (mỗi lô × mùa: stage, tỉ lệ thắng, độ dài trận,
+`ms_stage` = thời gian thật mỗi stage, so chi phí code giữa các mùa trong cùng lô), `synergy_spread` (độ lệch `adj` giữa các hệ
+của từng mùa), `synergies <mùa>` (mỗi hệ: cơ chế, `adj` khi kích / mốc ≥ 2, `adj_foe` khi wave địch có hệ đó), `roles`, `skills
+<mùa>` (mỗi skill mùa: mới / mượn, PP, số lần cast khi không item, % trận không cast, đầu ra mỗi lần cast, D / T / S = phần sát
+thương gây / nhận / hồi + khiên so với phần đều của đội, `other_part` = sát thương qua hook không gắn `ability`, `dmg0` /
+`dmgi` = sát thương so với cùng vai trò khi không item / có item (cách tính của tự cân bằng, bước 4b), so với **cùng dạng dùng
+skill web ở mùa khác** `D_web` / `casts0_web` / `dmg0_web` / `dmgi_web` — cần lô có cả mùa khác, ví dụ `all`). Lỗi script của
+worker ở đầu file.
+
 Phân tích sâu hơn: đọc thẳng các TSV bằng pandas (`pd.read_csv(f, sep="\t", na_filter=False)`), nối `units` với `stages`
 theo `(run, stage)`.
 
@@ -167,7 +177,7 @@ có hệ số theo hệ (hệ mạnh được cân qua chỉ số của các Pok
 **hàng chục**; một số = cùng hp / atk / skill — định dạng cũ). `skill` **không phải chỉ số**: sức mạnh skill riêng của dạng đó
 (`skillScale`, `BattleUnit.skill_scale()`) = × sát thương / hồi / khiên mà skill đó gây ra lúc chạy (`BattleSim.ability_scale`,
 cùng điều kiện với cờ `ability` của event; không nhân đòn đánh thường, hút máu / Shell Bell sau một đòn (`damage_hooks`), skill
-không phải của nó (TM, Skill Swap)); AP luôn 0 như web; tooltip skill ghi "Sức mạnh kỹ năng: x%". **Không chỉ số nào được âm**
+không phải của nó (TM, Skill Swap)); AP luôn 0 như web; tooltip skill ghi "Hiệu lực kỹ năng: x%". **Không chỉ số nào được âm**
 (người dùng 2026-11-20, trước đó `skill` < 1 thành AP âm, thấp nhất −47): skill quá mạnh → giảm `skill` hoặc tăng PP; mọi hệ
 số > 0 (`BOUNDS`), `autobalance.py` dừng nếu một chỉ số sẽ dưới 0 (`negative_stats`), `sim_test._check_balance` kiểm mọi dạng.
 Skill không gây sát thương / hồi / khiên (buff, trạng thái, triệu hồi: 186 dạng) không có cần `skill`, chỉ có PP. Áp lúc đọc data
@@ -182,7 +192,10 @@ vai trò: caster 3, support 2,5, tank / fighter / assassin 2, marksman 1,5, cho 
 mục tiêu × độ dài TB / 16), `webPP` (giữ một phần khác biệt maxPP của web:
 mục tiêu × (100 / maxPP web)^0,5, kẹp `castRange` [1, 4]), `castsWithItems` (tối đa khi cầm 2+ item: 6), `ppStep` / `ppFreeze`,
 `roleProfile` (khoảng q = ln(D / T) của vai trò: tank ≤ −0,25, carry ≥ +0,15, fighter ±0,3), `supportSustain` (support:
-ln(S / D) ≥ 0,4), `skillShare` (phần đầu ra từ skill: caster ≥ 55%, support ≥ 50%, marksman ≤ 50%), `castsP99` (1% trận nhiều nhất ≤ 10 lần), `roleStrength` / `roleStep`, `rarityGap` (0,03 log-odds mỗi bậc hiếm), `itemWeight` (1,5).
+ln(S / D) ≥ 0,4), `skillShare` (phần đầu ra từ skill: caster ≥ 55%, support ≥ 50%, marksman ≤ 50%), `castsP99` (1% trận nhiều nhất ≤ 10 lần), `roleStrength` / `roleStep`, `rarityGap` (0,03 log-odds mỗi bậc hiếm), `itemWeight` (1,5),
+`damageRange` (khoảng ln của sát thương so với cùng vai trò, theo vai trò: fighter / assassin / marksman / caster ±0,2 ≈
+×0,82..×1,22; tank / support chỉ phía trên — gây ít là đúng việc), `damageItemWeight` (phần của lệch khi có item: 0,5),
+`damageStrength` / `damageStep` (0,5 phần vượt, tối đa 0,1 mỗi bước).
 
 **Một bước**: `python tools/bot/autobalance.py <các lô chơi với balance hiện tại> [--rate 0.5] [--explore 0.03] [--min 60]
 [--step 0.1] [--sens S] [--dry]` (~3 phút cho 60 nghìn trận; lô cần `units_*.tsv` có `ppgain`; `--dry` ghi
@@ -199,6 +212,19 @@ ln(S / D) ≥ 0,4), `skillShare` (phần đầu ra từ skill: caster ≥ 55%, s
 4. **Vai trò** (`units` đội người chơi): D = sát thương gây ra, T = sát thương nhận, S = hồi + khiên, mỗi số so với phần chia đều
    của đội. q = ln(D / T) ngoài khoảng `roleProfile` → dịch một phần công sang thủ (tank gây quá nhiều) hoặc ngược lại (carry
    chịu đòn như tank), **không đổi sức mạnh**; support gây sát thương quá nhiều → ATK xuống, hồi / khiên quá ít → skill lên.
+4b. **Sát thương so với cùng vai trò, không item / có item** (người dùng 2026-11-21): mỗi trận của một con (đội người chơi;
+   wave địch có boss / hệ số chỉ số nên không dùng) so với TB sát thương của **các con khác** cùng vai trò, cùng sao, cùng số
+   item và cùng dải 5 stage (bỏ chính nó ra: con dùng nhiều không tự kéo TB về mình) → chỉ số = Σ sát thương / Σ TB đó (×1 =
+   như đồng vai trò), tính riêng trận **không item** và trận **có item**. Trừ trung vị của độ hiếm (×k / (k + 5) với k dạng:
+   độ hiếm ít dạng gần như không trừ) để con hiếm hơn vẫn được gây nhiều hơn; co theo độ tin cậy hai nửa run (~0,98: sát
+   thương đo rất ổn). Lệch dùng = (1 − `damageItemWeight`) × lệch không item + `damageItemWeight` × lệch có item; ngoài
+   `damageRange` của vai trò → dịch `damageStrength` phần vượt (tối đa `damageStep`) giữa công và thủ, **không đổi sức mạnh**
+   (sức mạnh là việc của bước 1). Báo cáo: mục `== Damage against the same role` (mỗi vai trò: số dạng ngoài khoảng, cao / thấp
+   nhất, con có item gây hơn / kém hẳn khi không item, skill mùa); `balance_step.tsv` cột `dmg_none` / `dmg_items` (chỉ số),
+   `n_dmg_*`, `dmg_dev`, `sigma_dmg`.
+   **Skill mùa tách riêng** (cả bước 1–5): trong run của một mùa, dạng được mùa đó cho skill khác (`data/season_skills.json`)
+   thành `<dạng>@<mùa>` (sàn của stages + units) — có giá trị / sát thương / số lần cast riêng trong báo cáo, **không bị cân**
+   (chỉ số của nó là của dạng gốc); dạng gốc chỉ đo bằng skill web.
 5. **Số lần cast → PP**: PP nhận mỗi trận (`ppgain`) của các trận không item (cả hai đội) → PP cho số lần mục tiêu (× độ
    dài trận / `refFight`, chia hệ số tự hiệu chỉnh `cast_calibration`: nhịp cast đo được / nhịp bước trước dự đoán; một lần
    cast thay một đòn đánh: mất `perAttack` PP của vai trò); cầm 2+ item thì tối đa `castsWithItems`; dạng ít data (hoặc chưa
@@ -314,6 +340,43 @@ Bài học / giới hạn:
   chúng về nhãn; sửa nhãn trước nếu thấy dạng nào bị đổi sai bản chất.
 - Bot pro dùng mô hình train `--all` (cả data của balance cũ) → còn "nhớ" chỉ số cũ một thời gian.
 - Item chưa có đòn bẩy riêng (dòng `item` trong `balance_step.tsv` chỉ để xem).
+
+## Kiểm tra 2026-11-21: balance v9, sàn lục giác, mùa 1 có skill / hệ riêng
+
+Lô `build/bot/design_s1_v9` (design test s1 ở **classic** — không truyền `-Diffs` thì bot dùng mức lưu trong cài đặt của
+người chơi; 1 308 run, 3 run mỗi cặp) và `build/bot/bal_v9` (lô chuẩn của tự cân bằng: normal, pass all, pro + synergy, 4 mùa,
+3 000 run, 28 phút) + bước thử `autobalance.py --dry` (`balance_report.dry.txt`, **chưa áp**); bảng mùa `season_s1.tsv`
+(`season_report.py`) trong mỗi lô. 0 run dừng vì lỗi script (dòng "6 resources still in use at exit" có từ trước).
+- Chung (normal): stage TB không mùa 21,2 / s1 22,3 / s2 22,3 / s3 22,9 (v8: 21,4 / 22,7 / 23,3 / 22,9); trận 14,2–15,1 s;
+  thời gian thật mỗi stage như nhau ở mọi mùa (s1 269 ms = không mùa) → code mùa không tốn thêm (chậm hơn v8 157–188 ms là
+  do sàn lục giác). Lệch giá trị các dạng 0,067 (bước v8 → v9: 0,050); số lần cast gần mục tiêu, s1 cast nhiều hơn các mùa khác
+  (caster 2,78 / 2,3–2,4, fighter 2,02 / 1,7).
+- **Hệ mùa 1 lệch hơn hệ web**: sd `adj` giữa các hệ 0,052 (bỏ trận có dòng Bulbasaur, hệ ≥ 300 trận) so với 0,033–0,036 ở
+  không mùa / s2 / s3. Bỏ trận có dòng Bulbasaur / Moltres, TB normal + classic: mạnh Electric +0,08 (mốc 2: +0,13–0,15),
+  Sound +0,06, Dragon +0,05; yếu Grass −0,08 (`seed_drain`), Water −0,06, Fighting −0,05, Artificial / Aquatic −0,05, Monster /
+  Psychic / Human / Flying / Steel / Ground / Ice −0,03 … −0,04. Flora / Baby / Gourmet ít trận (Flora s1 gần như chỉ có dòng
+  Bulbasaur).
+- **Giga Drain** (dòng Bulbasaur, 10 PP): cast 4,2–4,8 lần mỗi trận, D 2,8–3,0 (caster 1,3), adj +0,21 (cùng dạng dùng Magical
+  Leaf ở mùa khác: 0,00); có mặt ở 9,7% trận s1 và trong **cả 9 run s1 tới stage ≥ 40** (normal). Flora / Grass / Poison mạnh
+  chỉ nhờ nó.
+- Nguyên nhân chung: PP của skill mùa = `pp` của luật × tỉ lệ PP mà tự cân bằng đã chỉnh cho **skill web** của dạng đó →
+  Bulbasaur (PP bị hạ xuống sàn vì Magical Leaf yếu) có Giga Drain 10 PP; skill mượn mang maxPP web của chủ cũ → PP cao hơn:
+  Electro Web (Shinx 57 / web 39) không cast ở 35–66% trận, Pickup (Linoone 90) 20–41%, Fire Blast (Ponyta 40 / 25) 29%,
+  Magnet Rise / Parry / Strength Sap 20–33%. Cast ≥ 4 lần mỗi trận: Shift Gear (8 PP, đầu ra thấp, adj −0,14), Helping Hand,
+  Mirror Coat, Disguise Patch, Entrainment.
+- So với skill web của cùng dạng (D): mạnh hơn Giga Drain, Tidal Push, Life Dew, Primal Chill; yếu hơn nhiều Sky Attack
+  (1,6 / 3,2), Baton Pass (0,5 / 2,1), Anchor Shot, Mirror Coat, Mind Link, Supreme Overlord. Skill hỗ trợ / debuff (Will-O-Wisp,
+  Electro Link, Guard Dog, Toxic Spikes, Spite) gây ít là đúng vai, adj gần 0.
+- Bước tự cân bằng thử (bản đầu) sẽ hạ chỉ số Ivysaur (+0,76 so với nhóm) / Bulbasaur (+0,28) **ở mọi mùa** vì Giga Drain chỉ
+  có ở s1. Đã sửa (cùng ngày): skill mùa tách thành `<dạng>@<mùa>` (bước 4b) → lệch giá trị 0,067 → **0,052**, Ivysaur /
+  Bulbasaur không còn bị hạ; skill mùa vẫn **chưa có đòn bẩy riêng** (PP / sức mạnh theo (mùa, dạng)) nên chỉ được báo cáo.
+- Sát thương so với cùng vai trò (bước 4b, `balance_report.dry.txt`): độ lệch giữa các dạng sd 0,23 (caster) … 0,35 (tank);
+  ngoài khoảng: tank 57 / 228 (gây như carry: Girafarig ×3,1, Snover ×3,2, Munchlax ×2,9), fighter 56 / 120 (Carvanha ×2,3,
+  Hisui Voltorb ×2,3; thấp: Goomy ×0,3), marksman 39 / 93 (Salandit ×1,6; Comfey ×0,08), caster 17 / 49; bước thử dịch 153
+  dạng (92 về thủ, 62 về công; 66 / 67 dạng cũng bị tiêu chí vai trò dịch thì cùng chiều). Skill mùa cao nhất: Giga Drain
+  (`BULBASAUR@s1` ×3,2 không item / ×3,7 có item; Magical Leaf của web ×1,1 / ×1,0), Smack Down (Dwebble ×3,0), Earthquake
+  (Gible ×2,5); thấp nhất là skill hỗ trợ (Spite, Toxic Spikes, Electro Link, Guard Dog ×0,2–0,4).
+- Có từ trước, không do mùa: Bonsley / Stonjourner / Sudowoodo không đánh đòn nào ở 40–60% trận (lô v8 cũng vậy).
 
 ## Việc tiếp (phiên sau)
 

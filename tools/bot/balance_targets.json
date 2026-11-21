@@ -11,7 +11,8 @@
   "skillShare: [min, max] phần đầu ra đến từ skill (sát thương + hồi + khiên của skill, cột sdealt / ssus) so với skill + đòn đánh thường, theo vai trò: caster sống bằng skill, marksman bằng đòn tay. Ra ngoài thì dịch giữa ATK / tốc đánh và AP (cùng sức công); chỉ với skill scale theo AP. Sức mạnh của skill luôn đổi qua đúng chỉ số skill scale (AP, ATK; tool đọc data/abilities.json + src/core/ability_scripts.gd).",
   "roleStrength: phần của độ lệch được dịch mỗi bước; roleStep: tối đa mỗi bước (log) giữa công và thủ.",
   "rarityGap: nhóm hiếm hơn (cùng sao) phải mạnh hơn ít nhất ngần này mỗi bậc hiếm (log-odds); nhóm vi phạm cả nhóm dịch.",
-  "itemWeight: độ lệch dùng để cân = lệch khi không item + itemWeight x lệch của phần mỗi item thêm (1.5 = trung bình của 0 và 3 item)."
+  "itemWeight: độ lệch dùng để cân = lệch khi không item + itemWeight x lệch của phần mỗi item thêm (1.5 = trung bình của 0 và 3 item).",
+  "damageRange: sát thương mỗi trận so với các Pokémon KHÁC cùng phía, cùng vai trò, cùng sao, cùng số item và cùng dải 5 stage (x1 = như chúng; đã trừ mức TB của độ hiếm để con hiếm hơn vẫn được gây nhiều hơn), tính riêng khi không item và khi có item. Khoảng [min, max] của ln(lệch) theo vai trò (null = không giới hạn phía đó; 0.2 ≈ x1.22, -0.2 ≈ x0.82; một số = ± số đó cho mọi vai trò): ra ngoài thì dịch một phần công sang thủ hoặc ngược lại (cùng sức mạnh). Tank / support chỉ bị kéo khi gây NHIỀU hơn cùng vai trò (gây ít là đúng việc). damageItemWeight: phần của lệch khi có item (0 = chỉ tính trận không item, 1 = chỉ trận có item). damageStrength: phần của phần vượt được dịch mỗi bước; damageStep: tối đa mỗi bước (log)."
  ],
  "casts": {"caster": 3.0, "support": 2.5, "tank": 2.0, "assassin": 2.0, "fighter": 2.0, "marksman": 1.5},
  "refFight": 16.0,
@@ -28,5 +29,10 @@
  "roleStrength": 0.5,
  "roleStep": 0.1,
  "rarityGap": 0.03,
- "itemWeight": 1.5
+ "itemWeight": 1.5,
+ "damageRange": {"tank": [null, 0.2], "support": [null, 0.2], "fighter": [-0.2, 0.2], "assassin": [-0.2, 0.2],
+                 "marksman": [-0.2, 0.2], "caster": [-0.2, 0.2]},
+ "damageItemWeight": 0.5,
+ "damageStrength": 0.5,
+ "damageStep": 0.1
 }

@@ -14,6 +14,11 @@ criteria of tools/bot/balance_targets.json. No synergy lever: a strong synergy g
          dealing like a carry or a carry taking like a tank (beyond roleDeadZone from its role) -> part of the offence
          moved to bulk or back, same power; a support dealing too much -> Attack to skill, too little heal + shield ->
          more skill.
+  damage its damage dealt per fight against the OTHER units of the same role, stars, items held and 5-stage band
+         (the player's units), without items and with items (mixed by damageItemWeight), its rarity's mean taken out, shrunk by
+         the split-half reliability: beyond damageRange -> part of the offence moved to bulk or back (damageStrength
+         of the excess, at most damageStep), same power. A form with the skill of a season (data/season_skills.json) is
+         <form>@<season> in that season's runs: reported apart (not stepped), the form itself measured with its web skill.
   casts  abilities per fight without items -> its PP to cast: the PP it gains per fight (ppgain) solved for the casts
          of its role (webPP keeps part of the web's maxPP differences), with 2+ items at most castsWithItems; a cast
          replaces an attack (perAttack PP of its role lost). A form whose PP moves more than ppFreeze keeps its power
@@ -198,6 +203,118 @@ def damage_effective(folders):
             if not any(l.startswith("damage\teffective") for l in io.open(f, encoding="utf-8")):
                 return False
     return True
+
+
+SEASON_SKILLS = os.path.join(tm.ROOT, "data", "season_skills.json")
+
+
+def season_forms():
+    """{season: {form: skill}} of the forms a season gives another skill (data/season_skills.json, as
+    GameData.season_skill_rule + _apply_season_skills: the first rule that fits the form, its skill ported)."""
+    seasons = json.load(io.open(SEASON_SKILLS, encoding="utf-8")).get("seasons", {}) if os.path.exists(SEASON_SKILLS) else {}
+    out = {}
+    for season, families in seasons.items():
+        forms = {}
+        for pkm, d in tm.POKEMON.items():
+            rules = families.get(d.get("family", pkm))
+            rules = [rules] if isinstance(rules, dict) else rules if isinstance(rules, list) else []
+            web = d.get("skill", "")
+            for r in rules:
+                if not isinstance(r, dict) or not r.get("skill"):
+                    continue
+                if ("forms" in r and pkm not in r["forms"]) or ("replaces" in r and web not in r["replaces"]):
+                    continue
+                if r["skill"] in ABILITIES and r["skill"] != web:
+                    forms[pkm] = r["skill"]
+                break
+        if forms:
+            out[season] = forms
+    return out
+
+
+def base_form(name):
+    """<form>@<season> -> <form>."""
+    return name.split("@")[0]
+
+
+def load_runs(folders):
+    """(batch, run, season) of the batches' runs."""
+    frames = []
+    for i, d in enumerate(folders):
+        for f in sorted(glob.glob(os.path.join(d, "runs_*.tsv"))):
+            if os.path.getsize(f) > 0:
+                r = pd.read_csv(f, sep="\t", na_filter=False, low_memory=False, usecols=["run", "season"])
+                r["batch"] = i
+                frames.append(r)
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(columns=["run", "season", "batch"])
+
+
+def split_season_skills(stages, units, runs):
+    """In the runs of a season, the forms it gave another skill become <form>@<season> (boards of `stages`, `units`):
+    other units with their own numbers (reported, not stepped - their stats are the form's), the form itself measured
+    with its web skill only. -> unit rows renamed."""
+    maps = season_forms()
+    if not maps or runs.empty:
+        return 0
+    season_of = runs.drop_duplicates(["batch", "run"]).set_index(["batch", "run"])["season"]
+    frames = [stages] + ([units] if units is not None else [])
+    for frame in frames:
+        frame["season"] = season_of.reindex(pd.MultiIndex.from_frame(frame[["batch", "run"]])).to_numpy()
+    renamed = 0
+    for season, forms in maps.items():
+        def rename(token, season=season, forms=forms):
+            pkm = token.split("*")[0]
+            return pkm + "@" + season + token[len(pkm):] if pkm in forms else token
+        rows = stages["season"] == season
+        stages.loc[rows, "board"] = stages.loc[rows, "board"].map(lambda b: "|".join(rename(t) for t in b.split("|")) if b else b)
+        if units is not None:
+            mask = (units["season"] == season) & units["pkm"].isin(list(forms))
+            units.loc[mask, "pkm"] = units.loc[mask, "pkm"] + "@" + season
+            renamed += int(mask.sum())
+    return renamed
+
+
+def expected_damage(units, least_cell=30):
+    """The unit rows given with `exp`: the mean damage dealt by the OTHER units (its own entry - pkm, a
+    <form>@<season> apart - left out) of the same side, role, stars, items held and 5-stage band, so dealt / exp = its
+    damage against the same role (1 = like them). Rows of cells with fewer than least_cell others dropped, INANIMATE
+    forms out; `nitems` = items held."""
+    keep = ~units["pkm"].map(lambda k: tm.POKEMON.get(base_form(k), {}).get("passive") == "INANIMATE")
+    u = units.loc[keep, ["batch", "run", "stage", "team", "pkm", "role", "stars", "items", "dealt"]].copy()
+    u["nitems"] = u["items"].map(lambda s: len(s.split("+")) if s else 0)
+    u["band"] = (u["stage"].clip(upper=60) - 1) // 5
+    key = ["team", "role", "stars", "nitems", "band"]
+    cell, own = u.groupby(key)["dealt"], u.groupby(key + ["pkm"])["dealt"]
+    others = cell.transform("size") - own.transform("size")
+    u["exp"] = (cell.transform("sum") - own.transform("sum")) / others.clip(lower=1)
+    return u[(others >= least_cell) & (u["exp"] > 0)]
+
+
+def ratio_index(rows, by):
+    """Per group of `by`: n, index = sum dealt / sum exp (ratio of the sums: the bigger fights weigh more), se2 of
+    ln(index) (delta method)."""
+    g = rows.groupby(by)
+    x, e = g["dealt"].transform("sum"), g["exp"].transform("sum")
+    res2 = (rows["dealt"] - x / e.clip(lower=1e-9) * rows["exp"]) ** 2
+    out = pd.DataFrame({"n": g.size(), "dealt": g["dealt"].sum(), "exp": g["exp"].sum(), "res2": res2.groupby([rows[c] for c in by]).sum()})
+    out["index"] = out["dealt"].astype(float) / out["exp"].clip(lower=1e-9)
+    out["se2"] = out["res2"] / (out["dealt"].astype(float) ** 2).clip(lower=1e-9)
+    return out.drop(columns=["res2"])
+
+
+def damage_devs(rows, least):
+    """{(entity, bucket): (dev, se2, n, index)}: ln(dealt / exp) of each entity without items ("none") and with items
+    ("items", against the units holding as many), minus the median of its rarity's forms (web forms; the median: a
+    few much used forms do not set it; x k / (k + 5) for k forms: a rarity of few forms hardly moves it): a rarer form
+    may deal more than its role, the rarity order is the worth's job."""
+    t = ratio_index(rows, ["pkm", "bucket"]).reset_index()
+    t = t[t["n"] >= least].copy()
+    t["ln"] = np.log(t["index"].clip(lower=1e-3))
+    t["rarity"] = t["pkm"].map(lambda k: tm.POKEMON.get(base_form(k), {}).get("rarity", "COMMON"))
+    web = t[~t["pkm"].str.contains("@")]
+    offset = {k: float(g["ln"].median()) * len(g) / (len(g) + 5.0) for k, g in web.groupby(["rarity", "bucket"])}
+    return {(r.pkm, r.bucket): (r.ln - offset.get((r.rarity, r.bucket), 0.0), r.se2, int(r.n), r.index)
+            for r in t.itertuples(index=False)}
 
 
 _OUTPUT = re.compile(r"\b(?:hit|deal_damage|heal|add_shield)\(")
@@ -580,6 +697,8 @@ def main():
     stages, units = load_batches(folders)
     if units is None:
         sys.exit("the batches have no units_*.tsv (run them without -NoUnits)")
+    # a form with the skill of a season is another unit there: <form>@<season>, the form measured with its web skill
+    renamed = split_season_skills(stages, units, load_runs(folders))
     tracked = "ppgain" in units.columns
     effective = damage_effective(folders) # damage without overkill (else the execute abilities' 9999 counted)
     forms = {pkm: entry_of(v) for pkm, v in bal["pokemon"].items()}
@@ -684,6 +803,33 @@ def main():
             role_of.setdefault(pkm, role)
     for pkm in tm.POKEMON:
         role_of.setdefault(pkm, guess_role(pkm))
+    #endregion
+
+    #region 2b. damage against the same role (blue units: the waves' bosses / stat multipliers say nothing of a form),
+    # without and with items
+    d_goal, d_weight = goal.get("damageRange", 0.2), float(goal.get("damageItemWeight", 0.5))
+    d_strength, d_step = float(goal.get("damageStrength", 0.5)), float(goal.get("damageStep", 0.1))
+    # [low, high] of ln(damage against the role) per role (null: no limit on that side); one number: +-it for every role
+    d_band = lambda role: tuple(d_goal.get(role, [None, None])) if isinstance(d_goal, dict) else (-float(d_goal), float(d_goal))
+    d_out = lambda role, dev: (d_band(role)[1] is not None and dev > d_band(role)[1]) or \
+        (d_band(role)[0] is not None and dev < d_band(role)[0])
+    dmg_rows = expected_damage(units[units.team == "B"])
+    if not effective: # an execute's overkill is no damage of its role
+        dmg_rows = dmg_rows[~dmg_rows["pkm"].map(lambda k: executes(base_form(k)))]
+    dmg_rows = dmg_rows.assign(bucket=np.where(dmg_rows["nitems"] > 0, "items", "none"))
+    even = dmg_rows["run"].to_numpy() % 2 == 0 # by run, as the worth
+    dd_full, dd_a, dd_b = (damage_devs(r, least) for r in (dmg_rows, dmg_rows[even], dmg_rows[~even]))
+    damage, d_rel = {}, {} # entity -> {"none" / "items": (shrunk dev, index, n) or None, "dev": what the step uses}
+    for bucket in ("none", "items"):
+        pick = lambda d, i: {k[0]: v[i] for k, v in d.items() if k[1] == bucket}
+        full, se2_d, n_d = pick(dd_full, 0), pick(dd_full, 1), pick(dd_full, 2)
+        tau2_d, c_d, d_rel[bucket], _rho = calibrate(full, pick(dd_a, 0), pick(dd_b, 0), se2_d, n_d)
+        for k, dev in full.items():
+            entry = damage.setdefault(k, {"none": None, "items": None})
+            entry[bucket] = (dev * tau2_d / (tau2_d + c_d * se2_d[k]), dd_full[(k, bucket)][3], n_d[k])
+    for entry in damage.values():
+        parts = [(entry[b][0], wt) for b, wt in (("none", 1.0 - d_weight), ("items", d_weight)) if entry[b] is not None]
+        entry["dev"] = sum(v * wt for v, wt in parts) / max(sum(wt for _v, wt in parts), 1e-9)
     #endregion
 
     #region 3. casts -> PP (both teams: the same rules)
@@ -791,7 +937,7 @@ def main():
         frozen = web_pp > 0 and abs(math.log(max(realized(pkm, new)["pp"], 1) / max(old_pp, 1.0))) > pp_freeze
         # power: worth (without items + per item) against its group and the rarity order
         key = group_of.get(m)
-        dev0 = sdev0 = dit = sdit = shift = dev = dp = sigma = 0.0
+        dev0 = sdev0 = dit = sdit = shift = dev = dp = sigma = sigma_d = 0.0
         if key is not None:
             dev0 = dev_f.get(m, 0.0)
             sdev0 = dev0 * tau2 / (tau2 + c * se2[m])
@@ -834,14 +980,21 @@ def main():
                     skill_shift = min(r_strength * (logit(lo_s) - logit(s_share)), r_step)
                 elif "skill" in levers and hi_s is not None and s_share > hi_s:
                     skill_shift = max(r_strength * (logit(hi_s) - logit(s_share)), -r_step)
+            # damage against the same role (without / with items) beyond damageRange: part of the offence to bulk or
+            # back, same power (how strong it is stays the worth's)
+            dm = damage.get(pkm)
+            if dm is not None and d_out(role, dm["dev"]):
+                lo_d, hi_d = d_band(role)
+                edge = hi_d if hi_d is not None and dm["dev"] > hi_d else lo_d
+                sigma_d = max(min(-d_strength * (dm["dev"] - edge), d_step), -d_step)
         delta = 2.0 * dp
         prior = ROLE_OFFENCE.get(role, 0.5)
         off_r, def_r = rel.get(pkm, (0.0, 0.0))
         sign = 1.0 if delta < 0 else -1.0 # a nerf from where it outdoes its group, a buff to where it falls short
         w_off = prior * math.exp(max(min(sign * off_r, 1.5), -1.5))
         w_def = (1 - prior) * math.exp(max(min(sign * def_r, 1.5), -1.5))
-        d_off = delta * w_off / (w_off + w_def) + sigma
-        d_bulk = delta * w_def / (w_off + w_def) - sigma
+        d_off = delta * w_off / (w_off + w_def) + sigma + sigma_d
+        d_bulk = delta * w_def / (w_off + w_def) - sigma - sigma_d
         if moved_power or extra:
             new = step_stats(pkm, new, d_off, d_bulk, pr if pr["n"] else default_prof, cap, extra, levers, skill_shift)
         if new != old:
@@ -853,12 +1006,16 @@ def main():
             plain = plain_of[pkm]
             pred = float(predicted_casts(plain.ppgain.to_numpy(float), plain.casts.to_numpy(float),
                                          per_attack.get(role, 10.0), new_pp).mean())
+        dmg = damage.get(pkm) or {"none": None, "items": None, "dev": float("nan")}
+        dmg_cols = {"dmg_none": dmg["none"][1] if dmg["none"] else float("nan"), "n_dmg_none": dmg["none"][2] if dmg["none"] else 0,
+                    "dmg_items": dmg["items"][1] if dmg["items"] else float("nan"),
+                    "n_dmg_items": dmg["items"][2] if dmg["items"] else 0, "dmg_dev": dmg["dev"], "sigma_dmg": sigma_d}
         rows.append({"kind": "pokemon", "name": pkm, "group": "%s*%d/%d" % key if key else "-", "role": role, "n": n,
                      "units": int(pr["n"]), "worth": total.get(m, 0.0), "target": targets.get(key[:2], (0, 0))[1] if key else 0.0,
                      "weight": weight.get(m, 0.0), "se": math.sqrt(se2.get(m, 0.0)), "dev": dev0, "shrunk": sdev0,
                      "item": dit, "item_shrunk": sdit, "rarity_shift": shift, "dev_used": dev, "dp": dp, "sigma": sigma,
                      "a": pr["a"], "D": pr.get("D", 0.0), "T": pr.get("T", 0.0), "S": pr.get("S", 0.0),
-                     "q": pr.get("q", 0.0), "dq": dq_row,
+                     "q": pr.get("q", 0.0), "dq": dq_row, **dmg_cols,
                      "phys": pr["phys"], "levers": "+".join(levers) or "-", "scales": "+".join(sorted(skill_scaling(pkm))) or "-",
                      "skill_shift": skill_shift, "per_cast": pr.get("per_cast", -1.0),
                      "casts": c_now, "casts_items": c_items, "cast_target": c_target,
@@ -904,6 +1061,8 @@ def main():
         " (split-half %.2f)" % (sens, source, sens_evo, len(ratios), r_forms, rho_forms))
     say("imbalance %.3f (mean |deviation used| of the forms' worth, log-odds, weighted by use); power moved on %d forms,"
         " PP on %d" % (imbalance[0] / max(imbalance[1], 1), len(moved), len(pp_moved)))
+    say("season skills apart: %d unit rows as <form>@<season> (data/season_skills.json; the form's step from its web skill)"
+        % renamed)
     say()
     if tracked:
         say("== Casts per fight (both teams, forms with an ability): mean / share with none / per 10 s alive")
@@ -953,6 +1112,35 @@ def main():
         len(shaped), int(((shaped.role == "tank") & (shaped.sigma < 0)).sum()),
         int((shaped.role.isin(CARRIES) & (shaped.sigma > 0)).sum()), int((shaped.role == "fighter").sum()),
         int(((pk.role == "support") & ((pk.step_atk < 0.995) | (pk.step_skill > 1.005)) & (pk.sigma.abs() <= 0.001)).sum())))
+    say()
+    say("== Damage against the same role (blue units): dealt per fight / the other units of the same role, stars,"
+        " items held and 5-stage band (x1 = like them), without items / with items; ranked by the step's deviation (its"
+        " rarity's median out, shrunk: reliability %.2f / %.2f), with items weighing %.2f; range of the role: damageRange"
+        % (d_rel.get("none", 0.0), d_rel.get("items", 0.0), d_weight))
+    band_text = lambda role: "%s..%s" % tuple("-" if v is None else "x%.2f" % math.exp(v) for v in d_band(role))
+    idx = lambda e, b: "x%.2f" % e[b][1] if e[b] else "-"
+    fmt_d = lambda k, e: "%s %s / %s" % (k, idx(e, "none"), idx(e, "items"))
+    for role in ["tank", "fighter", "assassin", "marksman", "caster", "support"]:
+        mine = {k: e for k, e in damage.items() if "@" not in k and role_of.get(k) == role}
+        if not mine:
+            continue
+        devs = np.array([e["dev"] for e in mine.values()])
+        order = sorted(mine, key=lambda k: mine[k]["dev"])
+        say("%-9s %3d forms, sd %.2f, %d out of %s | most above: %s | most below: %s" % (
+            role, len(mine), devs.std(), sum(d_out(role, v) for v in devs), band_text(role),
+            ", ".join(fmt_d(k, mine[k]) for k in order[::-1][:3]), ", ".join(fmt_d(k, mine[k]) for k in order[:3])))
+    both = {k: e for k, e in damage.items() if "@" not in k and e["none"] and e["items"]}
+    gain = sorted(both, key=lambda k: math.log(max(both[k]["items"][1], 1e-3) / max(both[k]["none"][1], 1e-3)))
+    say("with items more than without (against the same role): %s | less: %s" % (
+        ", ".join(fmt_d(k, both[k]) for k in gain[::-1][:5]), ", ".join(fmt_d(k, both[k]) for k in gain[:5])))
+    seasonal = {k: e for k, e in damage.items() if "@" in k}
+    if seasonal:
+        order = sorted(seasonal, key=lambda k: seasonal[k]["dev"])
+        say("season skills (<form>@<season>: numbers of their own, not stepped here): most above: %s | most below: %s" % (
+            ", ".join(fmt_d(k, seasonal[k]) for k in order[::-1][:6]), ", ".join(fmt_d(k, seasonal[k]) for k in order[:6])))
+    moved_d = pk[pk.sigma_dmg.abs() > 0.001]
+    say("damage moved offence <-> bulk on %d forms (toward bulk %d, toward offence %d)" % (
+        len(moved_d), int((moved_d.sigma_dmg < 0).sum()), int((moved_d.sigma_dmg > 0).sum())))
     say()
     say("== Ability against attack: output of the ability (damage + heal + shield%s) / of the basic attacks; skillShare of"
         " the role" % ("" if skill_tracked else "; this batch has no sdealt: all but the attacks"))
