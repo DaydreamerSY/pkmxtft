@@ -1,0 +1,240 @@
+{
+  "_doc": "Mùa 1: skill MỚI (phần 2/2): Unique, Legendary, trứng. Cùng định dạng s1_new_1.json.",
+  "season": "s1",
+  "new": {
+    "ARCTOVISH": {
+      "id": "PRIMAL_CHILL",
+      "vi": "Hàn Khí Nguyên Thuỷ",
+      "en": "Primal Chill",
+      "key": "nova2.slow_stack_aura",
+      "pp": 100,
+      "text": "4 giây toả hàn khí: mỗi giây kẻ địch trong 2 ô mất thêm 20% SPEED và chịu 20 sát thương phép; kẻ bị làm chậm 4 lần thì FREEZE 1,5 giây.",
+      "tft": "Set 1 Glacial / aura làm chậm"
+    },
+    "ARMAROUGE": {
+      "id": "ARMOR_SALVO",
+      "vi": "Pháo Giáp Đồng Loạt",
+      "en": "Armor Salvo",
+      "key": "all_enemies.split",
+      "pp": 100,
+      "text": "Dạng Armarouge: bắn 250 sát thương phép chia đều cho mọi kẻ địch trên sàn (ít kẻ địch thì mỗi kẻ đau hơn).",
+      "tft": "Set 19 Sona / Baron (chia đều toàn địch)"
+    },
+    "EISCUE": {
+      "id": "SNOW_HUDDLE",
+      "vi": "Túm Tụm Tuyết",
+      "en": "Snow Huddle",
+      "key": "nova.pull_in",
+      "pp": 90,
+      "text": "Hút mọi kẻ địch trong 2 ô sát vào quanh mình; những kẻ bị hút FREEZE 1 giây và chịu 40 sát thương phép.",
+      "tft": "Set 3 Lux / Orianna (kéo vào giữa)"
+    },
+    "EMOLGA": {
+      "id": "DOUBLE_TEAM",
+      "vi": "Ảnh Phân Thân",
+      "en": "Double Team",
+      "key": "self.decoy_dodge",
+      "pp": 80,
+      "text": "Tạo 3 ảo ảnh quanh mình: mỗi ảo ảnh hút trọn một đòn đánh hoặc skill đơn mục tiêu nhắm vào nó; còn ảo ảnh thì +20 SPEED.",
+      "tft": "Set 4 Shen / né đòn"
+    },
+    "GALARIAN_FARFETCH_D": {
+      "id": "PARRY",
+      "vi": "Gạt Kiếm",
+      "en": "Parry",
+      "key": "self.counter_stance",
+      "pp": 90,
+      "text": "Thế thủ 3 giây: 3 đòn đánh đầu tiên nhắm vào nó bị gạt (không sát thương), mỗi lần gạt đâm trả 120% ATK sát thương vật lý.",
+      "tft": "Set 5 Riven / Set 8 Samira (phản đòn)"
+    },
+    "HAWLUCHA": {
+      "id": "SKY_DROP",
+      "vi": "Thả Từ Trời",
+      "en": "Sky Drop",
+      "key": "target.sky_drop",
+      "pp": 100,
+      "text": "Túm mục tiêu bay lên 1,5 giây (cả hai không bị nhắm, mục tiêu không làm gì), rồi quật xuống ô cũ: 150 sát thương vật lý, kẻ địch ADJACENT 60.",
+      "tft": "Set 9.5 Sett (quật) / banish"
+    },
+    "HEATMOR": {
+      "id": "INCINERATE",
+      "vi": "Thiêu Rụi",
+      "en": "Incinerate",
+      "key": "burst.shield_strip",
+      "pp": 90,
+      "text": "Phun lửa lên mục tiêu và kẻ địch ADJACENT nó: xoá khiên của chúng, gây 30 + 100% lượng khiên bị xoá thành sát thương phép và BURN 3 giây.",
+      "tft": "Set 8 Shred / Scalescorn"
+    },
+    "LATIOS": {
+      "id": "MIND_LINK",
+      "vi": "Thần Giao Cách Cảm",
+      "en": "Mind Link",
+      "key": "ally.share_damage_link",
+      "pp": 90,
+      "text": "Nối tâm trí với đồng minh mạnh nhất 6 giây: sát thương hai bên nhận được chia đôi cho nhau; cả hai +40 AP.",
+      "tft": "Spirit Link / Set 9 Shen"
+    },
+    "MARACTUS": {
+      "id": "MARACA_DANCE",
+      "vi": "Vũ Điệu Maraca",
+      "en": "Maraca Dance",
+      "key": "zone.ally_heal_haste",
+      "pp": 100,
+      "text": "Tạo sàn nhảy bán kính 2 quanh mình 5 giây: đồng minh trong vùng +25% SPEED và hồi 3% HP tối đa mỗi giây.",
+      "tft": "Set 10 Disco / Set 19 Pop Bãi Biển"
+    },
+    "MESPRIT": {
+      "id": "EMOTION_DRAIN",
+      "vi": "Hút Cảm Xúc",
+      "en": "Emotion Drain",
+      "key": "highest_ap.steal_silence",
+      "pp": 90,
+      "text": "Kẻ địch có AP cao nhất mất 40 AP (Mesprit nhận lượng đó) và bị SILENCE 2,5 giây.",
+      "tft": "Set 14 Cypher (cướp chỉ số)"
+    },
+    "MIMIKYU": {
+      "id": "DISGUISE_PATCH",
+      "vi": "Vá Lốt",
+      "en": "Disguise Patch",
+      "key": "allies_lowest.block_next",
+      "pp": 90,
+      "text": "Vá lốt cho bản thân và 2 đồng minh ít % HP nhất: lần trúng đòn kế tiếp của mỗi con bị chặn, kẻ tấn công chịu 40 sát thương phép.",
+      "tft": "Disguise (Mimikyu)"
+    },
+    "ORTHWORM": {
+      "id": "EARTH_EATER",
+      "vi": "Đất Lún",
+      "en": "Quicksand",
+      "key": "burst.zone",
+      "pp": 100,
+      "text": "Biến các ô quanh mục tiêu (bán kính 1) thành cát lún 4 giây: kẻ địch trong đó -50% SPEED và mất 30 HP mỗi giây; Orthworm hồi bằng tổng.",
+      "tft": "Set 18 / vùng làm chậm"
+    },
+    "SCREAM_TAIL": {
+      "id": "PERISH_SONG",
+      "vi": "Khúc Ca Diệt Vong",
+      "en": "Perish Song",
+      "key": "nova2.countdown_doom",
+      "pp": 100,
+      "text": "Mọi Pokémon khác trong 2 ô (cả đồng minh) nghe bài hát: 4 giây sau chịu 25% HP tối đa thành sát thương chuẩn (đồng minh chỉ 10%).",
+      "tft": "Perish Song (Pokémon)"
+    },
+    "STONJOURNER": {
+      "id": "POWER_SPOT",
+      "vi": "Điểm Năng Lượng",
+      "en": "Power Spot",
+      "key": "allies_adjacent.ability_power",
+      "pp": 90,
+      "text": "Vòng đá cổ: đồng minh ADJACENT +40 AP trong 6 giây và nhận 30 SHIELD.",
+      "tft": "Power Spot (Stonjourner)"
+    },
+    "TROPIUS": {
+      "id": "FRUIT_TOSS",
+      "vi": "Chuyền Quả",
+      "en": "Fruit Toss",
+      "key": "chain.heal_allies",
+      "pp": 90,
+      "text": "Hái quả trên cổ ném chuyền qua 4 đồng minh ít % HP nhất: lần đầu hồi 80 HP, mỗi lần chuyền sau ít hơn 20%; đồng minh cuối +10 SPEED.",
+      "tft": "Set 2 Taliyah (nảy) / healer"
+    },
+    "ZERAORA": {
+      "id": "PLASMA_BLITZ",
+      "vi": "Chớp Plasma Liên Hoàn",
+      "en": "Plasma Blitz",
+      "key": "dash_chain.n_enemies",
+      "pp": 90,
+      "text": "Lao lần lượt tới 3 kẻ địch gần nhau nhất, mỗi kẻ một cú đấm 40 + 60% ATK sát thương phép; mỗi cú +10 SPEED tới hết trận.",
+      "tft": "Set 6 Yone / Master Yi (lướt nhiều mục tiêu)"
+    },
+    "CELEBI": {
+      "id": "TIME_REWIND",
+      "vi": "Ngược Dòng Thời Gian",
+      "en": "Time Rewind",
+      "key": "team.rewind_hp",
+      "pp": 100,
+      "text": "Mọi đồng minh trở về lượng HP của 3 giây trước (nếu khi đó cao hơn) và được giải hiệu ứng xấu.",
+      "tft": "Set 19 Ekko (tua ngược) cho cả đội"
+    },
+    "ENAMORUS": {
+      "id": "LOVE_TANGLE",
+      "vi": "Tình Tay Ba",
+      "en": "Love Tangle",
+      "key": "two_enemies.infatuate",
+      "pp": 90,
+      "text": "2 kẻ địch gần nhất phải lòng nhau 3 giây: chúng đánh nhau (CHARM về phía nhau) và nhận 30% sát thương nhiều hơn.",
+      "tft": "Set 17 / charm"
+    },
+    "MELMETAL": {
+      "id": "IRON_SLAM",
+      "vi": "Nện Thép",
+      "en": "Iron Slam",
+      "key": "target.slam_into_cluster",
+      "pp": 100,
+      "text": "Nhấc mục tiêu lên rồi nện vào ô ADJACENT nó có nhiều kẻ địch nhất: mục tiêu 120% ATK, kẻ địch quanh chỗ nện 80% ATK sát thương vật lý, FLINCH 2 giây.",
+      "tft": "Set 9 Sion / Set 3 Gnar (ném vào nhau)"
+    },
+    "OKIDOGI": {
+      "id": "CHAIN_DRAG",
+      "vi": "Xích Kéo Độc",
+      "en": "Toxic Chain Drag",
+      "key": "closest_n.chain_pull",
+      "pp": 90,
+      "text": "Quăng xích độc vào 3 kẻ địch gần nhất: kéo mỗi kẻ lại gần 1 ô, 2 tầng POISON; mỗi kẻ bị xích cho Okidogi 5 DEF và 5 SPE_DEF.",
+      "tft": "Set 9 Darius / Nautilus"
+    },
+    "REGISTEEL": {
+      "id": "ZAP_LOCK",
+      "vi": "Pháo Điện Khoá Mục Tiêu",
+      "en": "Zap Lock",
+      "key": "highest_atk.lock_on_delayed",
+      "pp": 100,
+      "text": "Khoá kẻ địch có ATK cao nhất; 1,5 giây sau pháo điện trúng chắc chắn: 150 sát thương phép, PARALYSIS 2 giây; trong lúc tê liệt, đòn đánh vào nó +30% tỉ lệ chí mạng.",
+      "tft": "Lock-On + Zap Cannon (Pokémon)"
+    },
+    "SUICUNE": {
+      "id": "TIDAL_PUSH",
+      "vi": "Sóng Đẩy Thanh Tẩy",
+      "en": "Purifying Tide",
+      "key": "all_enemies.push",
+      "pp": 100,
+      "text": "Một đợt sóng quét sàn: mọi kẻ địch bị đẩy lùi 1 ô, chịu 30 + 8% HP tối đa của chúng thành sát thương phép và mất mọi hiệu ứng tốt.",
+      "tft": "Set 2 Ocean / sóng đẩy"
+    },
+    "AXEW": {
+      "id": "DRAGON_FURY",
+      "vi": "Long Nộ Tích Tụ",
+      "en": "Dragon Fury",
+      "key": "target.consume_stacks",
+      "pp": 80,
+      "text": "Mỗi đòn đánh trúng tích 1 nộ (tối đa 20). Skill tiêu hết nộ: chém mục tiêu 30/60/120 sát thương phép, +6% mỗi nộ.",
+      "tft": "Set 19 Smeech (Nhịp)"
+    },
+    "POPPLIO": {
+      "id": "BUBBLE_STASIS",
+      "vi": "Bóng Nước Che Chở",
+      "en": "Bubble Shelter",
+      "key": "allies_lowest.bubble_stasis",
+      "pp": 90,
+      "text": "Bọc 2 đồng minh ít % HP nhất trong bong bóng 2 giây: không bị nhắm, không hành động, hồi 10/20/40 HP mỗi 0,5 giây.",
+      "tft": "Set 4 Zilean / stasis"
+    },
+    "SANDILE": {
+      "id": "SNATCH",
+      "vi": "Rình Cướp",
+      "en": "Snatch",
+      "key": "enemy_buffs.redirect",
+      "pp": 90,
+      "text": "4 giây: mọi buff chỉ số, khiên và hồi máu mà kẻ địch nhận được bị chuyển sang Sandile; nó đánh kèm 20/40/80 sát thương phép lên mục tiêu.",
+      "tft": "Snatch (Pokémon)"
+    },
+    "SCATTERBUG": {
+      "id": "WING_POWDER",
+      "vi": "Phấn Cánh Bướm",
+      "en": "Wing Powder",
+      "key": "closest_allies.random_buffs",
+      "pp": 80,
+      "text": "Rắc phấn lên 3 đồng minh gần nhất: mỗi con nhận ngẫu nhiên một trong +20/40/80 SHIELD, +10/20/40 AP, +10/15/25 SPEED (theo hoa văn Vivillon).",
+      "tft": "Set 19 Kết Hợp / buff ngẫu nhiên"
+    }
+  }
+}

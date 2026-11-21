@@ -154,6 +154,8 @@ func _ready() -> void:
 	# Battle Pass: what the export holds is kept aside, then the locked synergies are hidden
 	for pkm in pokemon:
 		pokemon[pkm]["all_types"] = pokemon[pkm].get("types", []).duplicate()
+		pokemon[pkm]["web_skill"] = String(pokemon[pkm].get("skill", "")) # a season may change it (season_skill_rule)
+	season_skills = _load_json_optional(SEASON_SKILLS_PATH).get("seasons", {})
 	for map in config.get("maps", {}):
 		config.maps[map]["all_synergies"] = config.maps[map].get("synergies", []).duplicate()
 	_full = {"pool": pool.duplicate(), "additional": additional.duplicate(), "unique": unique.duplicate(),
@@ -327,10 +329,82 @@ func _apply_season() -> void:
 		var tiers: Array = _full.thresholds[type]
 		var replaced = own.get(type)
 		thresholds[type] = replaced if replaced is Array and replaced.size() == tiers.size() else tiers
+		var custom := SeasonSynergies.thresholds_of(type, tiers) # the season's synergy effects (data/season_synergies.json)
+		if not custom.is_empty():
+			thresholds[type] = custom
 	# no regional pool and no regional variant in a season: every Pokémon of the roster is its own line
 	regional_info = {} if season_active else _full.regional_info
 	regional_variants = {} if season_active else _full.regional_variants
 	regional_base = {} if season_active else _full.regional_base
+	_apply_season_skills()
+
+
+## Skills of the season (not in the web game; data/season_skills.json, docs/DESIGN_S1.md): in a season some forms use
+## another skill than the web game's, so that no two families of the season share a mechanic. The file:
+##   {"seasons": {"<season>": {"<FAMILY>": rule or [rules]}}}, rule = {"skill": id, "pp": the PP to cast (optional),
+##   "forms": [forms it applies to] (optional), "replaces": [web skills it replaces] (optional)}
+## The first rule of the family matching a form applies (no forms / replaces: every form). A form with a season skill
+## casts with the rule's PP (web scale) x the share of its web PP the auto balance gave it (else its own PP), and its
+## balance "skill" strength goes back to 1 (it was learnt on the web skill); the web skill stays in "web_skill".
+const SEASON_SKILLS_PATH := "res://data/season_skills.json"
+var season_skills: Dictionary = {}    # season -> {family -> rule | [rules]}
+var _season_saved: Dictionary = {}    # form -> {skill, maxPP, skillScale?} it had before the rule of the season
+
+
+## The rule of the season changing the skill of `pkm` ({}: it keeps its web skill).
+func season_skill_rule(pkm: String, season: String = Seasons.current) -> Dictionary:
+	if not pokemon.has(pkm) or season == Seasons.FULL:
+		return {}
+	var d: Dictionary = pokemon[pkm]
+	var rules = season_skills.get(season, {}).get(String(d.get("family", pkm)), null)
+	if rules is Dictionary:
+		rules = [rules]
+	if not rules is Array:
+		return {}
+	var web := String(d.get("web_skill", d.get("skill", "")))
+	for rule in rules:
+		if not rule is Dictionary or String(rule.get("skill", "")) == "":
+			continue
+		if rule.has("forms") and not Array(rule.forms).has(pkm):
+			continue
+		if rule.has("replaces") and not Array(rule.replaces).has(web):
+			continue
+		return rule
+	return {}
+
+
+## Every form back to its web skill (and, if `restore_stats`, the PP and skill strength it had before).
+func _undo_season_skills(restore_stats := true) -> void:
+	for pkm in _season_saved:
+		var saved: Dictionary = _season_saved[pkm]
+		pokemon[pkm]["skill"] = saved.skill
+		if restore_stats:
+			pokemon[pkm]["maxPP"] = saved.maxPP
+			if saved.has("skillScale"):
+				pokemon[pkm]["skillScale"] = saved.skillScale
+	_season_saved.clear()
+
+
+func _apply_season_skills() -> void:
+	_undo_season_skills()
+	if not season_active or not season_skills.has(Seasons.current):
+		return
+	for pkm in pokemon:
+		var rule := season_skill_rule(pkm)
+		if rule.is_empty() or not abilities.has(String(rule.skill)):
+			continue
+		var d: Dictionary = pokemon[pkm]
+		var saved := {"skill": d.get("skill", ""), "maxPP": d.get("maxPP", 0)}
+		if d.has("skillScale"):
+			saved["skillScale"] = d.skillScale
+		_season_saved[pkm] = saved
+		d["skill"] = String(rule.skill)
+		if rule.has("pp") and float(d.get("maxPP", 0)) > 0.0:
+			# the rule's PP is of the web's scale: the form keeps the share the auto balance gave its own PP
+			var web_pp := float(web_stat(pkm, "maxPP", d.maxPP))
+			var ratio := float(d.maxPP) / web_pp if web_pp > 0.0 else 1.0
+			d["maxPP"] = maxi(roundi(float(rule.pp) * ratio / 10.0) * 10, 10)
+		d.erase("skillScale")
 #endregion
 
 
@@ -794,9 +868,37 @@ func synergy_name(type: String) -> String:
 	return String(text.get("synergy", {}).get(type, type.capitalize()))
 
 
-## One text per tier of the synergy (thresholds in config.synergyThresholds).
+## One text per tier of the synergy (thresholds in config.synergyThresholds): the web's, or the season's own effects
+## (SeasonSynergies: replace = theirs, add = the web's then theirs).
 func synergy_tier_texts(type: String) -> Array:
-	return text.get("synergy_tiers", {}).get(type, [])
+	var web: Array = text.get("synergy_tiers", {}).get(type, [])
+	match SeasonSynergies.mode(type):
+		"replace":
+			return SeasonSynergies.texts(type).tiers
+		"add":
+			var own: Array = SeasonSynergies.texts(type).tiers
+			var out := []
+			for i in maxi(web.size(), own.size()):
+				var parts := PackedStringArray()
+				if i < web.size() and String(web[i]) != "":
+					parts.append(String(web[i]))
+				if i < own.size() and String(own[i]) != "":
+					parts.append(String(own[i]))
+				out.append(" · ".join(parts))
+			return out
+	return web
+
+
+## What a synergy does, in the current language: the web's text, or the season's own effects (SeasonSynergies).
+func synergy_description(type: String) -> String:
+	var web := String(text.get("synergy_description", {}).get(type, ""))
+	match SeasonSynergies.mode(type):
+		"replace":
+			return String(SeasonSynergies.texts(type).desc)
+		"add":
+			return web + "
+" + String(SeasonSynergies.texts(type).desc)
+	return web
 
 
 ## Rarity (COMMON, UNCOMMON...) in the game language.
@@ -887,6 +989,7 @@ func _apply_role_ranges() -> void:
 
 ## The auto balance off (the web stats, as sim_test checks them) or on again (data/balance.json, read again).
 func use_balance(on: bool) -> void:
+	_undo_season_skills(false) # the stats are rewritten below; the season's skills come back after
 	for pkm in _web_stats:
 		for stat in _web_stats[pkm]:
 			pokemon[pkm][stat] = _web_stats[pkm][stat]
@@ -895,6 +998,7 @@ func use_balance(on: bool) -> void:
 	balance_id = "off"
 	if on:
 		_apply_balance()
+	_apply_season_skills()
 
 
 ## The stats of a form (`d`, its data) with its balance `entry`: {"hp", "atk", "skill", "def", "speDef", "speed", "pp"}

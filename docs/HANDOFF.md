@@ -408,3 +408,33 @@ Người dùng: viền ô mảnh và nhạt hơn, vẽ sân theo phong cách Pok
   số ô); Vespiquen: hàng trước Defend, hàng 2 Heal, hai hàng sau Attack với tầm 5 (web 3; trước đó chỉ số hàng còn theo 3
   hàng).
 
+
+## 14. Mùa 1 thiết kế lại: hệ + skill riêng (2026-11-20) — file và bẫy
+
+Người dùng: mỗi mùa mỗi hệ một hiệu ứng mới (không lặp ở hệ / mùa nào), mỗi họ Pokémon một skill có **cơ chế riêng**
+trong mùa (luật chặt: đổi số / trạng thái / chỉ số vẫn là trùng), họ có ở nhiều mùa thì mỗi mùa một skill khác, làm từng
+mùa và duyệt bảng trước. Đã duyệt mùa 1 (mượn skill được, item giữa stage của hệ giữ nguyên, số liệu để tự cân bằng chỉnh).
+
+- Thiết kế: `tools/design/s1_types.json` (31 hệ), `s1_skills.json` (giữ + khoá cơ chế), `s1_borrow.json` (mượn skill đã port
+  của Pokémon ngoài mùa), `s1_new_1/2.json` (53 skill mới). `python tools/design/gen_design.py s1 [--write]` kiểm (mỗi họ một
+  skill, khoá `vùng.cơ chế` không trùng, id mới không phải skill web) → `docs/DESIGN_S1.md`; `--write` sinh
+  `data/season_skills.json`. Tham khảo TFT mùa 1–19: `build/tft/` (`tools/design/tft_fetch.py` từ Community Dragon,
+  `opgg_extract.py` cho op.gg — op.gg chỉ còn mùa 18–19).
+- Skill theo mùa: `GameData.season_skill_rule` / `_apply_season_skills` (trong `_apply_season`; `use_balance` áp lại):
+  `pokemon[pkm].skill` = skill của mùa, `web_skill` giữ bản web, PP = `pp` của luật (thang web) × tỉ lệ tự cân bằng đã
+  cho PP của chính dạng đó, hệ số `skillScale` của tự cân bằng về 1.
+  Luật có `forms` / `replaces` cho họ rẽ nhánh (Hisuian Samurott, Armarouge, Urshifu, Corsola).
+- 53 skill mới: `ability_scripts.gd` các region `abilities (season1a..d)`; phần kéo dài cần móc của trận ở
+  `src/core/season_skill_effects.gd` (`SeasonSkillEffects`: dấu ấn, dây nối, đỡ hộ, phản phép, bẫy, Snatch, Destiny Bond...),
+  `BattleSim.season_skills_on` chỉ bật khi trận có skill trong `SKILLS`. Trạng thái mới: `stasis` (không bị nhắm, không nhận
+  sát thương, không hành động), `fortified` (Thép: không bị đẩy), `unstoppable` (Quái vật). Chữ vi: `data/i18n/vi.json`
+  (`ability`, `ability_port`), VFX: `data/ability_vfx.json` (dùng lại sheet có sẵn).
+- 31 hiệu ứng hệ: `data/season_synergies.json` `seasons.s1` (mode replace), cơ chế ở `src/core/season_mechanics.gd`
+  (`SeasonMechanics.TYPES`; khối `{"type", "values", <param>: [mỗi mốc], "say": {vi, en}}`, chữ từng mốc từ "say").
+  Móc mới của `BattleSim` (chỉ khi `season_effects_on`): `on_fight_start`, `update`, `adjust_taken` (sau DEF), `on_lethal`,
+  `blocks_status`, `pick_target`, `on_death`, `on_dodge`, `on_area` (mọi event "area" của skill; event có `season: true` thì
+  bỏ qua). Ô cháy (Lửa) / bẫy hiện bằng khoá `SCORCH` / `TRAP` trong `board_effects` (chỉ tô màu, `Game.BOARD_EFFECT_COLORS`).
+  `tools\synergy_editor.bat` chọn được các cơ chế, sửa số từng mốc của tham số; chữ "say" sửa tay trong file.
+- Test: `sim_test._check_season_one` (mọi dạng có skill mùa 1 cast được, mỗi hệ mùa 1 đánh một trận ở mốc cao nhất).
+- Chưa làm: chơi thử / cân số, mùa 2 và 3 (32 họ lặp lại cần skill khác ở mùa sau), skill mới chưa có trong bot / role
+  audit (`tools\role_audit.bat` đọc skill web), `docs/SKILLS.md` chưa theo mùa.

@@ -27,6 +27,8 @@ const EMBER_COLOR := Color(1.0, 0.45, 0.1, 0.45)
 ## Board effect tints (EMBER first: the strongest when a cell has several).
 const BOARD_EFFECT_COLORS := {
 	"EMBER": EMBER_COLOR,
+	"SCORCH": Color(1.0, 0.42, 0.12, 0.38), # season synergy (SeasonMechanics scorch_cells_on_cast): damage only
+	"TRAP": Color(0.62, 0.3, 0.85, 0.5), # season skill Toxic Spikes (SeasonSkillEffects.set_traps)
 	"POISON_GAS": Color(0.65, 0.25, 0.85, 0.42),
 	"SMOKE": Color(0.35, 0.35, 0.4, 0.5),
 	"SPIKES": Color(0.75, 0.7, 0.6, 0.45),

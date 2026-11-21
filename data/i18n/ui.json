@@ -96,7 +96,7 @@
  "ally": {"vi": "đồng minh"},
  "range": {"vi": "tầm đánh"},
  "(simplified port)": {"vi": "(bản port rút gọn)"},
- "Ability strength: %d%% (damage, heal, shield)": {"vi": "Sức mạnh kỹ năng: %d%% (sát thương, hồi máu, khiên)"},
+ "Ability strength: %d%% (damage, heal, shield)": {"vi": "Hiệu lực kỹ năng: %d%% (sát thương, hồi máu, khiên)"},
  "(simplified port: %s)": {"vi": "(bản port rút gọn: %s)"},
  "(%s is not ported yet, placeholder)": {"vi": "(%s chưa được port, tạm thay thế)"},
  "(after %.1fs)": {"vi": "(sau %.1fs)"},

@@ -47,6 +47,7 @@ func _ready() -> void:
 	_check_balance()
 	_check_ability_events()
 	_check_skill_scale()
+	_check_season_synergies()
 	_check_player_config()
 	_check_fights()
 	_check_ported_rules()
@@ -54,6 +55,7 @@ func _ready() -> void:
 	_check_progression()
 	_check_progression_switch()
 	_check_seasons()
+	_check_season_one()
 	print("=== %s (%d failure(s)) ===" % ["OK" if failures == 0 else "FAILED", failures])
 	get_tree().quit(1 if failures > 0 else 0)
 
@@ -2146,6 +2148,74 @@ func _check_ability_events() -> void:
 	sim.dispose()
 
 
+## Synergy effects of a season (data/season_synergies.json, SeasonSynergies): the file is valid; a synergy whose effect
+## is replaced loses its web effect and gets its blocks (stat, team stat, stacks, on-hit status, lifesteal), its own
+## thresholds and generated texts; "add" keeps the web effect and adds (ability strength).
+func _check_season_synergies() -> void:
+	for p in SeasonSynergies.problems():
+		_fail("data/season_synergies.json: %s" % p)
+	var psychic := _first_of_type("PSYCHIC")
+	var other := ""
+	for pkm in GameData.pool:
+		if not GameData.get_pokemon(pkm).types.has("PSYCHIC") and not GameData.get_pokemon(pkm).types.has("FIRE") \
+				and int(GameData.get_pokemon(pkm).stars) == 1:
+			other = pkm
+			break
+	SeasonSynergies.load_data({"seasons": {Seasons.current: {
+		"PSYCHIC": {"mode": "replace", "thresholds": [1, 3], "effects": [
+			{"type": "stat", "stat": "atk", "values": [5, 10]},
+			{"type": "stat", "who": "team", "stat": "def", "values": [3, 6]},
+			{"type": "attack_stack", "stack": "atk", "values": [2], "max": 2},
+			{"type": "hit_status", "status": "burn", "values": [100], "duration": 3000, "on": "attack"},
+			{"type": "lifesteal", "values": [100], "on": "attack"}]},
+		"FIRE": {"mode": "add", "effects": [{"type": "ability_power", "values": [50]}]}}}})
+	GameData.apply_progression()
+	var split := SeasonSynergies.split({"PSYCHIC": 1, "FIRE": 1, "WATER": 1})
+	if split[0] != {"FIRE": 1, "WATER": 1} or split[1] != {"PSYCHIC": 1, "FIRE": 1}:
+		_fail("season synergies: split %s" % [split])
+	if GameData.config.synergyThresholds.get("PSYCHIC", []) != [1, 3] or GameData.synergy_tier_texts("PSYCHIC").size() != 2:
+		_fail("season synergies: thresholds %s, tier texts %s" % [GameData.config.synergyThresholds.get("PSYCHIC"),
+			GameData.synergy_tier_texts("PSYCHIC")])
+	var desc := GameData.synergy_description("PSYCHIC")
+	if not desc.contains("PSYCHIC Pokémon: +[5,10] ATK") or not desc.contains("Whole team: +[3,6] DEF") \
+			or not String(GameData.synergy_tier_texts("PSYCHIC")[0]).contains("+5 ATK") \
+			or not GameData.synergy_description("FIRE").contains("ability strength"):
+		_fail("season synergies: texts %s / %s / %s" % [desc, GameData.synergy_tier_texts("PSYCHIC"),
+			GameData.synergy_description("FIRE")])
+	var sim := _fight([[psychic, Vector2i(3, 3)], [other, Vector2i(2, 3)]], [["MAGIKARP", Vector2i(3, 4)]], {"PSYCHIC": 1})
+	var u: BattleUnit = sim.units[0]
+	var ally: BattleUnit = sim.units[1]
+	var t: BattleUnit = sim.units[2]
+	var plain := BattleUnit.create(psychic, BattleUnit.Team.BLUE)
+	if u.ap != plain.ap or u.atk != plain.atk + 5.0 or u.def != plain.def + 3.0 or u.synergy.has("PSYCHIC") \
+			or ally.def != BattleUnit.create(other, BattleUnit.Team.BLUE).def + 3.0 or not sim.season_effects_on:
+		_fail("season synergies: replaced Psychic gives AP %s (web %s), ATK %s (+5 of %s), DEF %s, ally DEF %s"
+			% [u.ap, plain.ap, u.atk, plain.atk, u.def, ally.def])
+	t.max_hp = 100000.0
+	t.hp = t.max_hp
+	t.dodge = 0.0
+	u.hp = u.max_hp * 0.5
+	var hp_before := u.hp
+	for _i in 3:
+		sim.attack_hit(u, t)
+	if u.atk != plain.atk + 5.0 + 4.0 or not t.has_status("burn") or u.hp <= hp_before:
+		_fail("season synergies: 3 attacks -> ATK %s (+5 +2x2 max), burn %s, HP %s -> %s"
+			% [u.atk, t.has_status("burn"), hp_before, u.hp])
+	sim.dispose()
+	var fire := _first_of_type("FIRE")
+	sim = _fight([[fire, Vector2i(3, 3)]], [["MAGIKARP", Vector2i(3, 4)]], {"FIRE": 1})
+	var f: BattleUnit = sim.units[0]
+	sim.ability_source = f
+	if not f.synergy.has("FIRE") or not is_equal_approx(sim.ability_scale(f), f.skill_scale() * 1.5):
+		_fail("season synergies: Fire add keeps its web effect %s, ability strength %s" % [f.synergy, sim.ability_scale(f)])
+	sim.ability_source = null
+	sim.dispose()
+	SeasonSynergies.load_data()
+	GameData.apply_progression()
+	if GameData.config.synergyThresholds.get("PSYCHIC", []) != GameData.full_thresholds().get("PSYCHIC", []):
+		_fail("season synergies: thresholds back to the file's %s" % GameData.config.synergyThresholds.get("PSYCHIC"))
+
+
 ## The auto balance's strength of an ability (data/balance.json "skill" -> skillScale, BattleUnit.skill_scale, never a
 ## stat): x the damage, heal and shield of its OWN ability while it runs - not its attacks, not what follows a damage
 ## (lifesteal), not another ability (TM, Skill Swap); its AP stays 0.
@@ -3218,3 +3288,79 @@ func _check_seasons() -> void:
 		"seasons: the regional Pokémon are back")
 	for type in web_thresholds:
 		_expect(Synergies.thresholds(type) == web_thresholds[type], "seasons: thresholds of %s are back" % type)
+
+
+## Season 1 (docs/DESIGN_S1.md): the forms with a season skill cast it (data/season_skills.json), and a fight of each
+## synergy of the season at its top tier runs its mechanic (data/season_synergies.json, SeasonMechanics).
+func _check_season_one() -> void:
+	if Seasons.season("s1").is_empty():
+		print("season 1: not in data/seasons.json")
+		return
+	var real_override := Progression.override_level
+	Progression.override_level = 9999
+	SeasonSynergies.load_data()
+	Seasons.set_current("s1")
+	GameData.apply_progression()
+	# the skills of the season
+	var by_skill := {}
+	var rules := 0
+	for pkm in GameData.pokemon:
+		var rule := GameData.season_skill_rule(pkm)
+		if rule.is_empty():
+			continue
+		rules += 1
+		var skill := String(rule.skill)
+		_expect(GameData.abilities.has(skill), "season 1: %s has no ability %s" % [pkm, skill])
+		_expect(String(GameData.pokemon[pkm].skill) == skill, "season 1: %s casts %s, not %s" % [pkm,
+			GameData.pokemon[pkm].skill, skill])
+		_expect(GameData.ability_name(skill) != skill or skill.length() < 3, "season 1: %s has no name" % skill)
+		if not by_skill.has(skill) and GameData.abilities.has(skill):
+			by_skill[skill] = pkm
+	for skill in by_skill:
+		var sim := BattleSim.new()
+		sim.rng.seed = 42
+		sim.setup_teams({}, {})
+		var caster := BattleUnit.create(by_skill[skill], BattleUnit.Team.BLUE)
+		sim.add_unit(caster, Vector2i(3, 2))
+		var mate := BattleUnit.create("PIKACHU", BattleUnit.Team.BLUE)
+		sim.add_unit(mate, Vector2i(2, 2))
+		mate.hp = mate.max_hp * 0.5
+		for c in [Vector2i(3, 3), Vector2i(4, 4), Vector2i(1, 5), Vector2i(6, 3)]:
+			sim.add_unit(BattleUnit.create("MACHAMP", BattleUnit.Team.RED), c)
+		caster.pp = caster.max_pp
+		AbilityRunner.cast(sim, caster, sim.board.get_unit(Vector2i(3, 3)))
+		var events: Array[Dictionary] = []
+		for i in 240:
+			sim.update(50.0)
+			events.append_array(sim.drain_events())
+		sim.dispose()
+		_expect(events.any(func(e: Dictionary) -> bool: return e.type == "cast"), "season 1: no cast event for " + skill)
+	# the synergies of the season, each at its top tier
+	var specs := SeasonSynergies.season_specs("s1")
+	for type in specs:
+		var members: Array[String] = []
+		for pkm in GameData.pool:
+			if GameData.get_pokemon(pkm).types.has(type) and members.size() < 3:
+				members.append(pkm)
+		if members.size() < 2:
+			continue
+		var tiers: Array = GameData.config.synergyThresholds.get(type, [1])
+		var top: int = tiers.size()
+		var blue: Array = []
+		var cells: Array[Vector2i] = [Vector2i(2, 3), Vector2i(3, 3), Vector2i(3, 0)]
+		for i in members.size():
+			blue.append([members[i], cells[i]])
+		var sim := _fight(blue, [["MACHAMP", Vector2i(2, 4)], ["MACHAMP", Vector2i(3, 4)], ["ALAKAZAM", Vector2i(3, 7)]],
+			{type: top})
+		_expect(sim.season_effects_on and not sim.units[0].season_effects.is_empty(),
+			"season 1: %s gives no effect of its own" % type)
+		for u in sim.units:
+			u.pp = u.max_pp * 0.9
+		_run(sim, 20000.0)
+		sim.dispose()
+	print("season 1: %d forms with a season skill (%d skills cast), %d synergies fought" % [rules, by_skill.size(),
+		specs.size()])
+	Seasons.set_current(Seasons.FULL)
+	GameData.apply_progression()
+	Progression.override_level = real_override
+	_expect(String(GameData.pokemon["MAREEP"].skill) == "THUNDER_SHOCK", "season 1: no season, Mareep has its web skill again")

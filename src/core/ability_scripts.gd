@@ -7705,3 +7705,1048 @@ static func hail(ctx: Dictionary) -> void:
 	show(ctx, cells)
 	board_effect(sim, cells, "HAIL")
 #endregion
+
+
+#region abilities (season1a)
+## Season skills (not in the web game; docs/DESIGN_S1.md, data/season_skills.json): lasting parts in SeasonSkillEffects.
+
+## -`amount` SPEED for `ms`, then back.
+static func _slow_for(sim: BattleSim, e: BattleUnit, amount: float, ms: float) -> void:
+	e.add_stat("speed", -amount)
+	sim.schedule(ms, null, func() -> void:
+		if e.alive:
+			e.add_stat("speed", amount))
+
+
+## Season 1 (Azurill): 3 / 4 / 5 bubbles fanned toward the target, each popping on the first enemy on its way:
+## 15 / 30 / 60 SPECIAL and -10 SPEED for 3 s.
+static func bubble(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var dir := BattleBoard.orientation(c.cell, t.cell)
+	var dirs: Array[Vector2i] = [dir, BattleBoard.turn(dir, 1), BattleBoard.turn(dir, -1), BattleBoard.turn(dir, 2),
+		BattleBoard.turn(dir, -2)]
+	for i in mini(int(by_stars(c, [3, 4, 5])), dirs.size()):
+		for cell in ray_from(c.cell, dirs[i]):
+			var e := sim.board.get_unit(cell)
+			if e != null and e.alive and e.team != c.team:
+				show(ctx, [cell])
+				hit(ctx, e, by_stars(c, [15, 30, 60]))
+				_slow_for(sim, e, 10.0, 3000.0)
+				break
+
+
+## Season 1 (Fennekin): a wisp on the target for 5 s: BURN, and it takes 15 / 20 / 30% more damage from everything.
+static func will_o_wisp(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	show(ctx, [t.cell])
+	status(ctx, t, "burn", 5000.0)
+	t.counters.wisp_until = sim.time_ms + 5000.0
+	t.counters.wisp_amp = by_stars(c, [0.15, 0.2, 0.3])
+
+
+## Season 1 (Goomy): heals back 40 / 60 / 90% of the damage taken in the last 3 s, then slime on the ADJACENT enemies:
+## 15 / 30 / 60 SPECIAL and -20% SPEED for 3 s.
+static func life_dew(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var lost := 0.0
+	for entry in c.counters.get("dew_log", []):
+		if float(entry[0]) >= sim.time_ms - 3000.0:
+			lost += float(entry[1])
+	c.counters.dew_log = []
+	if lost > 0.0:
+		sim.heal(c, lost * by_stars(c, [0.4, 0.6, 0.9]) * (1.0 + c.ap / 100.0), c)
+	var cells := BattleBoard.adjacent_cells(c.cell)
+	show(ctx, cells)
+	for e in enemies_on(ctx, cells):
+		hit(ctx, e, by_stars(c, [15, 30, 60]))
+		_slow_for(sim, e, roundf(e.speed * 0.2), 3000.0)
+
+
+## Season 1 (Klink): its next 3 / 4 / 5 attacks come twice as fast, each firing a gear at the enemy nearest its
+## target too (50% ATK as SPECIAL): SeasonSkillEffects.on_attack_hit.
+static func shift_gear(ctx: Dictionary) -> void:
+	var c: BattleUnit = ctx.caster
+	if int(c.counters.get("shift_gears", 0)) <= 0:
+		var boost := roundf(c.speed)
+		c.add_stat("speed", boost)
+		c.counters.shift_gear_speed = boost
+	c.counters.shift_gears = int(by_stars(c, [3, 4, 5]))
+	ctx.sim.emit({"type": "buff", "unit": c, "stat": "speed", "amount": c.counters.shift_gear_speed})
+
+
+## Season 1 (Mareep): a wire to the ally with the most ATK for 6 s: +15 / 25 / 40 SPEED, and each of its attacks
+## adds 10 / 20 / 40 SPECIAL (SeasonSkillEffects.on_attack_hit).
+static func electro_link(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var best: BattleUnit = null
+	for a in sim.allies_of(c):
+		if a != c and not a.inanimate and (best == null or a.atk > best.atk):
+			best = a
+	if best == null:
+		best = c
+	show(ctx, [best.cell], "allies")
+	var speed := by_stars(c, [15, 25, 40])
+	if not _active_link(sim, best):
+		best.add_stat("speed", speed)
+		sim.schedule(6000.0, null, func() -> void:
+			if best.alive:
+				best.add_stat("speed", -speed))
+	best.counters.charged_until = sim.time_ms + 6000.0
+	best.counters.charged_dmg = roundf(by_stars(c, [10, 20, 40]) * (1.0 + c.ap / 100.0))
+	sim.emit({"type": "buff", "unit": best, "stat": "speed", "amount": speed})
+
+
+static func _active_link(sim: BattleSim, u: BattleUnit) -> bool:
+	return sim.time_ms < float(u.counters.get("charged_until", -1.0))
+
+
+## Season 1 (Rattata): if the target has more HP, it is brought down to Rattata's HP (at most 80 / 160 / 320 TRUE);
+## else 20 / 40 / 80 SPECIAL.
+static func endeavor(ctx: Dictionary) -> void:
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	show(ctx, [t.cell])
+	if t.hp > c.hp:
+		hit(ctx, t, minf(t.hp - c.hp, by_stars(c, [80, 160, 320]) * (1.0 + c.ap / 100.0)), BattleUnit.DamageKind.TRUE, false)
+	else:
+		hit(ctx, t, by_stars(c, [20, 40, 80]))
+
+
+## Season 1 (Cyndaquil): a sea of fire on the target's row for 4 s: every second the enemies there BURN and take
+## 10 / 20 / 40 SPECIAL.
+static func fire_pledge(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var cells := BattleBoard.cells_in_row(t.cell.y)
+	var damage := by_stars(c, [10, 20, 40])
+	for i in 4:
+		sim.schedule(1000.0 * i, null, _pledge_tick.bind(ctx, cells, damage))
+
+
+static func _pledge_tick(ctx: Dictionary, cells: Array, damage: float) -> void:
+	if ctx.sim.finished:
+		return
+	show(ctx, cells)
+	for e in enemies_on(ctx, cells):
+		status(ctx, e, "burn", 1500.0)
+		hit(ctx, e, damage)
+
+
+## Season 1 (Growlithe): for 4 s, 30 / 40 / 50% of the damage its ADJACENT allies take goes to it instead
+## (SeasonSkillEffects.redirect); it gains 20 / 40 / 80 SHIELD.
+static func guard_dog(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	show(ctx, BattleBoard.adjacent_cells(c.cell), "allies")
+	c.counters.guard_until = sim.time_ms + 4000.0
+	c.counters.guard_pct = by_stars(c, [0.3, 0.4, 0.5])
+	sim.add_shield(c, by_stars(c, [20, 40, 80]) * (1.0 + c.ap / 100.0), c)
+
+
+## Season 1 (Nidoran M): 2 / 3 / 4 toxic spikes on free cells of its own front row; an enemy stepping on one takes
+## 30 / 60 / 120 SPECIAL and 2 POISON stacks (each spike once; SeasonSkillEffects.each_second).
+static func toxic_spikes(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var row := 3 if c.team == BattleUnit.Team.BLUE else 4
+	var free: Array = []
+	for cell in BattleBoard.cells_in_row(row):
+		if sim.board.is_free(cell):
+			free.append(cell)
+	if free.is_empty():
+		for cell in BattleBoard.cells_in_row(row):
+			free.append(cell)
+	var cells := pick_random(sim, free, int(by_stars(c, [2, 3, 4])))
+	SeasonSkillEffects.set_traps(sim, c, cells, roundf(by_stars(c, [30, 60, 120]) * (1.0 + c.ap / 100.0)))
+	show(ctx, cells)
+
+
+## Season 1 (Omanyte): wraps the target for 3 / 3 / 4 s: LOCKED, 10 / 20 / 40 SPECIAL every second, and it needs 30%
+## more PP to cast while wrapped.
+static func constrict(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var ms := by_stars(c, [3000, 3000, 4000])
+	show(ctx, [t.cell])
+	status(ctx, t, "locked", ms)
+	if not t.counters.has("constricted"):
+		var extra := roundf(t.max_pp * 0.3)
+		t.counters.constricted = true
+		t.max_pp += extra
+		sim.schedule(ms, null, func() -> void:
+			t.max_pp -= extra
+			t.counters.erase("constricted"))
+	for i in int(ms / 1000.0):
+		sim.schedule(1000.0 * (i + 1), c, func() -> void:
+			if t.alive:
+				hit(ctx, t, by_stars(c, [10, 20, 40])))
+
+
+## Season 1 (Piplup): mist over the 2 allies standing right behind it: 25 / 50 / 100 SHIELD and SAFEGUARD 3 s each.
+static func mist(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var dy := -1 if c.team == BattleUnit.Team.BLUE else 1
+	var behind: Array[BattleUnit] = []
+	for cell in BattleBoard.adjacent_cells(c.cell):
+		var a := sim.board.get_unit(cell)
+		if cell.y == c.cell.y + dy and a != null and a.alive and a.team == c.team and not a.inanimate:
+			behind.append(a)
+	if behind.is_empty(): # nobody behind: itself
+		behind.append(c)
+	show(ctx, behind.map(func(a: BattleUnit) -> Vector2i: return a.cell), "allies")
+	for a in behind.slice(0, 2):
+		sim.add_shield(a, by_stars(c, [25, 50, 100]) * (1.0 + c.ap / 100.0), c)
+		sim.add_status(a, "safeguard", 3000.0, c)
+
+
+## Season 1 (Sewaddle): an X through the target (it and its 4 neighbours off its row): 20 / 40 / 80 PHYSICAL; the
+## enemies hit under 12 / 15 / 18% HP fall.
+static func cross_cut(ctx: Dictionary) -> void:
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var cells: Array[Vector2i] = [t.cell]
+	for cell in BattleBoard.adjacent_cells(t.cell):
+		if cell.y != t.cell.y:
+			cells.append(cell)
+	show(ctx, cells)
+	var below := by_stars(c, [0.12, 0.15, 0.18])
+	for e in enemies_on(ctx, cells):
+		var r := hit(ctx, e, by_stars(c, [20, 40, 80]), BattleUnit.DamageKind.PHYSICAL)
+		if e.alive and not r.death and e.hp < e.max_hp * below:
+			hit(ctx, e, e.hp + e.shield + 1.0, BattleUnit.DamageKind.TRUE, false)
+
+
+## Season 1 (Spinarak): ties the 2 enemies nearest it together for 5 s: whatever one of them loses, the other loses
+## 30 / 40 / 50% of it as TRUE (SeasonSkillEffects.after_damage); both -15 SPEED for that time.
+static func spider_web(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var foes := sim.enemies_of(c)
+	foes.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool:
+		return BattleBoard.distance(a.cell, c.cell) < BattleBoard.distance(b.cell, c.cell))
+	if foes.size() < 2:
+		if not foes.is_empty():
+			hit(ctx, foes[0], by_stars(c, [20, 40, 80]))
+		return
+	var a: BattleUnit = foes[0]
+	var b: BattleUnit = foes[1]
+	show(ctx, [a.cell, b.cell])
+	for pair in [[a, b], [b, a]]:
+		var u: BattleUnit = pair[0]
+		u.counters.web_with = pair[1].id
+		u.counters.web_until = sim.time_ms + 5000.0
+		u.counters.web_pct = by_stars(c, [0.3, 0.4, 0.5])
+		_slow_for(sim, u, 15.0, 5000.0)
+
+
+## Season 1 (Bulbasaur): vines into the 3 enemies nearest it for 4 s: every second 8 / 15 / 30 SPECIAL each, and it
+## heals what they lose.
+static func giga_drain(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var foes := sim.enemies_of(c)
+	foes.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool:
+		return BattleBoard.distance(a.cell, c.cell) < BattleBoard.distance(b.cell, c.cell))
+	var tied := foes.slice(0, 3)
+	for i in 4:
+		sim.schedule(1000.0 * i, c, _drain_tick.bind(ctx, tied))
+
+
+static func _drain_tick(ctx: Dictionary, tied: Array) -> void:
+	var c: BattleUnit = ctx.caster
+	var total := 0.0
+	var cells: Array[Vector2i] = []
+	for e in tied:
+		if e.alive:
+			cells.append(e.cell)
+			total += float(hit(ctx, e, by_stars(c, [8, 15, 30])).taken)
+	show(ctx, cells)
+	if total > 0.0:
+		ctx.sim.heal(c, total, c)
+#endregion
+
+
+#region abilities (season1b)
+## Nearest free cell ADJACENT to `cell` from `toward` (null: none).
+static func _free_adjacent_toward(sim: BattleSim, cell: Vector2i, toward: Vector2i) -> Variant:
+	var best: Variant = null
+	for c in BattleBoard.adjacent_cells(cell):
+		if sim.board.is_free(c) and (best == null or BattleBoard.distance(c, toward) < BattleBoard.distance(best, toward)):
+			best = c
+	return best
+
+
+## Season 1 (Pancham): grabs the target and slams it onto a free cell behind itself (into its own side):
+## 30 / 60 / 120 SPECIAL and FLINCH 2 s.
+static func circle_throw(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	if t.can_be_moved():
+		var back := BattleBoard.step(c.cell, BattleBoard.orientation(t.cell, c.cell))
+		var to: Variant = back if BattleBoard.in_bounds(back) and sim.board.is_free(back) \
+			else _free_adjacent_toward(sim, c.cell, back)
+		if to != null:
+			sim.force_move(t, to, 300.0, "knockback")
+	show(ctx, [t.cell])
+	hit(ctx, t, by_stars(c, [30, 60, 120]))
+	status(ctx, t, "flinch", 2000.0)
+
+
+## Season 1 (Pawmi): the first time in a fight an ally has fallen, the nearest fallen one comes back with
+## 20 / 30 / 50% HP; else (or later) a punch: 30 / 60 / 120 SPECIAL and PARALYSIS 1 s.
+static func revival_blessing(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	if not c.counters.has("revived"):
+		var fallen: BattleUnit = null
+		for u in sim.units:
+			if not u.alive and u.team == c.team and not u.inanimate and not u.is_spawn and \
+					(fallen == null or BattleBoard.distance(u.cell, c.cell) < BattleBoard.distance(fallen.cell, c.cell)):
+				fallen = u
+		if fallen != null:
+			c.counters.revived = true
+			var back := _summon(sim, fallen.pkm, c.team, fallen.cell)
+			if back != null:
+				back.hp = maxf(roundf(back.max_hp * by_stars(c, [0.2, 0.3, 0.5])), 1.0)
+				show(ctx, [back.cell], "allies")
+				sim.emit({"type": "resurrect", "unit": back})
+				return
+	var t: BattleUnit = ctx.focus
+	if t != null:
+		show(ctx, [t.cell])
+		hit(ctx, t, by_stars(c, [30, 60, 120]))
+		status(ctx, t, "paralysis", 1000.0)
+
+
+## Season 1 (Trapinch): pulls the nearest enemy within 3 cells next to itself: LOCKED 2 / 3 / 4 s and
+## 30 / 60 / 120 SPECIAL.
+static func sand_pit(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var near: BattleUnit = null
+	for e in sim.enemies_of(c):
+		if BattleBoard.distance(e.cell, c.cell) <= 3 and not e.is_untargetable() and \
+				(near == null or BattleBoard.distance(e.cell, c.cell) < BattleBoard.distance(near.cell, c.cell)):
+			near = e
+	if near == null:
+		near = ctx.focus
+	if near == null:
+		return
+	if BattleBoard.distance(near.cell, c.cell) > 1 and near.can_be_moved():
+		var to: Variant = _free_adjacent_toward(sim, c.cell, near.cell)
+		if to != null:
+			sim.force_move(near, to, 300.0, "knockback")
+	show(ctx, [near.cell])
+	status(ctx, near, "locked", by_stars(c, [2000, 3000, 4000]))
+	hit(ctx, near, by_stars(c, [30, 60, 120]))
+
+
+## Season 1 (Vanillite): for 3 s, 50 / 75 / 100% of the special damage it takes goes back to its source
+## (SeasonSkillEffects.after_damage); 15 / 30 / 60 SHIELD.
+static func mirror_coat(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	show(ctx, [c.cell], "allies")
+	c.counters.mirror_until = sim.time_ms + 3000.0
+	c.counters.mirror_pct = by_stars(c, [0.5, 0.75, 1.0])
+	sim.add_shield(c, by_stars(c, [15, 30, 60]) * (1.0 + c.ap / 100.0), c)
+
+
+## Season 1 (Vulpix): a fox flame on each of the 3 / 3 / 4 nearest enemies (up to 3 each); an enemy with 3 flames
+## blows up: 60 / 120 / 240 SPECIAL and BURN 3 s.
+static func fox_fire(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var foes := sim.enemies_of(c)
+	foes.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool:
+		return BattleBoard.distance(a.cell, c.cell) < BattleBoard.distance(b.cell, c.cell))
+	var cells: Array[Vector2i] = []
+	for e in foes.slice(0, int(by_stars(c, [3, 3, 4]))):
+		cells.append(e.cell)
+		var flames := int(e.counters.get("fox_fire", 0)) + 1
+		if flames >= 3:
+			e.counters.erase("fox_fire")
+			hit(ctx, e, by_stars(c, [60, 120, 240]))
+			status(ctx, e, "burn", 3000.0)
+		else:
+			e.counters.fox_fire = flames
+	show(ctx, cells)
+
+
+## Season 1 (Corsola): the target loses 3 / 5 / 8 ATK; Corsola heals 300% of the target's ATK.
+static func strength_sap(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	show(ctx, [t.cell])
+	var sap := t.atk * 3.0
+	t.add_stat("atk", AbilityRunner.adjust_buff(c, t, -by_stars(c, [3, 5, 8])))
+	sim.heal(c, sap * (1.0 + c.ap / 100.0), c)
+
+
+## Season 1 (Dratini): flies to the ally with the lowest % HP and takes its place: that ally gets
+## 30 / 60 / 120 SHIELD, the enemies ADJACENT to Dratini's new cell FLINCH 2 s.
+static func ally_switch(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var low: BattleUnit = null
+	for a in sim.allies_of(c):
+		if a != c and not a.inanimate and (low == null or a.hp_ratio() < low.hp_ratio()):
+			low = a
+	if low == null:
+		return
+	if low.can_be_moved() and c.can_be_moved():
+		sim.swap_cells(c.cell, low.cell, "dash", 300.0)
+	sim.add_shield(low, by_stars(c, [30, 60, 120]) * (1.0 + c.ap / 100.0), c)
+	var cells := BattleBoard.adjacent_cells(c.cell)
+	show(ctx, cells)
+	for e in enemies_on(ctx, cells):
+		status(ctx, e, "flinch", 2000.0)
+
+
+## Season 1 (Dwebble): throws its rock onto the cell of the enemy back row with the most enemies around:
+## 30 / 60 / 120 SPECIAL there and ADJACENT, LOCKED 1 s.
+static func smack_down(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var row := BattleBoard.HEIGHT - 1 if c.team == BattleUnit.Team.BLUE else 0
+	var best := Vector2i(-1, -1)
+	var most := -1
+	for cell in BattleBoard.cells_in_row(row):
+		var n := enemies_on(ctx, BattleBoard.adjacent_cells(cell, true)).size()
+		if n > most:
+			most = n
+			best = cell
+	if most <= 0 and ctx.focus != null:
+		best = ctx.focus.cell
+	var cells := BattleBoard.adjacent_cells(best, true)
+	show(ctx, cells)
+	for e in enemies_on(ctx, cells):
+		hit(ctx, e, by_stars(c, [30, 60, 120]))
+		status(ctx, e, "locked", 1000.0)
+
+
+## Season 1 (Gible): a quake spreading in 3 rings around it (1, 2, 3 cells), 0.4 s apart: 20 / 40 / 80 SPECIAL to
+## the enemies of each ring (not FLYING).
+static func earthquake(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var center := c.cell
+	for r in range(1, 4):
+		sim.schedule(400.0 * (r - 1), c, _quake_ring.bind(ctx, center, r))
+
+
+static func _quake_ring(ctx: Dictionary, center: Vector2i, r: int) -> void:
+	var c: BattleUnit = ctx.caster
+	var ring: Array[Vector2i] = []
+	for cell in BattleBoard.cells_in_range(center, r):
+		if BattleBoard.distance(cell, center) == r:
+			ring.append(cell)
+	show(ctx, ring)
+	for e in enemies_on(ctx, ring):
+		if not e.types.has("FLYING"):
+			hit(ctx, e, by_stars(c, [20, 40, 80]))
+
+
+## Season 1 (Rockruff): hides in the rocks for 1.5 s (untargetable); its first attack after that is a sure critical
+## hit dealing 150 / 200 / 250% ATK (SeasonSkillEffects.on_attack_hit).
+static func rock_ambush(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	show(ctx, [c.cell], "allies")
+	c.add_status("untargetable", 1500.0)
+	c.counters.ambush = by_stars(c, [1.5, 2.0, 2.5])
+	for e in sim.units:
+		if e.target == c:
+			e.target = null
+
+
+## Season 1 (Snorunt): ties its fate to the target for 5 s: if Snorunt faints meanwhile, the target faints too
+## (SeasonSkillEffects.on_death); else, when it ends, 40 / 80 / 160 SPECIAL and FREEZE 1 s on the target.
+static func destiny_bond(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	show(ctx, [t.cell])
+	c.counters.bond_until = sim.time_ms + 5000.0
+	c.counters.bond_with = t.id
+	sim.schedule(5000.0, c, func() -> void:
+		if t.alive and int(c.counters.get("bond_with", -1)) == t.id:
+			c.counters.erase("bond_until")
+			show(ctx, [t.cell])
+			hit(ctx, t, by_stars(c, [40, 80, 160]))
+			status(ctx, t, "freeze", 1000.0))
+
+
+## Season 1 (Pawniard): every enemy under 12 / 16 / 22% HP falls; each one gives it 3 / 5 / 8 ATK. None: 100% ATK as
+## TRUE on the target.
+static func supreme_overlord(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var below := by_stars(c, [0.12, 0.16, 0.22])
+	var cells: Array[Vector2i] = []
+	for e in sim.enemies_of(c):
+		if e.hp < e.max_hp * below and not e.inanimate:
+			cells.append(e.cell)
+			var r := hit(ctx, e, e.hp + e.shield + 1.0, BattleUnit.DamageKind.TRUE, false)
+			if r.death:
+				c.add_stat("atk", by_stars(c, [3, 5, 8]))
+	if not cells.is_empty():
+		show(ctx, cells)
+		return
+	var t: BattleUnit = ctx.focus
+	if t != null:
+		show(ctx, [t.cell])
+		hit(ctx, t, c.atk, BattleUnit.DamageKind.TRUE)
+
+
+## Season 1 (Venipede): +10 / 20 / 40 SPEED and +4 / 8 / 15 ATK for 5 s; then (or when it faints) it hands them to
+## the ADJACENT ally with the most ATK for the rest of the fight (SeasonSkillEffects.pass_baton).
+static func baton_pass(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	if c.counters.has("baton"):
+		SeasonSkillEffects.pass_baton(sim, c)
+	var boost := {"speed": by_stars(c, [10, 20, 40]), "atk": by_stars(c, [4, 8, 15])}
+	c.add_stat("speed", boost.speed)
+	c.add_stat("atk", boost.atk)
+	c.counters.baton = boost
+	show(ctx, [c.cell], "allies")
+	var stamp := sim.time_ms
+	c.counters.baton_stamp = stamp
+	sim.schedule(5000.0, c, func() -> void:
+		if float(c.counters.get("baton_stamp", -1.0)) == stamp:
+			SeasonSkillEffects.pass_baton(sim, c))
+#endregion
+
+
+#region abilities (season1c)
+## Season 1 (Arctovish): 4 s of primal cold: every second the enemies within 2 cells lose 20% more SPEED and take 20
+## SPECIAL; one slowed by 80% FREEZES 1.5 s. Their SPEED comes back after.
+static func primal_chill(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var center := c.cell
+	var slowed: Dictionary = {} # unit -> [SPEED taken, stacks]
+	for i in 4:
+		sim.schedule(1000.0 * i, null, func() -> void:
+			if sim.finished:
+				return
+			var cells := BattleBoard.cells_in_range(center, 2)
+			show(ctx, cells)
+			for e in enemies_on(ctx, cells):
+				var st: Array = slowed.get(e, [0.0, 0])
+				var loss := roundf(e.speed * 0.2)
+				e.add_stat("speed", -loss)
+				st[0] = float(st[0]) + loss
+				st[1] = int(st[1]) + 1
+				slowed[e] = st
+				hit(ctx, e, 20.0)
+				if int(st[1]) == 4:
+					status(ctx, e, "freeze", 1500.0))
+	sim.schedule(4000.0, null, func() -> void:
+		for e in slowed:
+			if e.alive:
+				e.add_stat("speed", float(slowed[e][0])))
+
+
+## Season 1 (Armarouge): 250 SPECIAL shared evenly by every enemy on the board.
+static func armor_salvo(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var foes := sim.enemies_of(c)
+	if foes.is_empty():
+		return
+	var each := 250.0 * (1.0 + c.ap / 100.0) / foes.size()
+	show(ctx, foes.map(func(e: BattleUnit) -> Vector2i: return e.cell))
+	for e in foes:
+		hit(ctx, e, each, BattleUnit.DamageKind.SPECIAL, false)
+
+
+## Season 1 (Eiscue): pulls every enemy 2 cells away into the cells around it; those pulled FREEZE 1 s and take 40
+## SPECIAL.
+static func snow_huddle(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var pulled: Array[BattleUnit] = []
+	for e in sim.enemies_of(c):
+		if BattleBoard.distance(e.cell, c.cell) == 2 and e.can_be_moved():
+			var to: Variant = _free_adjacent_toward(sim, c.cell, e.cell)
+			if to != null:
+				sim.force_move(e, to, 300.0, "knockback")
+				pulled.append(e)
+	show(ctx, BattleBoard.cells_in_range(c.cell, 2))
+	for e in pulled:
+		status(ctx, e, "freeze", 1000.0)
+		hit(ctx, e, 40.0)
+
+
+## Season 1 (Emolga): 3 afterimages: each one makes a basic attack at it miss (SeasonSkillEffects.blocks_attack);
+## +20 SPEED while one is left.
+static func double_team(ctx: Dictionary) -> void:
+	var c: BattleUnit = ctx.caster
+	show(ctx, [c.cell], "allies")
+	if int(c.counters.get("decoys", 0)) <= 0:
+		c.add_stat("speed", 20.0)
+		c.counters.decoy_speed = 20.0
+	c.counters.decoys = 3
+
+
+## Season 1 (Galarian Farfetch'd): guard stance for 3 s: the first 3 basic attacks at it are parried (no damage) and
+## answered with 120% ATK as PHYSICAL (SeasonSkillEffects.blocks_attack).
+static func parry(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	show(ctx, [c.cell], "allies")
+	c.counters.parry_until = sim.time_ms + 3000.0
+	c.counters.parry = 3
+	c.counters.parry_ratio = 1.2
+
+
+## Season 1 (Hawlucha): carries the target up for 1.5 s (both out of reach, the target frozen in the air), then slams it
+## down: 150 PHYSICAL, 60 to the enemies ADJACENT.
+static func sky_drop(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	show(ctx, [t.cell])
+	c.add_status("skydiving", 1500.0)
+	t.add_status("stasis", 1500.0) # out of reach and held in the air (BattleUnit.can_act / is_untargetable)
+	for e in sim.units:
+		if e.target == t or e.target == c:
+			e.target = null
+	sim.schedule(1500.0, c, func() -> void:
+		if not t.alive:
+			return
+		var cells := BattleBoard.adjacent_cells(t.cell, true)
+		show(ctx, cells)
+		hit(ctx, t, 150.0, BattleUnit.DamageKind.PHYSICAL)
+		for e in enemies_on(ctx, BattleBoard.adjacent_cells(t.cell)):
+			hit(ctx, e, 60.0, BattleUnit.DamageKind.PHYSICAL))
+
+
+## Season 1 (Heatmor): fire over the target and the enemies ADJACENT to it: their SHIELD burns away, each takes
+## 30 + the SHIELD lost as SPECIAL and BURNS 3 s.
+static func incinerate(ctx: Dictionary) -> void:
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var cells := BattleBoard.adjacent_cells(t.cell, true)
+	show(ctx, cells)
+	for e in enemies_on(ctx, cells):
+		var burnt := e.shield
+		e.shield = 0.0
+		hit(ctx, e, 30.0 + burnt)
+		status(ctx, e, "burn", 3000.0)
+
+
+## Season 1 (Latios): links its mind with the strongest ally for 6 s: the damage either takes is halved and half goes
+## to the other (SeasonSkillEffects.redirect); both +40 AP meanwhile.
+static func mind_link(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var best: BattleUnit = null
+	for a in sim.allies_of(c):
+		if a != c and not a.inanimate and (best == null or a.unit_score() > best.unit_score()):
+			best = a
+	if best == null:
+		return
+	show(ctx, [best.cell, c.cell], "allies")
+	for pair in [[c, best], [best, c]]:
+		var u: BattleUnit = pair[0]
+		u.counters.link_with = pair[1].id
+		u.counters.link_until = sim.time_ms + 6000.0
+		u.add_stat("ap", 40.0)
+		sim.schedule(6000.0, null, func() -> void:
+			u.add_stat("ap", -40.0))
+
+
+## Season 1 (Maractus): a dance floor of radius 2 around it for 5 s: the allies there +25% SPEED for that time, and
+## every second the allies on it heal 3% of their max HP.
+static func maraca_dance(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var center := c.cell
+	var cells := BattleBoard.cells_in_range(center, 2, true)
+	show(ctx, cells, "allies")
+	for cell in cells:
+		var a := sim.board.get_unit(cell)
+		if a != null and a.alive and a.team == c.team and not a.inanimate:
+			var boost := roundf(a.speed * 0.25)
+			a.add_stat("speed", boost)
+			sim.schedule(5000.0, null, func() -> void:
+				if a.alive:
+					a.add_stat("speed", -boost))
+	for i in range(1, 6):
+		sim.schedule(1000.0 * i, null, func() -> void:
+			for cell in cells:
+				var a := sim.board.get_unit(cell)
+				if a != null and a.alive and a.team == c.team and not a.inanimate:
+					sim.heal(a, a.max_hp * 0.03, c))
+
+
+## Season 1 (Mesprit): the enemy with the most AP loses 40 AP (Mesprit gets it) and is SILENCED 2.5 s.
+static func emotion_drain(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var best: BattleUnit = null
+	for e in sim.enemies_of(c):
+		if not e.inanimate and (best == null or e.ap > best.ap):
+			best = e
+	if best == null:
+		return
+	show(ctx, [best.cell])
+	best.add_stat("ap", -40.0)
+	c.add_stat("ap", 40.0)
+	status(ctx, best, "silence", 2500.0)
+
+
+## Season 1 (Mimikyu): patches a Pikachu disguise on itself and the 2 allies with the lowest % HP: the next hit each
+## takes is stopped and its attacker takes 40 SPECIAL (SeasonSkillEffects.redirect).
+static func disguise_patch(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var allies := sim.allies_of(c).filter(func(a: BattleUnit) -> bool: return a != c and not a.inanimate)
+	allies.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool: return a.hp_ratio() < b.hp_ratio())
+	var wearers: Array = [c] + allies.slice(0, 2)
+	show(ctx, wearers.map(func(a: BattleUnit) -> Vector2i: return a.cell), "allies")
+	for a in wearers:
+		a.counters.disguise = 1
+		a.counters.disguise_dmg = roundf(40.0 * (1.0 + c.ap / 100.0))
+
+
+## Season 1 (Orthworm): quicksand on the cells around the target (radius 1) for 4 s: every second the enemies there
+## are slowed by half and take 30 SPECIAL; Orthworm heals what they lose.
+static func earth_eater(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var cells := BattleBoard.adjacent_cells(t.cell, true)
+	for i in 4:
+		sim.schedule(1000.0 * i, null, func() -> void:
+			if sim.finished:
+				return
+			show(ctx, cells)
+			var total := 0.0
+			for e in enemies_on(ctx, cells):
+				_slow_for(sim, e, roundf(e.speed * 0.5), 1000.0)
+				total += float(hit(ctx, e, 30.0).taken)
+			if total > 0.0 and c.alive:
+				sim.heal(c, total, c))
+
+
+## Season 1 (Scream Tail): everyone else within 2 cells hears the song: 4 s later the enemies lose 25% and the allies
+## 10% of their max HP as TRUE.
+static func perish_song(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var cells := BattleBoard.cells_in_range(c.cell, 2)
+	show(ctx, cells, "all")
+	var listeners: Array[BattleUnit] = []
+	for cell in cells:
+		var u := sim.board.get_unit(cell)
+		if u != null and u.alive and u != c and not u.inanimate:
+			listeners.append(u)
+	sim.schedule(4000.0, null, func() -> void:
+		for u in listeners:
+			if u.alive:
+				var share := 0.25 if u.team != c.team else 0.1
+				sim.deal_damage(u, roundf(u.max_hp * share), BattleUnit.DamageKind.TRUE, c if c.alive else null,
+					false, true, false))
+#endregion
+
+
+#region abilities (season1d)
+## Season 1 (Stonjourner): the ancient stones power up the ADJACENT allies for 6 s: +40 AP and 30 SHIELD.
+static func power_spot(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var cells := BattleBoard.adjacent_cells(c.cell)
+	show(ctx, cells, "allies")
+	for cell in cells:
+		var a := sim.board.get_unit(cell)
+		if a != null and a.alive and a.team == c.team and not a.inanimate:
+			a.add_stat("ap", 40.0)
+			sim.add_shield(a, 30.0 * (1.0 + c.ap / 100.0), c)
+			sim.emit({"type": "buff", "unit": a, "stat": "ap", "amount": 40.0})
+			sim.schedule(6000.0, null, func() -> void:
+				a.add_stat("ap", -40.0))
+
+
+## Season 1 (Tropius): throws a fruit through the 4 allies with the lowest % HP: 80 HP for the first, 20% less for each
+## next one; the last one also +10 SPEED.
+static func fruit_toss(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var allies := sim.allies_of(c).filter(func(a: BattleUnit) -> bool: return not a.inanimate)
+	allies.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool: return a.hp_ratio() < b.hp_ratio())
+	var heal := 80.0 * (1.0 + c.ap / 100.0)
+	var chain := allies.slice(0, 4)
+	for i in chain.size():
+		var a: BattleUnit = chain[i]
+		sim.schedule(200.0 * i, null, func() -> void:
+			if a.alive:
+				show(ctx, [a.cell], "allies")
+				sim.heal(a, heal * pow(0.8, i), c)
+				if i == chain.size() - 1:
+					a.add_stat("speed", 10.0))
+
+
+## Season 1 (Zeraora): dashes in turn to 3 enemies standing near each other, a punch each: 40 + 60% ATK as SPECIAL;
+## every punch +10 SPEED for the rest of the fight.
+static func plasma_blitz(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var chain: Array[BattleUnit] = [t]
+	while chain.size() < 3:
+		var last: BattleUnit = chain[chain.size() - 1]
+		var next: BattleUnit = null
+		for e in sim.enemies_of(c):
+			if not chain.has(e) and not e.is_untargetable() and \
+					(next == null or BattleBoard.distance(e.cell, last.cell) < BattleBoard.distance(next.cell, last.cell)):
+				next = e
+		if next == null:
+			break
+		chain.append(next)
+	for i in chain.size():
+		var e: BattleUnit = chain[i]
+		sim.schedule(250.0 * i, c, func() -> void:
+			if not e.alive:
+				return
+			var to: Variant = _free_adjacent_toward(sim, e.cell, c.cell)
+			if to != null and c.can_be_moved():
+				sim.move_unit(c, to, 150.0, "dash")
+			show(ctx, [e.cell])
+			hit(ctx, e, 40.0 + 0.6 * c.atk)
+			c.add_stat("speed", 10.0))
+
+
+## Season 1 (Celebi): every ally goes back to the HP it had 3 s ago when that was more (SeasonSkillEffects HP history),
+## and is cleansed.
+static func time_rewind(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var cells: Array[Vector2i] = []
+	for a in sim.allies_of(c):
+		if a.inanimate:
+			continue
+		cells.append(a.cell)
+		a.cleanse()
+		var hist: Array = a.counters.get("hp_hist", [])
+		if not hist.is_empty():
+			var before := float(hist[0])
+			if before > a.hp:
+				sim.heal(a, before - a.hp, c)
+	show(ctx, cells, "allies")
+
+
+## Season 1 (Enamorus): the 2 enemies nearest it fall for each other for 3 s: each is CHARMED toward the other and
+## takes 30% more damage (SeasonSkillEffects.damage_factor).
+static func love_tangle(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var foes := sim.enemies_of(c)
+	foes.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool:
+		return BattleBoard.distance(a.cell, c.cell) < BattleBoard.distance(b.cell, c.cell))
+	if foes.size() < 2:
+		if not foes.is_empty():
+			status(ctx, foes[0], "charm", 2000.0)
+		return
+	var a: BattleUnit = foes[0]
+	var b: BattleUnit = foes[1]
+	show(ctx, [a.cell, b.cell])
+	sim.add_status(a, "charm", 3000.0, b)
+	sim.add_status(b, "charm", 3000.0, a)
+	a.counters.love_until = sim.time_ms + 3000.0
+	b.counters.love_until = sim.time_ms + 3000.0
+
+
+## Season 1 (Melmetal): lifts the target and slams it onto the cell next to it with the most enemies around:
+## 120% ATK to the target, 80% ATK to the enemies around that cell, as PHYSICAL; FLINCH 2 s.
+static func iron_slam(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var spot := t.cell
+	var most := -1
+	for cell in BattleBoard.adjacent_cells(t.cell):
+		var n := enemies_on(ctx, BattleBoard.adjacent_cells(cell)).size()
+		if n > most:
+			most = n
+			spot = cell
+	if spot != t.cell and sim.board.is_free(spot) and t.can_be_moved():
+		sim.force_move(t, spot, 300.0, "knockback")
+	var cells := BattleBoard.adjacent_cells(spot, true)
+	show(ctx, cells)
+	hit(ctx, t, 1.2 * c.atk, BattleUnit.DamageKind.PHYSICAL)
+	status(ctx, t, "flinch", 2000.0)
+	for e in enemies_on(ctx, BattleBoard.adjacent_cells(spot)):
+		if e != t:
+			hit(ctx, e, 0.8 * c.atk, BattleUnit.DamageKind.PHYSICAL)
+			status(ctx, e, "flinch", 2000.0)
+
+
+## Season 1 (Okidogi): toxic chains on the 3 enemies nearest it: each is dragged 1 cell closer and gets 2 POISON
+## stacks; +5 DEF and +5 SPE_DEF to Okidogi per enemy chained.
+static func chain_drag(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var foes := sim.enemies_of(c)
+	foes.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool:
+		return BattleBoard.distance(a.cell, c.cell) < BattleBoard.distance(b.cell, c.cell))
+	var chained := foes.slice(0, 3)
+	show(ctx, chained.map(func(e: BattleUnit) -> Vector2i: return e.cell))
+	for e in chained:
+		if BattleBoard.distance(e.cell, c.cell) > 1 and e.can_be_moved():
+			var closer := BattleBoard.step(e.cell, BattleBoard.orientation(e.cell, c.cell))
+			if BattleBoard.in_bounds(closer) and sim.board.is_free(closer):
+				sim.force_move(e, closer, 250.0, "knockback")
+		status(ctx, e, "poison", 3000.0)
+		status(ctx, e, "poison", 3000.0)
+		c.add_stat("def", 5.0)
+		c.add_stat("speDef", 5.0)
+
+
+## Season 1 (Registeel): locks on the enemy with the most ATK; 1.5 s later a sure hit: 150 SPECIAL and PARALYSIS 2 s;
+## while it is paralysed, attacks at it get +30% crit chance (SeasonSkillEffects.crit_bonus).
+static func zap_lock(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var best: BattleUnit = null
+	for e in sim.enemies_of(c):
+		if not e.inanimate and (best == null or e.atk > best.atk):
+			best = e
+	if best == null:
+		return
+	show(ctx, [best.cell])
+	sim.schedule(1500.0, c, func() -> void:
+		if not best.alive:
+			return
+		show(ctx, [best.cell])
+		hit(ctx, best, 150.0)
+		status(ctx, best, "paralysis", 2000.0)
+		best.counters.zap_until = sim.time_ms + 2000.0)
+
+
+## Season 1 (Suicune): a wave over the board: every enemy is pushed 1 cell back, takes 30 + 8% of its max HP as
+## SPECIAL and loses its PROTECT, REFLECT, SAFEGUARD and MAGIC_BOUNCE.
+static func tidal_push(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var foes := sim.enemies_of(c)
+	show(ctx, foes.map(func(e: BattleUnit) -> Vector2i: return e.cell))
+	var back := Vector2i(0, 1) if c.team == BattleUnit.Team.BLUE else Vector2i(0, -1)
+	for e in foes:
+		for good in ["protect", "reflect", "safeguard", "magic_bounce"]:
+			e.statuses.erase(good)
+		if e.can_be_moved():
+			knock_back(sim, e, BattleBoard.orientation(e.cell, e.cell + back))
+		hit(ctx, e, 30.0 + 0.08 * e.max_hp)
+
+
+## Season 1 (Axew): each basic attack that lands stores 1 fury (up to 20, SeasonSkillEffects.on_attack_hit); the
+## ability spends it all: 30 / 60 / 120 SPECIAL on the target, +6% per fury.
+static func dragon_fury(ctx: Dictionary) -> void:
+	var c: BattleUnit = ctx.caster
+	var t: BattleUnit = ctx.focus
+	if t == null:
+		return
+	var fury := int(c.counters.get("fury", 0))
+	c.counters.fury = 0
+	show(ctx, [t.cell])
+	hit(ctx, t, by_stars(c, [30, 60, 120]) * (1.0 + 0.06 * fury))
+
+
+## Season 1 (Popplio): the 2 allies with the lowest % HP float in a bubble for 2 s (out of the fight a moment:
+## status "stasis"), healing 10 / 20 / 40 HP every 0.5 s.
+static func bubble_stasis(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var allies := sim.allies_of(c).filter(func(a: BattleUnit) -> bool: return not a.inanimate)
+	allies.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool: return a.hp_ratio() < b.hp_ratio())
+	var held := allies.slice(0, 2)
+	show(ctx, held.map(func(a: BattleUnit) -> Vector2i: return a.cell), "allies")
+	var heal := by_stars(c, [10, 20, 40]) * (1.0 + c.ap / 100.0)
+	for a in held:
+		a.add_status("stasis", 2000.0)
+		for e in sim.units:
+			if e.target == a:
+				e.target = null
+		for i in range(1, 5):
+			sim.schedule(500.0 * i, null, func() -> void:
+				if a.alive:
+					sim.heal(a, heal, c))
+
+
+## Season 1 (Sandile): for 4 s every heal and SHIELD the enemies get goes to Sandile instead
+## (SeasonSkillEffects.snatcher); it also bites the target: 20 / 40 / 80 SPECIAL.
+static func snatch(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	c.counters.snatch_until = sim.time_ms + 4000.0
+	var t: BattleUnit = ctx.focus
+	if t != null:
+		show(ctx, [t.cell])
+		hit(ctx, t, by_stars(c, [20, 40, 80]))
+
+
+## Season 1 (Scatterbug): scale powder on the 3 allies nearest it: each gets one of +20 / 40 / 80 SHIELD,
+## +10 / 20 / 40 AP or +10 / 15 / 25 SPEED, at random.
+static func wing_powder(ctx: Dictionary) -> void:
+	var sim: BattleSim = ctx.sim
+	var c: BattleUnit = ctx.caster
+	var allies := sim.allies_of(c).filter(func(a: BattleUnit) -> bool: return a != c and not a.inanimate)
+	allies.sort_custom(func(a: BattleUnit, b: BattleUnit) -> bool:
+		return BattleBoard.distance(a.cell, c.cell) < BattleBoard.distance(b.cell, c.cell))
+	var dusted := allies.slice(0, 3)
+	if dusted.is_empty():
+		dusted = [c]
+	show(ctx, dusted.map(func(a: BattleUnit) -> Vector2i: return a.cell), "allies")
+	for a in dusted:
+		match sim.rng.randi() % 3:
+			0:
+				sim.add_shield(a, by_stars(c, [20, 40, 80]) * (1.0 + c.ap / 100.0), c)
+			1:
+				a.add_stat("ap", by_stars(c, [10, 20, 40]))
+				sim.emit({"type": "buff", "unit": a, "stat": "ap", "amount": by_stars(c, [10, 20, 40])})
+			_:
+				a.add_stat("speed", by_stars(c, [10, 15, 25]))
+				sim.emit({"type": "buff", "unit": a, "stat": "speed", "amount": by_stars(c, [10, 15, 25])})
+#endregion

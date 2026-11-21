@@ -10,7 +10,11 @@ template wave, tool `tools\wave_editor.bat`), `docs/WORLD.md` (tham chiếu th�
 `docs/SEASONS.md` (mùa: danh sách Pokémon cố định của từng run; sinh bằng `python tools/port/gen_seasons.py`),
 `docs/THEMES.md` (điểm chung của 508 họ Pokémon — nguyên liệu dựng hệ mới theo mùa; sinh bằng
 `python tools/port/gen_themes.py` từ `tools/port/themes/`, bản xem có ảnh + lọc: `docs/themes.html`), `docs/BOT.md` (bot tự
-chơi hàng loạt → TSV để cân độ khó / cân bằng).
+chơi hàng loạt → TSV để cân độ khó / cân bằng), `docs/ROLES.md` (kiểm tra vai trò: skill thật của từng dạng → vai trò gợi ý,
+hệ hợp / không hợp vai trò theo mùa; sinh bằng `tools\role_audit.bat`, luật `tools/roles/role_rules.json`),
+`docs/DESIGN_S1.md` (thiết kế lại theo mùa: 31 hiệu ứng hệ mới + skill giữ / mượn / mới của từng họ, mỗi họ một cơ chế
+riêng; nguồn `tools/design/s1_*.json`, sinh + kiểm bằng `python tools/design/gen_design.py s1`; tham khảo TFT mùa 1–19 ở
+`build/tft/` lấy bằng `tools/design/tft_fetch.py` + `opgg_extract.py`).
 
 ## Dự án
 
@@ -43,6 +47,8 @@ tools\wave_editor.bat                                            # tool sửa te
 %G% --headless --path . --export-debug "Android" build/pkmxtft.apk   # APK debug (~2 phút, preset trong export_presets.cfg; còn preset "Windows")
 tools\bot_run.bat -Runs 500 -Workers 6 -Out build/bot/b1 -Passes journey -Report   # bot tự chơi song song -> TSV + report (docs/BOT.md)
 powershell -NoProfile -ExecutionPolicy Bypass -File tools/autobalance.ps1 -Iterations 3 -Runs 100 -Workers 12   # tự cân bằng -> data/balance.json
+tools\role_audit.bat [-ReportOnly] [-Only MOLTRES,ZAPDOS]         # kiểm tra vai trò (~25 s): probe skill headless -> docs/ROLES.md + build/roles/roles.tsv
+python tools/bot/season_report.py build/bot/bal_v9 [--season s1]  # mùa có skill / hệ riêng: hệ, skill mùa so với skill web cùng dạng -> season_<id>.tsv
 ```
 Mọi test / scene nhận `-- difficulty=<classic|normal|hard>`, `-- pass=<cấp>|all` (Battle Pass), `-- season=<id>|all` (mùa;
 `all` = không mùa) và `-- ui_scale=<hệ số> touch`
@@ -90,6 +96,7 @@ Bash tool: gọi `cmd //c "tools\\export_pac.bat"`; Godot console exe chạy đ�
 | `src/core/run_rules.gd` | `RunRules`: luật run dùng chung Game + bot (máu mất, thưởng wave, áp lựa chọn thị trấn, tự chọn khi vào trận) |
 | `tools/bot/` | bot tự chơi không view: `BotRun` (vòng stage chép từ Game + ghi TSV), `BotBrain` (quyết định, hồ sơ ngẫu nhiên), `BotPro` (bot pro: kế hoạch hệ theo quân + shop của run, rút softmax; đội hình / mua / item / kinh tế theo mô hình thắng; style `design` = kế hoạch cố định cho design test), `BotModel` + `model.json` + `train_model.py` (hồi quy logistic thắng / thua trên mọi trận), `BotKnowledge` + `knowledge.json` + `learn.py` (bảng kinh nghiệm), `autobalance.py` (một bước tự cân bằng → `data/balance.json`), `bot_runner.tscn` (worker), `report.py` / `balance.py` — `docs/BOT.md` |
 | `tools/wave_editor/` | tool (scene Godot, chữ tiếng Việt) sửa `data/wave_templates.json` + `data/difficulty.json`, có xem trước wave |
+| `tools/roles/` | kiểm tra vai trò: `role_probe.gd` (headless, cho từng dạng dùng skill trên sàn thử: tầm với, số địch trúng hàng đầu / cuối, burn / poison, hồi / khiên / buff đồng đội, lao tới) → `role_audit.py` + `role_rules.json` (luật, focus của từng hệ) → `docs/ROLES.md`; chưa đổi `UnitRoles` |
 | `tests/` | `sim_test` (logic), `flow_test`, `soak_test`, `layout_test` (kích thước UI, headless), `screenshot` |
 
 Toạ độ: ô (x, y), x = 0..6, y = 0..3 phía người chơi (y = 3 hàng đầu), 4..7 phía địch; ô lục giác đỉnh nhọn, hàng lẻ lệch
@@ -194,8 +201,10 @@ Board của `PlayerState` dùng đúng toạ độ ô của trận (web: board y
   hồi / khiên của skill đó, `BattleSim.ability_scale`; AP luôn 0 như web). **Không chỉ số nào được âm** (người dùng
   2026-11-20): skill quá mạnh → giảm `skill` hoặc tăng PP, không hạ chỉ số dưới 0 (`autobalance.py` kiểm trước khi ghi,
   `sim_test._check_balance`); không có hệ số theo hệ (người dùng: cân theo chỉ số từng con). Tiêu chí + mục tiêu
-  (số lần cast theo vai trò, hồ sơ công / thủ của vai trò, độ hiếm, có / không item): `tools/bot/balance_targets.json`,
-  `docs/BOT.md`. Đọc chỉ số từ `GameData`, đừng đọc thẳng `data/pac/pokemon.json`;
+  (số lần cast theo vai trò, hồ sơ công / thủ của vai trò, độ hiếm, có / không item, **sát thương so với cùng vai trò khi
+  không item / có item** — `damageRange`): `tools/bot/balance_targets.json`, `docs/BOT.md`. Dạng có skill mùa được tính là
+  `<dạng>@<mùa>` trong run của mùa đó (chỉ báo cáo, chưa có đòn bẩy riêng); dạng gốc chỉ đo bằng skill web.
+  Đọc chỉ số từ `GameData`, đừng đọc thẳng `data/pac/pokemon.json`;
   test cần số web thì `GameData.use_balance(false)` (sim_test làm vậy); về web hẳn: `python tools/bot/autobalance.py --reset`.
   Lô bot dùng cho một bước phải chơi với đúng `version` hiện tại (`meta_W.tsv` → `balance`).
 - Ô shop: gán qua `PlayerState.set_shop_slot(i, pkm)` (bản sao rời pool lúc hiện trong shop, như `shop.ts`), đừng gán `shop[i]`.
@@ -276,8 +285,34 @@ về 7 cột), bot, sơ đồ skill; sàn vẽ lại như sân Pokémon (Poké B
 sàn sâu hơn (`docs/HANDOFF.md` mục 13, `docs/PORTING.md` "Lưới lục giác"). Cân bằng / mô hình bot còn học trên sàn vuông.
 Sau đó: **Marksman / Caster tầm đánh 5** (`UnitRoles.ROLES` `"range"`; Support / cận chiến giữ tầm web).
 Sau đó (người dùng thấy chỉ số âm khi chơi thử): `skill` của tự cân bằng thành **sức mạnh skill** (× sát thương / hồi / khiên
-của skill riêng, tooltip "Sức mạnh kỹ năng: x%"), không còn AP âm; **không chỉ số nào được âm**. Version 9 đổi tại chỗ: 651 dạng
+của skill riêng, tooltip "Hiệu lực kỹ năng: x%"), không còn AP âm; **không chỉ số nào được âm**. Version 9 đổi tại chỗ: 651 dạng
 skill theo AP giữ số (cùng sát thương), 144 dạng skill không theo AP về 1 (bản trước: `build/bot/balance_v9.json`).
+Sau đó (người dùng: vai trò / hệ chưa hợp, vd hệ Lửa thưởng đòn đánh mà toàn pháp sư; Moltres "pháp sư mà tầm skill 4"):
+**tool kiểm tra vai trò** (`tools\role_audit.bat`, `docs/ROLES.md`). Phát hiện: `UnitRoles._guess` bỏ qua skill viết bằng code →
+522 / 1 106 dạng là Đỡ đòn; theo skill thật gợi ý Đỡ đòn 254, Đấu sĩ 264, Sát thủ 87, Xạ thủ 198, Pháp sư 122, **Đấu sĩ phép**
+(vai trò mới, chưa có trong game) 108, Hỗ trợ 73. Hệ Lửa mùa 1 chỉ 33% hợp (nhiều carry skill); Nước / Siêu linh / Âm thanh
+ngược lại. Overheat của Moltres trúng quanh *mục tiêu* (từ hàng cuối trúng 7 / 7 địch thử) nên theo luật vẫn là Pháp sư. Chưa
+áp vào game (chờ người dùng quyết).
+Sau đó (người dùng: bỏ Đấu sĩ phép; pháp sư nên *tung* skill chứ không thả tại chỗ): `role_rules.json` `battlemage: false`,
+pháp sư skill tại chỗ bị đánh dấu trong `docs/ROLES.md`; **danh sách skill** để đọc / cân lại: `python tools/roles/skill_list.py`
+→ `docs/SKILLS.md` + `docs/skills.html` (lọc tung / tại chỗ, vai trò, hệ, mùa; chỗ sửa từng skill). Sửa lỗi: Sing / Icicle
+Missile dùng area `front` không tồn tại → `backline` (như web). **Hiệu ứng hệ theo mùa**: `data/season_synergies.json` +
+`SeasonSynergies` (thay / thêm hiệu ứng web bằng 13 khối, mốc + chữ tooltip tự sinh; `BattleSim.setup_teams` tách
+`team_tiers` / `custom_tiers`), tool `tools\synergy_editor.bat` (`-- doc` ghi `docs/SEASON_SYNERGIES.md`, `-- shot` chụp
+trên desktop ẩn); file hiện chưa có hiệu ứng riêng nào (game như cũ). Tooltip skill đổi tên "Hiệu lực kỹ năng" (AP vi là
+"Sức mạnh kĩ năng").
+
+2026-11-20 (phiên "làm skill"): **mùa 1 thiết kế lại** theo luật người dùng (mỗi mùa mỗi hệ một hiệu ứng mới không lặp;
+mỗi họ một skill có cơ chế riêng trong mùa — đổi số / trạng thái / chỉ số vẫn là trùng; họ ở nhiều mùa thì mỗi mùa skill
+khác; duyệt từng mùa): bảng `docs/DESIGN_S1.md` (31 hệ, 85 skill giữ, 33 mượn, 53 mới, tham khảo TFT mùa 1–19) đã duyệt và
+code — `data/season_skills.json` (`GameData.season_skill_rule`), `SeasonMechanics` (31 cơ chế hệ, `data/season_synergies.json`
+`s1`), `SeasonSkillEffects` (phần kéo dài của skill mới), `docs/HANDOFF.md` mục 14. Chưa chơi thử / cân số; mùa 2, 3 chưa làm.
+
+2026-11-21: **test cân bằng** balance v9 + sàn lục giác + mùa 1 (`docs/BOT.md` "Kiểm tra 2026-11-21", lô `build/bot/bal_v9`,
+`design_s1_v9`, tool `tools/bot/season_report.py`): 0 lỗi; hệ mùa 1 lệch hơn hệ web (sd 0,052 / 0,035); Giga Drain (10 PP) áp
+đảo; PP skill mùa đang theo tỉ lệ cân cho skill web. Sau đó (người dùng): tự cân bằng thêm **sát thương so với cùng vai trò,
+không item / có item** (bước 4b, dịch công ↔ thủ, cùng sức mạnh) và tách skill mùa thành `<dạng>@<mùa>` (chỉ báo cáo; Ivysaur
+không còn bị hạ ở mọi mùa); bước thử trên `bal_v9` chưa áp. Còn: đòn bẩy riêng (PP / sức mạnh) cho skill mùa.
 
 Hướng tiếp: người dùng chọn điểm chung → hệ mới cho từng mùa (`docs/THEMES.md`), duyệt / chỉnh 3 mùa, cân mốc riêng của
 hệ đặc biệt; xác nhận bố cục gọn bản 4 trên máy thật, ký release; chạy bot lô lớn (hàng chục nghìn run) rồi cân độ khó

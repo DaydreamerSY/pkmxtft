@@ -73,8 +73,14 @@ var mana: Dictionary = Difficulty.mana():
 var _role_mana := {} ## role -> Difficulty.role_mana of `mana`
 ## The unit whose basic attack is dealing its damage now (attack_hit): its damage events get "attack": true.
 var _attack_source: BattleUnit = null
-## Per team: {type: tier} of the active synergies (a wave has some when the difficulty says so).
+## Per team: {type: tier} of the active synergies (a wave has some when the difficulty says so) whose web effect
+## works: a synergy the season gives effects of its own instead (SeasonSynergies "replace") is not in it.
 var team_tiers: Array = [{}, {}]
+## Per team: {type: tier} of the active synergies with effects of the season (SeasonSynergies, replace or add).
+var custom_tiers: Array = [{}, {}]
+## A team has synergy effects of the season: their hooks run (SeasonSynergies).
+var season_effects_on := false
+var season_skills_on := false ## a unit of the fight casts a season skill with a lasting effect (SeasonSkillEffects)
 ## Per team: {counts, active, dragon_stars, light: Vector2i or null, holes: {cell: depth},
 ## wands: Array, stage} (see setup_teams).
 var team_info: Array = [{}, {}]
@@ -103,7 +109,11 @@ func _init() -> void:
 
 ## Team context, before adding units. `tiers` = {type: tier}, `info` = see team_info.
 func setup_teams(blue_tiers: Dictionary, blue_info: Dictionary, red_tiers := {}, red_info := {}) -> void:
-	team_tiers = [blue_tiers, red_tiers]
+	var blue := SeasonSynergies.split(blue_tiers) # [web, own effects of the season]
+	var red := SeasonSynergies.split(red_tiers)
+	team_tiers = [blue[0], red[0]]
+	custom_tiers = [blue[1], red[1]]
+	season_effects_on = not (blue[1].is_empty() and red[1].is_empty())
 	team_info = [blue_info, red_info]
 	SynergyEffects.setup(self)
 
@@ -130,9 +140,13 @@ func add_unit(unit: BattleUnit, at: Vector2i) -> void:
 	board.place(unit, at)
 	if _started:
 		unit.is_spawn = true
+	if SeasonSkillEffects.SKILLS.has(unit.ability_id):
+		season_skills_on = true # the hooks of the season skills (SeasonSkillEffects)
 	# Dark melee Pokémon move first
 	unit.cooldown = 300.0 if unit.types.has("DARK") and unit.attack_range == 1 else unit.attack_cooldown() * 0.5
 	SynergyEffects.on_spawn(self, unit)
+	if season_effects_on:
+		SeasonSynergies.on_spawn(self, unit)
 	Weather.on_spawn(self, unit)
 	PassiveEffects.on_spawn(self, unit)
 	# its stats as it entered the fight (synergies, items, spawn effects): a resurrection restores them
@@ -176,6 +190,8 @@ func allies_of(unit: BattleUnit) -> Array[BattleUnit]:
 
 func emit(event: Dictionary) -> void:
 	events.append(event)
+	if season_effects_on and String(event.get("type", "")) == "area":
+		SeasonSynergies.on_area(self, event) # cells an ability step hits (Fire of a season burns them)
 
 
 func drain_events() -> Array[Dictionary]:
@@ -202,6 +218,8 @@ func update(dt_ms: float) -> void:
 		SynergyEffects.before_start(self) # Bug clones (spawns) join first
 		ItemEffects.on_fight_start(self)
 		SynergyEffects.on_fight_start(self)
+		if season_effects_on:
+			SeasonSynergies.on_fight_start(self)
 		PassiveEffects.on_fight_start(self)
 	time_ms += dt_ms
 	damage_hooks = 0 # no damage is running between two steps
@@ -226,6 +244,8 @@ func update(dt_ms: float) -> void:
 				_enrage(u)
 	_update_weather(dt_ms)
 	SynergyEffects.update(self, dt_ms)
+	if season_effects_on:
+		SeasonSynergies.update(self, dt_ms)
 
 	for u in units.duplicate():
 		if u.alive:
@@ -367,6 +387,10 @@ func _each_second(u: BattleUnit) -> void:
 	u.add_pp(float(mana_of(u).perSecond), true) # the rule
 	u.add_pp(Weather.pp_per_second(weather, 0.0)) # RAIN +3 / DROUGHT -3 of a 100-PP bar
 	SynergyEffects.on_second(self, u)
+	if season_effects_on:
+		SeasonSynergies.on_second(self, u)
+	if season_skills_on:
+		SeasonSkillEffects.each_second(self, u)
 	DishEffects.on_second(self, u)
 	PassiveEffects.on_second(self, u)
 	if weather == "SANDSTORM" and not u.types.has("GROUND") and not u.has_item("SAFETY_GOGGLES"):
@@ -469,6 +493,10 @@ func _pick_target(u: BattleUnit) -> BattleUnit:
 			if weakest == null or other.hp + other.shield < weakest.hp + weakest.shield:
 				weakest = other
 		return weakest
+	if season_effects_on and not u.has_status("charm") and not u.has_status("confusion"):
+		var hunted := SeasonSynergies.pick_target(self, u) # Wild of a season: the weakest enemy in range
+		if hunted != null:
+			return hunted
 	var t: BattleUnit = u.target if _is_valid_target(u, u.target) else _nearest_target_in_range(u)
 	if t != null and u.has_status("confusion"):
 		return _confused_target(u)
@@ -872,7 +900,8 @@ func attack_hit(u: BattleUnit, t: BattleUnit, triple := false) -> void:
 	var special_mode: bool = u.effects.get("special_attacks", false) \
 		or float(t.effects.get("wonder_room_until", 0.0)) > time_ms # Wonder Room
 	var damage := u.atk
-	var crit := chance(u.crit_chance / 100.0 + SynergyEffects.crit_chance_bonus(self, u, t), u)
+	var crit := chance(u.crit_chance / 100.0 + SynergyEffects.crit_chance_bonus(self, u, t)
+		+ (SeasonSkillEffects.crit_bonus(self, t) if season_skills_on else 0.0), u) # Zap Lock
 	var crit_factor := SynergyEffects.crit_reduction(t) if crit else 1.0
 	if special_mode:
 		damage = ceilf(damage * (1.0 + u.ap / 100.0))
@@ -885,7 +914,12 @@ func attack_hit(u: BattleUnit, t: BattleUnit, triple := false) -> void:
 	if not landed:
 		damage = 0.0
 		emit({"type": "miss", "unit": t})
+		if season_effects_on:
+			SeasonSynergies.on_dodge(self, t)
 	if t.has_status("protect") or t.has_status("skydiving"):
+		landed = false
+		damage = 0.0
+	if landed and season_skills_on and SeasonSkillEffects.blocks_attack(self, u, t): # Parry, Double Team
 		landed = false
 		damage = 0.0
 	var killed := false
@@ -960,6 +994,8 @@ func attack_hit(u: BattleUnit, t: BattleUnit, triple := false) -> void:
 		taken += r.taken
 		killed = r.death or killed
 		struck = struck or r.taken > 0.0
+	if landed and season_skills_on:
+		SeasonSkillEffects.on_attack_hit(self, u, t) # Shift Gear, Electro Link, Rock Ambush, Dragon Fury
 	_attack_source = null
 	# basic PP (Difficulty.mana, by role): the attacker for a hit that lands, the target once per hit of
 	# a basic attack (an ability's damage gives none; abilities that power basic attacks go through here)
@@ -972,11 +1008,15 @@ func attack_hit(u: BattleUnit, t: BattleUnit, triple := false) -> void:
 		"landed": landed, "triple": triple}
 	ItemEffects.on_attack(self, u, hit)
 	SynergyEffects.on_attack(self, u, hit)
+	if season_effects_on:
+		SeasonSynergies.on_attack(self, u)
 	PassiveEffects.on_attack(self, u, hit)
 	SynergyEffects.on_attack_received(self, t, u, hit)
 	if landed:
 		ItemEffects.on_attack_received(self, t, u)
 		SynergyEffects.on_hit(self, u, t)
+		if season_effects_on:
+			SeasonSynergies.on_hit(self, u, t, "attack")
 		PassiveEffects.on_hit(self, u, t, taken)
 
 
@@ -992,6 +1032,10 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 	if attacker != null and attacker.has_status("enraged"):
 		amount *= 2.0
 	amount *= ability_scale(attacker) # the auto balance's strength of its own ability
+	if season_effects_on:
+		amount *= SeasonSynergies.damage_factor(self, attacker, t)
+	if season_skills_on:
+		amount *= SeasonSkillEffects.damage_factor(self, attacker, t) # Will-O-Wisp, Love Tangle
 	# Magic Bounce (Rowap Berry): special damage is blocked and bounced back
 	if t.has_status("magic_bounce") and kind == BattleUnit.DamageKind.SPECIAL and attacker != null \
 			and attacker != t and not retaliation:
@@ -1001,7 +1045,7 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 			var bounce := roundf([0.5, 1.0, 2.0, 4.0][clampi(t.stars - 1, 0, 3)] * amount * (1.0 + t.ap / 100.0))
 			deal_damage(attacker, bounce, BattleUnit.DamageKind.SPECIAL, t, false, true)
 		return {"taken": 0.0, "death": false}
-	if t.has_status("resurrecting"):
+	if t.has_status("resurrecting") or t.has_status("stasis"):
 		return {"taken": 0.0, "death": false}
 	if t.has_status("protect") or t.has_status("skydiving"):
 		emit({"type": "damage", "unit": t, "amount": 0, "kind": kind, "crit": false, "blocked": true, "source": attacker,
@@ -1039,6 +1083,10 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 		if t.passive == "WONDER_GUARD": # Shedinja: 20 less damage from every non-TRUE hit
 			reduced -= 20.0
 	reduced = maxf(ceilf(reduced), 1.0)
+	if season_effects_on:
+		reduced = SeasonSynergies.adjust_taken(self, t, reduced) # Rock cap, Steel opening, Amorphous stagger
+	if season_skills_on:
+		reduced = SeasonSkillEffects.redirect(self, t, reduced, kind, attacker, retaliation) # Disguise, Guard Dog, Mind Link
 	if t.has_item("ABSORB_BULB"): # stores the damage its defenses stopped
 		t.counters.reduced = float(t.counters.get("reduced", 0.0)) + maxf(amount - reduced, 0.0)
 
@@ -1092,6 +1140,8 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 		"ability": attacker != null and attacker == ability_source and attacker != _attack_source}) # from its ability
 
 	damage_hooks += 1 # what follows the damage (retaliation, lifesteal, kill and hit effects) is not scaled again
+	if season_skills_on:
+		SeasonSkillEffects.after_damage(self, t, attacker, taken, kind, retaliation) # Spider Web, Mirror Coat, Life Dew
 	var can_retaliate := attacker != null and attacker.alive and not retaliation \
 		and not attacker.has_item("PROTECTIVE_PADS")
 	if can_retaliate and kind == BattleUnit.DamageKind.SPECIAL and t.has_item("POWER_LENS") and amount >= 1.0:
@@ -1103,7 +1153,12 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 	if attacker != null and attacker.alive and taken > 0.0:
 		ItemEffects.on_damage_dealt(self, attacker, t, taken, kind)
 		SynergyEffects.on_damage_dealt(self, attacker, t, taken, retaliation)
+		if season_effects_on:
+			SeasonSynergies.on_damage_dealt(self, attacker, t, taken, retaliation)
 	if t.hp <= 0.0:
+		if season_effects_on and SeasonSynergies.on_lethal(self, t): # Normal endures, Ghost lingers
+			damage_hooks -= 1
+			return {"taken": taken, "death": false}
 		if t.has_item("SMOKE_BALL"):
 			ItemEffects.smoke_ball(self, t)
 		if _try_resurrect(t):
@@ -1122,6 +1177,8 @@ func deal_damage(t: BattleUnit, amount: float, kind: int, attacker: BattleUnit, 
 		ItemEffects.on_damage_received(self, t, taken)
 		SynergyItems.on_damage_received(self, t)
 		SynergyEffects.on_damage_received(self, t, attacker, taken, retaliation)
+		if season_effects_on and t.alive:
+			SeasonSynergies.on_damage_received(self, t)
 		PassiveEffects.on_damage_received(self, t, attacker, kind, before, retaliation)
 	damage_hooks -= 1
 	return {"taken": taken, "death": false}
@@ -1249,6 +1306,8 @@ func _update_possessed() -> void:
 ## overheal; Grass Pokémon turn 40% of it into max HP.
 ## `source`: who heals (DPS meter), the healed unit itself by default.
 func heal(t: BattleUnit, amount: float, source: BattleUnit = null) -> float:
+	if season_skills_on and (source == null or source.team == t.team):
+		t = SeasonSkillEffects.snatcher(self, t) # Snatch: an enemy takes the heal
 	if not t.alive or amount <= 0.0 or t.has_status("protect"):
 		return 0.0
 	var healer: BattleUnit = source if source != null else t
@@ -1276,6 +1335,8 @@ func heal(t: BattleUnit, amount: float, source: BattleUnit = null) -> float:
 
 
 func add_shield(t: BattleUnit, amount: float, source: BattleUnit = null) -> void:
+	if season_skills_on and (source == null or source.team == t.team):
+		t = SeasonSkillEffects.snatcher(self, t) # Snatch: an enemy takes the shield
 	if not t.alive or amount <= 0.0:
 		return
 	var giver: BattleUnit = source if source != null else t
@@ -1295,7 +1356,21 @@ func add_shield(t: BattleUnit, amount: float, source: BattleUnit = null) -> void
 func ability_scale(u: BattleUnit) -> float:
 	if u == null or u != ability_source or u == _attack_source or damage_hooks > 0:
 		return 1.0
+	if season_effects_on: # ability_power of the season's synergy effects
+		return u.skill_scale() * SeasonSynergies.ability_factor(u)
 	return u.skill_scale()
+
+
+## What `u` is dealing damage with now: "attack" (the hit of its basic attack), "ability" (its ability running, or a
+## hit it scheduled), "" (anything else: statuses, items, retaliation...).
+func source_kind(u: BattleUnit) -> String:
+	if u == null:
+		return ""
+	if u == _attack_source:
+		return "attack"
+	if u == ability_source:
+		return "ability"
+	return ""
 
 
 ## Inflicts a status: immunities, weather and Aquatic durations, Enraged halving
@@ -1304,6 +1379,8 @@ func add_status(t: BattleUnit, status: String, duration: float, origin: BattleUn
 	if not t.alive or duration <= 0.0:
 		return
 	if t.is_immune_to(status):
+		return
+	if season_effects_on and SeasonSynergies.blocks_status(self, t, status): # Fairy mist, Fossil shell, Monster rage
 		return
 	if status == "possessed" and not _possess(t, origin):
 		add_status(t, "charm", duration, origin) # the last free unit of a team is charmed instead
@@ -1394,8 +1471,14 @@ func _faint(t: BattleUnit, attacker: BattleUnit = null, kind := BattleUnit.Damag
 		SynergyItems.on_flora_death(self, t)
 	ItemEffects.on_death(self, t, attacker)
 	SynergyEffects.on_death(self, t)
+	if season_effects_on:
+		SeasonSynergies.on_death(self, t)
+	if season_skills_on:
+		SeasonSkillEffects.on_death(self, t) # Destiny Bond, Baton Pass
 	PassiveEffects.on_death(self, t)
 	if attacker != null and attacker != t and attacker.alive:
 		SynergyEffects.on_kill(self, attacker, t)
+		if season_effects_on:
+			SeasonSynergies.on_kill(self, attacker, t)
 		PassiveEffects.on_kill(self, attacker, t, kind)
 #endregion

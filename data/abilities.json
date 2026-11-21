@@ -126,8 +126,8 @@
   "steps": [{"area": "between", "first_only": true, "guarantee_focus": true, "repeat": 4, "effects": [
    {"type": "damage", "stat": "atk", "values": [1, 1, 1, 2]}]}]},
 
- "SING": {"name": "Sing", "desc": "Puts the 1/2/3 front-most enemies to sleep for 2s.", "no_target": true,
-  "steps": [{"area": "front", "size": [1, 2, 3, 5], "effects": [
+ "SING": {"name": "Sing", "desc": "Puts the 1/2/3 back-most enemies to sleep for 2s.", "no_target": true,
+  "steps": [{"area": "backline", "size": [1, 2, 3, 5], "effects": [
    {"type": "status", "status": "sleep", "durations": [2000, 2000, 2000, 4000], "ap_scale": true}]}]},
 
  "LICK": {"name": "Lick", "desc": "Confuses and paralyses the target 3s, and deals 30/60/120 special damage.",
@@ -261,8 +261,8 @@
    {"type": "buff", "stat": "speed", "values": [-10], "no_ap": true},
    {"type": "damage", "values": [25, 45, 85, 160]}]}]},
 
- "ICICLE_MISSILE": {"name": "Icicle Missile", "desc": "After 1s, icicles hit the 1/2/3 front-most enemies: 50 special damage and freeze 2s.", "no_target": true,
-  "steps": [{"area": "front", "size": [1, 2, 3, 5], "delay": 1000, "effects": [
+ "ICICLE_MISSILE": {"name": "Icicle Missile", "desc": "After 1s, icicles hit the 1/2/3 back-most enemies: 50 special damage and freeze 2s.", "no_target": true,
+  "steps": [{"area": "backline", "size": [1, 2, 3, 5], "delay": 1000, "effects": [
    {"type": "status", "status": "freeze", "duration": 2000},
    {"type": "damage", "values": [50]}]}]},
 
@@ -1010,5 +1010,62 @@
  "STONE_AXE": {"name": "Stone Axe", "desc": "Deals 30/40/50 true damage to the target and scatters STEALTH_ROCKS around it.", "script": "stone_axe"},
  "ATTACK_ORDER": {"name": "Attack Order", "desc": "A Combee joins the fight and every Combee ally is enraged 3s. Its next attack deals 20/40/60 more special damage, +10/20/30 per Combee ally.", "no_target": true, "inimitable": true, "script": "attack_order"},
  "HEAL_ORDER": {"name": "Heal Order", "desc": "A Combee joins the fight, then it and every Combee heal their adjacent allies 10/20/30 HP and clear their negative statuses.", "no_target": true, "inimitable": true, "script": "heal_order"},
- "DEFEND_ORDER": {"name": "Defend Order", "desc": "A Combee joins the fight, every Combee gets 10/20/30 shield and it gets as much plus as much again per Combee ally.", "no_target": true, "inimitable": true, "script": "defend_order"}
+ "DEFEND_ORDER": {"name": "Defend Order", "desc": "A Combee joins the fight, every Combee gets 10/20/30 shield and it gets as much plus as much again per Combee ally.", "no_target": true, "inimitable": true, "script": "defend_order"},
+
+ "BUBBLE": {"name": "Bubble", "desc": "Blows 3/4/5 bubbles in a fan toward the target; each pops on the first enemy it meets: 15/30/60 special damage and -10 SPEED for 3s.", "script": "bubble"},
+ "WILL_O_WISP": {"name": "Will-O-Wisp", "desc": "A wisp clings to the target for 5s: it BURNS and takes 15/20/30% more damage from every source.", "script": "will_o_wisp"},
+ "LIFE_DEW": {"name": "Gooey Recovery", "desc": "Heals back 40/60/90% of the damage taken in the last 3s, then slimes the adjacent enemies: 15/30/60 special damage and -20% SPEED for 3s.", "no_target": true, "script": "life_dew"},
+ "SHIFT_GEAR": {"name": "Shift Gear", "desc": "Its next 3/4/5 attacks come twice as fast and each also fires a gear at the enemy nearest its target: 50% ATK as special damage.", "no_target": true, "script": "shift_gear"},
+ "ELECTRO_LINK": {"name": "Electro Link", "desc": "Wires itself to the ally with the most ATK for 6s: +15/25/40 SPEED and each of its attacks deals 10/20/40 more special damage.", "no_target": true, "script": "electro_link"},
+ "ENDEAVOR": {"name": "Endeavor", "desc": "If the target has more HP, brings it down to its own HP (at most 80/160/320 true damage); otherwise deals 20/40/80 special damage.", "script": "endeavor"},
+ "FIRE_PLEDGE": {"name": "Fire Pledge", "desc": "A sea of fire covers the target's row for 4s: every second the enemies there BURN and take 10/20/40 special damage.", "script": "fire_pledge"},
+ "GUARD_DOG": {"name": "Guard Dog", "desc": "For 4s, 30/40/50% of the damage its adjacent allies take is dealt to it instead; gains 20/40/80 SHIELD.", "no_target": true, "script": "guard_dog"},
+ "TOXIC_SPIKES": {"name": "Toxic Spikes", "desc": "Scatters 2/3/4 toxic spikes on free cells of its own front row; an enemy stepping on one takes 30/60/120 special damage and 2 POISON stacks.", "no_target": true, "script": "toxic_spikes"},
+ "CONSTRICT": {"name": "Constrict", "desc": "Wraps the target for 3/3/4s: LOCKED, 10/20/40 special damage every second, and it needs 30% more PP to cast while wrapped.", "script": "constrict"},
+ "MIST": {"name": "Mist", "desc": "Mist covers the 2 allies right behind it: 25/50/100 SHIELD and SAFEGUARD for 3s each.", "no_target": true, "script": "mist"},
+ "CROSS_CUT": {"name": "Cross Cut", "desc": "Slashes an X through the target (it and its 4 neighbours off its row): 20/40/80 physical damage; enemies hit under 12/15/18% HP are knocked out.", "script": "cross_cut"},
+ "SPIDER_WEB": {"name": "Spider Web", "desc": "Ties the 2 nearest enemies together for 5s: whatever one loses, the other loses 30/40/50% of it as true damage; both -15 SPEED.", "script": "spider_web"},
+ "GIGA_DRAIN": {"name": "Giga Drain", "desc": "Plants vines in the 3 nearest enemies for 4s: every second 8/15/30 special damage to each; heals for what they lose.", "script": "giga_drain"},
+
+ "CIRCLE_THROW": {"name": "Circle Throw", "desc": "Grabs the target and slams it onto a free cell behind itself: 30/60/120 special damage and FLINCH for 2s.", "script": "circle_throw"},
+ "REVIVAL_BLESSING": {"name": "Revival Blessing", "desc": "The first time in a fight an ally has fallen, the nearest fallen ally comes back with 20/30/50% HP. Otherwise: a punch for 30/60/120 special damage and PARALYSIS for 1s.", "no_target": true, "script": "revival_blessing"},
+ "SAND_PIT": {"name": "Sand Pit", "desc": "Pulls the nearest enemy within 3 cells next to itself: LOCKED for 2/3/4s and 30/60/120 special damage.", "script": "sand_pit"},
+ "MIRROR_COAT": {"name": "Mirror Coat", "desc": "For 3s, 50/75/100% of the special damage it takes is sent back to its source; gains 15/30/60 SHIELD.", "no_target": true, "script": "mirror_coat"},
+ "FOX_FIRE": {"name": "Fox Fire", "desc": "Puts a fox flame on each of the 3/3/4 nearest enemies; an enemy with 3 flames bursts: 60/120/240 special damage and BURN for 3s.", "script": "fox_fire"},
+ "STRENGTH_SAP": {"name": "Strength Sap", "desc": "The target loses 3/5/8 ATK and it heals 300% of the target's ATK.", "script": "strength_sap"},
+ "ALLY_SWITCH": {"name": "Rescue Flight", "desc": "Flies to the ally with the lowest % HP and swaps places with it: that ally gets 30/60/120 SHIELD and the enemies next to its new cell FLINCH for 2s.", "no_target": true, "script": "ally_switch"},
+ "SMACK_DOWN": {"name": "Smack Down", "desc": "Throws its rock onto the enemy back row where most enemies stand: 30/60/120 special damage there and around, LOCKED for 1s.", "script": "smack_down"},
+ "EARTHQUAKE": {"name": "Earthquake", "desc": "A quake spreads in 3 rings around it, 0.4s apart: 20/40/80 special damage to the enemies of each ring (not FLYING).", "script": "earthquake"},
+ "ROCK_AMBUSH": {"name": "Rock Ambush", "desc": "Hides in the rocks for 1.5s (untargetable); its next attack is a sure critical hit dealing 150/200/250% ATK.", "no_target": true, "script": "rock_ambush"},
+ "DESTINY_BOND": {"name": "Destiny Bond", "desc": "Ties its fate to the target for 5s: if it faints meanwhile, the target faints too; otherwise the target then takes 40/80/160 special damage and FREEZES for 1s.", "script": "destiny_bond"},
+ "SUPREME_OVERLORD": {"name": "Supreme Overlord", "desc": "Every enemy under 12/16/22% HP is knocked out, each giving it 3/5/8 ATK. If none: 100% ATK as true damage to the target.", "script": "supreme_overlord"},
+ "BATON_PASS": {"name": "Baton Pass", "desc": "+10/20/40 SPEED and +4/8/15 ATK for 5s; then (or when it faints) hands them to the adjacent ally with the most ATK for the rest of the fight.", "no_target": true, "script": "baton_pass"},
+
+ "PRIMAL_CHILL": {"name": "Primal Chill", "desc": "4s of primal cold: every second the enemies within 2 cells lose 20% more SPEED and take 20 special damage; one slowed 4 times FREEZES for 1.5s.", "no_target": true, "script": "primal_chill"},
+ "ARMOR_SALVO": {"name": "Armor Salvo", "desc": "250 special damage shared evenly by every enemy on the board.", "script": "armor_salvo"},
+ "SNOW_HUDDLE": {"name": "Snow Huddle", "desc": "Pulls every enemy 2 cells away into the cells around it; those pulled FREEZE for 1s and take 40 special damage.", "no_target": true, "script": "snow_huddle"},
+ "DOUBLE_TEAM": {"name": "Double Team", "desc": "Creates 3 afterimages: each one makes a basic attack at it miss; +20 SPEED while one is left.", "no_target": true, "script": "double_team"},
+ "PARRY": {"name": "Parry", "desc": "Guard stance for 3s: the first 3 basic attacks at it are parried and answered with 120% ATK as physical damage.", "no_target": true, "script": "parry"},
+ "SKY_DROP": {"name": "Sky Drop", "desc": "Carries the target up for 1.5s (both out of reach), then slams it down: 150 physical damage, 60 to the adjacent enemies.", "script": "sky_drop"},
+ "INCINERATE": {"name": "Incinerate", "desc": "Burns away the SHIELD of the target and the enemies next to it: each takes 30 + the SHIELD lost as special damage and BURNS for 3s.", "script": "incinerate"},
+ "MIND_LINK": {"name": "Mind Link", "desc": "Links its mind with the strongest ally for 6s: half the damage either takes goes to the other; both +40 AP meanwhile.", "no_target": true, "script": "mind_link"},
+ "MARACA_DANCE": {"name": "Maraca Dance", "desc": "A dance floor of radius 2 for 5s: the allies there +25% SPEED, and every second they heal 3% of their max HP.", "no_target": true, "script": "maraca_dance"},
+ "EMOTION_DRAIN": {"name": "Emotion Drain", "desc": "The enemy with the most AP loses 40 AP, which it gains, and is SILENCED for 2.5s.", "no_target": true, "script": "emotion_drain"},
+ "DISGUISE_PATCH": {"name": "Disguise Patch", "desc": "Patches a disguise on itself and the 2 allies with the lowest % HP: the next hit each takes is stopped and its attacker takes 40 special damage.", "no_target": true, "script": "disguise_patch"},
+ "EARTH_EATER": {"name": "Quicksand", "desc": "Turns the cells around the target into quicksand for 4s: every second the enemies there are slowed by half and take 30 special damage; heals what they lose.", "script": "earth_eater"},
+ "PERISH_SONG": {"name": "Perish Song", "desc": "Everyone else within 2 cells hears the song: 4s later the enemies lose 25% and the allies 10% of their max HP as true damage.", "no_target": true, "script": "perish_song"},
+
+ "POWER_SPOT": {"name": "Power Spot", "desc": "The ancient stones power up the adjacent allies for 6s: +40 AP and 30 SHIELD.", "no_target": true, "script": "power_spot"},
+ "FRUIT_TOSS": {"name": "Fruit Toss", "desc": "Throws a fruit through the 4 allies with the lowest % HP: 80 HP for the first, 20% less for each next one; the last one also gets +10 SPEED.", "no_target": true, "script": "fruit_toss"},
+ "PLASMA_BLITZ": {"name": "Plasma Blitz", "desc": "Dashes in turn to 3 enemies standing near each other, punching each for 40 + 60% ATK as special damage; every punch gives +10 SPEED for the fight.", "script": "plasma_blitz"},
+ "TIME_REWIND": {"name": "Time Rewind", "desc": "Every ally goes back to the HP it had 3s ago when that was more, and is cleansed.", "no_target": true, "script": "time_rewind"},
+ "LOVE_TANGLE": {"name": "Love Tangle", "desc": "The 2 nearest enemies fall for each other for 3s: each is CHARMED toward the other and takes 30% more damage.", "script": "love_tangle"},
+ "IRON_SLAM": {"name": "Iron Slam", "desc": "Lifts the target and slams it next to the most enemies: 120% ATK to it and 80% ATK to the enemies around as physical damage; FLINCH for 2s.", "script": "iron_slam"},
+ "CHAIN_DRAG": {"name": "Toxic Chain Drag", "desc": "Chains the 3 nearest enemies: each is dragged 1 cell closer and gets 2 POISON stacks; +5 DEF and +5 SPE_DEF per enemy chained.", "script": "chain_drag"},
+ "ZAP_LOCK": {"name": "Zap Lock", "desc": "Locks on the enemy with the most ATK; 1.5s later a sure hit: 150 special damage and PARALYSIS for 2s, during which attacks at it get +30% crit chance.", "no_target": true, "script": "zap_lock"},
+ "TIDAL_PUSH": {"name": "Purifying Tide", "desc": "A wave over the board: every enemy is pushed 1 cell back, takes 30 + 8% of its max HP as special damage and loses PROTECT, REFLECT, SAFEGUARD and MAGIC_BOUNCE.", "no_target": true, "script": "tidal_push"},
+ "DRAGON_FURY": {"name": "Dragon Fury", "desc": "Each basic attack that lands stores 1 fury (up to 20); the ability spends it all: 30/60/120 special damage to the target, +6% per fury.", "script": "dragon_fury"},
+ "BUBBLE_STASIS": {"name": "Bubble Shelter", "desc": "The 2 allies with the lowest % HP float in a bubble for 2s (out of reach, not acting), healing 10/20/40 HP every 0.5s.", "no_target": true, "script": "bubble_stasis"},
+ "SNATCH": {"name": "Snatch", "desc": "For 4s every heal and SHIELD the enemies get goes to it instead; also bites the target for 20/40/80 special damage.", "script": "snatch"},
+ "WING_POWDER": {"name": "Wing Powder", "desc": "Scale powder on the 3 nearest allies: each gets one of +20/40/80 SHIELD, +10/20/40 AP or +10/15/25 SPEED at random.", "no_target": true, "script": "wing_powder"}
 }

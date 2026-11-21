@@ -1011,6 +1011,8 @@ static func drum_beat(sim: BattleSim, u: BattleUnit) -> bool:
 	sim.emit({"type": "attack", "unit": u, "target": null, "hit_delay": 0.0})
 	drum_pp(sim, u)
 	SynergyEffects.on_attack(sim, u, {"target": null, "triple": false})
+	if sim.season_effects_on:
+		SeasonSynergies.on_attack(sim, u)
 	return true
 
 

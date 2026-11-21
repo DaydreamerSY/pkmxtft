@@ -108,7 +108,7 @@ Ba loại sát thương: **vật lý** (giảm bởi DEF), **phép** (giảm b�
 
 **Tự cân bằng** (chỉ có ở bản này, `data/balance.json`, `docs/BOT.md`): **mỗi Pokémon có chỉ số riêng** — hệ số của từng
 chỉ số (HP, ATK, DEF, SPE_DEF, SPEED, **PP tối đa**; HP / PP làm tròn hàng chục) và **sức mạnh skill** (× sát thương / hồi /
-khiên của skill riêng của nó, không phải chỉ số: AP vẫn 0; tooltip skill ghi "Sức mạnh kỹ năng: x%") học từ bot, áp lên chỉ số
+khiên của skill riêng của nó, không phải chỉ số: AP vẫn 0; tooltip skill ghi "Hiệu lực kỹ năng: x%") học từ bot, áp lên chỉ số
 web; **không chỉ số nào âm** (skill quá mạnh → giảm sức mạnh skill hoặc tăng PP); không có hệ số theo hệ (hệ mạnh được cân qua
 chỉ số các Pokémon của nó). Tiêu chí (người dùng 2026-11-19):
 làm tròn vai trò / không làm việc khác vai trò, có và không có item không mạnh hơn phần còn lại, hiếm hơn thì mạnh hơn, số

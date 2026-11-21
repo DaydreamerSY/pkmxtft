@@ -66,6 +66,8 @@ static func cast(sim: BattleSim, caster: BattleUnit, target: BattleUnit, ability
 	sim.damage_hooks = outer_hooks
 	ItemEffects.on_cast(sim, caster)
 	SynergyEffects.on_cast(sim, caster)
+	if sim.season_effects_on:
+		SeasonSynergies.on_cast(sim, caster)
 	PassiveEffects.on_cast(sim, caster)
 
 

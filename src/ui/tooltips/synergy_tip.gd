@@ -45,7 +45,7 @@ func _ready() -> void:
 	_icon.texture = GameData.type_icon(type)
 	_name.text = GameData.synergy_name(type)
 	_name.add_theme_color_override("font_color", GameData.TYPE_COLORS.get(type, UiStyle.TEXT).lightened(0.3))
-	var desc := String(GameData.text.get("synergy_description", {}).get(type, ""))
+	var desc := GameData.synergy_description(type) # the web's, or the season's own effects
 	_desc.text = GameText.format(desc)
 	if extra != "":
 		_desc.text += "\n[color=#9fd8ff]%s[/color]" % GameText.format(extra)

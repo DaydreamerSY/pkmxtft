@@ -1,0 +1,249 @@
+{
+  "_doc": "Mùa 1: skill MỚI (phần 1/2). family: {id, vi, en, key, text (số theo 1★/2★/3★; Unique / Legendary chỉ 3★), pp (thang web), tft = cảm hứng}.",
+  "season": "s1",
+  "new": {
+    "AZURILL": {
+      "id": "BUBBLE",
+      "vi": "Bong Bóng",
+      "en": "Bubble",
+      "key": "fan.first_hit",
+      "pp": 80,
+      "text": "Thổi 3/4/5 bong bóng xoè hình quạt về phía mục tiêu; mỗi bong bóng vỡ ở kẻ địch đầu tiên nó chạm: 15/30/60 sát thương phép và -10 SPEED 3 giây.",
+      "tft": "Set 13 Ezreal / đạn hình quạt"
+    },
+    "FENNEKIN": {
+      "id": "WILL_O_WISP",
+      "vi": "Quỷ Hỏa",
+      "en": "Will-O-Wisp",
+      "key": "target.vulnerability_mark",
+      "pp": 80,
+      "text": "Gắn ma trơi lên mục tiêu 5 giây: BURN, và nó chịu thêm 15/20/30% sát thương từ mọi nguồn.",
+      "tft": "Set 19 Akali (sơn: Dễ Tổn Thương)"
+    },
+    "GOOMY": {
+      "id": "LIFE_DEW",
+      "vi": "Thân Nhầy Hồi Phục",
+      "en": "Gooey Recovery",
+      "key": "self.rewind",
+      "pp": 100,
+      "text": "Hồi lại 40/60/90% sát thương đã nhận trong 3 giây qua, rồi bắn chất nhầy lên kẻ địch ADJACENT: 15/30/60 sát thương phép và -20% SPEED 3 giây.",
+      "tft": "Set 19 Ekko (tua ngược sát thương)"
+    },
+    "KLINK": {
+      "id": "SHIFT_GEAR",
+      "vi": "Sang Số",
+      "en": "Shift Gear",
+      "key": "self.rapid_attacks",
+      "pp": 70,
+      "text": "3/4/5 đòn đánh kế tiếp nhanh gấp đôi và mỗi đòn bắn thêm một bánh răng nảy sang kẻ địch gần mục tiêu: 50% ATK thành sát thương phép.",
+      "tft": "Set 19 Ashe (loạt tên)"
+    },
+    "MAREEP": {
+      "id": "ELECTRO_LINK",
+      "vi": "Dây Dẫn Điện",
+      "en": "Electro Link",
+      "key": "ally.tether_empower",
+      "pp": 90,
+      "text": "Nối dây điện với đồng minh có ATK cao nhất 6 giây: nó +15/25/40 SPEED, mỗi đòn đánh của nó phóng thêm 10/20/40 sát thương phép.",
+      "tft": "Set 11 Lillia / Karma (nối dây)"
+    },
+    "RATTATA": {
+      "id": "ENDEAVOR",
+      "vi": "Nỗ Lực",
+      "en": "Endeavor",
+      "key": "target.equalize_hp",
+      "pp": 100,
+      "text": "Nếu mục tiêu còn nhiều HP hơn nó: kéo HP mục tiêu xuống bằng HP của nó (tối đa 80/160/320 sát thương chuẩn). Không thì gây 20/40/80 sát thương phép.",
+      "tft": "Endeavor (Pokémon)"
+    },
+    "CYNDAQUIL": {
+      "id": "FIRE_PLEDGE",
+      "vi": "Thề Ước Lửa",
+      "en": "Fire Pledge",
+      "key": "row.zone",
+      "pp": 100,
+      "text": "Biển lửa phủ cả hàng của mục tiêu 4 giây: kẻ địch trên hàng bị BURN và chịu 10/20/40 sát thương phép mỗi giây. (Mọi dạng, cả Hisuian Typhlosion.)",
+      "tft": "Set 9 Brand / vùng cháy"
+    },
+    "GROWLITHE": {
+      "id": "GUARD_DOG",
+      "vi": "Hộ Vệ Trung Thành",
+      "en": "Guard Dog",
+      "key": "allies_adjacent.redirect_damage",
+      "pp": 90,
+      "text": "4 giây: 30/40/50% sát thương mà đồng minh ADJACENT nhận được chuyển sang nó; nó nhận 20/40/80 SHIELD.",
+      "tft": "Set 6 Bodyguard / Set 12 Rakan"
+    },
+    "NIDORANM": {
+      "id": "TOXIC_SPIKES",
+      "vi": "Chông Độc",
+      "en": "Toxic Spikes",
+      "key": "ally_front.traps",
+      "pp": 90,
+      "text": "Rải 2/3/4 chông độc lên các ô trống ở hàng trước phía mình; kẻ địch bước vào: 30/60/120 sát thương phép và 2 tầng POISON (mỗi chông một lần).",
+      "tft": "Set 9 Teemo / bẫy"
+    },
+    "OMANYTE": {
+      "id": "CONSTRICT",
+      "vi": "Xúc Tu Siết",
+      "en": "Constrict",
+      "key": "target.bind_mana_reave",
+      "pp": 90,
+      "text": "Quấn mục tiêu 3/3/4 giây: nó bị LOCKED, mất 10/20/40 HP mỗi giây và cần thêm 30% PP để dùng skill trong lúc bị quấn.",
+      "tft": "Mana Reave (TFT)"
+    },
+    "PIPLUP": {
+      "id": "MIST",
+      "vi": "Màn Sương",
+      "en": "Mist",
+      "key": "allies_behind.shield_safeguard",
+      "pp": 90,
+      "text": "Phủ sương lên 2 đồng minh đứng ngay sau nó: mỗi con 25/50/100 SHIELD và SAFEGUARD 3 giây (miễn hiệu ứng xấu).",
+      "tft": "Set 7 Guardian (che người phía sau)"
+    },
+    "SEWADDLE": {
+      "id": "CROSS_CUT",
+      "vi": "Kéo May Chữ X",
+      "en": "Cross Cut",
+      "key": "x_shape.execute",
+      "pp": 90,
+      "text": "Chém chữ X qua mục tiêu (mục tiêu + 4 ô chéo của nó): 20/40/80 sát thương vật lý; kẻ trúng dưới 12/15/18% HP bị hạ gục.",
+      "tft": "Set 19 Pyke (chữ X, kết liễu)"
+    },
+    "SPINARAK": {
+      "id": "SPIDER_WEB",
+      "vi": "Mạng Nhện Nối",
+      "en": "Spider Web",
+      "key": "two_enemies.damage_link",
+      "pp": 80,
+      "text": "Nối tơ 2 kẻ địch gần nhất với nhau 5 giây: mỗi khi một kẻ nhận sát thương, kẻ kia chịu 30/40/50% lượng đó (sát thương chuẩn) và cả hai -15 SPEED.",
+      "tft": "Set 11 Morgana / liên kết"
+    },
+    "BULBASAUR": {
+      "id": "GIGA_DRAIN",
+      "vi": "Siêu Hút Năng Lượng",
+      "en": "Giga Drain",
+      "key": "closest_n.tether_drain",
+      "pp": 100,
+      "text": "Cắm dây hút vào 3 kẻ địch gần nhất 4 giây: mỗi giây mỗi kẻ 8/15/30 sát thương phép; nó hồi bằng tổng lượng hút.",
+      "tft": "Set 19 Thresh (hút máu kẻ địch ở gần)"
+    },
+    "PANCHAM": {
+      "id": "CIRCLE_THROW",
+      "vi": "Quật Vòng",
+      "en": "Circle Throw",
+      "key": "target.throw_behind",
+      "pp": 100,
+      "text": "Túm mục tiêu quật ra ô trống sau lưng mình (giữa đội hình mình): 30/60/120 sát thương phép, FLINCH 2 giây.",
+      "tft": "Set 9.5 Sett"
+    },
+    "PAWMI": {
+      "id": "REVIVAL_BLESSING",
+      "vi": "Phước Lành Hồi Sinh",
+      "en": "Revival Blessing",
+      "key": "allies.revive_one",
+      "pp": 120,
+      "text": "Lần đầu mỗi trận có đồng minh đã gục: hồi sinh con gục gần nhất với 20/30/50% HP. Các lần sau (hoặc chưa ai gục): đấm mục tiêu 30/60/120 sát thương phép và PARALYSIS 1 giây.",
+      "tft": "Revival Blessing (Pawmot)"
+    },
+    "TRAPINCH": {
+      "id": "SAND_PIT",
+      "vi": "Hố Cát Kiến Sư Tử",
+      "en": "Sand Pit",
+      "key": "pull_nearest.strike",
+      "pp": 90,
+      "text": "Kéo kẻ địch gần nhất trong 3 ô sát vào mình; nó bị LOCKED 2/3/4 giây và chịu 30/60/120 sát thương phép.",
+      "tft": "Set 19 Mordekaiser (kéo kẻ gần nhất)"
+    },
+    "VANILLITE": {
+      "id": "MIRROR_COAT",
+      "vi": "Áo Gương",
+      "en": "Mirror Coat",
+      "key": "self.reflect_special",
+      "pp": 90,
+      "text": "3 giây: 50/75/100% sát thương phép nhận vào dội ngược lên kẻ gây ra (vẫn nhận sát thương); nhận 15/30/60 SHIELD.",
+      "tft": "Set 3 Rakan / phản đòn phép"
+    },
+    "VULPIX": {
+      "id": "FOX_FIRE",
+      "vi": "Hồ Hỏa",
+      "en": "Fox Fire",
+      "key": "marks.stack_detonate",
+      "pp": 70,
+      "text": "Đặt lửa hồ ly lên 3/3/4 kẻ địch gần nhất (mỗi kẻ 1 lửa, tối đa 3); kẻ có đủ 3 lửa nổ: 60/120/240 sát thương phép và BURN 3 giây.",
+      "tft": "Set 19 Mel (cộng dồn Blues) / Ahri"
+    },
+    "CORSOLA": {
+      "id": "STRENGTH_SAP",
+      "vi": "Hút Sức Mạnh",
+      "en": "Strength Sap",
+      "key": "target.sap_heal",
+      "pp": 90,
+      "text": "Mục tiêu mất 3/5/8 ATK; Corsola hồi HP bằng 300% ATK của mục tiêu. (Dạng Corsola / Galarian Corsola; Cursola giữ CURSE.)",
+      "tft": "Strength Sap (Galarian Corsola)"
+    },
+    "DRATINI": {
+      "id": "ALLY_SWITCH",
+      "vi": "Bay Tới Cứu",
+      "en": "Rescue Flight",
+      "key": "ally_lowest.swap_rescue",
+      "pp": 100,
+      "text": "Bay tới đổi chỗ với đồng minh ít % HP nhất: đồng minh nhận 30/60/120 SHIELD; Dratini đứng chắn, kẻ địch ADJACENT nơi đến bị FLINCH 2 giây.",
+      "tft": "Set 9 Shen / Set 17 Rakan (lao tới đồng minh)"
+    },
+    "DWEBBLE": {
+      "id": "SMACK_DOWN",
+      "vi": "Quăng Tảng Đá",
+      "en": "Smack Down",
+      "key": "backline_cluster.lob",
+      "pp": 100,
+      "text": "Ném tảng đá trên lưng vào ô hàng cuối của địch có nhiều kẻ địch quanh nhất: 30/60/120 sát thương phép lên kẻ ở đó và ADJACENT, LOCKED 1 giây.",
+      "tft": "Set 5 Ziggs / ném vào hậu tuyến"
+    },
+    "GIBLE": {
+      "id": "EARTHQUAKE",
+      "vi": "Động Đất",
+      "en": "Earthquake",
+      "key": "ring.expanding_wave",
+      "pp": 100,
+      "text": "Sóng chấn lan 3 vòng từ nó (1, 2, 3 ô), cách nhau 0,4 giây: mỗi vòng 20/40/80 sát thương phép lên kẻ địch trên vòng đó (trừ hệ FLYING).",
+      "tft": "Set 9 Sion / vòng lan"
+    },
+    "ROCKRUFF": {
+      "id": "ROCK_AMBUSH",
+      "vi": "Phục Kích Đá",
+      "en": "Rock Ambush",
+      "key": "self.stealth_ambush",
+      "pp": 80,
+      "text": "Ẩn vào vách đá 1,5 giây (không bị nhắm); đòn đánh đầu tiên khi hiện ra chắc chắn chí mạng và gây 150/200/250% ATK.",
+      "tft": "Set 19 Evelynn (ẩn mình) / Set 6 Shaco"
+    },
+    "SNORUNT": {
+      "id": "DESTINY_BOND",
+      "vi": "Lời Nguyền Đồng Mệnh",
+      "en": "Destiny Bond",
+      "key": "target.destiny_link",
+      "pp": 100,
+      "text": "Nối số phận với mục tiêu 5 giây: nếu Snorunt gục trong lúc đó, mục tiêu gục theo; nếu không, hết giờ mục tiêu chịu 40/80/160 sát thương phép và FREEZE 1 giây.",
+      "tft": "Destiny Bond (Pokémon)"
+    },
+    "PAWNIARD": {
+      "id": "SUPREME_OVERLORD",
+      "vi": "Tổng Tư Lệnh",
+      "en": "Supreme Overlord",
+      "key": "all_enemies.execute_low",
+      "pp": 100,
+      "text": "Ra lệnh chém: mọi kẻ địch dưới 12/16/22% HP trên sàn bị hạ gục; mỗi kẻ bị hạ cho Pawniard 3/5/8 ATK. Không ai dưới ngưỡng thì chém mục tiêu 100% ATK sát thương chuẩn.",
+      "tft": "Set 9 Nocturne / Kingambit"
+    },
+    "VENIPEDE": {
+      "id": "BATON_PASS",
+      "vi": "Chuyền Gậy",
+      "en": "Baton Pass",
+      "key": "self.buff_then_pass",
+      "pp": 80,
+      "text": "Nhận 10/20/40 SPEED và 4/8/15 ATK 5 giây; khi hết (hoặc khi gục), trao lại chừng đó cho đồng minh ADJACENT có ATK cao nhất tới hết trận.",
+      "tft": "Baton Pass (Scolipede)"
+    }
+  }
+}

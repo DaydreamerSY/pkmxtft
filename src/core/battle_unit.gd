@@ -81,6 +81,8 @@ var effects: Dictionary = {}
 var synergy: Dictionary = {}
 ## Item, synergy and passive stacks and timers (upgrade, muscle_band, attacks, fighting_blocks...).
 var counters: Dictionary = {}
+## Synergy effects of the season it gets (SeasonSynergies.on_spawn): [{e: effect, t: tier, type}].
+var season_effects: Array = []
 
 var target: BattleUnit = null
 var cooldown := 0.0 ## ms before the next action (step, attack or cast)
@@ -334,12 +336,13 @@ func cleanse() -> void:
 
 func can_act() -> bool:
 	return alive and not inanimate and not has_status("freeze") and not has_status("resurrecting") \
-		and not (has_status("sleep") and passive != "COMATOSE")
+		and not (has_status("sleep") and passive != "COMATOSE") and not has_status("stasis")
 
 
 ## Out of reach of attacks and targeting (Sky Attack dive, Galarian Darmanitan turning Zen).
 func is_untargetable() -> bool:
-	return has_status("skydiving") or has_status("untargetable") or has_status("resurrecting")
+	return has_status("skydiving") or has_status("untargetable") or has_status("resurrecting") \
+		or has_status("stasis") # stasis: season skills (Bubble Shelter, Sky Drop): out of the fight a moment
 
 
 func can_move() -> bool:
@@ -348,7 +351,8 @@ func can_move() -> bool:
 
 ## canBeMoved: forced displacements (knockbacks, pulls, swaps) leave it in place.
 func can_be_moved() -> bool:
-	return not has_status("skydiving") and not has_status("locked") and not has_item("HEAVY_DUTY_BOOTS")
+	return not has_status("skydiving") and not has_status("locked") and not has_item("HEAVY_DUTY_BOOTS") \
+		and not has_status("fortified") # Steel of a season (SeasonMechanics opening_fortify)
 
 
 ## canCast: not while SILENCE, with a Nullify Bandanna or a Teleport attack waiting.

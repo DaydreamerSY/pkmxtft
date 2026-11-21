@@ -1,0 +1,42 @@
+{
+  "_doc": "Mùa 1: skill MƯỢN cho họ bị trùng — skill đã port (số liệu, VFX, chữ có sẵn) mà không họ nào của mùa 1 dùng; key không trùng trong mùa. family: [skill, key, chủ gốc, lý do hợp].",
+  "season": "s1",
+  "borrow": {
+    "CHARMANDER": ["DRAGON_RAGE", "nova.channel_shield", "Magikarp", "Rồng lửa: khiên + đốt quanh mình 6 giây, hợp đấu sĩ hàng đầu"],
+    "POLIWAG": ["ENTRAINMENT", "target.replace_skill", "Audino", "Vòng xoáy thôi miên: kỹ năng của mục tiêu bị thay bằng Đồng Điệu"],
+    "SPEAROW": ["DRILL_PECK", "target.swap_chain", "Doduo", "Fearow học Drill Peck; mổ xuyên đội hình"],
+    "SWINUB": ["FISSURE", "random_cells.burst", "Barboach", "Mamoswine: Đất + nứt băng"],
+    "WEEDLE": ["FELL_STINGER", "target.grow_on_kill", "Poipole", "Beedrill học Fell Stinger"],
+    "ARCHEN": ["ACROBATICS", "target.hit_and_retreat", "Hoppip", "Archeops học Acrobatics; xạ thủ đánh rồi lùi"],
+    "IMPIDIMP": ["SPITE", "target.pp_drain_to_allies", "Yamask", "Tiểu yêu chơi khăm: rút PP chia cho đồng đội"],
+    "NACLI": ["IRON_DEFENSE", "allies_row.shield", "Shieldon", "Tường muối che cả hàng"],
+    "SKRELP": ["POISON_STING", "target.stack_overflow", "Skorupi", "Tảo độc dồn tầng, tràn tầng thành sát thương"],
+    "QUAXLY": ["FEATHER_DANCE", "dash_farthest.feather_trail", "Ducklett", "Quaquaval là vũ công"],
+    "PHANPY": ["HEADLONG_RUSH", "dash_farthest.sweep", "Great Tusk", "Great Tusk là Donphan nghịch thời"],
+    "POOCHYENA": ["BEAT_UP", "summon.pack", "Houndour", "Mightyena săn theo bầy"],
+    "TAILLOW": ["BRAVE_BIRD", "self.retreat_pull", "Starly", "Swellow học Brave Bird"],
+    "TOTODILE": ["JAW_LOCK", "target.lock_rebite", "Chewtle", "Feraligatr cắn giữ"],
+    "TOXEL": ["UPROAR", "in_range.channel", "Whismur", "Toxtricity chơi rock: náo loạn"],
+    "WOOPER": ["YAWN", "targeters.punish_shield", "Slowpoke", "Quagsire học Yawn; đỡ đòn lười biếng"],
+    "ZIGZAGOON": ["PICKUP", "target.disarm", "Alolan Meowth", "Nội tại gốc của Zigzagoon là Pickup"],
+    "BONSLEY": ["MIMIC", "target.copy_skill", "Mime Jr.", "Sudowoodo giả cây: bắt chước"],
+    "BOUNSWEET": ["HIGH_JUMP_KICK", "target.pp_steal", "Buneary", "Tsareena là nữ hoàng cú đá"],
+    "DARUMAKA": ["HEAT_CRASH", "target.scale_atk_gap", "Tepig", "Darmanitan nặng và nóng"],
+    "EXEGGCUTE": ["EERIE_SPELL", "chain.mixed_lowest", "Galarian Slowpoke", "Trứng siêu linh nảy giữa hai phe"],
+    "PONYTA": ["FIRE_BLAST", "star.plain", "Ho-Oh", "Rapidash học Fire Blast; vùng hình sao"],
+    "HISUI_SAMUROTT": ["ASSURANCE", "target.bonus_when_self_low", "Scraggy", "Chỉ dạng Hisui (Ác): càng đau càng chém mạnh"],
+    "FLETCHLING": ["SKY_ATTACK", "airborne.dive_farthest", "Lugia", "Talonflame bổ nhào từ trời"],
+    "SHINX": ["ELECTRO_WEB", "nova.speed_steal", "Joltik", "Luxray hút tốc độ con mồi"],
+    "BRUXISH": ["PSYCHO_SHIFT", "two_enemies.swap", "Sigilyph", "Cá siêu linh làm loạn vị trí địch"],
+    "CARNIVINE": ["ANCHOR_SHOT", "hook_farthest.strike", "Dhelmise", "Cây bắt mồi kéo con mồi về"],
+    "CHARCADET": ["SHELL_TRAP", "self.shield_detonate", "Turtonator", "Chỉ dạng Charcadet: giáp lửa nổ"],
+    "CHATOT": ["ENCORE", "team.repeat_last_cast", "Minccino", "Vẹt nhại lại kỹ năng của đồng đội"],
+    "FARFETCH_D": ["HELPING_HAND", "closest_allies.next_cast_double", "Sentret", "Chia cọng hành cho đồng đội"],
+    "PACHIRISU": ["FOLLOW_ME", "self.retreat_charm_targeters", "Indeedee", "Follow Me là chiêu nổi tiếng của Pachirisu"],
+    "URSHIFU": ["FOCUS_PUNCH", "target.delayed_ringout", "(chưa Pokémon nào dùng)", "Hai dạng Urshifu: tụ lực rồi đấm văng khỏi sàn"],
+    "TOGEDEMARU": ["MAGNET_RISE", "allies_weakest_adjacent.protect", "Nosepass", "Điện + Thép, nhấc đồng đội lên bằng từ trường"]
+  },
+  "keep_after_review": {
+    "REGIROCK": ["STEALTH_ROCKS", "cone.zone", "vùng hình nón khác vùng ngẫu nhiên của Amaura: giữ"]
+  }
+}
